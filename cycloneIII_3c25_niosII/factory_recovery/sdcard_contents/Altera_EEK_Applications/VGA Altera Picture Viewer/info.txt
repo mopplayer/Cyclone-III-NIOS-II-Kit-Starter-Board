@@ -1,0 +1,20 @@
+VGA Picture Viewer Application
+==============================
+This is a VGA mirrored version of the original Picture Viewer Application
+
+Picture Viewer Application 
+==========================
+Takes JPEG or BMP images stored on SD Card and displays them on LCD Panel
+
+How to use the demo
+===================
+1) Touch 'Forward' for next image, 'Reverse' for previous
+2) Touch Play/Stop to play or stop slide
+3) Touch + or - to adjust delay
+4) Touch Hide to hide, touch anywhere to unhide
+
+ADD YOUR PICS TO THE PICTURE VIEWER
+--------------------------------
+- Connect SD Card to your PC using the reader
+- Copy your JPEGS to 'Image' directory on SD Card
+- This example design comes with full source code

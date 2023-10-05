@@ -1,0 +1,1170 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+HDL Signal                                                                                                           C file/line            Name before truncation (if applicable)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+accelerator_mandelbrot_hw_draw_int_mandelbrot_cpu_registers0                                                                                
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters0_p0xFF_p2_read0                 hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters0_p0xFF_p2_read0_address0        hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters0_p0xFF_p2_read0_address1        hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters0_p0xFF_p2_read0_address2        hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters0_p0xFF_p2_read0_flush0          hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters0_p0xFF_p2_read0_module0         hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters0_p0xFF_p2_read0_read0           hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters0_p0xFF_p2_read0_readdata0       hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters0_p0xFF_p2_read0_readdatavalid0  hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters0_p0xFF_p2_read0_waitrequest_n0  hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0                 hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0_address0        hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0_address1        hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0_address2        hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0_address3                               
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0_flush0          hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0_module0         hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0_read0           hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0_readdata0       hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0_readdatavalid0  hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters1_p0xFF_p2_read0_waitrequest_n0  hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0                 hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0_address0        hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0_address1        hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0_address2        hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0_address3                               
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0_flush0          hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0_module0         hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0_read0           hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0_readdata0       hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0_readdatavalid0  hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters2_p0xFF_p2_read0_waitrequest_n0  hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0                 hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0_address0        hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0_address1        hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0_address2        hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0_address3                               
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0_flush0          hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0_module0         hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0_read0           hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0_readdata0       hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0_readdatavalid0  hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_colour_lookup_table_iters3_p0xFF_p2_read0_waitrequest_n0  hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer1_write0                                      hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer1_write0_address0                             hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer1_write0_address1                             hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer1_write0_address2                             hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer1_write0_address3                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer1_write0_module0                              hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer1_write0_waitrequest_n0                       hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer1_write0_write0                               hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer1_write0_writedata0                           hw_mandelbrot.c (222)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer3_write0                                      hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer3_write0_address0                             hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer3_write0_address1                             hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer3_write0_address2                             hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer3_write0_address3                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer3_write0_module0                              hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer3_write0_waitrequest_n0                       hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer3_write0_write0                               hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer3_write0_writedata0                           hw_mandelbrot.c (225)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer5_write0                                      hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer5_write0_address0                             hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer5_write0_address1                             hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer5_write0_address2                             hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer5_write0_module0                              hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer5_write0_waitrequest_n0                       hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer5_write0_write0                               hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer5_write0_writedata0                           hw_mandelbrot.c (228)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer7_write0                                      hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer7_write0_address0                             hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer7_write0_address1                             hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer7_write0_address2                             hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer7_write0_address3                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer7_write0_module0                              hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer7_write0_waitrequest_n0                       hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer7_write0_write0                               hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_dereferenced_frame_buffer7_write0_writedata0                           hw_mandelbrot.c (229)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0                                                hw_mandelbrot.c (65)   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_state_machine_do_0                             hw_mandelbrot.c (128)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_state_machine_do_1                             hw_mandelbrot.c (130)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_state_machine_do_2                             hw_mandelbrot.c (133)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_state_machine_do_3                             hw_mandelbrot.c (136)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_state_machine_do_4                             hw_mandelbrot.c (137)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_state_machine_subroutine_0                     hw_mandelbrot.c (65)   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_the_state_machine_do_0                         hw_mandelbrot.c (128)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_the_state_machine_do_1                         hw_mandelbrot.c (130)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_the_state_machine_do_2                         hw_mandelbrot.c (133)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_the_state_machine_do_3                         hw_mandelbrot.c (136)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_the_state_machine_do_4                         hw_mandelbrot.c (137)  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_hw_draw_int_mandelbrot0_the_state_machine_subroutine_0                 hw_mandelbrot.c (65)   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0                                                                              
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_address0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_address_mux_out0                                                             
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_byteenable0                                                                  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_byteenable_mux_out0                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_byteenable_shifted0                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_fifo_aclr0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_fifo_empty0                                                                  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_fifo_full0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_fifo_out0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_fifo_out_aligned0                                                            
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_fifo_read0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_fifo_sclr0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_flush0                                                                       
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_read0                                                                        
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_readdata0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_readdata_aligned0                                                            
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_readdatavalid0                                                               
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_waitrequest_n0                                                               
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_write0                                                                       
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_writedata0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource0_writedata_mux_out0                                                           
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1                                                                              
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_address0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_address_mux_out0                                                             
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_byteenable0                                                                  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_byteenable_mux_out0                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_byteenable_shifted0                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_fifo_aclr0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_fifo_empty0                                                                  
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_fifo_full0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_fifo_out0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_fifo_out_aligned0                                                            
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_fifo_read0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_fifo_sclr0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_flush0                                                                       
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_read0                                                                        
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_readdata0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_readdata_aligned0                                                            
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_readdatavalid0                                                               
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_waitrequest_n0                                                               
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_write0                                                                       
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_writedata0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_master_resource1_writedata_mux_out0                                                           
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource0                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource0_op_a0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource0_op_b0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource0_res0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource1                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource10                                                                         
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource10_op_a0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource10_op_b0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource10_res0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource11                                                                         
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource11_op_a0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource11_op_b0                                                                   
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource11_res0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource1_op_a0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource1_op_b0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource1_res0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource2                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource2_op_a0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource2_op_b0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource2_res0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource3                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource3_op_a0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource3_op_b0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource3_res0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource4                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource4_op_a0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource4_op_b0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource4_res0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource5                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource5_op_a0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource5_op_b0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource5_res0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource6                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource6_op_a0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource6_op_b0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource6_res0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource7                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource7_op_a0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource7_op_b0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource7_res0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource8                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource8_op_a0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource8_op_b0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource8_res0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource9                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource9_op_a0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource9_op_b0                                                                    
+accelerator_mandelbrot_hw_draw_int_mandelbrot_multiplier_resource9_res0                                                                     
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply0                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply1                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply10                                                                         
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply11                                                                         
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply2                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply3                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply4                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply5                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply6                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply7                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply8                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply9                                                                          
+accelerator_mandelbrot_hw_draw_int_mandelbrot_shift_fifo0                                                                                   
+advance_to_hw_draw_int_mandelbrot_state0                                                                             hw_mandelbrot.c (65)   
+advance_to_state_do_0                                                                                                hw_mandelbrot.c (130)  
+advance_to_state_do_1                                                                                                hw_mandelbrot.c (133)  
+advance_to_state_do_2                                                                                                hw_mandelbrot.c (136)  
+advance_to_state_do_3                                                                                                hw_mandelbrot.c (137)  
+advance_to_state_do_4                                                                                                hw_mandelbrot.c (128)  
+block_wide_enable0                                                                                                   hw_mandelbrot.c (65)   
+block_wide_enable1                                                                                                   hw_mandelbrot.c (128)  
+block_wide_enable2                                                                                                   hw_mandelbrot.c (130)  
+block_wide_enable3                                                                                                   hw_mandelbrot.c (133)  
+block_wide_enable4                                                                                                   hw_mandelbrot.c (136)  
+block_wide_enable5                                                                                                   hw_mandelbrot.c (137)  
+break0                                                                                                                (128)                 
+break1                                                                                                                (130)                 
+break10                                                                                                               (137)                 
+break11                                                                                                              hw_mandelbrot.c (137)  
+break12                                                                                                                                     
+break13                                                                                                              hw_mandelbrot.c (128)  
+break14                                                                                                                                     
+break15                                                                                                                                     
+break16                                                                                                                                     
+break17                                                                                                                                     
+break2                                                                                                               hw_mandelbrot.c (130)  
+break3                                                                                                                                      
+break4                                                                                                                (133)                 
+break5                                                                                                               hw_mandelbrot.c (133)  
+break6                                                                                                                                      
+break7                                                                                                                (136)                 
+break8                                                                                                               hw_mandelbrot.c (136)  
+break9                                                                                                                                      
+colour_lookup_table0                                                                                                  (68)                  
+colour_lookup_table_iters0_p0xFF_p2                                                                                   (128)                 
+colour_lookup_table_iters1_p0xFF_p2                                                                                   (128)                 
+colour_lookup_table_iters2_p0xFF_p2                                                                                   (128)                 
+colour_lookup_table_iters3_p0xFF_p2                                                                                   (128)                 
+column0                                                                                                               (69)                  
+column1                                                                                                               (94)                  
+column10                                                                                                                                    
+column11                                                                                                                                    
+column12                                                                                                                                    
+column13                                                                                                                                    
+column14                                                                                                                                    
+column2                                                                                                               (216)                 
+column3                                                                                                              hw_mandelbrot.c (157)  
+column4                                                                                                               (157)                 
+column5                                                                                                               (186)                 
+column6                                                                                                              hw_mandelbrot.c (157)  
+column7                                                                                                               (157)                 
+column8                                                                                                              hw_mandelbrot.c (157)  
+column9                                                                                                                                     
+column_init0                                                                                                         hw_mandelbrot.c (128)  
+column_init1                                                                                                                                
+continue0                                                                                                             (128)                 
+continue1                                                                                                             (130)                 
+continue2                                                                                                             (133)                 
+continue3                                                                                                             (136)                 
+continue4                                                                                                             (137)                 
+control_output_break0                                                                                                hw_mandelbrot.c (130)  
+control_output_break1                                                                                                 (130)                 
+control_output_break2                                                                                                hw_mandelbrot.c (133)  
+control_output_break3                                                                                                 (133)                 
+control_output_break4                                                                                                hw_mandelbrot.c (136)  
+control_output_break5                                                                                                 (136)                 
+control_output_break6                                                                                                hw_mandelbrot.c (137)  
+control_output_break7                                                                                                 (137)                 
+control_output_break8                                                                                                hw_mandelbrot.c (128)  
+control_output_break9                                                                                                 (128)                 
+control_output_if0                                                                                                                          
+control_output_if1                                                                                                                          
+control_output_if10                                                                                                  hw_mandelbrot.c (157)  
+control_output_if11                                                                                                   (157)                 
+control_output_if2                                                                                                   hw_mandelbrot.c (130)  
+control_output_if3                                                                                                    (130)                 
+control_output_if4                                                                                                   hw_mandelbrot.c (133)  
+control_output_if5                                                                                                    (133)                 
+control_output_if6                                                                                                   hw_mandelbrot.c (136)  
+control_output_if7                                                                                                    (136)                 
+control_output_if8                                                                                                   hw_mandelbrot.c (137)  
+control_output_if9                                                                                                    (137)                 
+count0                                                                                                                                      
+cpu_address0                                                                                                                                
+cpu_address_c2hplus0                                                                                                                        
+cpu_irq0                                                                                                                                    
+cpu_irq_c2hplus0                                                                                                                            
+cpu_readdata0                                                                                                        hw_mandelbrot.c (65)   
+cpu_readdata1                                                                                                                               
+cpu_readdata_c2hplus0                                                                                                                       
+cpu_select0                                                                                                                                 
+cpu_select_c2hplus0                                                                                                                         
+cpu_waitrequest_n0                                                                                                                          
+cpu_waitrequest_n_c2hplus0                                                                                                                  
+cpu_write0                                                                                                                                  
+cpu_write_c2hplus0                                                                                                                          
+cpu_writedata0                                                                                                                              
+cpu_writedata_c2hplus0                                                                                                                      
+current_x0                                                                                                                                  
+current_x0_copy0                                                                                                      (72)                  
+current_x0_copy1                                                                                                      (98)                  
+current_x0_copy10                                                                                                                           
+current_x0_copy11                                                                                                                           
+current_x0_copy12                                                                                                                           
+current_x0_copy13                                                                                                                           
+current_x0_copy14                                                                                                                           
+current_x0_copy15                                                                                                                           
+current_x0_copy2                                                                                                      (191)                 
+current_x0_copy3                                                                                                     hw_mandelbrot.c (157)  
+current_x0_copy4                                                                                                      (157)                 
+current_x0_copy5                                                                                                      (160)                 
+current_x0_copy6                                                                                                     hw_mandelbrot.c (157)  
+current_x0_copy7                                                                                                      (157)                 
+current_x0_copy8                                                                                                     hw_mandelbrot.c (157)  
+current_x0_copy9                                                                                                                            
+current_x0_copy_init0                                                                                                hw_mandelbrot.c (128)  
+current_x0_copy_init1                                                                                                                       
+current_x1                                                                                                                                  
+current_x1_copy0                                                                                                      (76)                  
+current_x1_copy1                                                                                                      (101)                 
+current_x1_copy10                                                                                                                           
+current_x1_copy11                                                                                                                           
+current_x1_copy12                                                                                                                           
+current_x1_copy13                                                                                                                           
+current_x1_copy14                                                                                                                           
+current_x1_copy15                                                                                                                           
+current_x1_copy2                                                                                                      (194)                 
+current_x1_copy3                                                                                                     hw_mandelbrot.c (157)  
+current_x1_copy4                                                                                                      (157)                 
+current_x1_copy5                                                                                                      (163)                 
+current_x1_copy6                                                                                                     hw_mandelbrot.c (157)  
+current_x1_copy7                                                                                                      (157)                 
+current_x1_copy8                                                                                                     hw_mandelbrot.c (157)  
+current_x1_copy9                                                                                                                            
+current_x1_copy_init0                                                                                                hw_mandelbrot.c (128)  
+current_x1_copy_init1                                                                                                                       
+current_x2_copy0                                                                                                      (80)                  
+current_x2_copy1                                                                                                      (104)                 
+current_x2_copy10                                                                                                                           
+current_x2_copy11                                                                                                                           
+current_x2_copy12                                                                                                                           
+current_x2_copy13                                                                                                                           
+current_x2_copy14                                                                                                                           
+current_x2_copy15                                                                                                                           
+current_x2_copy2                                                                                                      (197)                 
+current_x2_copy3                                                                                                     hw_mandelbrot.c (157)  
+current_x2_copy4                                                                                                      (157)                 
+current_x2_copy5                                                                                                      (166)                 
+current_x2_copy6                                                                                                     hw_mandelbrot.c (157)  
+current_x2_copy7                                                                                                      (157)                 
+current_x2_copy8                                                                                                     hw_mandelbrot.c (157)  
+current_x2_copy9                                                                                                                            
+current_x2_copy_init0                                                                                                hw_mandelbrot.c (128)  
+current_x2_copy_init1                                                                                                                       
+current_x3_copy0                                                                                                      (80)                  
+current_x3_copy1                                                                                                      (105)                 
+current_x3_copy10                                                                                                                           
+current_x3_copy11                                                                                                                           
+current_x3_copy12                                                                                                                           
+current_x3_copy13                                                                                                                           
+current_x3_copy14                                                                                                                           
+current_x3_copy15                                                                                                                           
+current_x3_copy2                                                                                                      (198)                 
+current_x3_copy3                                                                                                     hw_mandelbrot.c (157)  
+current_x3_copy4                                                                                                      (157)                 
+current_x3_copy5                                                                                                      (167)                 
+current_x3_copy6                                                                                                     hw_mandelbrot.c (157)  
+current_x3_copy7                                                                                                      (157)                 
+current_x3_copy8                                                                                                     hw_mandelbrot.c (157)  
+current_x3_copy9                                                                                                                            
+current_x3_copy_init0                                                                                                hw_mandelbrot.c (128)  
+current_x3_copy_init1                                                                                                                       
+current_y0                                                                                                                                  
+current_y1                                                                                                                                  
+current_y_copy0                                                                                                       (91)                  
+current_y_copy1                                                                                                       (123)                 
+current_y_copy10                                                                                                                            
+current_y_copy11                                                                                                                            
+current_y_copy12                                                                                                                            
+current_y_copy2                                                                                                       (185)                 
+current_y_copy3                                                                                                      hw_mandelbrot.c (157)  
+current_y_copy4                                                                                                       (157)                 
+current_y_copy5                                                                                                      hw_mandelbrot.c (157)  
+current_y_copy6                                                                                                                             
+current_y_copy7                                                                                                                             
+current_y_copy8                                                                                                                             
+current_y_copy9                                                                                                                             
+current_y_copy_init0                                                                                                 hw_mandelbrot.c (128)  
+current_y_copy_init1                                                                                                                        
+delayed_slave_waitrequest_n0                                                                                                                
+dereferenced_colour_lookup_table_iters0_p0xFF_p3                                                                     hw_mandelbrot.c (222)  
+dereferenced_colour_lookup_table_iters1_p0xFF_p3                                                                     hw_mandelbrot.c (225)  
+dereferenced_colour_lookup_table_iters2_p0xFF_p3                                                                     hw_mandelbrot.c (228)  
+dereferenced_colour_lookup_table_iters3_p0xFF_p3                                                                     hw_mandelbrot.c (229)  
+dereferenced_frame_buffer2                                                                                            (222)                 
+dereferenced_frame_buffer4                                                                                            (225)                 
+dereferenced_frame_buffer6                                                                                            (228)                 
+dereferenced_frame_buffer8                                                                                            (229)                 
+dereferenced_frame_buffer9                                                                                                                  
+dummy_if_signal0                                                                                                      (66)                  
+dummy_if_signal1                                                                                                      (66)                  
+dummy_if_signal10                                                                                                     (128)                 
+dummy_if_signal11                                                                                                     (128)                 
+dummy_if_signal2                                                                                                      (130)                 
+dummy_if_signal3                                                                                                      (130)                 
+dummy_if_signal4                                                                                                      (133)                 
+dummy_if_signal5                                                                                                      (133)                 
+dummy_if_signal6                                                                                                      (136)                 
+dummy_if_signal7                                                                                                      (136)                 
+dummy_if_signal8                                                                                                      (137)                 
+dummy_if_signal9                                                                                                      (137)                 
+enable_hw_draw_int_mandelbrot_state0                                                                                 hw_mandelbrot.c (65)   
+enable_state_do_0                                                                                                    hw_mandelbrot.c (130)  
+enable_state_do_1                                                                                                    hw_mandelbrot.c (133)  
+enable_state_do_2                                                                                                    hw_mandelbrot.c (136)  
+enable_state_do_3                                                                                                    hw_mandelbrot.c (137)  
+enable_state_do_4                                                                                                    hw_mandelbrot.c (128)  
+first_time_at_clock_13_state_do_4                                                                                    hw_mandelbrot.c (128)  
+first_time_at_clock_13_state_do_5                                                                                                           
+first_time_at_clock_13_state_do_6                                                                                                           
+first_time_at_clock_2_state_do_0                                                                                     hw_mandelbrot.c (130)  
+first_time_at_clock_2_state_do_1                                                                                                            
+first_time_at_clock_2_state_do_10                                                                                                           
+first_time_at_clock_2_state_do_11                                                                                                           
+first_time_at_clock_2_state_do_2                                                                                                            
+first_time_at_clock_2_state_do_3                                                                                     hw_mandelbrot.c (133)  
+first_time_at_clock_2_state_do_4                                                                                                            
+first_time_at_clock_2_state_do_5                                                                                                            
+first_time_at_clock_2_state_do_6                                                                                     hw_mandelbrot.c (136)  
+first_time_at_clock_2_state_do_7                                                                                                            
+first_time_at_clock_2_state_do_8                                                                                                            
+first_time_at_clock_2_state_do_9                                                                                     hw_mandelbrot.c (137)  
+first_time_at_clock_3_state_do_4                                                                                     hw_mandelbrot.c (128)  
+first_time_at_clock_3_state_do_5                                                                                                            
+first_time_at_clock_3_state_do_6                                                                                                            
+frame_buffer0                                                                                                                               
+frame_buffer1                                                                                                         (128)                 
+frame_buffer10                                                                                                                              
+frame_buffer11                                                                                                                              
+frame_buffer12                                                                                                                              
+frame_buffer13                                                                                                                              
+frame_buffer14                                                                                                                              
+frame_buffer15                                                                                                                              
+frame_buffer16                                                                                                                              
+frame_buffer17                                                                                                                              
+frame_buffer18                                                                                                                              
+frame_buffer19                                                                                                                              
+frame_buffer2                                                                                                         (222)                 
+frame_buffer20                                                                                                                              
+frame_buffer21                                                                                                                              
+frame_buffer22                                                                                                                              
+frame_buffer23                                                                                                                              
+frame_buffer3                                                                                                         (128)                 
+frame_buffer4                                                                                                         (225)                 
+frame_buffer5                                                                                                         (128)                 
+frame_buffer6                                                                                                         (228)                 
+frame_buffer7                                                                                                         (128)                 
+frame_buffer8                                                                                                         (229)                 
+frame_buffer9                                                                                                                               
+frame_buffer_init0                                                                                                   hw_mandelbrot.c (128)  
+frame_buffer_init1                                                                                                                          
+go_bit_control_output0                                                                                               hw_mandelbrot.c (128)  
+go_bit_control_output1                                                                                                (128)                 
+go_bit_control_output10                                                                                              hw_mandelbrot.c (222)  
+go_bit_control_output11                                                                                               (222)                 
+go_bit_control_output12                                                                                              hw_mandelbrot.c (222)  
+go_bit_control_output13                                                                                               (222)                 
+go_bit_control_output14                                                                                              hw_mandelbrot.c (225)  
+go_bit_control_output15                                                                                               (225)                 
+go_bit_control_output16                                                                                              hw_mandelbrot.c (225)  
+go_bit_control_output17                                                                                               (225)                 
+go_bit_control_output18                                                                                              hw_mandelbrot.c (228)  
+go_bit_control_output19                                                                                               (228)                 
+go_bit_control_output2                                                                                               hw_mandelbrot.c (130)  
+go_bit_control_output20                                                                                              hw_mandelbrot.c (228)  
+go_bit_control_output21                                                                                               (228)                 
+go_bit_control_output22                                                                                              hw_mandelbrot.c (229)  
+go_bit_control_output23                                                                                               (229)                 
+go_bit_control_output24                                                                                              hw_mandelbrot.c (229)  
+go_bit_control_output25                                                                                               (229)                 
+go_bit_control_output26                                                                                                                     
+go_bit_control_output27                                                                                                                     
+go_bit_control_output28                                                                                                                     
+go_bit_control_output3                                                                                                (130)                 
+go_bit_control_output4                                                                                               hw_mandelbrot.c (133)  
+go_bit_control_output5                                                                                                (133)                 
+go_bit_control_output6                                                                                               hw_mandelbrot.c (136)  
+go_bit_control_output7                                                                                                (136)                 
+go_bit_control_output8                                                                                               hw_mandelbrot.c (137)  
+go_bit_control_output9                                                                                                (137)                 
+hardware_result0                                                                                                                            
+hw_draw_int_mandelbrot0                                                                                                                     
+hw_draw_int_mandelbrot_begin0                                                                                        hw_mandelbrot.c (65)   
+hw_draw_int_mandelbrot_functiondata0                                                                                 hw_mandelbrot.c (65)   
+hw_draw_int_mandelbrot_read0                                                                                         hw_mandelbrot.c (65)   
+hw_draw_int_mandelbrot_readdatavalid0                                                                                hw_mandelbrot.c (65)   
+hw_draw_int_mandelbrot_select0                                                                                       hw_mandelbrot.c (65)   
+hw_draw_int_mandelbrot_state0                                                                                        hw_mandelbrot.c (65)   
+hw_draw_int_mandelbrot_waitrequest_n0                                                                                hw_mandelbrot.c (65)   
+if0                                                                                                                   (65)                  
+if1                                                                                                                                         
+if10                                                                                                                 hw_mandelbrot.c (136)  
+if11                                                                                                                                        
+if12                                                                                                                  (136)                 
+if13                                                                                                                 hw_mandelbrot.c (137)  
+if14                                                                                                                                        
+if15                                                                                                                  (137)                 
+if16                                                                                                                 hw_mandelbrot.c (157)  
+if17                                                                                                                                        
+if18                                                                                                                                        
+if19                                                                                                                                        
+if2                                                                                                                                         
+if20                                                                                                                                        
+if21                                                                                                                                        
+if3                                                                                                                   (128)                 
+if4                                                                                                                  hw_mandelbrot.c (130)  
+if5                                                                                                                                         
+if6                                                                                                                   (130)                 
+if7                                                                                                                  hw_mandelbrot.c (133)  
+if8                                                                                                                                         
+if9                                                                                                                   (133)                 
+inhibit_from_c_do_block0                                                                                             hw_mandelbrot.c (128)  
+inhibit_from_c_do_block1                                                                                             hw_mandelbrot.c (130)  
+inhibit_from_c_do_block2                                                                                             hw_mandelbrot.c (133)  
+inhibit_from_c_do_block3                                                                                             hw_mandelbrot.c (136)  
+inhibit_from_c_do_block4                                                                                             hw_mandelbrot.c (137)  
+internal_master0                                                                                                                            
+iters0_init0                                                                                                         hw_mandelbrot.c (130)  
+iters0_init1                                                                                                                                
+iters1                                                                                                                (73)                  
+iters10                                                                                                                                     
+iters11                                                                                                              hw_mandelbrot.c (130)  
+iters12                                                                                                               (130)                 
+iters13                                                                                                              hw_mandelbrot.c (130)  
+iters14                                                                                                               (133)                 
+iters15                                                                                                               (133)                 
+iters16                                                                                                                                     
+iters17                                                                                                                                     
+iters18                                                                                                                                     
+iters19                                                                                                              hw_mandelbrot.c (133)  
+iters1_init0                                                                                                         hw_mandelbrot.c (133)  
+iters1_init1                                                                                                                                
+iters2                                                                                                                (77)                  
+iters20                                                                                                               (133)                 
+iters21                                                                                                              hw_mandelbrot.c (133)  
+iters22                                                                                                               (136)                 
+iters23                                                                                                               (136)                 
+iters24                                                                                                                                     
+iters25                                                                                                                                     
+iters26                                                                                                                                     
+iters27                                                                                                              hw_mandelbrot.c (136)  
+iters28                                                                                                               (136)                 
+iters29                                                                                                              hw_mandelbrot.c (136)  
+iters2_init0                                                                                                         hw_mandelbrot.c (136)  
+iters2_init1                                                                                                                                
+iters30                                                                                                               (137)                 
+iters31                                                                                                               (137)                 
+iters32                                                                                                                                     
+iters33                                                                                                                                     
+iters34                                                                                                                                     
+iters35                                                                                                              hw_mandelbrot.c (137)  
+iters36                                                                                                               (137)                 
+iters37                                                                                                              hw_mandelbrot.c (137)  
+iters38                                                                                                                                     
+iters39                                                                                                                                     
+iters3_init0                                                                                                         hw_mandelbrot.c (137)  
+iters3_init1                                                                                                                                
+iters4                                                                                                                (81)                  
+iters40                                                                                                                                     
+iters41                                                                                                                                     
+iters42                                                                                                                                     
+iters43                                                                                                                                     
+iters44                                                                                                                                     
+iters45                                                                                                                                     
+iters46                                                                                                                                     
+iters47                                                                                                                                     
+iters48                                                                                                                                     
+iters49                                                                                                                                     
+iters5                                                                                                                (81)                  
+iters50                                                                                                                                     
+iters51                                                                                                                                     
+iters52                                                                                                                                     
+iters53                                                                                                                                     
+iters54                                                                                                                                     
+iters55                                                                                                                                     
+iters56                                                                                                                                     
+iters57                                                                                                                                     
+iters58                                                                                                                                     
+iters59                                                                                                                                     
+iters6                                                                                                                (130)                 
+iters60                                                                                                                                     
+iters61                                                                                                                                     
+iters62                                                                                                                                     
+iters63                                                                                                                                     
+iters64                                                                                                                                     
+iters65                                                                                                                                     
+iters7                                                                                                                (130)                 
+iters8                                                                                                                                      
+iters9                                                                                                                                      
+lpm_mult_clken0                                                                                                                             
+lpm_mult_clken1                                                                                                                             
+lpm_mult_clken10                                                                                                                            
+lpm_mult_clken11                                                                                                                            
+lpm_mult_clken2                                                                                                                             
+lpm_mult_clken3                                                                                                                             
+lpm_mult_clken4                                                                                                                             
+lpm_mult_clken5                                                                                                                             
+lpm_mult_clken6                                                                                                                             
+lpm_mult_clken7                                                                                                                             
+lpm_mult_clken8                                                                                                                             
+lpm_mult_clken9                                                                                                                             
+lpm_multiply_result0                                                                                                                        
+lpm_multiply_result1                                                                                                                        
+lpm_multiply_result10                                                                                                                       
+lpm_multiply_result11                                                                                                                       
+lpm_multiply_result2                                                                                                                        
+lpm_multiply_result3                                                                                                                        
+lpm_multiply_result4                                                                                                                        
+lpm_multiply_result5                                                                                                                        
+lpm_multiply_result6                                                                                                                        
+lpm_multiply_result7                                                                                                                        
+lpm_multiply_result8                                                                                                                        
+lpm_multiply_result9                                                                                                                        
+max_iter0                                                                                                                                   
+max_iter1                                                                                                                                   
+multiply0                                                                                                             (130)                 
+multiply1                                                                                                             (130)                 
+multiply10                                                                                                            (133)                 
+multiply11                                                                                                            (133)                 
+multiply12                                                                                                            (136)                 
+multiply13                                                                                                            (136)                 
+multiply14                                                                                                            (136)                 
+multiply15                                                                                                            (136)                 
+multiply16                                                                                                            (136)                 
+multiply17                                                                                                            (136)                 
+multiply18                                                                                                            (137)                 
+multiply19                                                                                                            (137)                 
+multiply2                                                                                                             (130)                 
+multiply20                                                                                                            (137)                 
+multiply21                                                                                                            (137)                 
+multiply22                                                                                                            (137)                 
+multiply23                                                                                                            (137)                 
+multiply3                                                                                                             (130)                 
+multiply4                                                                                                             (130)                 
+multiply5                                                                                                             (130)                 
+multiply6                                                                                                             (133)                 
+multiply7                                                                                                             (133)                 
+multiply8                                                                                                             (133)                 
+multiply9                                                                                                             (133)                 
+multiply_assignment0                                                                                                  (130)                 
+multiply_assignment0_op_a0                                                                                            (130)                 
+multiply_assignment0_op_a1                                                                                            (130)                 
+multiply_assignment0_op_a2                                                                                            (130)                 
+multiply_assignment0_op_b0                                                                                            (130)                 
+multiply_assignment0_op_b1                                                                                            (130)                 
+multiply_assignment0_op_b2                                                                                            (130)                 
+multiply_assignment0_prod0                                                                                            (130)                 
+multiply_assignment1                                                                                                  (130)                 
+multiply_assignment10                                                                                                 (137)                 
+multiply_assignment10_op_a0                                                                                           (137)                 
+multiply_assignment10_op_a1                                                                                           (137)                 
+multiply_assignment10_op_a2                                                                                           (137)                 
+multiply_assignment10_op_b0                                                                                           (137)                 
+multiply_assignment10_op_b1                                                                                           (137)                 
+multiply_assignment10_op_b2                                                                                           (137)                 
+multiply_assignment10_prod0                                                                                           (137)                 
+multiply_assignment11                                                                                                 (137)                 
+multiply_assignment11_op_a0                                                                                           (137)                 
+multiply_assignment11_op_a1                                                                                           (137)                 
+multiply_assignment11_op_a2                                                                                           (137)                 
+multiply_assignment11_op_b0                                                                                           (137)                 
+multiply_assignment11_op_b1                                                                                           (137)                 
+multiply_assignment11_op_b2                                                                                           (137)                 
+multiply_assignment11_prod0                                                                                           (137)                 
+multiply_assignment1_op_a0                                                                                            (130)                 
+multiply_assignment1_op_a1                                                                                            (130)                 
+multiply_assignment1_op_a2                                                                                            (130)                 
+multiply_assignment1_op_b0                                                                                            (130)                 
+multiply_assignment1_op_b1                                                                                            (130)                 
+multiply_assignment1_op_b2                                                                                            (130)                 
+multiply_assignment1_prod0                                                                                            (130)                 
+multiply_assignment2                                                                                                  (130)                 
+multiply_assignment2_op_a0                                                                                            (130)                 
+multiply_assignment2_op_a1                                                                                            (130)                 
+multiply_assignment2_op_a2                                                                                            (130)                 
+multiply_assignment2_op_b0                                                                                            (130)                 
+multiply_assignment2_op_b1                                                                                            (130)                 
+multiply_assignment2_op_b2                                                                                            (130)                 
+multiply_assignment2_prod0                                                                                            (130)                 
+multiply_assignment3                                                                                                  (133)                 
+multiply_assignment3_op_a0                                                                                            (133)                 
+multiply_assignment3_op_a1                                                                                            (133)                 
+multiply_assignment3_op_a2                                                                                            (133)                 
+multiply_assignment3_op_b0                                                                                            (133)                 
+multiply_assignment3_op_b1                                                                                            (133)                 
+multiply_assignment3_op_b2                                                                                            (133)                 
+multiply_assignment3_prod0                                                                                            (133)                 
+multiply_assignment4                                                                                                  (133)                 
+multiply_assignment4_op_a0                                                                                            (133)                 
+multiply_assignment4_op_a1                                                                                            (133)                 
+multiply_assignment4_op_a2                                                                                            (133)                 
+multiply_assignment4_op_b0                                                                                            (133)                 
+multiply_assignment4_op_b1                                                                                            (133)                 
+multiply_assignment4_op_b2                                                                                            (133)                 
+multiply_assignment4_prod0                                                                                            (133)                 
+multiply_assignment5                                                                                                  (133)                 
+multiply_assignment5_op_a0                                                                                            (133)                 
+multiply_assignment5_op_a1                                                                                            (133)                 
+multiply_assignment5_op_a2                                                                                            (133)                 
+multiply_assignment5_op_b0                                                                                            (133)                 
+multiply_assignment5_op_b1                                                                                            (133)                 
+multiply_assignment5_op_b2                                                                                            (133)                 
+multiply_assignment5_prod0                                                                                            (133)                 
+multiply_assignment6                                                                                                  (136)                 
+multiply_assignment6_op_a0                                                                                            (136)                 
+multiply_assignment6_op_a1                                                                                            (136)                 
+multiply_assignment6_op_a2                                                                                            (136)                 
+multiply_assignment6_op_b0                                                                                            (136)                 
+multiply_assignment6_op_b1                                                                                            (136)                 
+multiply_assignment6_op_b2                                                                                            (136)                 
+multiply_assignment6_prod0                                                                                            (136)                 
+multiply_assignment7                                                                                                  (136)                 
+multiply_assignment7_op_a0                                                                                            (136)                 
+multiply_assignment7_op_a1                                                                                            (136)                 
+multiply_assignment7_op_a2                                                                                            (136)                 
+multiply_assignment7_op_b0                                                                                            (136)                 
+multiply_assignment7_op_b1                                                                                            (136)                 
+multiply_assignment7_op_b2                                                                                            (136)                 
+multiply_assignment7_prod0                                                                                            (136)                 
+multiply_assignment8                                                                                                  (136)                 
+multiply_assignment8_op_a0                                                                                            (136)                 
+multiply_assignment8_op_a1                                                                                            (136)                 
+multiply_assignment8_op_a2                                                                                            (136)                 
+multiply_assignment8_op_b0                                                                                            (136)                 
+multiply_assignment8_op_b1                                                                                            (136)                 
+multiply_assignment8_op_b2                                                                                            (136)                 
+multiply_assignment8_prod0                                                                                            (136)                 
+multiply_assignment9                                                                                                  (137)                 
+multiply_assignment9_op_a0                                                                                            (137)                 
+multiply_assignment9_op_a1                                                                                            (137)                 
+multiply_assignment9_op_a2                                                                                            (137)                 
+multiply_assignment9_op_b0                                                                                            (137)                 
+multiply_assignment9_op_b1                                                                                            (137)                 
+multiply_assignment9_op_b2                                                                                            (137)                 
+multiply_assignment9_prod0                                                                                            (137)                 
+pixel0                                                                                                                (69)                  
+pixel1                                                                                                                (127)                 
+pixel2                                                                                                                (128)                 
+pixel3                                                                                                                                      
+pixel4                                                                                                                                      
+pixel5                                                                                                                                      
+pixel6                                                                                                                                      
+pixel7                                                                                                                                      
+pixel8                                                                                                                                      
+pixel_init0                                                                                                          hw_mandelbrot.c (128)  
+pixel_init1                                                                                                                                 
+polled_data_ready0                                                                                                                          
+port_monitor0                                                                                                                               
+return0                                                                                                               (65)                  
+signal0                                                                                                                                     
+signal1                                                                                                                                     
+signal10                                                                                                             hw_mandelbrot.c (133)  
+signal11                                                                                                             hw_mandelbrot.c (133)  
+signal12                                                                                                             hw_mandelbrot.c (133)  
+signal13                                                                                                             hw_mandelbrot.c (133)  
+signal14                                                                                                             hw_mandelbrot.c (136)  
+signal15                                                                                                             hw_mandelbrot.c (136)  
+signal16                                                                                                             hw_mandelbrot.c (136)  
+signal17                                                                                                             hw_mandelbrot.c (136)  
+signal18                                                                                                             hw_mandelbrot.c (137)  
+signal19                                                                                                             hw_mandelbrot.c (137)  
+signal2                                                                                                                                     
+signal20                                                                                                             hw_mandelbrot.c (137)  
+signal21                                                                                                             hw_mandelbrot.c (137)  
+signal22                                                                                                             hw_mandelbrot.c (130)  
+signal23                                                                                                             hw_mandelbrot.c (133)  
+signal24                                                                                                             hw_mandelbrot.c (136)  
+signal25                                                                                                             hw_mandelbrot.c (137)  
+signal26                                                                                                             hw_mandelbrot.c (130)  
+signal27                                                                                                             hw_mandelbrot.c (133)  
+signal28                                                                                                             hw_mandelbrot.c (136)  
+signal29                                                                                                             hw_mandelbrot.c (137)  
+signal3                                                                                                                                     
+signal30                                                                                                             hw_mandelbrot.c (128)  
+signal31                                                                                                              (130)                 
+signal32                                                                                                             hw_mandelbrot.c (130)  
+signal33                                                                                                             hw_mandelbrot.c (130)  
+signal34                                                                                                             hw_mandelbrot.c (130)  
+signal35                                                                                                             hw_mandelbrot.c (130)  
+signal36                                                                                                             hw_mandelbrot.c (130)  
+signal37                                                                                                             hw_mandelbrot.c (130)  
+signal38                                                                                                              (133)                 
+signal39                                                                                                             hw_mandelbrot.c (133)  
+signal4                                                                                                                                     
+signal40                                                                                                             hw_mandelbrot.c (133)  
+signal41                                                                                                             hw_mandelbrot.c (133)  
+signal42                                                                                                             hw_mandelbrot.c (133)  
+signal43                                                                                                             hw_mandelbrot.c (133)  
+signal44                                                                                                             hw_mandelbrot.c (133)  
+signal45                                                                                                              (136)                 
+signal46                                                                                                             hw_mandelbrot.c (136)  
+signal47                                                                                                             hw_mandelbrot.c (136)  
+signal48                                                                                                             hw_mandelbrot.c (136)  
+signal49                                                                                                             hw_mandelbrot.c (136)  
+signal5                                                                                                                                     
+signal50                                                                                                             hw_mandelbrot.c (136)  
+signal51                                                                                                             hw_mandelbrot.c (136)  
+signal52                                                                                                              (137)                 
+signal53                                                                                                             hw_mandelbrot.c (137)  
+signal54                                                                                                             hw_mandelbrot.c (137)  
+signal55                                                                                                             hw_mandelbrot.c (137)  
+signal56                                                                                                             hw_mandelbrot.c (137)  
+signal57                                                                                                             hw_mandelbrot.c (137)  
+signal58                                                                                                             hw_mandelbrot.c (137)  
+signal59                                                                                                             hw_mandelbrot.c (222)  
+signal6                                                                                                              hw_mandelbrot.c (130)  
+signal60                                                                                                             hw_mandelbrot.c (225)  
+signal61                                                                                                             hw_mandelbrot.c (228)  
+signal62                                                                                                             hw_mandelbrot.c (229)  
+signal7                                                                                                              hw_mandelbrot.c (130)  
+signal8                                                                                                              hw_mandelbrot.c (130)  
+signal9                                                                                                              hw_mandelbrot.c (130)  
+slave_address0                                                                                                                              
+slave_functiondata0                                                                                                                         
+slave_read0                                                                                                                                 
+slave_readdata0                                                                                                                             
+slave_waitrequest_n0                                                                                                                        
+software_result0                                                                                                                            
+stack_struct0                                                                                                                               
+state_do_0                                                                                                           hw_mandelbrot.c (130)  
+state_do_1                                                                                                           hw_mandelbrot.c (133)  
+state_do_2                                                                                                           hw_mandelbrot.c (136)  
+state_do_3                                                                                                           hw_mandelbrot.c (137)  
+state_do_4                                                                                                           hw_mandelbrot.c (128)  
+step_dim0                                                                                                                                   
+step_dim1                                                                                                                                   
+sub_hw_draw_int_mandelbrot0                                                                                          hw_mandelbrot.c (65)   
+subexp0                                                                                                                                     
+subexp1                                                                                                                                     
+subexp10                                                                                                             hw_mandelbrot.c (128)  
+subexp100                                                                                                            hw_mandelbrot.c (136)  
+subexp101                                                                                                            hw_mandelbrot.c (136)  
+subexp102                                                                                                            hw_mandelbrot.c (136)  
+subexp103                                                                                                            hw_mandelbrot.c (136)  
+subexp104                                                                                                            hw_mandelbrot.c (136)  
+subexp105                                                                                                            hw_mandelbrot.c (136)  
+subexp106                                                                                                            hw_mandelbrot.c (137)  
+subexp107                                                                                                            hw_mandelbrot.c (137)  
+subexp108                                                                                                            hw_mandelbrot.c (137)  
+subexp109                                                                                                            hw_mandelbrot.c (137)  
+subexp11                                                                                                             hw_mandelbrot.c (157)  
+subexp110                                                                                                            hw_mandelbrot.c (137)  
+subexp111                                                                                                            hw_mandelbrot.c (137)  
+subexp112                                                                                                             (229)                 
+subexp113                                                                                                            hw_mandelbrot.c (130)  
+subexp114                                                                                                            hw_mandelbrot.c (130)  
+subexp115                                                                                                            hw_mandelbrot.c (130)  
+subexp116                                                                                                            hw_mandelbrot.c (130)  
+subexp117                                                                                                            hw_mandelbrot.c (130)  
+subexp118                                                                                                            hw_mandelbrot.c (130)  
+subexp119                                                                                                            hw_mandelbrot.c (130)  
+subexp12                                                                                                             hw_mandelbrot.c (157)  
+subexp120                                                                                                            hw_mandelbrot.c (130)  
+subexp121                                                                                                            hw_mandelbrot.c (130)  
+subexp122                                                                                                            hw_mandelbrot.c (130)  
+subexp123                                                                                                            hw_mandelbrot.c (133)  
+subexp124                                                                                                            hw_mandelbrot.c (133)  
+subexp125                                                                                                            hw_mandelbrot.c (133)  
+subexp126                                                                                                            hw_mandelbrot.c (133)  
+subexp127                                                                                                            hw_mandelbrot.c (133)  
+subexp128                                                                                                            hw_mandelbrot.c (133)  
+subexp129                                                                                                            hw_mandelbrot.c (133)  
+subexp13                                                                                                             hw_mandelbrot.c (157)  
+subexp130                                                                                                            hw_mandelbrot.c (133)  
+subexp131                                                                                                            hw_mandelbrot.c (133)  
+subexp132                                                                                                            hw_mandelbrot.c (133)  
+subexp133                                                                                                            hw_mandelbrot.c (136)  
+subexp134                                                                                                            hw_mandelbrot.c (136)  
+subexp135                                                                                                            hw_mandelbrot.c (136)  
+subexp136                                                                                                            hw_mandelbrot.c (136)  
+subexp137                                                                                                            hw_mandelbrot.c (136)  
+subexp138                                                                                                            hw_mandelbrot.c (136)  
+subexp139                                                                                                            hw_mandelbrot.c (136)  
+subexp14                                                                                                             hw_mandelbrot.c (130)  
+subexp140                                                                                                            hw_mandelbrot.c (136)  
+subexp141                                                                                                            hw_mandelbrot.c (136)  
+subexp142                                                                                                            hw_mandelbrot.c (136)  
+subexp143                                                                                                            hw_mandelbrot.c (137)  
+subexp144                                                                                                            hw_mandelbrot.c (137)  
+subexp145                                                                                                            hw_mandelbrot.c (137)  
+subexp146                                                                                                            hw_mandelbrot.c (137)  
+subexp147                                                                                                            hw_mandelbrot.c (137)  
+subexp148                                                                                                            hw_mandelbrot.c (137)  
+subexp149                                                                                                            hw_mandelbrot.c (137)  
+subexp15                                                                                                             hw_mandelbrot.c (130)  
+subexp150                                                                                                            hw_mandelbrot.c (137)  
+subexp151                                                                                                            hw_mandelbrot.c (137)  
+subexp152                                                                                                            hw_mandelbrot.c (137)  
+subexp153                                                                                                            hw_mandelbrot.c (222)  
+subexp154                                                                                                            hw_mandelbrot.c (225)  
+subexp155                                                                                                            hw_mandelbrot.c (228)  
+subexp156                                                                                                            hw_mandelbrot.c (229)  
+subexp157                                                                                                            hw_mandelbrot.c (222)  
+subexp158                                                                                                            hw_mandelbrot.c (222)  
+subexp159                                                                                                            hw_mandelbrot.c (222)  
+subexp16                                                                                                             hw_mandelbrot.c (130)  
+subexp160                                                                                                            hw_mandelbrot.c (222)  
+subexp161                                                                                                            hw_mandelbrot.c (222)  
+subexp162                                                                                                            hw_mandelbrot.c (222)  
+subexp163                                                                                                            hw_mandelbrot.c (222)  
+subexp164                                                                                                            hw_mandelbrot.c (225)  
+subexp165                                                                                                            hw_mandelbrot.c (225)  
+subexp166                                                                                                            hw_mandelbrot.c (225)  
+subexp167                                                                                                            hw_mandelbrot.c (225)  
+subexp168                                                                                                            hw_mandelbrot.c (225)  
+subexp169                                                                                                            hw_mandelbrot.c (225)  
+subexp17                                                                                                             hw_mandelbrot.c (130)  
+subexp170                                                                                                            hw_mandelbrot.c (228)  
+subexp171                                                                                                            hw_mandelbrot.c (228)  
+subexp172                                                                                                            hw_mandelbrot.c (228)  
+subexp173                                                                                                            hw_mandelbrot.c (228)  
+subexp174                                                                                                            hw_mandelbrot.c (228)  
+subexp175                                                                                                            hw_mandelbrot.c (228)  
+subexp176                                                                                                            hw_mandelbrot.c (229)  
+subexp177                                                                                                            hw_mandelbrot.c (229)  
+subexp178                                                                                                            hw_mandelbrot.c (229)  
+subexp179                                                                                                            hw_mandelbrot.c (229)  
+subexp18                                                                                                             hw_mandelbrot.c (130)  
+subexp180                                                                                                            hw_mandelbrot.c (229)  
+subexp181                                                                                                            hw_mandelbrot.c (229)  
+subexp182                                                                                                            hw_mandelbrot.c (225)  
+subexp183                                                                                                            hw_mandelbrot.c (228)  
+subexp184                                                                                                            hw_mandelbrot.c (229)  
+subexp19                                                                                                             hw_mandelbrot.c (133)  
+subexp2                                                                                                              hw_mandelbrot.c (101)  
+subexp20                                                                                                             hw_mandelbrot.c (133)  
+subexp21                                                                                                             hw_mandelbrot.c (133)  
+subexp22                                                                                                             hw_mandelbrot.c (133)  
+subexp23                                                                                                             hw_mandelbrot.c (133)  
+subexp24                                                                                                             hw_mandelbrot.c (136)  
+subexp25                                                                                                             hw_mandelbrot.c (136)  
+subexp26                                                                                                             hw_mandelbrot.c (136)  
+subexp27                                                                                                             hw_mandelbrot.c (136)  
+subexp28                                                                                                             hw_mandelbrot.c (136)  
+subexp29                                                                                                             hw_mandelbrot.c (137)  
+subexp3                                                                                                              hw_mandelbrot.c (104)  
+subexp30                                                                                                             hw_mandelbrot.c (137)  
+subexp31                                                                                                             hw_mandelbrot.c (137)  
+subexp32                                                                                                             hw_mandelbrot.c (137)  
+subexp33                                                                                                             hw_mandelbrot.c (137)  
+subexp34                                                                                                             hw_mandelbrot.c (216)  
+subexp35                                                                                                             hw_mandelbrot.c (191)  
+subexp36                                                                                                             hw_mandelbrot.c (194)  
+subexp37                                                                                                             hw_mandelbrot.c (163)  
+subexp38                                                                                                             hw_mandelbrot.c (197)  
+subexp39                                                                                                             hw_mandelbrot.c (166)  
+subexp4                                                                                                              hw_mandelbrot.c (105)  
+subexp40                                                                                                             hw_mandelbrot.c (198)  
+subexp41                                                                                                             hw_mandelbrot.c (167)  
+subexp42                                                                                                             hw_mandelbrot.c (167)  
+subexp43                                                                                                             hw_mandelbrot.c (185)  
+subexp44                                                                                                              (222)                 
+subexp45                                                                                                             hw_mandelbrot.c (130)  
+subexp46                                                                                                             hw_mandelbrot.c (130)  
+subexp47                                                                                                             hw_mandelbrot.c (130)  
+subexp48                                                                                                             hw_mandelbrot.c (130)  
+subexp49                                                                                                             hw_mandelbrot.c (130)  
+subexp5                                                                                                              hw_mandelbrot.c (105)  
+subexp50                                                                                                             hw_mandelbrot.c (130)  
+subexp51                                                                                                             hw_mandelbrot.c (133)  
+subexp52                                                                                                             hw_mandelbrot.c (133)  
+subexp53                                                                                                             hw_mandelbrot.c (133)  
+subexp54                                                                                                             hw_mandelbrot.c (133)  
+subexp55                                                                                                             hw_mandelbrot.c (133)  
+subexp56                                                                                                             hw_mandelbrot.c (133)  
+subexp57                                                                                                             hw_mandelbrot.c (136)  
+subexp58                                                                                                             hw_mandelbrot.c (136)  
+subexp59                                                                                                             hw_mandelbrot.c (136)  
+subexp6                                                                                                                                     
+subexp60                                                                                                             hw_mandelbrot.c (136)  
+subexp61                                                                                                             hw_mandelbrot.c (136)  
+subexp62                                                                                                             hw_mandelbrot.c (136)  
+subexp63                                                                                                             hw_mandelbrot.c (157)  
+subexp64                                                                                                             hw_mandelbrot.c (157)  
+subexp65                                                                                                             hw_mandelbrot.c (157)  
+subexp66                                                                                                             hw_mandelbrot.c (157)  
+subexp67                                                                                                             hw_mandelbrot.c (157)  
+subexp68                                                                                                             hw_mandelbrot.c (157)  
+subexp69                                                                                                             hw_mandelbrot.c (137)  
+subexp7                                                                                                                                     
+subexp70                                                                                                             hw_mandelbrot.c (137)  
+subexp71                                                                                                             hw_mandelbrot.c (137)  
+subexp72                                                                                                             hw_mandelbrot.c (137)  
+subexp73                                                                                                             hw_mandelbrot.c (137)  
+subexp74                                                                                                             hw_mandelbrot.c (137)  
+subexp75                                                                                                             hw_mandelbrot.c (128)  
+subexp76                                                                                                             hw_mandelbrot.c (128)  
+subexp77                                                                                                             hw_mandelbrot.c (128)  
+subexp78                                                                                                             hw_mandelbrot.c (128)  
+subexp79                                                                                                              (225)                 
+subexp8                                                                                                                                     
+subexp80                                                                                                                                    
+subexp81                                                                                                                                    
+subexp82                                                                                                                                    
+subexp83                                                                                                                                    
+subexp84                                                                                                                                    
+subexp85                                                                                                                                    
+subexp86                                                                                                                                    
+subexp87                                                                                                              (228)                 
+subexp88                                                                                                             hw_mandelbrot.c (130)  
+subexp89                                                                                                             hw_mandelbrot.c (130)  
+subexp9                                                                                                              hw_mandelbrot.c (128)  
+subexp90                                                                                                             hw_mandelbrot.c (130)  
+subexp91                                                                                                             hw_mandelbrot.c (130)  
+subexp92                                                                                                             hw_mandelbrot.c (130)  
+subexp93                                                                                                             hw_mandelbrot.c (130)  
+subexp94                                                                                                             hw_mandelbrot.c (133)  
+subexp95                                                                                                             hw_mandelbrot.c (133)  
+subexp96                                                                                                             hw_mandelbrot.c (133)  
+subexp97                                                                                                             hw_mandelbrot.c (133)  
+subexp98                                                                                                             hw_mandelbrot.c (133)  
+subexp99                                                                                                             hw_mandelbrot.c (133)  
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply0                                                                      
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply1                                                                      
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply10                                                                     
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply11                                                                     
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply2                                                                      
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply3                                                                      
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply4                                                                      
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply5                                                                      
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply6                                                                      
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply7                                                                      
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply8                                                                      
+the_accelerator_mandelbrot_hw_draw_int_mandelbrot_registered_multiply9                                                                      
+the_cpu_registers0                                                                                                                          
+tmp_cpu_readdata1                                                                                                                           
+x0                                                                                                                    (130)                 
+x1                                                                                                                    (130)                 
+x10                                                                                                                                         
+x11                                                                                                                                         
+x12                                                                                                                                         
+x13                                                                                                                  hw_mandelbrot.c (133)  
+x14                                                                                                                   (133)                 
+x15                                                                                                                  hw_mandelbrot.c (133)  
+x16                                                                                                                   (136)                 
+x17                                                                                                                   (136)                 
+x18                                                                                                                                         
+x19                                                                                                                                         
+x2                                                                                                                                          
+x20                                                                                                                                         
+x21                                                                                                                  hw_mandelbrot.c (136)  
+x22                                                                                                                   (136)                 
+x23                                                                                                                  hw_mandelbrot.c (136)  
+x24                                                                                                                   (137)                 
+x25                                                                                                                   (137)                 
+x26                                                                                                                                         
+x27                                                                                                                                         
+x28                                                                                                                                         
+x29                                                                                                                  hw_mandelbrot.c (137)  
+x3                                                                                                                                          
+x30                                                                                                                   (137)                 
+x31                                                                                                                  hw_mandelbrot.c (137)  
+x4                                                                                                                                          
+x5                                                                                                                   hw_mandelbrot.c (130)  
+x6                                                                                                                    (130)                 
+x7                                                                                                                   hw_mandelbrot.c (130)  
+x8                                                                                                                    (133)                 
+x9                                                                                                                    (133)                 
+x_init0                                                                                                              hw_mandelbrot.c (130)  
+x_init1                                                                                                                                     
+x_init2                                                                                                              hw_mandelbrot.c (133)  
+x_init3                                                                                                                                     
+x_init4                                                                                                              hw_mandelbrot.c (136)  
+x_init5                                                                                                                                     
+x_init6                                                                                                              hw_mandelbrot.c (137)  
+x_init7                                                                                                                                     
+xsqr0                                                                                                                 (130)                 
+xsqr1                                                                                                                 (130)                 
+xsqr10                                                                                                                (133)                 
+xsqr11                                                                                                               hw_mandelbrot.c (133)  
+xsqr12                                                                                                                (136)                 
+xsqr13                                                                                                                (136)                 
+xsqr14                                                                                                                                      
+xsqr15                                                                                                               hw_mandelbrot.c (136)  
+xsqr16                                                                                                                (136)                 
+xsqr17                                                                                                               hw_mandelbrot.c (136)  
+xsqr18                                                                                                                (137)                 
+xsqr19                                                                                                                (137)                 
+xsqr2                                                                                                                                       
+xsqr20                                                                                                                                      
+xsqr21                                                                                                               hw_mandelbrot.c (137)  
+xsqr22                                                                                                                (137)                 
+xsqr23                                                                                                               hw_mandelbrot.c (137)  
+xsqr24                                                                                                                                      
+xsqr25                                                                                                                                      
+xsqr26                                                                                                                                      
+xsqr27                                                                                                                                      
+xsqr3                                                                                                                hw_mandelbrot.c (130)  
+xsqr4                                                                                                                 (130)                 
+xsqr5                                                                                                                hw_mandelbrot.c (130)  
+xsqr6                                                                                                                 (133)                 
+xsqr7                                                                                                                 (133)                 
+xsqr8                                                                                                                                       
+xsqr9                                                                                                                hw_mandelbrot.c (133)  
+y0                                                                                                                    (130)                 
+y1                                                                                                                    (130)                 
+y10                                                                                                                                         
+y11                                                                                                                                         
+y12                                                                                                                                         
+y13                                                                                                                  hw_mandelbrot.c (133)  
+y14                                                                                                                   (133)                 
+y15                                                                                                                  hw_mandelbrot.c (133)  
+y16                                                                                                                   (136)                 
+y17                                                                                                                   (136)                 
+y18                                                                                                                                         
+y19                                                                                                                                         
+y2                                                                                                                                          
+y20                                                                                                                                         
+y21                                                                                                                  hw_mandelbrot.c (136)  
+y22                                                                                                                   (136)                 
+y23                                                                                                                  hw_mandelbrot.c (136)  
+y24                                                                                                                   (137)                 
+y25                                                                                                                   (137)                 
+y26                                                                                                                                         
+y27                                                                                                                                         
+y28                                                                                                                                         
+y29                                                                                                                  hw_mandelbrot.c (137)  
+y3                                                                                                                                          
+y30                                                                                                                   (137)                 
+y31                                                                                                                  hw_mandelbrot.c (137)  
+y4                                                                                                                                          
+y5                                                                                                                   hw_mandelbrot.c (130)  
+y6                                                                                                                    (130)                 
+y7                                                                                                                   hw_mandelbrot.c (130)  
+y8                                                                                                                    (133)                 
+y9                                                                                                                    (133)                 
+y_init0                                                                                                              hw_mandelbrot.c (130)  
+y_init1                                                                                                                                     
+y_init2                                                                                                              hw_mandelbrot.c (133)  
+y_init3                                                                                                                                     
+y_init4                                                                                                              hw_mandelbrot.c (136)  
+y_init5                                                                                                                                     
+y_init6                                                                                                              hw_mandelbrot.c (137)  
+y_init7                                                                                                                                     
+ysqr0                                                                                                                 (130)                 
+ysqr1                                                                                                                 (130)                 
+ysqr10                                                                                                                (133)                 
+ysqr11                                                                                                               hw_mandelbrot.c (133)  
+ysqr12                                                                                                                (136)                 
+ysqr13                                                                                                                (136)                 
+ysqr14                                                                                                                                      
+ysqr15                                                                                                               hw_mandelbrot.c (136)  
+ysqr16                                                                                                                (136)                 
+ysqr17                                                                                                               hw_mandelbrot.c (136)  
+ysqr18                                                                                                                (137)                 
+ysqr19                                                                                                                (137)                 
+ysqr2                                                                                                                                       
+ysqr20                                                                                                                                      
+ysqr21                                                                                                               hw_mandelbrot.c (137)  
+ysqr22                                                                                                                (137)                 
+ysqr23                                                                                                               hw_mandelbrot.c (137)  
+ysqr24                                                                                                                                      
+ysqr25                                                                                                                                      
+ysqr26                                                                                                                                      
+ysqr27                                                                                                                                      
+ysqr3                                                                                                                hw_mandelbrot.c (130)  
+ysqr4                                                                                                                 (130)                 
+ysqr5                                                                                                                hw_mandelbrot.c (130)  
+ysqr6                                                                                                                 (133)                 
+ysqr7                                                                                                                 (133)                 
+ysqr8                                                                                                                                       
+ysqr9                                                                                                                hw_mandelbrot.c (133)  
+

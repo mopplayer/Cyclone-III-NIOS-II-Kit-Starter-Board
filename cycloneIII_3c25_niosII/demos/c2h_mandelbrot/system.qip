@@ -1,0 +1,55 @@
+# ext_clk_one
+# cpu
+set_global_assignment -name SDC_FILE [file join $::quartus(qip_path) cpu.sdc]
+set_global_assignment -name SOURCE_FILE [file join $::quartus(qip_path) cpu.ocp]
+# tristate_bridge
+# ssram
+# flash
+# frame_buffer
+# ddr_sdram_clock_crossing_bridge
+# pipeline_bridge
+# flash_ssram_pipeline_bridge
+# jtag_uart
+# push_buttons
+# system_tick
+# sysid
+# lcd_sgdma
+# lcd_pixel_converter
+set_global_assignment -name TCL_FILE [file join $::quartus(qip_path) altera_avalon_pixel_converter_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) altera_avalon_pixel_converter.v]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) lcd_pixel_converter.v]
+# lcd_data_format_adapter
+# lcd_ta_formatter_to_fifo
+# lcd_on_chip_memory_fifo
+# lcd_ta_fifo_to_sequencer
+# lcd_video_sequencer
+set_global_assignment -name TCL_FILE [file join $::quartus(qip_path) altera_avalon_video_sync_generator_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) altera_avalon_video_sync_generator.v]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) lcd_video_sequencer.v]
+# touchPanel_spi
+# touchPanel_irq_n
+# lcd_i2c_scl
+# lcd_i2c_cs
+# lcd_i2c_dat
+# pio_id_eeprom_dat
+# pio_id_eeprom_scl
+# descriptor_memory
+# frame_buffer_pipeline_bridge
+# system_clk
+# slow_clk
+# video_clk
+# clock_crossing_bridge
+# dummy_master_inst
+set_global_assignment -name TCL_FILE [file join $::quartus(qip_path) dummy_master/Dummy_Master_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) dummy_master/dummy_master.v]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) dummy_master_inst.v]
+# colour_lookup_table
+# lcd_data_format_adapter_1
+# accelerator_mandelbrot_hw_draw_int_mandelbrot_managed_instance
+set_global_assignment -name TCL_FILE [file join $::quartus(qip_path) accelerator_mandelbrot_hw_draw_int_mandelbrot_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) accelerator_mandelbrot_hw_draw_int_mandelbrot_managed_instance.v]
+# null
+set_global_assignment -name SOPC_BUILDER_SIGNATURE_ID "0800270050CA0000013BA743579E"
+set_global_assignment -entity "system" -name IP_TOOL_NAME "sopc"
+set_global_assignment -entity "system" -name IP_TOOL_VERSION "12.0"
+set_global_assignment -entity "system" -name IP_TOOL_ENV "sopc"

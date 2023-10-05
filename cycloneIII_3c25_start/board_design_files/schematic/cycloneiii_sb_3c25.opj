@@ -1,0 +1,32 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\cycloneiii_sb_3c25.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (PartMRUSelector)
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\cycloneiii_sb_3c25.dsn")
+      (Path "Design Resources" ".\cycloneiii_sb_3c25.dsn" "TOP")
+      (Path "Design Resources" ".\cycloneiii_sb_3c25.dsn" "EP3C25")
+      (Path "Design Resources" ".\cycloneiii_sb_3c25.dsn" "IN/OUT")
+      (Path "Design Resources" ".\cycloneiii_sb_3c25.dsn" "MEMORY")
+      (Path "Design Resources" ".\cycloneiii_sb_3c25.dsn" "POWER")
+      (Path "Design Resources" ".\cycloneiii_sb_3c25.dsn" "USB BLASTER")
+      (Select "Design Resources" ".\cycloneiii_sb_3c25.dsn" "POWER"
+         "01 - LTM4603EV-1 and LTC3413EFE"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -4 -30 0 200 0 394"))
+      (Tab 0)))
+  (MPSSessionName "jlyow"))

@@ -1,0 +1,479 @@
+//IP Functional Simulation Model
+//VERSION_BEGIN 12.1 cbx_mgl 2012:11:07:18:06:30:SJ cbx_simgen 2012:11:07:18:03:51:SJ  VERSION_END
+// synthesis VERILOG_INPUT_VERSION VERILOG_2001
+// altera message_off 10463
+
+
+
+// Copyright (C) 1991-2012 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// You may only use these simulation model output files for simulation
+// purposes and expressly not for synthesis or any other purposes (in which
+// event Altera disclaims all warranties of any kind).
+
+
+//synopsys translate_off
+
+//synthesis_resources = lut 42 mux21 19 oper_decoder 1 oper_less_than 3 oper_mux 13 
+`timescale 1 ps / 1 ps
+module  lcd_data_format_adapter
+	( 
+	clk,
+	in_data,
+	in_empty,
+	in_endofpacket,
+	in_ready,
+	in_startofpacket,
+	in_valid,
+	out_data,
+	out_endofpacket,
+	out_ready,
+	out_startofpacket,
+	out_valid,
+	reset_n) /* synthesis synthesis_clearbox=1 */;
+	input   clk;
+	input   [23:0]  in_data;
+	input   [1:0]  in_empty;
+	input   in_endofpacket;
+	output   in_ready;
+	input   in_startofpacket;
+	input   in_valid;
+	output   [7:0]  out_data;
+	output   out_endofpacket;
+	input   out_ready;
+	output   out_startofpacket;
+	output   out_valid;
+	input   reset_n;
+
+	reg	lcd_data_format_adapter_out_data_0_reg0_126q;
+	reg	lcd_data_format_adapter_out_data_1_reg0_124q;
+	reg	lcd_data_format_adapter_out_data_2_reg0_123q;
+	reg	lcd_data_format_adapter_out_data_3_reg0_122q;
+	reg	lcd_data_format_adapter_out_data_4_reg0_121q;
+	reg	lcd_data_format_adapter_out_data_5_reg0_120q;
+	reg	lcd_data_format_adapter_out_data_6_reg0_119q;
+	reg	lcd_data_format_adapter_out_data_7_reg0_118q;
+	reg	lcd_data_format_adapter_out_endofpacket_reg0_125q;
+	reg	lcd_data_format_adapter_out_startofpacket_reg0_127q;
+	reg	lcd_data_format_adapter_out_valid_reg0_117q;
+	reg	lcd_data_format_adapter_state_register_0_116q;
+	reg	lcd_data_format_adapter_state_register_1_61q;
+	reg	lcd_data_format_adapter_a_data0_0_40q;
+	reg	lcd_data_format_adapter_a_data0_1_39q;
+	reg	lcd_data_format_adapter_a_data0_2_38q;
+	reg	lcd_data_format_adapter_a_data0_3_37q;
+	reg	lcd_data_format_adapter_a_data0_4_36q;
+	reg	lcd_data_format_adapter_a_data0_5_35q;
+	reg	lcd_data_format_adapter_a_data0_6_34q;
+	reg	lcd_data_format_adapter_a_data0_7_33q;
+	reg	lcd_data_format_adapter_a_data1_0_48q;
+	reg	lcd_data_format_adapter_a_data1_1_47q;
+	reg	lcd_data_format_adapter_a_data1_2_46q;
+	reg	lcd_data_format_adapter_a_data1_3_45q;
+	reg	lcd_data_format_adapter_a_data1_4_44q;
+	reg	lcd_data_format_adapter_a_data1_5_43q;
+	reg	lcd_data_format_adapter_a_data1_6_42q;
+	reg	lcd_data_format_adapter_a_data1_7_41q;
+	reg	lcd_data_format_adapter_a_data2_0_56q;
+	reg	lcd_data_format_adapter_a_data2_1_55q;
+	reg	lcd_data_format_adapter_a_data2_2_54q;
+	reg	lcd_data_format_adapter_a_data2_3_53q;
+	reg	lcd_data_format_adapter_a_data2_4_52q;
+	reg	lcd_data_format_adapter_a_data2_5_51q;
+	reg	lcd_data_format_adapter_a_data2_6_50q;
+	reg	lcd_data_format_adapter_a_data2_7_49q;
+	reg	lcd_data_format_adapter_a_empty_0_60q;
+	reg	lcd_data_format_adapter_a_empty_1_59q;
+	reg	lcd_data_format_adapter_a_endofpacket_58q;
+	reg	lcd_data_format_adapter_a_startofpacket_57q;
+	reg	lcd_data_format_adapter_a_valid_32q;
+	wire	wire_lcd_data_format_adapter_a_empty_1m_dataout;
+	wire	wire_lcd_data_format_adapter_a_empty_2m_dataout;
+	wire	wire_lcd_data_format_adapter_a_ready_67m_dataout;
+	wire	wire_lcd_data_format_adapter_a_ready_69m_dataout;
+	wire	wire_lcd_data_format_adapter_a_ready_73m_dataout;
+	wire	wire_lcd_data_format_adapter_a_ready_75m_dataout;
+	wire	wire_lcd_data_format_adapter_b_endofpacket_82m_dataout;
+	wire	wire_lcd_data_format_adapter_b_endofpacket_86m_dataout;
+	wire	wire_lcd_data_format_adapter_b_startofpacket_96m_dataout;
+	wire	wire_lcd_data_format_adapter_b_valid_83m_dataout;
+	wire	wire_lcd_data_format_adapter_new_state_66m_dataout;
+	wire	wire_lcd_data_format_adapter_new_state_68m_dataout;
+	wire	wire_lcd_data_format_adapter_new_state_72m_dataout;
+	wire	wire_lcd_data_format_adapter_new_state_74m_dataout;
+	wire	wire_lcd_data_format_adapter_new_state_80m_dataout;
+	wire	wire_lcd_data_format_adapter_new_state_81m_dataout;
+	wire	wire_lcd_data_format_adapter_new_state_84m_dataout;
+	wire	wire_lcd_data_format_adapter_new_state_85m_dataout;
+	wire	wire_lcd_data_format_adapter_out_valid_reg0_172m_dataout;
+	wire  [3:0]   wire_lcd_data_format_adapter_decoder0_95_o;
+	wire  wire_lcd_data_format_adapter_lessthan0_63_o;
+	wire  wire_lcd_data_format_adapter_lessthan1_70_o;
+	wire  wire_lcd_data_format_adapter_lessthan2_78_o;
+	wire  wire_lcd_data_format_adapter_mux0_87_o;
+	wire  wire_lcd_data_format_adapter_mux10_99_o;
+	wire  wire_lcd_data_format_adapter_mux11_100_o;
+	wire  wire_lcd_data_format_adapter_mux12_101_o;
+	wire  wire_lcd_data_format_adapter_mux1_88_o;
+	wire  wire_lcd_data_format_adapter_mux2_89_o;
+	wire  wire_lcd_data_format_adapter_mux3_90_o;
+	wire  wire_lcd_data_format_adapter_mux4_91_o;
+	wire  wire_lcd_data_format_adapter_mux5_92_o;
+	wire  wire_lcd_data_format_adapter_mux6_93_o;
+	wire  wire_lcd_data_format_adapter_mux7_94_o;
+	wire  wire_lcd_data_format_adapter_mux8_97_o;
+	wire  wire_lcd_data_format_adapter_mux9_98_o;
+	wire  s_wire_lcd_data_format_adapter_always4_64_dataout;
+	wire  s_wire_lcd_data_format_adapter_always4_71_dataout;
+	wire  s_wire_lcd_data_format_adapter_always4_77_dataout;
+	wire  s_wire_lcd_data_format_adapter_in_ready_103_dataout;
+	wire  s_wire_vcc;
+
+	initial
+	begin
+		lcd_data_format_adapter_out_data_0_reg0_126q = 0;
+		lcd_data_format_adapter_out_data_1_reg0_124q = 0;
+		lcd_data_format_adapter_out_data_2_reg0_123q = 0;
+		lcd_data_format_adapter_out_data_3_reg0_122q = 0;
+		lcd_data_format_adapter_out_data_4_reg0_121q = 0;
+		lcd_data_format_adapter_out_data_5_reg0_120q = 0;
+		lcd_data_format_adapter_out_data_6_reg0_119q = 0;
+		lcd_data_format_adapter_out_data_7_reg0_118q = 0;
+		lcd_data_format_adapter_out_endofpacket_reg0_125q = 0;
+		lcd_data_format_adapter_out_startofpacket_reg0_127q = 0;
+	end
+	always @ ( posedge clk or  negedge reset_n)
+	begin
+		if (reset_n == 1'b0) 
+		begin
+			lcd_data_format_adapter_out_data_0_reg0_126q <= 0;
+			lcd_data_format_adapter_out_data_1_reg0_124q <= 0;
+			lcd_data_format_adapter_out_data_2_reg0_123q <= 0;
+			lcd_data_format_adapter_out_data_3_reg0_122q <= 0;
+			lcd_data_format_adapter_out_data_4_reg0_121q <= 0;
+			lcd_data_format_adapter_out_data_5_reg0_120q <= 0;
+			lcd_data_format_adapter_out_data_6_reg0_119q <= 0;
+			lcd_data_format_adapter_out_data_7_reg0_118q <= 0;
+			lcd_data_format_adapter_out_endofpacket_reg0_125q <= 0;
+			lcd_data_format_adapter_out_startofpacket_reg0_127q <= 0;
+		end
+		else if  (s_wire_lcd_data_format_adapter_always4_77_dataout == 1'b1) 
+		begin
+			lcd_data_format_adapter_out_data_0_reg0_126q <= wire_lcd_data_format_adapter_mux7_94_o;
+			lcd_data_format_adapter_out_data_1_reg0_124q <= wire_lcd_data_format_adapter_mux6_93_o;
+			lcd_data_format_adapter_out_data_2_reg0_123q <= wire_lcd_data_format_adapter_mux5_92_o;
+			lcd_data_format_adapter_out_data_3_reg0_122q <= wire_lcd_data_format_adapter_mux4_91_o;
+			lcd_data_format_adapter_out_data_4_reg0_121q <= wire_lcd_data_format_adapter_mux3_90_o;
+			lcd_data_format_adapter_out_data_5_reg0_120q <= wire_lcd_data_format_adapter_mux2_89_o;
+			lcd_data_format_adapter_out_data_6_reg0_119q <= wire_lcd_data_format_adapter_mux1_88_o;
+			lcd_data_format_adapter_out_data_7_reg0_118q <= wire_lcd_data_format_adapter_mux0_87_o;
+			lcd_data_format_adapter_out_endofpacket_reg0_125q <= wire_lcd_data_format_adapter_mux12_101_o;
+			lcd_data_format_adapter_out_startofpacket_reg0_127q <= wire_lcd_data_format_adapter_b_startofpacket_96m_dataout;
+		end
+	end
+	initial
+	begin
+		lcd_data_format_adapter_out_valid_reg0_117q = 0;
+		lcd_data_format_adapter_state_register_0_116q = 0;
+		lcd_data_format_adapter_state_register_1_61q = 0;
+	end
+	always @ ( posedge clk or  negedge reset_n)
+	begin
+		if (reset_n == 1'b0) 
+		begin
+			lcd_data_format_adapter_out_valid_reg0_117q <= 0;
+			lcd_data_format_adapter_state_register_0_116q <= 0;
+			lcd_data_format_adapter_state_register_1_61q <= 0;
+		end
+		else 
+		begin
+			lcd_data_format_adapter_out_valid_reg0_117q <= wire_lcd_data_format_adapter_out_valid_reg0_172m_dataout;
+			lcd_data_format_adapter_state_register_0_116q <= wire_lcd_data_format_adapter_mux11_100_o;
+			lcd_data_format_adapter_state_register_1_61q <= wire_lcd_data_format_adapter_mux10_99_o;
+		end
+	end
+	initial
+	begin
+		lcd_data_format_adapter_a_data0_0_40q = 0;
+		lcd_data_format_adapter_a_data0_1_39q = 0;
+		lcd_data_format_adapter_a_data0_2_38q = 0;
+		lcd_data_format_adapter_a_data0_3_37q = 0;
+		lcd_data_format_adapter_a_data0_4_36q = 0;
+		lcd_data_format_adapter_a_data0_5_35q = 0;
+		lcd_data_format_adapter_a_data0_6_34q = 0;
+		lcd_data_format_adapter_a_data0_7_33q = 0;
+		lcd_data_format_adapter_a_data1_0_48q = 0;
+		lcd_data_format_adapter_a_data1_1_47q = 0;
+		lcd_data_format_adapter_a_data1_2_46q = 0;
+		lcd_data_format_adapter_a_data1_3_45q = 0;
+		lcd_data_format_adapter_a_data1_4_44q = 0;
+		lcd_data_format_adapter_a_data1_5_43q = 0;
+		lcd_data_format_adapter_a_data1_6_42q = 0;
+		lcd_data_format_adapter_a_data1_7_41q = 0;
+		lcd_data_format_adapter_a_data2_0_56q = 0;
+		lcd_data_format_adapter_a_data2_1_55q = 0;
+		lcd_data_format_adapter_a_data2_2_54q = 0;
+		lcd_data_format_adapter_a_data2_3_53q = 0;
+		lcd_data_format_adapter_a_data2_4_52q = 0;
+		lcd_data_format_adapter_a_data2_5_51q = 0;
+		lcd_data_format_adapter_a_data2_6_50q = 0;
+		lcd_data_format_adapter_a_data2_7_49q = 0;
+		lcd_data_format_adapter_a_empty_0_60q = 0;
+		lcd_data_format_adapter_a_empty_1_59q = 0;
+		lcd_data_format_adapter_a_endofpacket_58q = 0;
+		lcd_data_format_adapter_a_startofpacket_57q = 0;
+		lcd_data_format_adapter_a_valid_32q = 0;
+	end
+	always @ ( posedge clk or  negedge reset_n)
+	begin
+		if (reset_n == 1'b0) 
+		begin
+			lcd_data_format_adapter_a_data0_0_40q <= 0;
+			lcd_data_format_adapter_a_data0_1_39q <= 0;
+			lcd_data_format_adapter_a_data0_2_38q <= 0;
+			lcd_data_format_adapter_a_data0_3_37q <= 0;
+			lcd_data_format_adapter_a_data0_4_36q <= 0;
+			lcd_data_format_adapter_a_data0_5_35q <= 0;
+			lcd_data_format_adapter_a_data0_6_34q <= 0;
+			lcd_data_format_adapter_a_data0_7_33q <= 0;
+			lcd_data_format_adapter_a_data1_0_48q <= 0;
+			lcd_data_format_adapter_a_data1_1_47q <= 0;
+			lcd_data_format_adapter_a_data1_2_46q <= 0;
+			lcd_data_format_adapter_a_data1_3_45q <= 0;
+			lcd_data_format_adapter_a_data1_4_44q <= 0;
+			lcd_data_format_adapter_a_data1_5_43q <= 0;
+			lcd_data_format_adapter_a_data1_6_42q <= 0;
+			lcd_data_format_adapter_a_data1_7_41q <= 0;
+			lcd_data_format_adapter_a_data2_0_56q <= 0;
+			lcd_data_format_adapter_a_data2_1_55q <= 0;
+			lcd_data_format_adapter_a_data2_2_54q <= 0;
+			lcd_data_format_adapter_a_data2_3_53q <= 0;
+			lcd_data_format_adapter_a_data2_4_52q <= 0;
+			lcd_data_format_adapter_a_data2_5_51q <= 0;
+			lcd_data_format_adapter_a_data2_6_50q <= 0;
+			lcd_data_format_adapter_a_data2_7_49q <= 0;
+			lcd_data_format_adapter_a_empty_0_60q <= 0;
+			lcd_data_format_adapter_a_empty_1_59q <= 0;
+			lcd_data_format_adapter_a_endofpacket_58q <= 0;
+			lcd_data_format_adapter_a_startofpacket_57q <= 0;
+			lcd_data_format_adapter_a_valid_32q <= 0;
+		end
+		else if  (s_wire_lcd_data_format_adapter_in_ready_103_dataout == 1'b1) 
+		begin
+			lcd_data_format_adapter_a_data0_0_40q <= in_data[16];
+			lcd_data_format_adapter_a_data0_1_39q <= in_data[17];
+			lcd_data_format_adapter_a_data0_2_38q <= in_data[18];
+			lcd_data_format_adapter_a_data0_3_37q <= in_data[19];
+			lcd_data_format_adapter_a_data0_4_36q <= in_data[20];
+			lcd_data_format_adapter_a_data0_5_35q <= in_data[21];
+			lcd_data_format_adapter_a_data0_6_34q <= in_data[22];
+			lcd_data_format_adapter_a_data0_7_33q <= in_data[23];
+			lcd_data_format_adapter_a_data1_0_48q <= in_data[8];
+			lcd_data_format_adapter_a_data1_1_47q <= in_data[9];
+			lcd_data_format_adapter_a_data1_2_46q <= in_data[10];
+			lcd_data_format_adapter_a_data1_3_45q <= in_data[11];
+			lcd_data_format_adapter_a_data1_4_44q <= in_data[12];
+			lcd_data_format_adapter_a_data1_5_43q <= in_data[13];
+			lcd_data_format_adapter_a_data1_6_42q <= in_data[14];
+			lcd_data_format_adapter_a_data1_7_41q <= in_data[15];
+			lcd_data_format_adapter_a_data2_0_56q <= in_data[0];
+			lcd_data_format_adapter_a_data2_1_55q <= in_data[1];
+			lcd_data_format_adapter_a_data2_2_54q <= in_data[2];
+			lcd_data_format_adapter_a_data2_3_53q <= in_data[3];
+			lcd_data_format_adapter_a_data2_4_52q <= in_data[4];
+			lcd_data_format_adapter_a_data2_5_51q <= in_data[5];
+			lcd_data_format_adapter_a_data2_6_50q <= in_data[6];
+			lcd_data_format_adapter_a_data2_7_49q <= in_data[7];
+			lcd_data_format_adapter_a_empty_0_60q <= wire_lcd_data_format_adapter_a_empty_2m_dataout;
+			lcd_data_format_adapter_a_empty_1_59q <= wire_lcd_data_format_adapter_a_empty_1m_dataout;
+			lcd_data_format_adapter_a_endofpacket_58q <= in_endofpacket;
+			lcd_data_format_adapter_a_startofpacket_57q <= in_startofpacket;
+			lcd_data_format_adapter_a_valid_32q <= in_valid;
+		end
+	end
+	and(wire_lcd_data_format_adapter_a_empty_1m_dataout, in_empty[1], in_endofpacket);
+	and(wire_lcd_data_format_adapter_a_empty_2m_dataout, in_empty[0], in_endofpacket);
+	and(wire_lcd_data_format_adapter_a_ready_67m_dataout, s_wire_lcd_data_format_adapter_always4_64_dataout, lcd_data_format_adapter_a_valid_32q);
+	and(wire_lcd_data_format_adapter_a_ready_69m_dataout, wire_lcd_data_format_adapter_a_ready_67m_dataout, s_wire_lcd_data_format_adapter_always4_77_dataout);
+	and(wire_lcd_data_format_adapter_a_ready_73m_dataout, s_wire_lcd_data_format_adapter_always4_71_dataout, lcd_data_format_adapter_a_valid_32q);
+	and(wire_lcd_data_format_adapter_a_ready_75m_dataout, wire_lcd_data_format_adapter_a_ready_73m_dataout, s_wire_lcd_data_format_adapter_always4_77_dataout);
+	and(wire_lcd_data_format_adapter_b_endofpacket_82m_dataout, (lcd_data_format_adapter_a_endofpacket_58q & wire_lcd_data_format_adapter_lessthan2_78_o), lcd_data_format_adapter_a_valid_32q);
+	and(wire_lcd_data_format_adapter_b_endofpacket_86m_dataout, wire_lcd_data_format_adapter_b_endofpacket_82m_dataout, s_wire_lcd_data_format_adapter_always4_77_dataout);
+	and(wire_lcd_data_format_adapter_b_startofpacket_96m_dataout, lcd_data_format_adapter_a_startofpacket_57q, wire_lcd_data_format_adapter_decoder0_95_o[0]);
+	and(wire_lcd_data_format_adapter_b_valid_83m_dataout, lcd_data_format_adapter_a_valid_32q, s_wire_lcd_data_format_adapter_always4_77_dataout);
+	assign		wire_lcd_data_format_adapter_new_state_66m_dataout = (lcd_data_format_adapter_a_valid_32q === 1'b1) ? (~ s_wire_lcd_data_format_adapter_always4_64_dataout) : lcd_data_format_adapter_state_register_0_116q;
+	assign		wire_lcd_data_format_adapter_new_state_68m_dataout = (s_wire_lcd_data_format_adapter_always4_77_dataout === 1'b1) ? wire_lcd_data_format_adapter_new_state_66m_dataout : lcd_data_format_adapter_state_register_0_116q;
+	assign		wire_lcd_data_format_adapter_new_state_72m_dataout = (lcd_data_format_adapter_a_valid_32q === 1'b1) ? (~ s_wire_lcd_data_format_adapter_always4_71_dataout) : lcd_data_format_adapter_state_register_1_61q;
+	assign		wire_lcd_data_format_adapter_new_state_74m_dataout = (s_wire_lcd_data_format_adapter_always4_77_dataout === 1'b1) ? wire_lcd_data_format_adapter_new_state_72m_dataout : lcd_data_format_adapter_state_register_1_61q;
+	and(wire_lcd_data_format_adapter_new_state_80m_dataout, lcd_data_format_adapter_state_register_1_61q, ~(lcd_data_format_adapter_a_valid_32q));
+	and(wire_lcd_data_format_adapter_new_state_81m_dataout, lcd_data_format_adapter_state_register_0_116q, ~(lcd_data_format_adapter_a_valid_32q));
+	assign		wire_lcd_data_format_adapter_new_state_84m_dataout = (s_wire_lcd_data_format_adapter_always4_77_dataout === 1'b1) ? wire_lcd_data_format_adapter_new_state_80m_dataout : lcd_data_format_adapter_state_register_1_61q;
+	assign		wire_lcd_data_format_adapter_new_state_85m_dataout = (s_wire_lcd_data_format_adapter_always4_77_dataout === 1'b1) ? wire_lcd_data_format_adapter_new_state_81m_dataout : lcd_data_format_adapter_state_register_0_116q;
+	assign		wire_lcd_data_format_adapter_out_valid_reg0_172m_dataout = (s_wire_lcd_data_format_adapter_always4_77_dataout === 1'b1) ? wire_lcd_data_format_adapter_mux9_98_o : lcd_data_format_adapter_out_valid_reg0_117q;
+	oper_decoder   lcd_data_format_adapter_decoder0_95
+	( 
+	.i({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}),
+	.o(wire_lcd_data_format_adapter_decoder0_95_o));
+	defparam
+		lcd_data_format_adapter_decoder0_95.width_i = 2,
+		lcd_data_format_adapter_decoder0_95.width_o = 4;
+	oper_less_than   lcd_data_format_adapter_lessthan0_63
+	( 
+	.a({1'b1, 1'b0}),
+	.b({lcd_data_format_adapter_a_empty_1_59q, lcd_data_format_adapter_a_empty_0_60q}),
+	.cin(1'b1),
+	.o(wire_lcd_data_format_adapter_lessthan0_63_o));
+	defparam
+		lcd_data_format_adapter_lessthan0_63.sgate_representation = 0,
+		lcd_data_format_adapter_lessthan0_63.width_a = 2,
+		lcd_data_format_adapter_lessthan0_63.width_b = 2;
+	oper_less_than   lcd_data_format_adapter_lessthan1_70
+	( 
+	.a({1'b0, 1'b1}),
+	.b({lcd_data_format_adapter_a_empty_1_59q, lcd_data_format_adapter_a_empty_0_60q}),
+	.cin(1'b1),
+	.o(wire_lcd_data_format_adapter_lessthan1_70_o));
+	defparam
+		lcd_data_format_adapter_lessthan1_70.sgate_representation = 0,
+		lcd_data_format_adapter_lessthan1_70.width_a = 2,
+		lcd_data_format_adapter_lessthan1_70.width_b = 2;
+	oper_less_than   lcd_data_format_adapter_lessthan2_78
+	( 
+	.a({2{1'b0}}),
+	.b({lcd_data_format_adapter_a_empty_1_59q, lcd_data_format_adapter_a_empty_0_60q}),
+	.cin(1'b1),
+	.o(wire_lcd_data_format_adapter_lessthan2_78_o));
+	defparam
+		lcd_data_format_adapter_lessthan2_78.sgate_representation = 0,
+		lcd_data_format_adapter_lessthan2_78.width_a = 2,
+		lcd_data_format_adapter_lessthan2_78.width_b = 2;
+	oper_mux   lcd_data_format_adapter_mux0_87
+	( 
+	.data({1'b0, lcd_data_format_adapter_a_data2_7_49q, lcd_data_format_adapter_a_data1_7_41q, lcd_data_format_adapter_a_data0_7_33q}),
+	.o(wire_lcd_data_format_adapter_mux0_87_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux0_87.width_data = 4,
+		lcd_data_format_adapter_mux0_87.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux10_99
+	( 
+	.data({lcd_data_format_adapter_state_register_1_61q, wire_lcd_data_format_adapter_new_state_84m_dataout, wire_lcd_data_format_adapter_new_state_74m_dataout, wire_lcd_data_format_adapter_new_state_84m_dataout}),
+	.o(wire_lcd_data_format_adapter_mux10_99_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux10_99.width_data = 4,
+		lcd_data_format_adapter_mux10_99.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux11_100
+	( 
+	.data({lcd_data_format_adapter_state_register_0_116q, {2{wire_lcd_data_format_adapter_new_state_85m_dataout}}, wire_lcd_data_format_adapter_new_state_68m_dataout}),
+	.o(wire_lcd_data_format_adapter_mux11_100_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux11_100.width_data = 4,
+		lcd_data_format_adapter_mux11_100.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux12_101
+	( 
+	.data({1'b0, wire_lcd_data_format_adapter_b_endofpacket_86m_dataout, wire_lcd_data_format_adapter_a_ready_75m_dataout, wire_lcd_data_format_adapter_a_ready_69m_dataout}),
+	.o(wire_lcd_data_format_adapter_mux12_101_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux12_101.width_data = 4,
+		lcd_data_format_adapter_mux12_101.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux1_88
+	( 
+	.data({1'b0, lcd_data_format_adapter_a_data2_6_50q, lcd_data_format_adapter_a_data1_6_42q, lcd_data_format_adapter_a_data0_6_34q}),
+	.o(wire_lcd_data_format_adapter_mux1_88_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux1_88.width_data = 4,
+		lcd_data_format_adapter_mux1_88.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux2_89
+	( 
+	.data({1'b0, lcd_data_format_adapter_a_data2_5_51q, lcd_data_format_adapter_a_data1_5_43q, lcd_data_format_adapter_a_data0_5_35q}),
+	.o(wire_lcd_data_format_adapter_mux2_89_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux2_89.width_data = 4,
+		lcd_data_format_adapter_mux2_89.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux3_90
+	( 
+	.data({1'b0, lcd_data_format_adapter_a_data2_4_52q, lcd_data_format_adapter_a_data1_4_44q, lcd_data_format_adapter_a_data0_4_36q}),
+	.o(wire_lcd_data_format_adapter_mux3_90_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux3_90.width_data = 4,
+		lcd_data_format_adapter_mux3_90.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux4_91
+	( 
+	.data({1'b0, lcd_data_format_adapter_a_data2_3_53q, lcd_data_format_adapter_a_data1_3_45q, lcd_data_format_adapter_a_data0_3_37q}),
+	.o(wire_lcd_data_format_adapter_mux4_91_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux4_91.width_data = 4,
+		lcd_data_format_adapter_mux4_91.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux5_92
+	( 
+	.data({1'b0, lcd_data_format_adapter_a_data2_2_54q, lcd_data_format_adapter_a_data1_2_46q, lcd_data_format_adapter_a_data0_2_38q}),
+	.o(wire_lcd_data_format_adapter_mux5_92_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux5_92.width_data = 4,
+		lcd_data_format_adapter_mux5_92.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux6_93
+	( 
+	.data({1'b0, lcd_data_format_adapter_a_data2_1_55q, lcd_data_format_adapter_a_data1_1_47q, lcd_data_format_adapter_a_data0_1_39q}),
+	.o(wire_lcd_data_format_adapter_mux6_93_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux6_93.width_data = 4,
+		lcd_data_format_adapter_mux6_93.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux7_94
+	( 
+	.data({1'b0, lcd_data_format_adapter_a_data2_0_56q, lcd_data_format_adapter_a_data1_0_48q, lcd_data_format_adapter_a_data0_0_40q}),
+	.o(wire_lcd_data_format_adapter_mux7_94_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux7_94.width_data = 4,
+		lcd_data_format_adapter_mux7_94.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux8_97
+	( 
+	.data({1'b0, s_wire_lcd_data_format_adapter_always4_77_dataout, wire_lcd_data_format_adapter_a_ready_75m_dataout, wire_lcd_data_format_adapter_a_ready_69m_dataout}),
+	.o(wire_lcd_data_format_adapter_mux8_97_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux8_97.width_data = 4,
+		lcd_data_format_adapter_mux8_97.width_sel = 2;
+	oper_mux   lcd_data_format_adapter_mux9_98
+	( 
+	.data({1'b0, {3{wire_lcd_data_format_adapter_b_valid_83m_dataout}}}),
+	.o(wire_lcd_data_format_adapter_mux9_98_o),
+	.sel({lcd_data_format_adapter_state_register_1_61q, lcd_data_format_adapter_state_register_0_116q}));
+	defparam
+		lcd_data_format_adapter_mux9_98.width_data = 4,
+		lcd_data_format_adapter_mux9_98.width_sel = 2;
+	assign
+		in_ready = s_wire_lcd_data_format_adapter_in_ready_103_dataout,
+		out_data = {lcd_data_format_adapter_out_data_7_reg0_118q, lcd_data_format_adapter_out_data_6_reg0_119q, lcd_data_format_adapter_out_data_5_reg0_120q, lcd_data_format_adapter_out_data_4_reg0_121q, lcd_data_format_adapter_out_data_3_reg0_122q, lcd_data_format_adapter_out_data_2_reg0_123q, lcd_data_format_adapter_out_data_1_reg0_124q, lcd_data_format_adapter_out_data_0_reg0_126q},
+		out_endofpacket = lcd_data_format_adapter_out_endofpacket_reg0_125q,
+		out_startofpacket = lcd_data_format_adapter_out_startofpacket_reg0_127q,
+		out_valid = lcd_data_format_adapter_out_valid_reg0_117q,
+		s_wire_lcd_data_format_adapter_always4_64_dataout = (lcd_data_format_adapter_a_endofpacket_58q & wire_lcd_data_format_adapter_lessthan0_63_o),
+		s_wire_lcd_data_format_adapter_always4_71_dataout = (lcd_data_format_adapter_a_endofpacket_58q & wire_lcd_data_format_adapter_lessthan1_70_o),
+		s_wire_lcd_data_format_adapter_always4_77_dataout = ((~ lcd_data_format_adapter_out_valid_reg0_117q) | out_ready),
+		s_wire_lcd_data_format_adapter_in_ready_103_dataout = ((~ lcd_data_format_adapter_a_valid_32q) | wire_lcd_data_format_adapter_mux8_97_o),
+		s_wire_vcc = 1'b1;
+endmodule //lcd_data_format_adapter
+//synopsys translate_on
+//VALID FILE

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Board Update Portal</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="progress.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="header">
+<h1>Board Update Portal</h1>
+<p><em>Altera Embedded Systems Development Kit, Cyclone III
+Edition</em></p>
+</div>
+<div id="main_content"> <br />
+<table style="text-align: left; width: 700px;" border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left; vertical-align: top;"><span style="font-style: italic; color: rgb(0, 102, 204);"><big><big><big><span style="font-weight: bold;">Ready</span></big></big></big></span></td>
+<td><img style="text-decoration: underline; width: 14px; height: 10px;" alt="Arrow" src="orange-arrow-space.gif" /><span style="font-weight: bold; color: black;">What you need to
+update the board</span><span style="text-decoration: underline; font-weight: bold;"><br />
+</span>
+<ol>
+<li>SRAM Object File (SOF) containing FPGA Image</li>
+<li>Executable Linked File (ELF) containing Software
+Application</li>
+<ul>
+<li>ELF not required if the design has no software
+application</li>
+</ul>
+</ol>
+</td>
+</tr>
+<tr>
+<td><big><big><big><big><a style="font-style: italic; color: rgb(0, 102, 204);" href="http://www.altera.com/products/devkits/altera/kit-emb-dev-cyc3.html"><big><big><big><span style="font-weight: bold;"></span></big></big></big></a></big></big></big></big><big><a style="font-style: italic; color: rgb(0, 102, 204);" href="http://www.altera.com/products/devkits/altera/kit-emb-dev-cyc3.html"><big><big><big><span style="font-weight: bold;"><br />
+</span></big></big></big></a></big></td>
+<td></td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><span style="font-style: italic; color: rgb(0, 102, 204);"><big><big><big><span style="font-weight: bold;">Set</span></big></big></big></span></td>
+<td><a style="font-weight: bold;" href="http://www.altera.com/products/devkits/altera/kit-emb-dev-cyc3.html"><img style="border: 0px solid ; height: 10px; width: 14px;" alt="" src="orange-arrow-space.gif" /></a><a href="FlashConversion.html"><span style="font-weight: bold;"><span style="color: rgb(0, 102, 204);">Convert design to Flash
+format</span></span></a><br />
+<span style="font-weight: normal;">Follow these
+steps to convert SRAM
+Object File (.SOF) and Executable Linked File (ELF) to Flash Format
+i.e. format required to program Flash</span></td>
+</tr>
+<tr>
+<td></td>
+<td><br />
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><span style="font-style: italic; color: rgb(0, 102, 204);"><big><big><big><span style="font-weight: bold;">Go</span></big></big></big></span></td>
+<td><a style="font-weight: bold;" href="http://www.altera.com/products/devkits/altera/kit-emb-dev-cyc3.html"><img style="border: 0px solid ; height: 10px; width: 14px;" alt="" src="orange-arrow-space.gif" /></a><span style="color: black; font-weight: bold;">Program flash</span><br />
+<span style="font-weight: normal;">To update the
+flash memory and reconfigure the FPGA</span><br />
+<ol>
+<li><span style="font-weight: normal;">Use
+the Browse buttons to browse to the HW and SW Files respectively</span></li>
+<li><span style="font-weight: normal;">Click
+UPLOAD</span></li>
+<li><span style="font-weight: normal;">Click
+Reset to configure the FPGA with new image</span></li>
+</ol>
+<span style="font-weight: normal;"><br />
+</span></td>
+</tr>
+</tbody>
+</table>
+<br />
+<br />
+<h2 style="text-align: left;"><br />
+<strong></strong></h2>
+<hr />
+<p>The contents of this website are contained on a FAT16
+formatted SD card
+in a directory at the top level called "webserver_html". You can
+replace this content or add new content by placing your SD card into an
+SD card reader and your content into this directory. </p>
+<p class="note"> <em>Note: Content you add must be
+of
+a known "type" to be served properly. HTML, GIF, and JPEG images are a
+few examples of types supported by this example application. For more
+advanced file types you'll need to modify the web-server example
+application.</em>
+<a href="http://www.altera.com/support/ip/processors/nios2/ips-nios2_support.html">&nbsp;</a></p>
+</div>
+<div id="links">
+<ul class="main_links">
+</ul>
+</div>
+<div id="board_interaction">
+     <form action="/reset_system.html" enctype="multipart/form-data" method="post" onsubmit="startProgress(); return true;">
+     <strong>CFI Flash File Upload</strong> 
+     </select>
+     <br />HW File Name:<br />
+     <input class="adjust_font" name="hw_filename" type="file" size="20"/>
+     <br />SW File Name:<br />
+     <input class="adjust_font" name="sw_filename" type="file" size="20"/>
+     <input class="adjust_font" name="upload_image" value="Upload" type="submit"/>
+     </form>
+     <div id="progress" style="width: 200px; border 1px solid black">
+       <div id="progressbar" style="width: 0px; height: 1.5ex; background-color: black; border: 0px solid white; margin-left: 0.5em; margin-right: 0.5em; margin-top: 1ex">
+         &nbsp;
+       </div>
+     </div>
+     <div id="tp" style="margin-left: 0.5em">&nbsp;</div>
+<hr />
+<p><br />
+</p>
+<p style="font-weight: bold;"><br />
+</p>
+<p style="font-weight: bold;"></p>
+<p style="font-weight: bold;">Tools</p>
+<p>&nbsp;&nbsp;&nbsp; <a href="https://www.altera.com/support/software/download/sof-download_center.html">Downloads</a></p>
+<p>&nbsp;&nbsp;&nbsp; <a href="http://www.altera.com/support/licensing/lic-index.html">Licensing<br />
+</a></p>
+<p></p>
+<p><br />
+</p>
+<p style="font-weight: bold;">Resources</p>
+<p>&nbsp;&nbsp;&nbsp; <a href="http://www.altera.com/literature/lit-nio2.jsp">Literature</a>&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; <a href="http://www.altera.com/technology/embedded/training/emb-training.html">Training</a></p>
+<p>&nbsp;&nbsp;&nbsp; <a href="http://www.altera.com/support/examples/nios2/exm-nios2.html">Design
+Examples</a></p>
+<p>&nbsp;&nbsp;&nbsp; <a href="http://www.altera.com/technology/embedded/community/emb-community.html">Community</a></p>
+<p><a href="http://www.altera.com/support/ip/processors/nios2/ips-nios2_support.html">&nbsp;&nbsp;&nbsp;
+Support</a></p>
+<p><a href="http://www.altera.com/technology/embedded/community/emb-community.html">&nbsp;&nbsp;&nbsp;
+</a></p>
+<p style="font-weight: bold;">Development Kits</p>
+<p>&nbsp;&nbsp;&nbsp; <a href="http://www.altera.com/products/devkits/kit-index.html">KIts</a></p>
+<p>&nbsp;&nbsp;&nbsp; <a href="http://www.altera.com/products/devkits/kit-daughter_boards.jsp">Daughter
+Cards</a></p>
+<p></p>
+</div>
+<div id="foot">
+<p>Copyright © 2008 Altera Corporation</p>
+</div>
+<!-- end #container --> </div>
+</body></html>

@@ -1,0 +1,96 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.817 ns
+From           : HC_VD
+To             : LCD_DATA_DECODE:u3|d1_VD
+From Clock     : --
+To Clock       : HC_NCLK
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.096 ns
+From           : Terasic_I2CBir_bus:u2|cnt[1]
+To             : ID_I2CDAT
+From Clock     : HC_ID_I2CSCL
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.967 ns
+From           : HC_GREST
+To             : GREST
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.107 ns
+From           : HC_ID_I2CDAT
+To             : Terasic_I2CBir_bus:u2|pre_w_r
+From Clock     : --
+To Clock       : HC_ID_I2CSCL
+Failed Paths   : 0
+
+Type           : Clock Setup: 'OSC100'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 175.01 MHz ( period = 5.714 ns )
+From           : LCD_poweron_seq:u4|reset_cnt[3]
+To             : LCD_poweron_seq:u4|reset_cnt[11]
+From Clock     : OSC100
+To Clock       : OSC100
+Failed Paths   : 0
+
+Type           : Clock Setup: 'HC_ID_I2CSCL'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 221.43 MHz ( period = 4.516 ns )
+From           : Terasic_I2CBir_bus:u2|cnt[3]
+To             : Terasic_I2CBir_bus:u2|cnt[7]
+From Clock     : HC_ID_I2CSCL
+To Clock       : HC_ID_I2CSCL
+Failed Paths   : 0
+
+Type           : Clock Setup: 'HC_VGA_CLOCK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 255.75 MHz ( period = 3.910 ns )
+From           : VGA_DATA_DECODE:u1|color_phase_counter[1]
+To             : VGA_DATA_DECODE:u1|VGA_B[2]
+From Clock     : HC_VGA_CLOCK
+To Clock       : HC_VGA_CLOCK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'HC_NCLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 270.42 MHz ( period = 3.698 ns )
+From           : LCD_DATA_DECODE:u3|color_phase_counter[0]
+To             : LCD_DATA_DECODE:u3|LCD_B[7]
+From Clock     : HC_NCLK
+To Clock       : HC_NCLK
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

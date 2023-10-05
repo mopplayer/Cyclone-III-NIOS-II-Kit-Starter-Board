@@ -1,0 +1,30 @@
+About Imagem
+--------------------------
+
+Imagem Technologies has innovative solutions for addressing graphics and video.
+Imagem's Athlet Graphics IP engine is a SOPC Builder ready vector graphics engine that can be used with the Nios II Processor.
+
+How to use
+--------------------------
+
+1) From the "Altera" main application selector— 
+2) Select “Imagem Instrumentation” item
+3) Select "Info" to know to use the demo
+4) Select "Load" to start the demo
+5) Interact with the GUI using the LCD touch panel
+
+
+About the demo:
+---------------------
+
+The Demo shows:
+ARGB graphics
+Clipping
+Brightness, saturation and contrast effects
+Accelerated Polygon drawing 
+Dynamic sub-pixel anti-aliasing
+Polygon Blurring support
+
+http://www.imagem-technology.com/ALTERA_EEK.html
+
+Contact imagem at http://www.imagem-technology.com/

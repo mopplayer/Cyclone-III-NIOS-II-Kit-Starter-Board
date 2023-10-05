@@ -1,0 +1,63 @@
+This application is intended to show certain of Micrium products running on the Altera Nios II Embedded Evaluation Kit.
+The application includes the following products:
+
+uCOS-II.
+uC/TCP-IP.
+uC-Probe.
+uC-HTTP Server.
+uC-DHCP Client.
+uC-GUI.
+uC-FS.
+
+To run this application, your board should be connected to a Network which can provide an IP address via DHCP.
+
+After loading the application, a uC-GUI based Main screen is displayed to allow you to select  one of Micrium products Demo by pressing the corresponding button on the NEEK touch screen. This will display a new screen corresponding to selected product, and give you more information about it. 
+
+A Menu button on each product Demo screen allow you to return back to the main Menu screen.
+
+The following is a short explanation of each product Demo included in this application.
+
+1- uC-Probe Demo:
+
+uC/Probe is a unique tool from Micrium that offers software developers valuable insight into running embedded applications.  
+In order to fully experience the demo, you will need to install uC/Probe on your PC.  You will also need to ensure that your PC and your Nios II Embedded Evaluation Kit board are connected to the same Network. 
+
+You should use uC/Probe (running on your PC) to open Altera-NEEK-Workspace.wsp file, and to add symbols contained in the file named Micrium_products_demo.elf. Those two files can be obtained from Micrium Web site at http://www.micrium.com/altera.
+  
+With this workspace open and uC/Probe set up to receive data via TCP/IP from a target having the IP address as indicated in uC-Probe Demo screen on your board (the IP address is obtained dynamically by uC-DHCP Client).  Clicking uC/Probe's start button should allow you to begin monitoring the values of the demo's global variables.  The example workspace displays these variables on multiple data screens, with the first portion of screens showing variables that are specific to uC/OS-II (Micrium's RTOS), and the second portion displaying variables used by uC/TCP-IP (Micrium's TCP/IP software).  
+
+
+2- uC-GUI
+
+µC/GUI is designed to provide an efficient, processor and LCD controller-independent graphical user interface (GUI) for any application that operates with a graphical LCD. It is compatible with single-task and multitask environments, with a proprietary operating system or with any commercial RTOS.
+
+Two uC-GUI based applications are provided in this Demo.
+   - Car Dash Board system.
+   - Air Craft Engine monitoring system.
+   
+3- uC-FS
+ 
+µC/FS is a file system for embedded applications which can be used on any media, for which you can provide basic hardware access functions. 
+µC/FS is a high performance library that has been optimized for minimum memory consumption in RAM and ROM, high speed and versatility.  It is written in ANSI C and can be used on any CPU.   
+
+uC-FS Demo included in this application consists in a simple program that does the following:
+    
+    - Calculate Free space on the SD Card.
+    - Open a text file in write mode.
+    - Write a string "Hello World !!!" to that file.
+    - Close the opened file. 
+    - Open the previous file in read mode.
+    - Read data from this file.
+    - Close the opened file. 
+ 
+ This application uses Altera SPI device to access to the SD Card. 
+
+4- uC-HTTP Server
+
+This part of the Demo application allows you to test Micrium HyperText Transport Protocol server. After displaying the HTTPs Demo screen by cliking uC-HTTPs
+button from the Main screen, get the current IP address and use your favorite browser to load a test Web page from the SD Card by typing  the following url,
+                            http://<IP Address>/index.htm
+
+
+If you have questions about Micrium products, you should consult Micrium's Web site, http://www.Micrium.com.  There you will find up-to-date information on all of Micrium's offerings, 
+including uC/Probe.  The Web site will also allow you to download a free, 30-day evaluation version of uC/Probe that is entirely compatible with the above demo. 			   

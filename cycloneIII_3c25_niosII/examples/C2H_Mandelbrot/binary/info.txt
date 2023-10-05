@@ -1,0 +1,39 @@
+-----------------------------------------
+Welcome to the Mandelbrot C2H Application
+-----------------------------------------
+
+The Mandelbrot algorithm consists of a formula that is repeatedly calculated until it converges to a fixed value (4 in this case). The number of repetitions is tracked and used to select a color which is then displayed on the screen. If the calculation does not converge within a pre-determined number of repetitions, the result is said to be contained within the Mandelbrot Set. Results in the Mandelbrot Set are displayed as a solid color (black in this case).
+
+The algorithm uses four multiplications, three additions, and two shift operations per iteration. On average, hundreds of iterations occur before a single point converges. This means that a general purpose processor on average requires thousands of clock cycles before a single point has been calculated.
+
+
+------------
+Instructions
+------------
+
+1) At start time, the application defaults to hardware implementation of Mandelbrot
+2) To open the main menu press anywhere on the touch screen display
+3) To disable the hardware accelerator (software only mode) press the 'Software' button
+4) To enable the hardware accelerator press the 'Hardware' button 
+5) To change the color palette press the 'Color' button
+6) To exit the main menu press the 'Continue' button
+
+
+------------------------------------------
+GHz Processing at a Fraction of the Power!
+------------------------------------------
+
+In this design example you will see the difference between a general purpose processor and a hardware accelerator when each is used to calculate the Mandelbrot algorithm. Both implementations use the same clock frequency. In order for a general purpose processor to be capable of performing the calculations at the same speed as the hardware accelerator, it would need to operate at clock frequencies hundreds of times larger.
+
+For example if the speedup factor is 200x, and the hardware accelerator operates at 100MHz, you would need the general purpose processor to operate at 20000MHz. Such a processor does not exist and is why expensive single instruction multiple data (SIMD) processors are in use today. The drawback of an off-the-shelf SIMD processor is that the power envelope is much higher as a result of the high clock frequency. At a fraction of the cost and power of a SIMD processor, you can use FPGAs to implement hardware accelerators for time critical sections of your own algorithms as this design example illustrates.
+
+
+-------------
+To Learn More
+-------------
+
+To obtain the source code or other information relevant to this design example please visit the following:
+
+www.altera.com/support/examples/nios2/exm-c2h-mandelbrot.html
+www.altera.com/literature/lit-nio2.jsp
+www.altera.com/embedded

@@ -1,0 +1,90 @@
+//IP Functional Simulation Model
+//VERSION_BEGIN 12.1 cbx_mgl 2012:11:07:18:06:30:SJ cbx_simgen 2012:11:07:18:03:51:SJ  VERSION_END
+// synthesis VERILOG_INPUT_VERSION VERILOG_2001
+// altera message_off 10463
+
+
+
+// Copyright (C) 1991-2012 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// You may only use these simulation model output files for simulation
+// purposes and expressly not for synthesis or any other purposes (in which
+// event Altera disclaims all warranties of any kind).
+
+
+//synopsys translate_off
+
+//synthesis_resources = lut 1 
+`timescale 1 ps / 1 ps
+module  lcd_ta_sgdma_to_fifo
+	( 
+	clk,
+	in_data,
+	in_empty,
+	in_endofpacket,
+	in_ready,
+	in_startofpacket,
+	in_valid,
+	out_data,
+	out_empty,
+	out_endofpacket,
+	out_ready,
+	out_startofpacket,
+	out_valid,
+	reset_n) /* synthesis synthesis_clearbox=1 */;
+	input   clk;
+	input   [63:0]  in_data;
+	input   [2:0]  in_empty;
+	input   in_endofpacket;
+	output   in_ready;
+	input   in_startofpacket;
+	input   in_valid;
+	output   [63:0]  out_data;
+	output   [2:0]  out_empty;
+	output   out_endofpacket;
+	input   out_ready;
+	output   out_startofpacket;
+	output   out_valid;
+	input   reset_n;
+
+	reg	lcd_ta_sgdma_to_fifo_ready_0_1q;
+	wire  s_wire_vcc;
+
+	initial
+	begin
+		lcd_ta_sgdma_to_fifo_ready_0_1q = 0;
+	end
+	always @ ( posedge clk or  negedge reset_n)
+	begin
+		if (reset_n == 1'b0) 
+		begin
+			lcd_ta_sgdma_to_fifo_ready_0_1q <= 0;
+		end
+		else 
+		begin
+			lcd_ta_sgdma_to_fifo_ready_0_1q <= out_ready;
+		end
+	end
+	assign
+		in_ready = lcd_ta_sgdma_to_fifo_ready_0_1q,
+		out_data = {in_data[63:0]},
+		out_empty = {in_empty[2:0]},
+		out_endofpacket = in_endofpacket,
+		out_startofpacket = in_startofpacket,
+		out_valid = (lcd_ta_sgdma_to_fifo_ready_0_1q & in_valid),
+		s_wire_vcc = 1'b1;
+endmodule //lcd_ta_sgdma_to_fifo
+//synopsys translate_on
+//VALID FILE

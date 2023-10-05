@@ -1,0 +1,8 @@
+Cyclone III Starter Development Kit v11.1.0 Memory Map README File
+=================================================================
+User Regions 1:         0x00000000 to 0x0001FF00
+Factory Hardware:    	0x00020000 to 0x000CFFFF
+User Regions 2:         0x000D0000 to 0x00FFFF00
+
+
+

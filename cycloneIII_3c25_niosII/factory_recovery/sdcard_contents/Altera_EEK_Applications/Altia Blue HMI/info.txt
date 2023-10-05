@@ -1,0 +1,23 @@
+Altia Blue HMI
+--------------------------
+
+Altia® DeepScreen® can target GUIs created in Altia® Design to a simple frame buffer on Nios II hardware or to the D/AVE accelerated graphics API offered by TES.
+With these options, it is possible to get outstanding graphics performance for next generation GUIs on the lowest cost hardware.
+
+http://www.altia.com/
+
+How to Use
+------------
+1) On the LCD panel touch to select the Altia Blue HMI and press load
+2) Once the demo is loaded you can evaluate the GUI using the LCD screen
+
+Altia's Advantages:
+---------------------
+Includes Designers and Artists in the process
+High impact user interfaces get your products noticed.
+	• High performance C code output 
+		Generated graphics code leverages the power of FPGAs and the D/AVE engine.
+	•  Portability across multiple targets
+		Altia interfaces built for other targets can be rapidly moved to an FPGA for performance testing.
+	• Standard and open data formats
+		Altia’s use of Photoshop®, bitmaps, XML and C minimizes the risk of using tools.

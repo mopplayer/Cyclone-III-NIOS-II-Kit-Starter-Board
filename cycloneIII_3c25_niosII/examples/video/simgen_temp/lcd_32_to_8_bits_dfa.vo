@@ -1,0 +1,528 @@
+//IP Functional Simulation Model
+//VERSION_BEGIN 12.1 cbx_mgl 2012:11:07:18:06:30:SJ cbx_simgen 2012:11:07:18:03:51:SJ  VERSION_END
+// synthesis VERILOG_INPUT_VERSION VERILOG_2001
+// altera message_off 10463
+
+
+
+// Copyright (C) 1991-2012 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// You may only use these simulation model output files for simulation
+// purposes and expressly not for synthesis or any other purposes (in which
+// event Altera disclaims all warranties of any kind).
+
+
+//synopsys translate_off
+
+//synthesis_resources = lut 43 mux21 28 oper_add 1 oper_decoder 1 oper_less_than 3 oper_mux 14 
+`timescale 1 ps / 1 ps
+module  lcd_32_to_8_bits_dfa
+	( 
+	clk,
+	in_data,
+	in_empty,
+	in_endofpacket,
+	in_ready,
+	in_startofpacket,
+	in_valid,
+	out_data,
+	out_empty,
+	out_endofpacket,
+	out_ready,
+	out_startofpacket,
+	out_valid,
+	reset_n) /* synthesis synthesis_clearbox=1 */;
+	input   clk;
+	input   [23:0]  in_data;
+	input   [1:0]  in_empty;
+	input   in_endofpacket;
+	output   in_ready;
+	input   in_startofpacket;
+	input   in_valid;
+	output   [7:0]  out_data;
+	output   out_empty;
+	output   out_endofpacket;
+	input   out_ready;
+	output   out_startofpacket;
+	output   out_valid;
+	input   reset_n;
+
+	reg	lcd_32_to_8_bits_dfa_out_data_0_reg0_138q;
+	reg	lcd_32_to_8_bits_dfa_out_data_1_reg0_137q;
+	reg	lcd_32_to_8_bits_dfa_out_data_2_reg0_136q;
+	reg	lcd_32_to_8_bits_dfa_out_data_3_reg0_135q;
+	reg	lcd_32_to_8_bits_dfa_out_data_4_reg0_134q;
+	reg	lcd_32_to_8_bits_dfa_out_data_5_reg0_133q;
+	reg	lcd_32_to_8_bits_dfa_out_data_6_reg0_132q;
+	reg	lcd_32_to_8_bits_dfa_out_data_7_reg0_131q;
+	reg	lcd_32_to_8_bits_dfa_out_empty_reg0_129q;
+	reg	lcd_32_to_8_bits_dfa_out_endofpacket_reg0_140q;
+	reg	lcd_32_to_8_bits_dfa_out_startofpacket_reg0_139q;
+	reg	lcd_32_to_8_bits_dfa_out_valid_reg0_130q;
+	reg	lcd_32_to_8_bits_dfa_state_register_0_128q;
+	reg	lcd_32_to_8_bits_dfa_state_register_1_61q;
+	reg	lcd_32_to_8_bits_dfa_a_data0_0_40q;
+	reg	lcd_32_to_8_bits_dfa_a_data0_1_39q;
+	reg	lcd_32_to_8_bits_dfa_a_data0_2_38q;
+	reg	lcd_32_to_8_bits_dfa_a_data0_3_37q;
+	reg	lcd_32_to_8_bits_dfa_a_data0_4_36q;
+	reg	lcd_32_to_8_bits_dfa_a_data0_5_35q;
+	reg	lcd_32_to_8_bits_dfa_a_data0_6_34q;
+	reg	lcd_32_to_8_bits_dfa_a_data0_7_33q;
+	reg	lcd_32_to_8_bits_dfa_a_data1_0_48q;
+	reg	lcd_32_to_8_bits_dfa_a_data1_1_47q;
+	reg	lcd_32_to_8_bits_dfa_a_data1_2_46q;
+	reg	lcd_32_to_8_bits_dfa_a_data1_3_45q;
+	reg	lcd_32_to_8_bits_dfa_a_data1_4_44q;
+	reg	lcd_32_to_8_bits_dfa_a_data1_5_43q;
+	reg	lcd_32_to_8_bits_dfa_a_data1_6_42q;
+	reg	lcd_32_to_8_bits_dfa_a_data1_7_41q;
+	reg	lcd_32_to_8_bits_dfa_a_data2_0_56q;
+	reg	lcd_32_to_8_bits_dfa_a_data2_1_55q;
+	reg	lcd_32_to_8_bits_dfa_a_data2_2_54q;
+	reg	lcd_32_to_8_bits_dfa_a_data2_3_53q;
+	reg	lcd_32_to_8_bits_dfa_a_data2_4_52q;
+	reg	lcd_32_to_8_bits_dfa_a_data2_5_51q;
+	reg	lcd_32_to_8_bits_dfa_a_data2_6_50q;
+	reg	lcd_32_to_8_bits_dfa_a_data2_7_49q;
+	reg	lcd_32_to_8_bits_dfa_a_empty_0_60q;
+	reg	lcd_32_to_8_bits_dfa_a_empty_1_59q;
+	reg	lcd_32_to_8_bits_dfa_a_endofpacket_58q;
+	reg	lcd_32_to_8_bits_dfa_a_startofpacket_57q;
+	reg	lcd_32_to_8_bits_dfa_a_valid_32q;
+	wire	wire_lcd_32_to_8_bits_dfa_a_empty_1m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_a_empty_2m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_a_ready_69m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_a_ready_72m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_a_ready_79m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_a_ready_82m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_empty_65m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_empty_68m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_empty_71m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_empty_76m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_empty_78m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_empty_81m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_empty_87m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_empty_90m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_empty_95m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_endofpacket_91m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_endofpacket_96m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_startofpacket_106m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_b_valid_92m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_new_state_67m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_new_state_70m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_new_state_77m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_new_state_80m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_new_state_88m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_new_state_89m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_new_state_93m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_new_state_94m_dataout;
+	wire	wire_lcd_32_to_8_bits_dfa_out_valid_reg0_186m_dataout;
+	wire  [2:0]   wire_lcd_32_to_8_bits_dfa_add0_75_o;
+	wire  [3:0]   wire_lcd_32_to_8_bits_dfa_decoder0_105_o;
+	wire  wire_lcd_32_to_8_bits_dfa_lessthan0_63_o;
+	wire  wire_lcd_32_to_8_bits_dfa_lessthan1_73_o;
+	wire  wire_lcd_32_to_8_bits_dfa_lessthan2_85_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux0_97_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux10_109_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux11_110_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux12_111_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux13_112_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux1_98_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux2_99_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux3_100_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux4_101_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux5_102_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux6_103_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux7_104_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux8_107_o;
+	wire  wire_lcd_32_to_8_bits_dfa_mux9_108_o;
+	wire  s_wire_lcd_32_to_8_bits_dfa_always4_64_dataout;
+	wire  s_wire_lcd_32_to_8_bits_dfa_always4_74_dataout;
+	wire  s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout;
+	wire  s_wire_lcd_32_to_8_bits_dfa_always4_86_dataout;
+	wire  s_wire_lcd_32_to_8_bits_dfa_in_ready_114_dataout;
+	wire  s_wire_vcc;
+
+	initial
+	begin
+		lcd_32_to_8_bits_dfa_out_data_0_reg0_138q = 0;
+		lcd_32_to_8_bits_dfa_out_data_1_reg0_137q = 0;
+		lcd_32_to_8_bits_dfa_out_data_2_reg0_136q = 0;
+		lcd_32_to_8_bits_dfa_out_data_3_reg0_135q = 0;
+		lcd_32_to_8_bits_dfa_out_data_4_reg0_134q = 0;
+		lcd_32_to_8_bits_dfa_out_data_5_reg0_133q = 0;
+		lcd_32_to_8_bits_dfa_out_data_6_reg0_132q = 0;
+		lcd_32_to_8_bits_dfa_out_data_7_reg0_131q = 0;
+		lcd_32_to_8_bits_dfa_out_empty_reg0_129q = 0;
+		lcd_32_to_8_bits_dfa_out_endofpacket_reg0_140q = 0;
+		lcd_32_to_8_bits_dfa_out_startofpacket_reg0_139q = 0;
+	end
+	always @ ( posedge clk or  negedge reset_n)
+	begin
+		if (reset_n == 1'b0) 
+		begin
+			lcd_32_to_8_bits_dfa_out_data_0_reg0_138q <= 0;
+			lcd_32_to_8_bits_dfa_out_data_1_reg0_137q <= 0;
+			lcd_32_to_8_bits_dfa_out_data_2_reg0_136q <= 0;
+			lcd_32_to_8_bits_dfa_out_data_3_reg0_135q <= 0;
+			lcd_32_to_8_bits_dfa_out_data_4_reg0_134q <= 0;
+			lcd_32_to_8_bits_dfa_out_data_5_reg0_133q <= 0;
+			lcd_32_to_8_bits_dfa_out_data_6_reg0_132q <= 0;
+			lcd_32_to_8_bits_dfa_out_data_7_reg0_131q <= 0;
+			lcd_32_to_8_bits_dfa_out_empty_reg0_129q <= 0;
+			lcd_32_to_8_bits_dfa_out_endofpacket_reg0_140q <= 0;
+			lcd_32_to_8_bits_dfa_out_startofpacket_reg0_139q <= 0;
+		end
+		else if  (s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout == 1'b1) 
+		begin
+			lcd_32_to_8_bits_dfa_out_data_0_reg0_138q <= wire_lcd_32_to_8_bits_dfa_mux7_104_o;
+			lcd_32_to_8_bits_dfa_out_data_1_reg0_137q <= wire_lcd_32_to_8_bits_dfa_mux6_103_o;
+			lcd_32_to_8_bits_dfa_out_data_2_reg0_136q <= wire_lcd_32_to_8_bits_dfa_mux5_102_o;
+			lcd_32_to_8_bits_dfa_out_data_3_reg0_135q <= wire_lcd_32_to_8_bits_dfa_mux4_101_o;
+			lcd_32_to_8_bits_dfa_out_data_4_reg0_134q <= wire_lcd_32_to_8_bits_dfa_mux3_100_o;
+			lcd_32_to_8_bits_dfa_out_data_5_reg0_133q <= wire_lcd_32_to_8_bits_dfa_mux2_99_o;
+			lcd_32_to_8_bits_dfa_out_data_6_reg0_132q <= wire_lcd_32_to_8_bits_dfa_mux1_98_o;
+			lcd_32_to_8_bits_dfa_out_data_7_reg0_131q <= wire_lcd_32_to_8_bits_dfa_mux0_97_o;
+			lcd_32_to_8_bits_dfa_out_empty_reg0_129q <= wire_lcd_32_to_8_bits_dfa_mux12_111_o;
+			lcd_32_to_8_bits_dfa_out_endofpacket_reg0_140q <= wire_lcd_32_to_8_bits_dfa_mux13_112_o;
+			lcd_32_to_8_bits_dfa_out_startofpacket_reg0_139q <= wire_lcd_32_to_8_bits_dfa_b_startofpacket_106m_dataout;
+		end
+	end
+	initial
+	begin
+		lcd_32_to_8_bits_dfa_out_valid_reg0_130q = 0;
+		lcd_32_to_8_bits_dfa_state_register_0_128q = 0;
+		lcd_32_to_8_bits_dfa_state_register_1_61q = 0;
+	end
+	always @ ( posedge clk or  negedge reset_n)
+	begin
+		if (reset_n == 1'b0) 
+		begin
+			lcd_32_to_8_bits_dfa_out_valid_reg0_130q <= 0;
+			lcd_32_to_8_bits_dfa_state_register_0_128q <= 0;
+			lcd_32_to_8_bits_dfa_state_register_1_61q <= 0;
+		end
+		else 
+		begin
+			lcd_32_to_8_bits_dfa_out_valid_reg0_130q <= wire_lcd_32_to_8_bits_dfa_out_valid_reg0_186m_dataout;
+			lcd_32_to_8_bits_dfa_state_register_0_128q <= wire_lcd_32_to_8_bits_dfa_mux11_110_o;
+			lcd_32_to_8_bits_dfa_state_register_1_61q <= wire_lcd_32_to_8_bits_dfa_mux10_109_o;
+		end
+	end
+	initial
+	begin
+		lcd_32_to_8_bits_dfa_a_data0_0_40q = 0;
+		lcd_32_to_8_bits_dfa_a_data0_1_39q = 0;
+		lcd_32_to_8_bits_dfa_a_data0_2_38q = 0;
+		lcd_32_to_8_bits_dfa_a_data0_3_37q = 0;
+		lcd_32_to_8_bits_dfa_a_data0_4_36q = 0;
+		lcd_32_to_8_bits_dfa_a_data0_5_35q = 0;
+		lcd_32_to_8_bits_dfa_a_data0_6_34q = 0;
+		lcd_32_to_8_bits_dfa_a_data0_7_33q = 0;
+		lcd_32_to_8_bits_dfa_a_data1_0_48q = 0;
+		lcd_32_to_8_bits_dfa_a_data1_1_47q = 0;
+		lcd_32_to_8_bits_dfa_a_data1_2_46q = 0;
+		lcd_32_to_8_bits_dfa_a_data1_3_45q = 0;
+		lcd_32_to_8_bits_dfa_a_data1_4_44q = 0;
+		lcd_32_to_8_bits_dfa_a_data1_5_43q = 0;
+		lcd_32_to_8_bits_dfa_a_data1_6_42q = 0;
+		lcd_32_to_8_bits_dfa_a_data1_7_41q = 0;
+		lcd_32_to_8_bits_dfa_a_data2_0_56q = 0;
+		lcd_32_to_8_bits_dfa_a_data2_1_55q = 0;
+		lcd_32_to_8_bits_dfa_a_data2_2_54q = 0;
+		lcd_32_to_8_bits_dfa_a_data2_3_53q = 0;
+		lcd_32_to_8_bits_dfa_a_data2_4_52q = 0;
+		lcd_32_to_8_bits_dfa_a_data2_5_51q = 0;
+		lcd_32_to_8_bits_dfa_a_data2_6_50q = 0;
+		lcd_32_to_8_bits_dfa_a_data2_7_49q = 0;
+		lcd_32_to_8_bits_dfa_a_empty_0_60q = 0;
+		lcd_32_to_8_bits_dfa_a_empty_1_59q = 0;
+		lcd_32_to_8_bits_dfa_a_endofpacket_58q = 0;
+		lcd_32_to_8_bits_dfa_a_startofpacket_57q = 0;
+		lcd_32_to_8_bits_dfa_a_valid_32q = 0;
+	end
+	always @ ( posedge clk or  negedge reset_n)
+	begin
+		if (reset_n == 1'b0) 
+		begin
+			lcd_32_to_8_bits_dfa_a_data0_0_40q <= 0;
+			lcd_32_to_8_bits_dfa_a_data0_1_39q <= 0;
+			lcd_32_to_8_bits_dfa_a_data0_2_38q <= 0;
+			lcd_32_to_8_bits_dfa_a_data0_3_37q <= 0;
+			lcd_32_to_8_bits_dfa_a_data0_4_36q <= 0;
+			lcd_32_to_8_bits_dfa_a_data0_5_35q <= 0;
+			lcd_32_to_8_bits_dfa_a_data0_6_34q <= 0;
+			lcd_32_to_8_bits_dfa_a_data0_7_33q <= 0;
+			lcd_32_to_8_bits_dfa_a_data1_0_48q <= 0;
+			lcd_32_to_8_bits_dfa_a_data1_1_47q <= 0;
+			lcd_32_to_8_bits_dfa_a_data1_2_46q <= 0;
+			lcd_32_to_8_bits_dfa_a_data1_3_45q <= 0;
+			lcd_32_to_8_bits_dfa_a_data1_4_44q <= 0;
+			lcd_32_to_8_bits_dfa_a_data1_5_43q <= 0;
+			lcd_32_to_8_bits_dfa_a_data1_6_42q <= 0;
+			lcd_32_to_8_bits_dfa_a_data1_7_41q <= 0;
+			lcd_32_to_8_bits_dfa_a_data2_0_56q <= 0;
+			lcd_32_to_8_bits_dfa_a_data2_1_55q <= 0;
+			lcd_32_to_8_bits_dfa_a_data2_2_54q <= 0;
+			lcd_32_to_8_bits_dfa_a_data2_3_53q <= 0;
+			lcd_32_to_8_bits_dfa_a_data2_4_52q <= 0;
+			lcd_32_to_8_bits_dfa_a_data2_5_51q <= 0;
+			lcd_32_to_8_bits_dfa_a_data2_6_50q <= 0;
+			lcd_32_to_8_bits_dfa_a_data2_7_49q <= 0;
+			lcd_32_to_8_bits_dfa_a_empty_0_60q <= 0;
+			lcd_32_to_8_bits_dfa_a_empty_1_59q <= 0;
+			lcd_32_to_8_bits_dfa_a_endofpacket_58q <= 0;
+			lcd_32_to_8_bits_dfa_a_startofpacket_57q <= 0;
+			lcd_32_to_8_bits_dfa_a_valid_32q <= 0;
+		end
+		else if  (s_wire_lcd_32_to_8_bits_dfa_in_ready_114_dataout == 1'b1) 
+		begin
+			lcd_32_to_8_bits_dfa_a_data0_0_40q <= in_data[16];
+			lcd_32_to_8_bits_dfa_a_data0_1_39q <= in_data[17];
+			lcd_32_to_8_bits_dfa_a_data0_2_38q <= in_data[18];
+			lcd_32_to_8_bits_dfa_a_data0_3_37q <= in_data[19];
+			lcd_32_to_8_bits_dfa_a_data0_4_36q <= in_data[20];
+			lcd_32_to_8_bits_dfa_a_data0_5_35q <= in_data[21];
+			lcd_32_to_8_bits_dfa_a_data0_6_34q <= in_data[22];
+			lcd_32_to_8_bits_dfa_a_data0_7_33q <= in_data[23];
+			lcd_32_to_8_bits_dfa_a_data1_0_48q <= in_data[8];
+			lcd_32_to_8_bits_dfa_a_data1_1_47q <= in_data[9];
+			lcd_32_to_8_bits_dfa_a_data1_2_46q <= in_data[10];
+			lcd_32_to_8_bits_dfa_a_data1_3_45q <= in_data[11];
+			lcd_32_to_8_bits_dfa_a_data1_4_44q <= in_data[12];
+			lcd_32_to_8_bits_dfa_a_data1_5_43q <= in_data[13];
+			lcd_32_to_8_bits_dfa_a_data1_6_42q <= in_data[14];
+			lcd_32_to_8_bits_dfa_a_data1_7_41q <= in_data[15];
+			lcd_32_to_8_bits_dfa_a_data2_0_56q <= in_data[0];
+			lcd_32_to_8_bits_dfa_a_data2_1_55q <= in_data[1];
+			lcd_32_to_8_bits_dfa_a_data2_2_54q <= in_data[2];
+			lcd_32_to_8_bits_dfa_a_data2_3_53q <= in_data[3];
+			lcd_32_to_8_bits_dfa_a_data2_4_52q <= in_data[4];
+			lcd_32_to_8_bits_dfa_a_data2_5_51q <= in_data[5];
+			lcd_32_to_8_bits_dfa_a_data2_6_50q <= in_data[6];
+			lcd_32_to_8_bits_dfa_a_data2_7_49q <= in_data[7];
+			lcd_32_to_8_bits_dfa_a_empty_0_60q <= wire_lcd_32_to_8_bits_dfa_a_empty_2m_dataout;
+			lcd_32_to_8_bits_dfa_a_empty_1_59q <= wire_lcd_32_to_8_bits_dfa_a_empty_1m_dataout;
+			lcd_32_to_8_bits_dfa_a_endofpacket_58q <= in_endofpacket;
+			lcd_32_to_8_bits_dfa_a_startofpacket_57q <= in_startofpacket;
+			lcd_32_to_8_bits_dfa_a_valid_32q <= in_valid;
+		end
+	end
+	and(wire_lcd_32_to_8_bits_dfa_a_empty_1m_dataout, in_empty[1], in_endofpacket);
+	and(wire_lcd_32_to_8_bits_dfa_a_empty_2m_dataout, in_empty[0], in_endofpacket);
+	and(wire_lcd_32_to_8_bits_dfa_a_ready_69m_dataout, s_wire_lcd_32_to_8_bits_dfa_always4_64_dataout, lcd_32_to_8_bits_dfa_a_valid_32q);
+	and(wire_lcd_32_to_8_bits_dfa_a_ready_72m_dataout, wire_lcd_32_to_8_bits_dfa_a_ready_69m_dataout, s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout);
+	and(wire_lcd_32_to_8_bits_dfa_a_ready_79m_dataout, s_wire_lcd_32_to_8_bits_dfa_always4_74_dataout, lcd_32_to_8_bits_dfa_a_valid_32q);
+	and(wire_lcd_32_to_8_bits_dfa_a_ready_82m_dataout, wire_lcd_32_to_8_bits_dfa_a_ready_79m_dataout, s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout);
+	and(wire_lcd_32_to_8_bits_dfa_b_empty_65m_dataout, lcd_32_to_8_bits_dfa_a_empty_0_60q, s_wire_lcd_32_to_8_bits_dfa_always4_64_dataout);
+	and(wire_lcd_32_to_8_bits_dfa_b_empty_68m_dataout, wire_lcd_32_to_8_bits_dfa_b_empty_65m_dataout, lcd_32_to_8_bits_dfa_a_valid_32q);
+	and(wire_lcd_32_to_8_bits_dfa_b_empty_71m_dataout, wire_lcd_32_to_8_bits_dfa_b_empty_68m_dataout, s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout);
+	and(wire_lcd_32_to_8_bits_dfa_b_empty_76m_dataout, wire_lcd_32_to_8_bits_dfa_add0_75_o[1], s_wire_lcd_32_to_8_bits_dfa_always4_74_dataout);
+	and(wire_lcd_32_to_8_bits_dfa_b_empty_78m_dataout, wire_lcd_32_to_8_bits_dfa_b_empty_76m_dataout, lcd_32_to_8_bits_dfa_a_valid_32q);
+	and(wire_lcd_32_to_8_bits_dfa_b_empty_81m_dataout, wire_lcd_32_to_8_bits_dfa_b_empty_78m_dataout, s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout);
+	and(wire_lcd_32_to_8_bits_dfa_b_empty_87m_dataout, lcd_32_to_8_bits_dfa_a_empty_0_60q, s_wire_lcd_32_to_8_bits_dfa_always4_86_dataout);
+	and(wire_lcd_32_to_8_bits_dfa_b_empty_90m_dataout, wire_lcd_32_to_8_bits_dfa_b_empty_87m_dataout, lcd_32_to_8_bits_dfa_a_valid_32q);
+	and(wire_lcd_32_to_8_bits_dfa_b_empty_95m_dataout, wire_lcd_32_to_8_bits_dfa_b_empty_90m_dataout, s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout);
+	and(wire_lcd_32_to_8_bits_dfa_b_endofpacket_91m_dataout, s_wire_lcd_32_to_8_bits_dfa_always4_86_dataout, lcd_32_to_8_bits_dfa_a_valid_32q);
+	and(wire_lcd_32_to_8_bits_dfa_b_endofpacket_96m_dataout, wire_lcd_32_to_8_bits_dfa_b_endofpacket_91m_dataout, s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout);
+	and(wire_lcd_32_to_8_bits_dfa_b_startofpacket_106m_dataout, lcd_32_to_8_bits_dfa_a_startofpacket_57q, wire_lcd_32_to_8_bits_dfa_decoder0_105_o[0]);
+	and(wire_lcd_32_to_8_bits_dfa_b_valid_92m_dataout, lcd_32_to_8_bits_dfa_a_valid_32q, s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout);
+	assign		wire_lcd_32_to_8_bits_dfa_new_state_67m_dataout = (lcd_32_to_8_bits_dfa_a_valid_32q === 1'b1) ? (~ s_wire_lcd_32_to_8_bits_dfa_always4_64_dataout) : lcd_32_to_8_bits_dfa_state_register_0_128q;
+	assign		wire_lcd_32_to_8_bits_dfa_new_state_70m_dataout = (s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout === 1'b1) ? wire_lcd_32_to_8_bits_dfa_new_state_67m_dataout : lcd_32_to_8_bits_dfa_state_register_0_128q;
+	assign		wire_lcd_32_to_8_bits_dfa_new_state_77m_dataout = (lcd_32_to_8_bits_dfa_a_valid_32q === 1'b1) ? (~ s_wire_lcd_32_to_8_bits_dfa_always4_74_dataout) : lcd_32_to_8_bits_dfa_state_register_1_61q;
+	assign		wire_lcd_32_to_8_bits_dfa_new_state_80m_dataout = (s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout === 1'b1) ? wire_lcd_32_to_8_bits_dfa_new_state_77m_dataout : lcd_32_to_8_bits_dfa_state_register_1_61q;
+	and(wire_lcd_32_to_8_bits_dfa_new_state_88m_dataout, lcd_32_to_8_bits_dfa_state_register_1_61q, ~(lcd_32_to_8_bits_dfa_a_valid_32q));
+	and(wire_lcd_32_to_8_bits_dfa_new_state_89m_dataout, lcd_32_to_8_bits_dfa_state_register_0_128q, ~(lcd_32_to_8_bits_dfa_a_valid_32q));
+	assign		wire_lcd_32_to_8_bits_dfa_new_state_93m_dataout = (s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout === 1'b1) ? wire_lcd_32_to_8_bits_dfa_new_state_88m_dataout : lcd_32_to_8_bits_dfa_state_register_1_61q;
+	assign		wire_lcd_32_to_8_bits_dfa_new_state_94m_dataout = (s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout === 1'b1) ? wire_lcd_32_to_8_bits_dfa_new_state_89m_dataout : lcd_32_to_8_bits_dfa_state_register_0_128q;
+	assign		wire_lcd_32_to_8_bits_dfa_out_valid_reg0_186m_dataout = (s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout === 1'b1) ? wire_lcd_32_to_8_bits_dfa_mux9_108_o : lcd_32_to_8_bits_dfa_out_valid_reg0_130q;
+	oper_add   lcd_32_to_8_bits_dfa_add0_75
+	( 
+	.a({lcd_32_to_8_bits_dfa_a_empty_1_59q, lcd_32_to_8_bits_dfa_a_empty_0_60q, 1'b1}),
+	.b({1'b1, 1'b0, 1'b1}),
+	.cin(1'b0),
+	.cout(),
+	.o(wire_lcd_32_to_8_bits_dfa_add0_75_o));
+	defparam
+		lcd_32_to_8_bits_dfa_add0_75.sgate_representation = 0,
+		lcd_32_to_8_bits_dfa_add0_75.width_a = 3,
+		lcd_32_to_8_bits_dfa_add0_75.width_b = 3,
+		lcd_32_to_8_bits_dfa_add0_75.width_o = 3;
+	oper_decoder   lcd_32_to_8_bits_dfa_decoder0_105
+	( 
+	.i({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}),
+	.o(wire_lcd_32_to_8_bits_dfa_decoder0_105_o));
+	defparam
+		lcd_32_to_8_bits_dfa_decoder0_105.width_i = 2,
+		lcd_32_to_8_bits_dfa_decoder0_105.width_o = 4;
+	oper_less_than   lcd_32_to_8_bits_dfa_lessthan0_63
+	( 
+	.a({1'b1, 1'b0}),
+	.b({lcd_32_to_8_bits_dfa_a_empty_1_59q, lcd_32_to_8_bits_dfa_a_empty_0_60q}),
+	.cin(1'b1),
+	.o(wire_lcd_32_to_8_bits_dfa_lessthan0_63_o));
+	defparam
+		lcd_32_to_8_bits_dfa_lessthan0_63.sgate_representation = 0,
+		lcd_32_to_8_bits_dfa_lessthan0_63.width_a = 2,
+		lcd_32_to_8_bits_dfa_lessthan0_63.width_b = 2;
+	oper_less_than   lcd_32_to_8_bits_dfa_lessthan1_73
+	( 
+	.a({1'b0, 1'b1}),
+	.b({lcd_32_to_8_bits_dfa_a_empty_1_59q, lcd_32_to_8_bits_dfa_a_empty_0_60q}),
+	.cin(1'b1),
+	.o(wire_lcd_32_to_8_bits_dfa_lessthan1_73_o));
+	defparam
+		lcd_32_to_8_bits_dfa_lessthan1_73.sgate_representation = 0,
+		lcd_32_to_8_bits_dfa_lessthan1_73.width_a = 2,
+		lcd_32_to_8_bits_dfa_lessthan1_73.width_b = 2;
+	oper_less_than   lcd_32_to_8_bits_dfa_lessthan2_85
+	( 
+	.a({2{1'b0}}),
+	.b({lcd_32_to_8_bits_dfa_a_empty_1_59q, lcd_32_to_8_bits_dfa_a_empty_0_60q}),
+	.cin(1'b1),
+	.o(wire_lcd_32_to_8_bits_dfa_lessthan2_85_o));
+	defparam
+		lcd_32_to_8_bits_dfa_lessthan2_85.sgate_representation = 0,
+		lcd_32_to_8_bits_dfa_lessthan2_85.width_a = 2,
+		lcd_32_to_8_bits_dfa_lessthan2_85.width_b = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux0_97
+	( 
+	.data({1'b0, lcd_32_to_8_bits_dfa_a_data2_7_49q, lcd_32_to_8_bits_dfa_a_data1_7_41q, lcd_32_to_8_bits_dfa_a_data0_7_33q}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux0_97_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux0_97.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux0_97.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux10_109
+	( 
+	.data({lcd_32_to_8_bits_dfa_state_register_1_61q, wire_lcd_32_to_8_bits_dfa_new_state_93m_dataout, wire_lcd_32_to_8_bits_dfa_new_state_80m_dataout, wire_lcd_32_to_8_bits_dfa_new_state_93m_dataout}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux10_109_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux10_109.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux10_109.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux11_110
+	( 
+	.data({lcd_32_to_8_bits_dfa_state_register_0_128q, {2{wire_lcd_32_to_8_bits_dfa_new_state_94m_dataout}}, wire_lcd_32_to_8_bits_dfa_new_state_70m_dataout}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux11_110_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux11_110.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux11_110.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux12_111
+	( 
+	.data({1'b0, wire_lcd_32_to_8_bits_dfa_b_empty_95m_dataout, wire_lcd_32_to_8_bits_dfa_b_empty_81m_dataout, wire_lcd_32_to_8_bits_dfa_b_empty_71m_dataout}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux12_111_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux12_111.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux12_111.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux13_112
+	( 
+	.data({1'b0, wire_lcd_32_to_8_bits_dfa_b_endofpacket_96m_dataout, wire_lcd_32_to_8_bits_dfa_a_ready_82m_dataout, wire_lcd_32_to_8_bits_dfa_a_ready_72m_dataout}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux13_112_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux13_112.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux13_112.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux1_98
+	( 
+	.data({1'b0, lcd_32_to_8_bits_dfa_a_data2_6_50q, lcd_32_to_8_bits_dfa_a_data1_6_42q, lcd_32_to_8_bits_dfa_a_data0_6_34q}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux1_98_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux1_98.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux1_98.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux2_99
+	( 
+	.data({1'b0, lcd_32_to_8_bits_dfa_a_data2_5_51q, lcd_32_to_8_bits_dfa_a_data1_5_43q, lcd_32_to_8_bits_dfa_a_data0_5_35q}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux2_99_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux2_99.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux2_99.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux3_100
+	( 
+	.data({1'b0, lcd_32_to_8_bits_dfa_a_data2_4_52q, lcd_32_to_8_bits_dfa_a_data1_4_44q, lcd_32_to_8_bits_dfa_a_data0_4_36q}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux3_100_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux3_100.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux3_100.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux4_101
+	( 
+	.data({1'b0, lcd_32_to_8_bits_dfa_a_data2_3_53q, lcd_32_to_8_bits_dfa_a_data1_3_45q, lcd_32_to_8_bits_dfa_a_data0_3_37q}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux4_101_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux4_101.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux4_101.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux5_102
+	( 
+	.data({1'b0, lcd_32_to_8_bits_dfa_a_data2_2_54q, lcd_32_to_8_bits_dfa_a_data1_2_46q, lcd_32_to_8_bits_dfa_a_data0_2_38q}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux5_102_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux5_102.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux5_102.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux6_103
+	( 
+	.data({1'b0, lcd_32_to_8_bits_dfa_a_data2_1_55q, lcd_32_to_8_bits_dfa_a_data1_1_47q, lcd_32_to_8_bits_dfa_a_data0_1_39q}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux6_103_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux6_103.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux6_103.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux7_104
+	( 
+	.data({1'b0, lcd_32_to_8_bits_dfa_a_data2_0_56q, lcd_32_to_8_bits_dfa_a_data1_0_48q, lcd_32_to_8_bits_dfa_a_data0_0_40q}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux7_104_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux7_104.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux7_104.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux8_107
+	( 
+	.data({1'b0, s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout, wire_lcd_32_to_8_bits_dfa_a_ready_82m_dataout, wire_lcd_32_to_8_bits_dfa_a_ready_72m_dataout}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux8_107_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux8_107.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux8_107.width_sel = 2;
+	oper_mux   lcd_32_to_8_bits_dfa_mux9_108
+	( 
+	.data({1'b0, {3{wire_lcd_32_to_8_bits_dfa_b_valid_92m_dataout}}}),
+	.o(wire_lcd_32_to_8_bits_dfa_mux9_108_o),
+	.sel({lcd_32_to_8_bits_dfa_state_register_1_61q, lcd_32_to_8_bits_dfa_state_register_0_128q}));
+	defparam
+		lcd_32_to_8_bits_dfa_mux9_108.width_data = 4,
+		lcd_32_to_8_bits_dfa_mux9_108.width_sel = 2;
+	assign
+		in_ready = s_wire_lcd_32_to_8_bits_dfa_in_ready_114_dataout,
+		out_data = {lcd_32_to_8_bits_dfa_out_data_7_reg0_131q, lcd_32_to_8_bits_dfa_out_data_6_reg0_132q, lcd_32_to_8_bits_dfa_out_data_5_reg0_133q, lcd_32_to_8_bits_dfa_out_data_4_reg0_134q, lcd_32_to_8_bits_dfa_out_data_3_reg0_135q, lcd_32_to_8_bits_dfa_out_data_2_reg0_136q, lcd_32_to_8_bits_dfa_out_data_1_reg0_137q, lcd_32_to_8_bits_dfa_out_data_0_reg0_138q},
+		out_empty = lcd_32_to_8_bits_dfa_out_empty_reg0_129q,
+		out_endofpacket = lcd_32_to_8_bits_dfa_out_endofpacket_reg0_140q,
+		out_startofpacket = lcd_32_to_8_bits_dfa_out_startofpacket_reg0_139q,
+		out_valid = lcd_32_to_8_bits_dfa_out_valid_reg0_130q,
+		s_wire_lcd_32_to_8_bits_dfa_always4_64_dataout = (lcd_32_to_8_bits_dfa_a_endofpacket_58q & wire_lcd_32_to_8_bits_dfa_lessthan0_63_o),
+		s_wire_lcd_32_to_8_bits_dfa_always4_74_dataout = (lcd_32_to_8_bits_dfa_a_endofpacket_58q & wire_lcd_32_to_8_bits_dfa_lessthan1_73_o),
+		s_wire_lcd_32_to_8_bits_dfa_always4_84_dataout = ((~ lcd_32_to_8_bits_dfa_out_valid_reg0_130q) | out_ready),
+		s_wire_lcd_32_to_8_bits_dfa_always4_86_dataout = (lcd_32_to_8_bits_dfa_a_endofpacket_58q & wire_lcd_32_to_8_bits_dfa_lessthan2_85_o),
+		s_wire_lcd_32_to_8_bits_dfa_in_ready_114_dataout = ((~ lcd_32_to_8_bits_dfa_a_valid_32q) | wire_lcd_32_to_8_bits_dfa_mux8_107_o),
+		s_wire_vcc = 1'b1;
+endmodule //lcd_32_to_8_bits_dfa
+//synopsys translate_on
+//VALID FILE

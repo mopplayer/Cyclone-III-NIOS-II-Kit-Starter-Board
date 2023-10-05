@@ -1,0 +1,3034 @@
+-- Copyright (C) 1991-2006 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1_CLK is vga_mode3_decode:u1|CLK at LC_X10_Y6_N2
+--operation mode is normal
+
+B1_CLK_lut_out = B1_v_clr & (!B1_MODE_33[1] # !B1_MODE_33[0]) # !B1_v_clr & (B1_CLK);
+B1_CLK = DFFEAS(B1_CLK_lut_out, !GLOBAL(HC_VGA_CLOCK), VCC, , , , , , );
+
+
+--B1L58 is vga_mode3_decode:u1|VGA_R[0]~110 at LC_X16_Y4_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[0]_qfbk = B1_VGA_R_o[0];
+B1L58 = HC_VGA_BLANK & (B1_VGA_R_o[0]_qfbk);
+
+--B1_VGA_R_o[0] is vga_mode3_decode:u1|VGA_R_o[0] at LC_X16_Y4_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[0] = DFFEAS(B1L58, GLOBAL(HC_VGA_CLOCK), VCC, , B1L2, HC_VGA_DATA[0], , , VCC);
+
+
+--B1L59 is vga_mode3_decode:u1|VGA_R[1]~111 at LC_X15_Y4_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[1]_qfbk = B1_VGA_R_o[1];
+B1L59 = HC_VGA_BLANK & B1_VGA_R_o[1]_qfbk;
+
+--B1_VGA_R_o[1] is vga_mode3_decode:u1|VGA_R_o[1] at LC_X15_Y4_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[1] = DFFEAS(B1L59, GLOBAL(HC_VGA_CLOCK), VCC, , B1L2, HC_VGA_DATA[1], , , VCC);
+
+
+--B1L60 is vga_mode3_decode:u1|VGA_R[2]~112 at LC_X17_Y4_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[2]_qfbk = B1_VGA_R_o[2];
+B1L60 = HC_VGA_BLANK & B1_VGA_R_o[2]_qfbk;
+
+--B1_VGA_R_o[2] is vga_mode3_decode:u1|VGA_R_o[2] at LC_X17_Y4_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[2] = DFFEAS(B1L60, GLOBAL(HC_VGA_CLOCK), VCC, , B1L2, HC_VGA_DATA[2], , , VCC);
+
+
+--B1L61 is vga_mode3_decode:u1|VGA_R[3]~113 at LC_X16_Y4_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[3]_qfbk = B1_VGA_R_o[3];
+B1L61 = HC_VGA_BLANK & B1_VGA_R_o[3]_qfbk;
+
+--B1_VGA_R_o[3] is vga_mode3_decode:u1|VGA_R_o[3] at LC_X16_Y4_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[3] = DFFEAS(B1L61, GLOBAL(HC_VGA_CLOCK), VCC, , B1L2, HC_VGA_DATA[3], , , VCC);
+
+
+--B1L62 is vga_mode3_decode:u1|VGA_R[4]~114 at LC_X15_Y4_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[4]_qfbk = B1_VGA_R_o[4];
+B1L62 = HC_VGA_BLANK & (B1_VGA_R_o[4]_qfbk);
+
+--B1_VGA_R_o[4] is vga_mode3_decode:u1|VGA_R_o[4] at LC_X15_Y4_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[4] = DFFEAS(B1L62, GLOBAL(HC_VGA_CLOCK), VCC, , B1L2, HC_VGA_DATA[4], , , VCC);
+
+
+--B1L63 is vga_mode3_decode:u1|VGA_R[5]~115 at LC_X17_Y4_N1
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[5]_qfbk = B1_VGA_R_o[5];
+B1L63 = HC_VGA_BLANK & B1_VGA_R_o[5]_qfbk;
+
+--B1_VGA_R_o[5] is vga_mode3_decode:u1|VGA_R_o[5] at LC_X17_Y4_N1
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[5] = DFFEAS(B1L63, GLOBAL(HC_VGA_CLOCK), VCC, , B1L2, HC_VGA_DATA[5], , , VCC);
+
+
+--B1L64 is vga_mode3_decode:u1|VGA_R[6]~116 at LC_X17_Y4_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[6]_qfbk = B1_VGA_R_o[6];
+B1L64 = HC_VGA_BLANK & B1_VGA_R_o[6]_qfbk;
+
+--B1_VGA_R_o[6] is vga_mode3_decode:u1|VGA_R_o[6] at LC_X17_Y4_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[6] = DFFEAS(B1L64, GLOBAL(HC_VGA_CLOCK), VCC, , B1L2, HC_VGA_DATA[6], , , VCC);
+
+
+--B1L65 is vga_mode3_decode:u1|VGA_R[7]~117 at LC_X17_Y4_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[7]_qfbk = B1_VGA_R_o[7];
+B1L65 = HC_VGA_BLANK & B1_VGA_R_o[7]_qfbk;
+
+--B1_VGA_R_o[7] is vga_mode3_decode:u1|VGA_R_o[7] at LC_X17_Y4_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[7] = DFFEAS(B1L65, GLOBAL(HC_VGA_CLOCK), VCC, , B1L2, HC_VGA_DATA[7], , , VCC);
+
+
+--B1L66 is vga_mode3_decode:u1|VGA_R[8]~118 at LC_X17_Y4_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[8]_qfbk = B1_VGA_R_o[8];
+B1L66 = HC_VGA_BLANK & B1_VGA_R_o[8]_qfbk;
+
+--B1_VGA_R_o[8] is vga_mode3_decode:u1|VGA_R_o[8] at LC_X17_Y4_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[8] = DFFEAS(B1L66, GLOBAL(HC_VGA_CLOCK), VCC, , B1L2, HC_VGA_DATA[8], , , VCC);
+
+
+--B1L67 is vga_mode3_decode:u1|VGA_R[9]~119 at LC_X17_Y4_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[9]_qfbk = B1_VGA_R_o[9];
+B1L67 = HC_VGA_BLANK & B1_VGA_R_o[9]_qfbk;
+
+--B1_VGA_R_o[9] is vga_mode3_decode:u1|VGA_R_o[9] at LC_X17_Y4_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_R_o[9] = DFFEAS(B1L67, GLOBAL(HC_VGA_CLOCK), VCC, , B1L2, HC_VGA_DATA[9], , , VCC);
+
+
+--B1L37 is vga_mode3_decode:u1|VGA_G[0]~110 at LC_X15_Y4_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[0]_qfbk = B1_VGA_G_o[0];
+B1L37 = HC_VGA_BLANK & (B1_VGA_G_o[0]_qfbk);
+
+--B1_VGA_G_o[0] is vga_mode3_decode:u1|VGA_G_o[0] at LC_X15_Y4_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[0] = DFFEAS(B1L37, GLOBAL(HC_VGA_CLOCK), VCC, , B1L3, HC_VGA_DATA[0], , , VCC);
+
+
+--B1L38 is vga_mode3_decode:u1|VGA_G[1]~111 at LC_X15_Y4_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[1]_qfbk = B1_VGA_G_o[1];
+B1L38 = HC_VGA_BLANK & (B1_VGA_G_o[1]_qfbk);
+
+--B1_VGA_G_o[1] is vga_mode3_decode:u1|VGA_G_o[1] at LC_X15_Y4_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[1] = DFFEAS(B1L38, GLOBAL(HC_VGA_CLOCK), VCC, , B1L3, HC_VGA_DATA[1], , , VCC);
+
+
+--B1L39 is vga_mode3_decode:u1|VGA_G[2]~112 at LC_X14_Y4_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[2]_qfbk = B1_VGA_G_o[2];
+B1L39 = HC_VGA_BLANK & (B1_VGA_G_o[2]_qfbk);
+
+--B1_VGA_G_o[2] is vga_mode3_decode:u1|VGA_G_o[2] at LC_X14_Y4_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[2] = DFFEAS(B1L39, GLOBAL(HC_VGA_CLOCK), VCC, , B1L3, HC_VGA_DATA[2], , , VCC);
+
+
+--B1L40 is vga_mode3_decode:u1|VGA_G[3]~113 at LC_X14_Y4_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[3]_qfbk = B1_VGA_G_o[3];
+B1L40 = HC_VGA_BLANK & (B1_VGA_G_o[3]_qfbk);
+
+--B1_VGA_G_o[3] is vga_mode3_decode:u1|VGA_G_o[3] at LC_X14_Y4_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[3] = DFFEAS(B1L40, GLOBAL(HC_VGA_CLOCK), VCC, , B1L3, HC_VGA_DATA[3], , , VCC);
+
+
+--B1L41 is vga_mode3_decode:u1|VGA_G[4]~114 at LC_X15_Y4_N1
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[4]_qfbk = B1_VGA_G_o[4];
+B1L41 = HC_VGA_BLANK & (B1_VGA_G_o[4]_qfbk);
+
+--B1_VGA_G_o[4] is vga_mode3_decode:u1|VGA_G_o[4] at LC_X15_Y4_N1
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[4] = DFFEAS(B1L41, GLOBAL(HC_VGA_CLOCK), VCC, , B1L3, HC_VGA_DATA[4], , , VCC);
+
+
+--B1L42 is vga_mode3_decode:u1|VGA_G[5]~115 at LC_X17_Y4_N5
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[5]_qfbk = B1_VGA_G_o[5];
+B1L42 = HC_VGA_BLANK & (B1_VGA_G_o[5]_qfbk);
+
+--B1_VGA_G_o[5] is vga_mode3_decode:u1|VGA_G_o[5] at LC_X17_Y4_N5
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[5] = DFFEAS(B1L42, GLOBAL(HC_VGA_CLOCK), VCC, , B1L3, HC_VGA_DATA[5], , , VCC);
+
+
+--B1L43 is vga_mode3_decode:u1|VGA_G[6]~116 at LC_X17_Y4_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[6]_qfbk = B1_VGA_G_o[6];
+B1L43 = HC_VGA_BLANK & B1_VGA_G_o[6]_qfbk;
+
+--B1_VGA_G_o[6] is vga_mode3_decode:u1|VGA_G_o[6] at LC_X17_Y4_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[6] = DFFEAS(B1L43, GLOBAL(HC_VGA_CLOCK), VCC, , B1L3, HC_VGA_DATA[6], , , VCC);
+
+
+--B1L44 is vga_mode3_decode:u1|VGA_G[7]~117 at LC_X14_Y4_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[7]_qfbk = B1_VGA_G_o[7];
+B1L44 = HC_VGA_BLANK & B1_VGA_G_o[7]_qfbk;
+
+--B1_VGA_G_o[7] is vga_mode3_decode:u1|VGA_G_o[7] at LC_X14_Y4_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[7] = DFFEAS(B1L44, GLOBAL(HC_VGA_CLOCK), VCC, , B1L3, HC_VGA_DATA[7], , , VCC);
+
+
+--B1L45 is vga_mode3_decode:u1|VGA_G[8]~118 at LC_X17_Y4_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[8]_qfbk = B1_VGA_G_o[8];
+B1L45 = HC_VGA_BLANK & (B1_VGA_G_o[8]_qfbk);
+
+--B1_VGA_G_o[8] is vga_mode3_decode:u1|VGA_G_o[8] at LC_X17_Y4_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[8] = DFFEAS(B1L45, GLOBAL(HC_VGA_CLOCK), VCC, , B1L3, HC_VGA_DATA[8], , , VCC);
+
+
+--B1L46 is vga_mode3_decode:u1|VGA_G[9]~119 at LC_X17_Y4_N0
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[9]_qfbk = B1_VGA_G_o[9];
+B1L46 = HC_VGA_BLANK & (B1_VGA_G_o[9]_qfbk);
+
+--B1_VGA_G_o[9] is vga_mode3_decode:u1|VGA_G_o[9] at LC_X17_Y4_N0
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_G_o[9] = DFFEAS(B1L46, GLOBAL(HC_VGA_CLOCK), VCC, , B1L3, HC_VGA_DATA[9], , , VCC);
+
+
+--B1L16 is vga_mode3_decode:u1|VGA_B[0]~110 at LC_X14_Y4_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[0]_qfbk = B1_VGA_B_o[0];
+B1L16 = HC_VGA_BLANK & B1_VGA_B_o[0]_qfbk;
+
+--B1_VGA_B_o[0] is vga_mode3_decode:u1|VGA_B_o[0] at LC_X14_Y4_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[0] = DFFEAS(B1L16, GLOBAL(HC_VGA_CLOCK), VCC, , B1L4, HC_VGA_DATA[0], , , VCC);
+
+
+--B1L17 is vga_mode3_decode:u1|VGA_B[1]~111 at LC_X14_Y4_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[1]_qfbk = B1_VGA_B_o[1];
+B1L17 = HC_VGA_BLANK & (B1_VGA_B_o[1]_qfbk);
+
+--B1_VGA_B_o[1] is vga_mode3_decode:u1|VGA_B_o[1] at LC_X14_Y4_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[1] = DFFEAS(B1L17, GLOBAL(HC_VGA_CLOCK), VCC, , B1L4, HC_VGA_DATA[1], , , VCC);
+
+
+--B1L18 is vga_mode3_decode:u1|VGA_B[2]~112 at LC_X14_Y4_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[2]_qfbk = B1_VGA_B_o[2];
+B1L18 = HC_VGA_BLANK & (B1_VGA_B_o[2]_qfbk);
+
+--B1_VGA_B_o[2] is vga_mode3_decode:u1|VGA_B_o[2] at LC_X14_Y4_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[2] = DFFEAS(B1L18, GLOBAL(HC_VGA_CLOCK), VCC, , B1L4, HC_VGA_DATA[2], , , VCC);
+
+
+--B1L19 is vga_mode3_decode:u1|VGA_B[3]~113 at LC_X14_Y4_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[3]_qfbk = B1_VGA_B_o[3];
+B1L19 = HC_VGA_BLANK & (B1_VGA_B_o[3]_qfbk);
+
+--B1_VGA_B_o[3] is vga_mode3_decode:u1|VGA_B_o[3] at LC_X14_Y4_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[3] = DFFEAS(B1L19, GLOBAL(HC_VGA_CLOCK), VCC, , B1L4, HC_VGA_DATA[3], , , VCC);
+
+
+--B1L20 is vga_mode3_decode:u1|VGA_B[4]~114 at LC_X16_Y5_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[4]_qfbk = B1_VGA_B_o[4];
+B1L20 = HC_VGA_BLANK & B1_VGA_B_o[4]_qfbk;
+
+--B1_VGA_B_o[4] is vga_mode3_decode:u1|VGA_B_o[4] at LC_X16_Y5_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[4] = DFFEAS(B1L20, GLOBAL(HC_VGA_CLOCK), VCC, , B1L4, HC_VGA_DATA[4], , , VCC);
+
+
+--B1L21 is vga_mode3_decode:u1|VGA_B[5]~115 at LC_X16_Y5_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[5]_qfbk = B1_VGA_B_o[5];
+B1L21 = HC_VGA_BLANK & B1_VGA_B_o[5]_qfbk;
+
+--B1_VGA_B_o[5] is vga_mode3_decode:u1|VGA_B_o[5] at LC_X16_Y5_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[5] = DFFEAS(B1L21, GLOBAL(HC_VGA_CLOCK), VCC, , B1L4, HC_VGA_DATA[5], , , VCC);
+
+
+--B1L22 is vga_mode3_decode:u1|VGA_B[6]~116 at LC_X16_Y6_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[6]_qfbk = B1_VGA_B_o[6];
+B1L22 = HC_VGA_BLANK & B1_VGA_B_o[6]_qfbk;
+
+--B1_VGA_B_o[6] is vga_mode3_decode:u1|VGA_B_o[6] at LC_X16_Y6_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[6] = DFFEAS(B1L22, GLOBAL(HC_VGA_CLOCK), VCC, , B1L4, HC_VGA_DATA[6], , , VCC);
+
+
+--B1L23 is vga_mode3_decode:u1|VGA_B[7]~117 at LC_X16_Y5_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[7]_qfbk = B1_VGA_B_o[7];
+B1L23 = HC_VGA_BLANK & B1_VGA_B_o[7]_qfbk;
+
+--B1_VGA_B_o[7] is vga_mode3_decode:u1|VGA_B_o[7] at LC_X16_Y5_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[7] = DFFEAS(B1L23, GLOBAL(HC_VGA_CLOCK), VCC, , B1L4, HC_VGA_DATA[7], , , VCC);
+
+
+--B1L24 is vga_mode3_decode:u1|VGA_B[8]~118 at LC_X16_Y6_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[8]_qfbk = B1_VGA_B_o[8];
+B1L24 = HC_VGA_BLANK & B1_VGA_B_o[8]_qfbk;
+
+--B1_VGA_B_o[8] is vga_mode3_decode:u1|VGA_B_o[8] at LC_X16_Y6_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[8] = DFFEAS(B1L24, GLOBAL(HC_VGA_CLOCK), VCC, , B1L4, HC_VGA_DATA[8], , , VCC);
+
+
+--B1L25 is vga_mode3_decode:u1|VGA_B[9]~119 at LC_X16_Y7_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[9]_qfbk = B1_VGA_B_o[9];
+B1L25 = HC_VGA_BLANK & B1_VGA_B_o[9]_qfbk;
+
+--B1_VGA_B_o[9] is vga_mode3_decode:u1|VGA_B_o[9] at LC_X16_Y7_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_VGA_B_o[9] = DFFEAS(B1L25, GLOBAL(HC_VGA_CLOCK), VCC, , B1L4, HC_VGA_DATA[9], , , VCC);
+
+
+--D1_LCD_R[0] is LCD_DATA_DECODE:u3|LCD_R[0] at LC_X1_Y10_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_R[0]_lut_out = GND;
+D1_LCD_R[0] = DFFEAS(D1_LCD_R[0]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_R[0], , , VCC);
+
+
+--D1_LCD_R[1] is LCD_DATA_DECODE:u3|LCD_R[1] at LC_X1_Y10_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_R[1]_lut_out = GND;
+D1_LCD_R[1] = DFFEAS(D1_LCD_R[1]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_R[1], , , VCC);
+
+
+--D1_LCD_R[2] is LCD_DATA_DECODE:u3|LCD_R[2] at LC_X1_Y9_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_R[2]_lut_out = GND;
+D1_LCD_R[2] = DFFEAS(D1_LCD_R[2]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_R[2], , , VCC);
+
+
+--D1_LCD_R[3] is LCD_DATA_DECODE:u3|LCD_R[3] at LC_X1_Y9_N8
+--operation mode is normal
+
+D1_LCD_R[3]_lut_out = D1_mLCD_R[3];
+D1_LCD_R[3] = DFFEAS(D1_LCD_R[3]_lut_out, GLOBAL(E1L7), VCC, , , , , , );
+
+
+--D1_LCD_R[4] is LCD_DATA_DECODE:u3|LCD_R[4] at LC_X2_Y9_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_R[4]_lut_out = GND;
+D1_LCD_R[4] = DFFEAS(D1_LCD_R[4]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_R[4], , , VCC);
+
+
+--D1_LCD_R[5] is LCD_DATA_DECODE:u3|LCD_R[5] at LC_X1_Y8_N7
+--operation mode is normal
+
+D1_LCD_R[5]_lut_out = D1_mLCD_R[5];
+D1_LCD_R[5] = DFFEAS(D1_LCD_R[5]_lut_out, GLOBAL(E1L7), VCC, , , , , , );
+
+
+--D1_LCD_R[6] is LCD_DATA_DECODE:u3|LCD_R[6] at LC_X1_Y9_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_R[6]_lut_out = GND;
+D1_LCD_R[6] = DFFEAS(D1_LCD_R[6]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_R[6], , , VCC);
+
+
+--D1_LCD_R[7] is LCD_DATA_DECODE:u3|LCD_R[7] at LC_X1_Y8_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_R[7]_lut_out = GND;
+D1_LCD_R[7] = DFFEAS(D1_LCD_R[7]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_R[7], , , VCC);
+
+
+--D1_LCD_G[0] is LCD_DATA_DECODE:u3|LCD_G[0] at LC_X1_Y12_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_G[0]_lut_out = GND;
+D1_LCD_G[0] = DFFEAS(D1_LCD_G[0]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_G[0], , , VCC);
+
+
+--D1_LCD_G[1] is LCD_DATA_DECODE:u3|LCD_G[1] at LC_X1_Y12_N4
+--operation mode is normal
+
+D1_LCD_G[1]_lut_out = D1_mLCD_G[1];
+D1_LCD_G[1] = DFFEAS(D1_LCD_G[1]_lut_out, GLOBAL(E1L7), VCC, , , , , , );
+
+
+--D1_LCD_G[2] is LCD_DATA_DECODE:u3|LCD_G[2] at LC_X1_Y12_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_G[2]_lut_out = GND;
+D1_LCD_G[2] = DFFEAS(D1_LCD_G[2]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_G[2], , , VCC);
+
+
+--D1_LCD_G[3] is LCD_DATA_DECODE:u3|LCD_G[3] at LC_X1_Y12_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_G[3]_lut_out = GND;
+D1_LCD_G[3] = DFFEAS(D1_LCD_G[3]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_G[3], , , VCC);
+
+
+--D1_LCD_G[4] is LCD_DATA_DECODE:u3|LCD_G[4] at LC_X1_Y11_N9
+--operation mode is normal
+
+D1_LCD_G[4]_lut_out = D1_mLCD_G[4];
+D1_LCD_G[4] = DFFEAS(D1_LCD_G[4]_lut_out, GLOBAL(E1L7), VCC, , , , , , );
+
+
+--D1_LCD_G[5] is LCD_DATA_DECODE:u3|LCD_G[5] at LC_X1_Y11_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_G[5]_lut_out = GND;
+D1_LCD_G[5] = DFFEAS(D1_LCD_G[5]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_G[5], , , VCC);
+
+
+--D1_LCD_G[6] is LCD_DATA_DECODE:u3|LCD_G[6] at LC_X1_Y11_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_G[6]_lut_out = GND;
+D1_LCD_G[6] = DFFEAS(D1_LCD_G[6]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_G[6], , , VCC);
+
+
+--D1_LCD_G[7] is LCD_DATA_DECODE:u3|LCD_G[7] at LC_X1_Y10_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_G[7]_lut_out = GND;
+D1_LCD_G[7] = DFFEAS(D1_LCD_G[7]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_G[7], , , VCC);
+
+
+--D1_LCD_B[0] is LCD_DATA_DECODE:u3|LCD_B[0] at LC_X1_Y13_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_B[0]_lut_out = GND;
+D1_LCD_B[0] = DFFEAS(D1_LCD_B[0]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_B[0], , , VCC);
+
+
+--D1_LCD_B[1] is LCD_DATA_DECODE:u3|LCD_B[1] at LC_X1_Y13_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_B[1]_lut_out = GND;
+D1_LCD_B[1] = DFFEAS(D1_LCD_B[1]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_B[1], , , VCC);
+
+
+--D1_LCD_B[2] is LCD_DATA_DECODE:u3|LCD_B[2] at LC_X1_Y13_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_B[2]_lut_out = GND;
+D1_LCD_B[2] = DFFEAS(D1_LCD_B[2]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_B[2], , , VCC);
+
+
+--D1_LCD_B[3] is LCD_DATA_DECODE:u3|LCD_B[3] at LC_X1_Y13_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_B[3]_lut_out = GND;
+D1_LCD_B[3] = DFFEAS(D1_LCD_B[3]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_B[3], , , VCC);
+
+
+--D1_LCD_B[4] is LCD_DATA_DECODE:u3|LCD_B[4] at LC_X1_Y13_N9
+--operation mode is normal
+
+D1_LCD_B[4]_lut_out = D1_mLCD_B[4];
+D1_LCD_B[4] = DFFEAS(D1_LCD_B[4]_lut_out, GLOBAL(E1L7), VCC, , , , , , );
+
+
+--D1_LCD_B[5] is LCD_DATA_DECODE:u3|LCD_B[5] at LC_X1_Y13_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_B[5]_lut_out = GND;
+D1_LCD_B[5] = DFFEAS(D1_LCD_B[5]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_B[5], , , VCC);
+
+
+--D1_LCD_B[6] is LCD_DATA_DECODE:u3|LCD_B[6] at LC_X1_Y13_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_B[6]_lut_out = GND;
+D1_LCD_B[6] = DFFEAS(D1_LCD_B[6]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_B[6], , , VCC);
+
+
+--D1_LCD_B[7] is LCD_DATA_DECODE:u3|LCD_B[7] at LC_X1_Y12_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_B[7]_lut_out = GND;
+D1_LCD_B[7] = DFFEAS(D1_LCD_B[7]_lut_out, GLOBAL(E1L7), VCC, , , D1_mLCD_B[7], , , VCC);
+
+
+--E1_CLK1[0] is LCD_DATA_DECODE:u3|DIV3:u1|CLK1[0] at LC_X14_Y3_N3
+--operation mode is normal
+
+E1_CLK1[0]_lut_out = !E1_CLK1[1];
+E1_CLK1[0] = DFFEAS(E1_CLK1[0]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--E1_CLK2[1] is LCD_DATA_DECODE:u3|DIV3:u1|CLK2[1] at LC_X14_Y3_N4
+--operation mode is normal
+
+E1_CLK2[1]_lut_out = E1_CLK2[0] & !E1_CLK2[1];
+E1_CLK2[1] = DFFEAS(E1_CLK2[1]_lut_out, !GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--E1_CLK1[1] is LCD_DATA_DECODE:u3|DIV3:u1|CLK1[1] at LC_X14_Y3_N7
+--operation mode is normal
+
+E1_CLK1[1]_lut_out = !E1_CLK1[1] & E1_CLK1[0];
+E1_CLK1[1] = DFFEAS(E1_CLK1[1]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--E1_CLK2[0] is LCD_DATA_DECODE:u3|DIV3:u1|CLK2[0] at LC_X14_Y3_N0
+--operation mode is normal
+
+E1_CLK2[0]_lut_out = !E1_CLK2[1];
+E1_CLK2[0] = DFFEAS(E1_CLK2[0]_lut_out, !GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--E1L7 is LCD_DATA_DECODE:u3|DIV3:u1|CLK_OUT~10 at LC_X14_Y3_N6
+--operation mode is normal
+
+E1L7 = E1_CLK2[1] & !E1_CLK1[1] & (!E1_CLK1[0] # !E1_CLK2[0]) # !E1_CLK2[1] & (!E1_CLK1[0] # !E1_CLK2[0]);
+
+
+--D1_LCD_HD is LCD_DATA_DECODE:u3|LCD_HD at LC_X1_Y11_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_HD_lut_out = GND;
+D1_LCD_HD = DFFEAS(D1_LCD_HD_lut_out, GLOBAL(E1L7), VCC, , , D1_LCD_HD_Delay[4], , , VCC);
+
+
+--D1_LCD_VD is LCD_DATA_DECODE:u3|LCD_VD at LC_X1_Y11_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_VD_lut_out = GND;
+D1_LCD_VD = DFFEAS(D1_LCD_VD_lut_out, GLOBAL(E1L7), VCC, , , D1_LCD_VD_Delay[4], , , VCC);
+
+
+--D1_LCD_DEN is LCD_DATA_DECODE:u3|LCD_DEN at LC_X1_Y12_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_DEN_lut_out = GND;
+D1_LCD_DEN = DFFEAS(D1_LCD_DEN_lut_out, GLOBAL(E1L7), VCC, , , D1_LCD_DEN_Delay[4], , , VCC);
+
+
+--B1_v_clr is vga_mode3_decode:u1|v_clr at LC_X15_Y3_N6
+--operation mode is normal
+
+B1_v_clr_lut_out = HC_VGA_VS & (B1_v_clr) # !HC_VGA_VS & (B1L9 & (!B1L7) # !B1L9 & B1_v_clr);
+B1_v_clr = DFFEAS(B1_v_clr_lut_out, !GLOBAL(HC_VGA_CLOCK), VCC, , , , , , );
+
+
+--B1_MODE_33[0] is vga_mode3_decode:u1|MODE_33[0] at LC_X10_Y6_N5
+--operation mode is normal
+
+B1_MODE_33[0]_lut_out = !B1_MODE_33[0];
+B1_MODE_33[0] = DFFEAS(B1_MODE_33[0]_lut_out, !GLOBAL(HC_VGA_CLOCK), B1_v_clr, , , , , , );
+
+
+--B1_MODE_33[1] is vga_mode3_decode:u1|MODE_33[1] at LC_X10_Y6_N4
+--operation mode is normal
+
+B1_MODE_33[1]_lut_out = B1_MODE_33[0] $ (B1_MODE_33[1]);
+B1_MODE_33[1] = DFFEAS(B1_MODE_33[1]_lut_out, !GLOBAL(HC_VGA_CLOCK), B1_v_clr, , , , , , );
+
+
+--B1_MODE_3[0] is vga_mode3_decode:u1|MODE_3[0] at LC_X16_Y4_N2
+--operation mode is normal
+
+B1_MODE_3[0]_lut_out = !B1_MODE_3[0];
+B1_MODE_3[0] = DFFEAS(B1_MODE_3[0]_lut_out, GLOBAL(HC_VGA_CLOCK), HC_VGA_BLANK, , , , , , );
+
+
+--B1_MODE_3[1] is vga_mode3_decode:u1|MODE_3[1] at LC_X16_Y4_N5
+--operation mode is normal
+
+B1_MODE_3[1]_lut_out = B1_MODE_3[1] $ B1_MODE_3[0];
+B1_MODE_3[1] = DFFEAS(B1_MODE_3[1]_lut_out, GLOBAL(HC_VGA_CLOCK), HC_VGA_BLANK, , , , , , );
+
+
+--B1L2 is vga_mode3_decode:u1|Decoder~34 at LC_X16_Y4_N4
+--operation mode is normal
+
+B1L2 = !B1_MODE_3[1] & B1_MODE_3[0];
+
+
+--B1L3 is vga_mode3_decode:u1|Decoder~35 at LC_X16_Y4_N0
+--operation mode is normal
+
+B1L3 = B1_MODE_3[1] & !B1_MODE_3[0];
+
+
+--B1L4 is vga_mode3_decode:u1|Decoder~36 at LC_X16_Y4_N7
+--operation mode is normal
+
+B1L4 = B1_MODE_3[1] & B1_MODE_3[0];
+
+
+--D1_mLCD_R[0] is LCD_DATA_DECODE:u3|mLCD_R[0] at LC_X10_Y12_N1
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_R[0]_lut_out = GND;
+D1_mLCD_R[0] = DFFEAS(D1_mLCD_R[0]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay2[0], , , VCC);
+
+
+--D1_mLCD_R[1] is LCD_DATA_DECODE:u3|mLCD_R[1] at LC_X8_Y12_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_R[1]_lut_out = GND;
+D1_mLCD_R[1] = DFFEAS(D1_mLCD_R[1]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay2[1], , , VCC);
+
+
+--D1_mLCD_R[2] is LCD_DATA_DECODE:u3|mLCD_R[2] at LC_X8_Y12_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_R[2]_lut_out = GND;
+D1_mLCD_R[2] = DFFEAS(D1_mLCD_R[2]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay2[2], , , VCC);
+
+
+--D1_mLCD_R[3] is LCD_DATA_DECODE:u3|mLCD_R[3] at LC_X10_Y12_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_R[3]_lut_out = GND;
+D1_mLCD_R[3] = DFFEAS(D1_mLCD_R[3]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay2[3], , , VCC);
+
+
+--D1_mLCD_R[4] is LCD_DATA_DECODE:u3|mLCD_R[4] at LC_X9_Y13_N3
+--operation mode is normal
+
+D1_mLCD_R[4]_lut_out = D1_oLCD_RGB_Delay2[4];
+D1_mLCD_R[4] = DFFEAS(D1_mLCD_R[4]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, , , , );
+
+
+--D1_mLCD_R[5] is LCD_DATA_DECODE:u3|mLCD_R[5] at LC_X10_Y12_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_R[5]_lut_out = GND;
+D1_mLCD_R[5] = DFFEAS(D1_mLCD_R[5]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay2[5], , , VCC);
+
+
+--D1_mLCD_R[6] is LCD_DATA_DECODE:u3|mLCD_R[6] at LC_X9_Y13_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_R[6]_lut_out = GND;
+D1_mLCD_R[6] = DFFEAS(D1_mLCD_R[6]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay2[6], , , VCC);
+
+
+--D1_mLCD_R[7] is LCD_DATA_DECODE:u3|mLCD_R[7] at LC_X10_Y12_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_R[7]_lut_out = GND;
+D1_mLCD_R[7] = DFFEAS(D1_mLCD_R[7]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay2[7], , , VCC);
+
+
+--D1_mLCD_G[0] is LCD_DATA_DECODE:u3|mLCD_G[0] at LC_X9_Y12_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_G[0]_lut_out = GND;
+D1_mLCD_G[0] = DFFEAS(D1_mLCD_G[0]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay1[0], , , VCC);
+
+
+--D1_mLCD_G[1] is LCD_DATA_DECODE:u3|mLCD_G[1] at LC_X9_Y12_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_G[1]_lut_out = GND;
+D1_mLCD_G[1] = DFFEAS(D1_mLCD_G[1]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay1[1], , , VCC);
+
+
+--D1_mLCD_G[2] is LCD_DATA_DECODE:u3|mLCD_G[2] at LC_X8_Y12_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_G[2]_lut_out = GND;
+D1_mLCD_G[2] = DFFEAS(D1_mLCD_G[2]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay1[2], , , VCC);
+
+
+--D1_mLCD_G[3] is LCD_DATA_DECODE:u3|mLCD_G[3] at LC_X10_Y12_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_G[3]_lut_out = GND;
+D1_mLCD_G[3] = DFFEAS(D1_mLCD_G[3]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay1[3], , , VCC);
+
+
+--D1_mLCD_G[4] is LCD_DATA_DECODE:u3|mLCD_G[4] at LC_X9_Y13_N7
+--operation mode is normal
+
+D1_mLCD_G[4]_lut_out = D1_oLCD_RGB_Delay1[4];
+D1_mLCD_G[4] = DFFEAS(D1_mLCD_G[4]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, , , , );
+
+
+--D1_mLCD_G[5] is LCD_DATA_DECODE:u3|mLCD_G[5] at LC_X10_Y12_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_G[5]_lut_out = GND;
+D1_mLCD_G[5] = DFFEAS(D1_mLCD_G[5]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay1[5], , , VCC);
+
+
+--D1_mLCD_G[6] is LCD_DATA_DECODE:u3|mLCD_G[6] at LC_X9_Y13_N1
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_G[6]_lut_out = GND;
+D1_mLCD_G[6] = DFFEAS(D1_mLCD_G[6]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay1[6], , , VCC);
+
+
+--D1_mLCD_G[7] is LCD_DATA_DECODE:u3|mLCD_G[7] at LC_X9_Y12_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_G[7]_lut_out = GND;
+D1_mLCD_G[7] = DFFEAS(D1_mLCD_G[7]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay1[7], , , VCC);
+
+
+--D1_mLCD_B[0] is LCD_DATA_DECODE:u3|mLCD_B[0] at LC_X9_Y12_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_B[0]_lut_out = GND;
+D1_mLCD_B[0] = DFFEAS(D1_mLCD_B[0]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay[0], , , VCC);
+
+
+--D1_mLCD_B[1] is LCD_DATA_DECODE:u3|mLCD_B[1] at LC_X9_Y12_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_B[1]_lut_out = GND;
+D1_mLCD_B[1] = DFFEAS(D1_mLCD_B[1]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay[1], , , VCC);
+
+
+--D1_mLCD_B[2] is LCD_DATA_DECODE:u3|mLCD_B[2] at LC_X8_Y12_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_B[2]_lut_out = GND;
+D1_mLCD_B[2] = DFFEAS(D1_mLCD_B[2]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay[2], , , VCC);
+
+
+--D1_mLCD_B[3] is LCD_DATA_DECODE:u3|mLCD_B[3] at LC_X10_Y12_N5
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_B[3]_lut_out = GND;
+D1_mLCD_B[3] = DFFEAS(D1_mLCD_B[3]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay[3], , , VCC);
+
+
+--D1_mLCD_B[4] is LCD_DATA_DECODE:u3|mLCD_B[4] at LC_X9_Y12_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_B[4]_lut_out = GND;
+D1_mLCD_B[4] = DFFEAS(D1_mLCD_B[4]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay[4], , , VCC);
+
+
+--D1_mLCD_B[5] is LCD_DATA_DECODE:u3|mLCD_B[5] at LC_X10_Y12_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_B[5]_lut_out = GND;
+D1_mLCD_B[5] = DFFEAS(D1_mLCD_B[5]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay[5], , , VCC);
+
+
+--D1_mLCD_B[6] is LCD_DATA_DECODE:u3|mLCD_B[6] at LC_X9_Y12_N1
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_B[6]_lut_out = GND;
+D1_mLCD_B[6] = DFFEAS(D1_mLCD_B[6]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay[6], , , VCC);
+
+
+--D1_mLCD_B[7] is LCD_DATA_DECODE:u3|mLCD_B[7] at LC_X9_Y12_N0
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_mLCD_B[7]_lut_out = GND;
+D1_mLCD_B[7] = DFFEAS(D1_mLCD_B[7]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , D1L1, D1_oLCD_RGB_Delay[7], , , VCC);
+
+
+--D1_LCD_HD_Delay[4] is LCD_DATA_DECODE:u3|LCD_HD_Delay[4] at LC_X15_Y11_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_HD_Delay[4]_lut_out = GND;
+D1_LCD_HD_Delay[4] = DFFEAS(D1_LCD_HD_Delay[4]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_HD_Delay[3], , , VCC);
+
+
+--D1_LCD_VD_Delay[4] is LCD_DATA_DECODE:u3|LCD_VD_Delay[4] at LC_X12_Y11_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_VD_Delay[4]_lut_out = GND;
+D1_LCD_VD_Delay[4] = DFFEAS(D1_LCD_VD_Delay[4]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_VD_Delay[3], , , VCC);
+
+
+--D1_LCD_DEN_Delay[4] is LCD_DATA_DECODE:u3|LCD_DEN_Delay[4] at LC_X15_Y12_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_DEN_Delay[4]_lut_out = GND;
+D1_LCD_DEN_Delay[4] = DFFEAS(D1_LCD_DEN_Delay[4]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_DEN_Delay[3], , , VCC);
+
+
+--B1_v_cnt[2] is vga_mode3_decode:u1|v_cnt[2] at LC_X15_Y3_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_v_cnt[2]_lut_out = GND;
+B1_v_cnt[2] = DFFEAS(B1_v_cnt[2]_lut_out, !GLOBAL(HC_VGA_CLOCK), !HC_VGA_VS, , B1L9, B1L85, , , VCC);
+
+
+--B1_v_cnt[1] is vga_mode3_decode:u1|v_cnt[1] at LC_X16_Y3_N9
+--operation mode is normal
+
+B1_v_cnt[1]_lut_out = B1L82;
+B1_v_cnt[1] = DFFEAS(B1_v_cnt[1]_lut_out, !GLOBAL(HC_VGA_CLOCK), !HC_VGA_VS, , B1L9, , , , );
+
+
+--B1_v_cnt[5] is vga_mode3_decode:u1|v_cnt[5] at LC_X15_Y3_N1
+--operation mode is normal
+
+B1_v_cnt[5]_lut_out = B1L95;
+B1_v_cnt[5] = DFFEAS(B1_v_cnt[5]_lut_out, !GLOBAL(HC_VGA_CLOCK), !HC_VGA_VS, , B1L9, , , , );
+
+
+--B1L8 is vga_mode3_decode:u1|LessThan~125 at LC_X15_Y3_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_v_cnt[3]_qfbk = B1_v_cnt[3];
+B1L8 = !B1_v_cnt[2] & !B1_v_cnt[1] & !B1_v_cnt[3]_qfbk # !B1_v_cnt[5];
+
+--B1_v_cnt[3] is vga_mode3_decode:u1|v_cnt[3] at LC_X15_Y3_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_v_cnt[3] = DFFEAS(B1L8, !GLOBAL(HC_VGA_CLOCK), !HC_VGA_VS, , B1L9, B1L88, , , VCC);
+
+
+--B1_v_cnt[7] is vga_mode3_decode:u1|v_cnt[7] at LC_X15_Y3_N8
+--operation mode is normal
+
+B1_v_cnt[7]_lut_out = B1L101;
+B1_v_cnt[7] = DFFEAS(B1_v_cnt[7]_lut_out, !GLOBAL(HC_VGA_CLOCK), !HC_VGA_VS, , B1L9, , , , );
+
+
+--B1_v_cnt[6] is vga_mode3_decode:u1|v_cnt[6] at LC_X15_Y3_N3
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_v_cnt[6]_lut_out = GND;
+B1_v_cnt[6] = DFFEAS(B1_v_cnt[6]_lut_out, !GLOBAL(HC_VGA_CLOCK), !HC_VGA_VS, , B1L9, B1L98, , , VCC);
+
+
+--B1L9 is vga_mode3_decode:u1|LessThan~126 at LC_X15_Y3_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_v_cnt[4]_qfbk = B1_v_cnt[4];
+B1L9 = !B1_v_cnt[6] & !B1_v_cnt[7] & (B1L8 # !B1_v_cnt[4]_qfbk);
+
+--B1_v_cnt[4] is vga_mode3_decode:u1|v_cnt[4] at LC_X15_Y3_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_v_cnt[4] = DFFEAS(B1L9, !GLOBAL(HC_VGA_CLOCK), !HC_VGA_VS, , B1L9, B1L91, , , VCC);
+
+
+--B1L79 is vga_mode3_decode:u1|add~164 at LC_X16_Y3_N0
+--operation mode is arithmetic
+
+B1L79 = !B1_v_cnt[0];
+
+--B1L80 is vga_mode3_decode:u1|add~166 at LC_X16_Y3_N0
+--operation mode is arithmetic
+
+B1L80_cout_0 = B1_v_cnt[0];
+B1L80 = CARRY(B1L80_cout_0);
+
+--B1L81 is vga_mode3_decode:u1|add~166COUT1_212 at LC_X16_Y3_N0
+--operation mode is arithmetic
+
+B1L81_cout_1 = B1_v_cnt[0];
+B1L81 = CARRY(B1L81_cout_1);
+
+
+--B1L82 is vga_mode3_decode:u1|add~169 at LC_X16_Y3_N1
+--operation mode is arithmetic
+
+B1L82 = B1_v_cnt[1] $ B1L80;
+
+--B1L83 is vga_mode3_decode:u1|add~171 at LC_X16_Y3_N1
+--operation mode is arithmetic
+
+B1L83_cout_0 = !B1L80 # !B1_v_cnt[1];
+B1L83 = CARRY(B1L83_cout_0);
+
+--B1L84 is vga_mode3_decode:u1|add~171COUT1_214 at LC_X16_Y3_N1
+--operation mode is arithmetic
+
+B1L84_cout_1 = !B1L81 # !B1_v_cnt[1];
+B1L84 = CARRY(B1L84_cout_1);
+
+
+--B1L85 is vga_mode3_decode:u1|add~174 at LC_X16_Y3_N2
+--operation mode is arithmetic
+
+B1L85 = B1_v_cnt[2] $ !B1L83;
+
+--B1L86 is vga_mode3_decode:u1|add~176 at LC_X16_Y3_N2
+--operation mode is arithmetic
+
+B1L86_cout_0 = B1_v_cnt[2] & !B1L83;
+B1L86 = CARRY(B1L86_cout_0);
+
+--B1L87 is vga_mode3_decode:u1|add~176COUT1_216 at LC_X16_Y3_N2
+--operation mode is arithmetic
+
+B1L87_cout_1 = B1_v_cnt[2] & !B1L84;
+B1L87 = CARRY(B1L87_cout_1);
+
+
+--B1L88 is vga_mode3_decode:u1|add~179 at LC_X16_Y3_N3
+--operation mode is arithmetic
+
+B1L88 = B1_v_cnt[3] $ B1L86;
+
+--B1L89 is vga_mode3_decode:u1|add~181 at LC_X16_Y3_N3
+--operation mode is arithmetic
+
+B1L89_cout_0 = !B1L86 # !B1_v_cnt[3];
+B1L89 = CARRY(B1L89_cout_0);
+
+--B1L90 is vga_mode3_decode:u1|add~181COUT1_217 at LC_X16_Y3_N3
+--operation mode is arithmetic
+
+B1L90_cout_1 = !B1L87 # !B1_v_cnt[3];
+B1L90 = CARRY(B1L90_cout_1);
+
+
+--B1L5 is vga_mode3_decode:u1|Equal~186 at LC_X15_Y3_N0
+--operation mode is normal
+
+B1L5 = B1L79 & !B1L85 & !B1L88 & !B1L82;
+
+
+--B1L91 is vga_mode3_decode:u1|add~184 at LC_X16_Y3_N4
+--operation mode is arithmetic
+
+B1L91 = B1_v_cnt[4] $ (!B1L89);
+
+--B1L92 is vga_mode3_decode:u1|add~186 at LC_X16_Y3_N4
+--operation mode is arithmetic
+
+B1L92 = B1L93;
+
+
+--B1L95 is vga_mode3_decode:u1|add~189 at LC_X16_Y3_N5
+--operation mode is arithmetic
+
+B1L95_carry_eqn = (!B1L92 & GND) # (B1L92 & VCC);
+B1L95 = B1_v_cnt[5] $ (B1L95_carry_eqn);
+
+--B1L96 is vga_mode3_decode:u1|add~191 at LC_X16_Y3_N5
+--operation mode is arithmetic
+
+B1L96_cout_0 = !B1L92 # !B1_v_cnt[5];
+B1L96 = CARRY(B1L96_cout_0);
+
+--B1L97 is vga_mode3_decode:u1|add~191COUT1_219 at LC_X16_Y3_N5
+--operation mode is arithmetic
+
+B1L97_cout_1 = !B1L92 # !B1_v_cnt[5];
+B1L97 = CARRY(B1L97_cout_1);
+
+
+--B1L6 is vga_mode3_decode:u1|Equal~187 at LC_X15_Y3_N4
+--operation mode is normal
+
+B1L6 = !B1L91 & (!B1L95);
+
+
+--B1L98 is vga_mode3_decode:u1|add~194 at LC_X16_Y3_N6
+--operation mode is arithmetic
+
+B1L98_carry_eqn = (!B1L92 & B1L96) # (B1L92 & B1L97);
+B1L98 = B1_v_cnt[6] $ !B1L98_carry_eqn;
+
+--B1L99 is vga_mode3_decode:u1|add~196 at LC_X16_Y3_N6
+--operation mode is arithmetic
+
+B1L99_cout_0 = B1_v_cnt[6] & !B1L96;
+B1L99 = CARRY(B1L99_cout_0);
+
+--B1L100 is vga_mode3_decode:u1|add~196COUT1_221 at LC_X16_Y3_N6
+--operation mode is arithmetic
+
+B1L100_cout_1 = B1_v_cnt[6] & !B1L97;
+B1L100 = CARRY(B1L100_cout_1);
+
+
+--B1L101 is vga_mode3_decode:u1|add~199 at LC_X16_Y3_N7
+--operation mode is normal
+
+B1L101_carry_eqn = (!B1L92 & B1L99) # (B1L92 & B1L100);
+B1L101 = B1L101_carry_eqn $ B1_v_cnt[7];
+
+
+--B1L7 is vga_mode3_decode:u1|Equal~188 at LC_X15_Y3_N5
+--operation mode is normal
+
+B1L7 = !B1L101 & B1L5 & !B1L98 & B1L6;
+
+
+--D1_oLCD_RGB_Delay2[0] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay2[0] at LC_X11_Y12_N0
+--operation mode is normal
+
+D1_oLCD_RGB_Delay2[0]_lut_out = D1_oLCD_RGB_Delay1[0];
+D1_oLCD_RGB_Delay2[0] = DFFEAS(D1_oLCD_RGB_Delay2[0]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_LCD_VD_Delay[0] is LCD_DATA_DECODE:u3|LCD_VD_Delay[0] at LC_X12_Y11_N4
+--operation mode is normal
+
+D1_LCD_VD_Delay[0]_lut_out = HC_VD;
+D1_LCD_VD_Delay[0] = DFFEAS(D1_LCD_VD_Delay[0]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_SIPO_cnt[1] is LCD_DATA_DECODE:u3|SIPO_cnt[1] at LC_X9_Y12_N3
+--operation mode is normal
+
+D1_SIPO_cnt[1]_lut_out = D1_SIPO_cnt[0] & !D1_SIPO_cnt[1];
+D1_SIPO_cnt[1] = DFFEAS(D1_SIPO_cnt[1]_lut_out, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , , , , , );
+
+
+--D1L1 is LCD_DATA_DECODE:u3|Equal~156 at LC_X9_Y12_N5
+--operation mode is normal
+
+D1_SIPO_cnt[0]_qfbk = D1_SIPO_cnt[0];
+D1L1 = !D1_SIPO_cnt[0]_qfbk & !D1_SIPO_cnt[1];
+
+--D1_SIPO_cnt[0] is LCD_DATA_DECODE:u3|SIPO_cnt[0] at LC_X9_Y12_N5
+--operation mode is normal
+
+D1_SIPO_cnt[0] = DFFEAS(D1L1, GLOBAL(HC_NCLK), D1_LCD_VD_Delay[0], , , , , , );
+
+
+--D1_oLCD_RGB_Delay2[1] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay2[1] at LC_X8_Y12_N0
+--operation mode is normal
+
+D1_oLCD_RGB_Delay2[1]_lut_out = D1_oLCD_RGB_Delay1[1];
+D1_oLCD_RGB_Delay2[1] = DFFEAS(D1_oLCD_RGB_Delay2[1]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay2[2] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay2[2] at LC_X8_Y12_N5
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay2[2]_lut_out = GND;
+D1_oLCD_RGB_Delay2[2] = DFFEAS(D1_oLCD_RGB_Delay2[2]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_oLCD_RGB_Delay1[2], , , VCC);
+
+
+--D1_oLCD_RGB_Delay2[3] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay2[3] at LC_X11_Y12_N3
+--operation mode is normal
+
+D1_oLCD_RGB_Delay2[3]_lut_out = D1_oLCD_RGB_Delay1[3];
+D1_oLCD_RGB_Delay2[3] = DFFEAS(D1_oLCD_RGB_Delay2[3]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay2[4] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay2[4] at LC_X9_Y13_N2
+--operation mode is normal
+
+D1_oLCD_RGB_Delay2[4]_lut_out = D1_oLCD_RGB_Delay1[4];
+D1_oLCD_RGB_Delay2[4] = DFFEAS(D1_oLCD_RGB_Delay2[4]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay2[5] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay2[5] at LC_X10_Y12_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay2[5]_lut_out = GND;
+D1_oLCD_RGB_Delay2[5] = DFFEAS(D1_oLCD_RGB_Delay2[5]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_oLCD_RGB_Delay1[5], , , VCC);
+
+
+--D1_oLCD_RGB_Delay2[6] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay2[6] at LC_X9_Y13_N0
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay2[6]_lut_out = GND;
+D1_oLCD_RGB_Delay2[6] = DFFEAS(D1_oLCD_RGB_Delay2[6]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_oLCD_RGB_Delay1[6], , , VCC);
+
+
+--D1_oLCD_RGB_Delay2[7] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay2[7] at LC_X11_Y12_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay2[7]_lut_out = GND;
+D1_oLCD_RGB_Delay2[7] = DFFEAS(D1_oLCD_RGB_Delay2[7]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_oLCD_RGB_Delay1[7], , , VCC);
+
+
+--D1_oLCD_RGB_Delay1[0] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay1[0] at LC_X11_Y12_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay1[0]_lut_out = GND;
+D1_oLCD_RGB_Delay1[0] = DFFEAS(D1_oLCD_RGB_Delay1[0]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_oLCD_RGB_Delay[0], , , VCC);
+
+
+--D1_oLCD_RGB_Delay1[1] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay1[1] at LC_X8_Y12_N9
+--operation mode is normal
+
+D1_oLCD_RGB_Delay1[1]_lut_out = D1_oLCD_RGB_Delay[1];
+D1_oLCD_RGB_Delay1[1] = DFFEAS(D1_oLCD_RGB_Delay1[1]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay1[2] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay1[2] at LC_X8_Y12_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay1[2]_lut_out = GND;
+D1_oLCD_RGB_Delay1[2] = DFFEAS(D1_oLCD_RGB_Delay1[2]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_oLCD_RGB_Delay[2], , , VCC);
+
+
+--D1_oLCD_RGB_Delay1[3] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay1[3] at LC_X11_Y12_N2
+--operation mode is normal
+
+D1_oLCD_RGB_Delay1[3]_lut_out = D1_oLCD_RGB_Delay[3];
+D1_oLCD_RGB_Delay1[3] = DFFEAS(D1_oLCD_RGB_Delay1[3]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay1[4] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay1[4] at LC_X9_Y13_N9
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay1[4]_lut_out = GND;
+D1_oLCD_RGB_Delay1[4] = DFFEAS(D1_oLCD_RGB_Delay1[4]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_oLCD_RGB_Delay[4], , , VCC);
+
+
+--D1_oLCD_RGB_Delay1[5] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay1[5] at LC_X10_Y12_N0
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay1[5]_lut_out = GND;
+D1_oLCD_RGB_Delay1[5] = DFFEAS(D1_oLCD_RGB_Delay1[5]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_oLCD_RGB_Delay[5], , , VCC);
+
+
+--D1_oLCD_RGB_Delay1[6] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay1[6] at LC_X9_Y13_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay1[6]_lut_out = GND;
+D1_oLCD_RGB_Delay1[6] = DFFEAS(D1_oLCD_RGB_Delay1[6]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_oLCD_RGB_Delay[6], , , VCC);
+
+
+--D1_oLCD_RGB_Delay1[7] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay1[7] at LC_X11_Y12_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay1[7]_lut_out = GND;
+D1_oLCD_RGB_Delay1[7] = DFFEAS(D1_oLCD_RGB_Delay1[7]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_oLCD_RGB_Delay[7], , , VCC);
+
+
+--D1_oLCD_RGB_Delay[0] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay[0] at LC_X11_Y12_N5
+--operation mode is normal
+
+D1_oLCD_RGB_Delay[0]_lut_out = HC_LCD_DATA[0];
+D1_oLCD_RGB_Delay[0] = DFFEAS(D1_oLCD_RGB_Delay[0]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay[1] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay[1] at LC_X8_Y12_N1
+--operation mode is normal
+
+D1_oLCD_RGB_Delay[1]_lut_out = HC_LCD_DATA[1];
+D1_oLCD_RGB_Delay[1] = DFFEAS(D1_oLCD_RGB_Delay[1]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay[2] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay[2] at LC_X8_Y12_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_oLCD_RGB_Delay[2]_lut_out = GND;
+D1_oLCD_RGB_Delay[2] = DFFEAS(D1_oLCD_RGB_Delay[2]_lut_out, GLOBAL(HC_NCLK), VCC, , , HC_LCD_DATA[2], , , VCC);
+
+
+--D1_oLCD_RGB_Delay[3] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay[3] at LC_X11_Y12_N9
+--operation mode is normal
+
+D1_oLCD_RGB_Delay[3]_lut_out = HC_LCD_DATA[3];
+D1_oLCD_RGB_Delay[3] = DFFEAS(D1_oLCD_RGB_Delay[3]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay[4] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay[4] at LC_X9_Y13_N6
+--operation mode is normal
+
+D1_oLCD_RGB_Delay[4]_lut_out = HC_LCD_DATA[4];
+D1_oLCD_RGB_Delay[4] = DFFEAS(D1_oLCD_RGB_Delay[4]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay[5] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay[5] at LC_X14_Y12_N3
+--operation mode is normal
+
+D1_oLCD_RGB_Delay[5]_lut_out = HC_LCD_DATA[5];
+D1_oLCD_RGB_Delay[5] = DFFEAS(D1_oLCD_RGB_Delay[5]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay[6] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay[6] at LC_X9_Y13_N5
+--operation mode is normal
+
+D1_oLCD_RGB_Delay[6]_lut_out = HC_LCD_DATA[6];
+D1_oLCD_RGB_Delay[6] = DFFEAS(D1_oLCD_RGB_Delay[6]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_oLCD_RGB_Delay[7] is LCD_DATA_DECODE:u3|oLCD_RGB_Delay[7] at LC_X11_Y12_N7
+--operation mode is normal
+
+D1_oLCD_RGB_Delay[7]_lut_out = HC_LCD_DATA[7];
+D1_oLCD_RGB_Delay[7] = DFFEAS(D1_oLCD_RGB_Delay[7]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_LCD_HD_Delay[3] is LCD_DATA_DECODE:u3|LCD_HD_Delay[3] at LC_X15_Y11_N5
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_HD_Delay[3]_lut_out = GND;
+D1_LCD_HD_Delay[3] = DFFEAS(D1_LCD_HD_Delay[3]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_HD_Delay[2], , , VCC);
+
+
+--D1_LCD_VD_Delay[3] is LCD_DATA_DECODE:u3|LCD_VD_Delay[3] at LC_X12_Y11_N7
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_VD_Delay[3]_lut_out = GND;
+D1_LCD_VD_Delay[3] = DFFEAS(D1_LCD_VD_Delay[3]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_VD_Delay[2], , , VCC);
+
+
+--D1_LCD_DEN_Delay[3] is LCD_DATA_DECODE:u3|LCD_DEN_Delay[3] at LC_X15_Y12_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_DEN_Delay[3]_lut_out = GND;
+D1_LCD_DEN_Delay[3] = DFFEAS(D1_LCD_DEN_Delay[3]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_DEN_Delay[2], , , VCC);
+
+
+--C1L37Q is Terasic_I2CBir_bus:u2|w_r~reg0 at LC_X9_Y9_N0
+--operation mode is normal
+
+C1L37Q_lut_out = C1L3 & C1_pre_w_r & (!A1L52) # !C1L3 & (C1L37Q);
+C1L37Q = DFFEAS(C1L37Q_lut_out, !HC_ID_I2CSCL, !C1_tr, , , , , , );
+
+
+--C1L9Q is Terasic_I2CBir_bus:u2|cnt[0]~reg0 at LC_X8_Y9_N0
+--operation mode is arithmetic
+
+C1L9Q_lut_out = !C1L9Q;
+C1L9Q = DFFEAS(C1L9Q_lut_out, !HC_ID_I2CSCL, !C1_tr, , , VCC, , , C1L6);
+
+--C1L7 is Terasic_I2CBir_bus:u2|cnt[0]~119 at LC_X8_Y9_N0
+--operation mode is arithmetic
+
+C1L7_cout_0 = C1L9Q;
+C1L7 = CARRY(C1L7_cout_0);
+
+--C1L8 is Terasic_I2CBir_bus:u2|cnt[0]~119COUT1_157 at LC_X8_Y9_N0
+--operation mode is arithmetic
+
+C1L8_cout_1 = C1L9Q;
+C1L8 = CARRY(C1L8_cout_1);
+
+
+--C1L18Q is Terasic_I2CBir_bus:u2|cnt[3]~reg0 at LC_X8_Y9_N3
+--operation mode is arithmetic
+
+C1L18Q_lut_out = C1L18Q $ (C1L13);
+C1L18Q = DFFEAS(C1L18Q_lut_out, !HC_ID_I2CSCL, !C1_tr, , , VCC, , , C1L6);
+
+--C1L16 is Terasic_I2CBir_bus:u2|cnt[3]~123 at LC_X8_Y9_N3
+--operation mode is arithmetic
+
+C1L16_cout_0 = !C1L13 # !C1L18Q;
+C1L16 = CARRY(C1L16_cout_0);
+
+--C1L17 is Terasic_I2CBir_bus:u2|cnt[3]~123COUT1_162 at LC_X8_Y9_N3
+--operation mode is arithmetic
+
+C1L17_cout_1 = !C1L14 # !C1L18Q;
+C1L17 = CARRY(C1L17_cout_1);
+
+
+--C1L25Q is Terasic_I2CBir_bus:u2|cnt[5]~reg0 at LC_X8_Y9_N5
+--operation mode is arithmetic
+
+C1L25Q_carry_eqn = (!C1L19 & GND) # (C1L19 & VCC);
+C1L25Q_lut_out = C1L25Q $ (C1L25Q_carry_eqn);
+C1L25Q = DFFEAS(C1L25Q_lut_out, !HC_ID_I2CSCL, !C1_tr, , , ~GND, , , C1L6);
+
+--C1L23 is Terasic_I2CBir_bus:u2|cnt[5]~127 at LC_X8_Y9_N5
+--operation mode is arithmetic
+
+C1L23_cout_0 = !C1L19 # !C1L25Q;
+C1L23 = CARRY(C1L23_cout_0);
+
+--C1L24 is Terasic_I2CBir_bus:u2|cnt[5]~127COUT1_164 at LC_X8_Y9_N5
+--operation mode is arithmetic
+
+C1L24_cout_1 = !C1L19 # !C1L25Q;
+C1L24 = CARRY(C1L24_cout_1);
+
+
+--C1L28Q is Terasic_I2CBir_bus:u2|cnt[6]~reg0 at LC_X8_Y9_N6
+--operation mode is arithmetic
+
+C1L28Q_carry_eqn = (!C1L19 & C1L23) # (C1L19 & C1L24);
+C1L28Q_lut_out = C1L28Q $ (!C1L28Q_carry_eqn);
+C1L28Q = DFFEAS(C1L28Q_lut_out, !HC_ID_I2CSCL, !C1_tr, , , ~GND, , , C1L6);
+
+--C1L26 is Terasic_I2CBir_bus:u2|cnt[6]~131 at LC_X8_Y9_N6
+--operation mode is arithmetic
+
+C1L26_cout_0 = C1L28Q & (!C1L23);
+C1L26 = CARRY(C1L26_cout_0);
+
+--C1L27 is Terasic_I2CBir_bus:u2|cnt[6]~131COUT1_166 at LC_X8_Y9_N6
+--operation mode is arithmetic
+
+C1L27_cout_1 = C1L28Q & (!C1L24);
+C1L27 = CARRY(C1L27_cout_1);
+
+
+--C1L29Q is Terasic_I2CBir_bus:u2|cnt[7]~reg0 at LC_X8_Y9_N7
+--operation mode is normal
+
+C1L29Q_carry_eqn = (!C1L19 & C1L26) # (C1L19 & C1L27);
+C1L29Q_lut_out = C1L29Q $ C1L29Q_carry_eqn;
+C1L29Q = DFFEAS(C1L29Q_lut_out, !HC_ID_I2CSCL, !C1_tr, , , ~GND, , , C1L6);
+
+
+--C1L1 is Terasic_I2CBir_bus:u2|Equal~165 at LC_X8_Y9_N9
+--operation mode is normal
+
+C1L1 = !C1L28Q & !C1L29Q & !C1L25Q & C1L18Q;
+
+
+--C1L12Q is Terasic_I2CBir_bus:u2|cnt[1]~reg0 at LC_X8_Y9_N1
+--operation mode is arithmetic
+
+C1L12Q_lut_out = C1L12Q $ C1L7;
+C1L12Q = DFFEAS(C1L12Q_lut_out, !HC_ID_I2CSCL, !C1_tr, , , ~GND, , , C1L6);
+
+--C1L10 is Terasic_I2CBir_bus:u2|cnt[1]~139 at LC_X8_Y9_N1
+--operation mode is arithmetic
+
+C1L10_cout_0 = !C1L7 # !C1L12Q;
+C1L10 = CARRY(C1L10_cout_0);
+
+--C1L11 is Terasic_I2CBir_bus:u2|cnt[1]~139COUT1_159 at LC_X8_Y9_N1
+--operation mode is arithmetic
+
+C1L11_cout_1 = !C1L8 # !C1L12Q;
+C1L11 = CARRY(C1L11_cout_1);
+
+
+--C1L15Q is Terasic_I2CBir_bus:u2|cnt[2]~reg0 at LC_X8_Y9_N2
+--operation mode is arithmetic
+
+C1L15Q_lut_out = C1L15Q $ !C1L10;
+C1L15Q = DFFEAS(C1L15Q_lut_out, !HC_ID_I2CSCL, !C1_tr, , , ~GND, , , C1L6);
+
+--C1L13 is Terasic_I2CBir_bus:u2|cnt[2]~143 at LC_X8_Y9_N2
+--operation mode is arithmetic
+
+C1L13_cout_0 = C1L15Q & !C1L10;
+C1L13 = CARRY(C1L13_cout_0);
+
+--C1L14 is Terasic_I2CBir_bus:u2|cnt[2]~143COUT1_161 at LC_X8_Y9_N2
+--operation mode is arithmetic
+
+C1L14_cout_1 = C1L15Q & !C1L11;
+C1L14 = CARRY(C1L14_cout_1);
+
+
+--C1L2 is Terasic_I2CBir_bus:u2|Equal~166 at LC_X9_Y9_N6
+--operation mode is normal
+
+C1L2 = !C1L12Q & !C1L15Q;
+
+
+--C1L22Q is Terasic_I2CBir_bus:u2|cnt[4]~reg0 at LC_X8_Y9_N4
+--operation mode is arithmetic
+
+C1L22Q_lut_out = C1L22Q $ (!C1L16);
+C1L22Q = DFFEAS(C1L22Q_lut_out, !HC_ID_I2CSCL, !C1_tr, , , ~GND, , , C1L6);
+
+--C1L19 is Terasic_I2CBir_bus:u2|cnt[4]~147 at LC_X8_Y9_N4
+--operation mode is arithmetic
+
+C1L19 = C1L20;
+
+
+--C1L3 is Terasic_I2CBir_bus:u2|Equal~167 at LC_X9_Y9_N8
+--operation mode is normal
+
+C1L3 = C1L9Q & !C1L22Q & C1L1 & C1L2;
+
+
+--C1L30 is Terasic_I2CBir_bus:u2|i2c_rw~33 at LC_X9_Y9_N9
+--operation mode is normal
+
+C1L30 = C1L37Q $ C1L3;
+
+
+--B1_v_cnt[0] is vga_mode3_decode:u1|v_cnt[0] at LC_X16_Y3_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+B1_v_cnt[0]_lut_out = GND;
+B1_v_cnt[0] = DFFEAS(B1_v_cnt[0]_lut_out, !GLOBAL(HC_VGA_CLOCK), !HC_VGA_VS, , B1L9, B1L79, , , VCC);
+
+
+--D1_LCD_HD_Delay[2] is LCD_DATA_DECODE:u3|LCD_HD_Delay[2] at LC_X15_Y11_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_HD_Delay[2]_lut_out = GND;
+D1_LCD_HD_Delay[2] = DFFEAS(D1_LCD_HD_Delay[2]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_HD_Delay[1], , , VCC);
+
+
+--D1_LCD_VD_Delay[2] is LCD_DATA_DECODE:u3|LCD_VD_Delay[2] at LC_X12_Y11_N6
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_VD_Delay[2]_lut_out = GND;
+D1_LCD_VD_Delay[2] = DFFEAS(D1_LCD_VD_Delay[2]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_VD_Delay[1], , , VCC);
+
+
+--D1_LCD_DEN_Delay[2] is LCD_DATA_DECODE:u3|LCD_DEN_Delay[2] at LC_X15_Y12_N4
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_DEN_Delay[2]_lut_out = GND;
+D1_LCD_DEN_Delay[2] = DFFEAS(D1_LCD_DEN_Delay[2]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_DEN_Delay[1], , , VCC);
+
+
+--C1_pre_w_r is Terasic_I2CBir_bus:u2|pre_w_r at LC_X9_Y9_N5
+--operation mode is normal
+
+C1_pre_w_r_lut_out = C1L4 & (A1L52) # !C1L4 & C1_pre_w_r;
+C1_pre_w_r = DFFEAS(C1_pre_w_r_lut_out, !HC_ID_I2CSCL, !C1_tr, , , , , , );
+
+
+--C1L35Q is Terasic_I2CBir_bus:u2|rx_stop~reg0 at LC_X10_Y9_N7
+--operation mode is normal
+
+C1L35Q_lut_out = !C1_prev_sda & C1_prev_scl & A1L52 & HC_ID_I2CSCL;
+C1L35Q = DFFEAS(C1L35Q_lut_out, SAMPLE_CLK[5], VCC, , , , , , );
+
+
+--C1L34Q is Terasic_I2CBir_bus:u2|rx_start~reg0 at LC_X10_Y9_N9
+--operation mode is normal
+
+C1L34Q_lut_out = C1_prev_sda & C1_prev_scl & !A1L52 & HC_ID_I2CSCL;
+C1L34Q = DFFEAS(C1L34Q_lut_out, SAMPLE_CLK[5], VCC, , , , , , );
+
+
+--C1_tr is Terasic_I2CBir_bus:u2|tr at LC_X9_Y9_N4
+--operation mode is normal
+
+C1_tr = C1L34Q # C1L35Q;
+
+
+--C1L5 is Terasic_I2CBir_bus:u2|LessThan~120 at LC_X9_Y9_N7
+--operation mode is normal
+
+C1L5 = C1L22Q & (C1L9Q # C1L18Q # !C1L2);
+
+
+--C1L6 is Terasic_I2CBir_bus:u2|LessThan~121 at LC_X8_Y9_N8
+--operation mode is normal
+
+C1L6 = C1L25Q # C1L29Q # C1L28Q # C1L5;
+
+
+--D1_LCD_HD_Delay[1] is LCD_DATA_DECODE:u3|LCD_HD_Delay[1] at LC_X16_Y11_N2
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_HD_Delay[1]_lut_out = GND;
+D1_LCD_HD_Delay[1] = DFFEAS(D1_LCD_HD_Delay[1]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_HD_Delay[0], , , VCC);
+
+
+--D1_LCD_VD_Delay[1] is LCD_DATA_DECODE:u3|LCD_VD_Delay[1] at LC_X12_Y11_N5
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_VD_Delay[1]_lut_out = GND;
+D1_LCD_VD_Delay[1] = DFFEAS(D1_LCD_VD_Delay[1]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_VD_Delay[0], , , VCC);
+
+
+--D1_LCD_DEN_Delay[1] is LCD_DATA_DECODE:u3|LCD_DEN_Delay[1] at LC_X15_Y12_N5
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+D1_LCD_DEN_Delay[1]_lut_out = GND;
+D1_LCD_DEN_Delay[1] = DFFEAS(D1_LCD_DEN_Delay[1]_lut_out, GLOBAL(HC_NCLK), VCC, , , D1_LCD_DEN_Delay[0], , , VCC);
+
+
+--C1L4 is Terasic_I2CBir_bus:u2|Equal~168 at LC_X9_Y9_N1
+--operation mode is normal
+
+C1L4 = !C1L9Q & C1L2 & C1L1 & !C1L22Q;
+
+
+--C1_prev_scl is Terasic_I2CBir_bus:u2|prev_scl at LC_X10_Y9_N0
+--operation mode is normal
+
+C1_prev_scl_lut_out = HC_ID_I2CSCL;
+C1_prev_scl = DFFEAS(C1_prev_scl_lut_out, SAMPLE_CLK[5], VCC, , , , , , );
+
+
+--C1_prev_sda is Terasic_I2CBir_bus:u2|prev_sda at LC_X10_Y9_N8
+--operation mode is normal
+--sload is tied to vcc, which is functionally the same as treating the sdata port as the data input.
+
+C1_prev_sda_lut_out = GND;
+C1_prev_sda = DFFEAS(C1_prev_sda_lut_out, SAMPLE_CLK[5], VCC, , , A1L52, , , VCC);
+
+
+--SAMPLE_CLK[5] is SAMPLE_CLK[5] at LC_X10_Y9_N6
+--operation mode is normal
+
+SAMPLE_CLK[5]_carry_eqn = (!A1L170 & A1L174) # (A1L170 & A1L175);
+SAMPLE_CLK[5]_lut_out = SAMPLE_CLK[5] $ (SAMPLE_CLK[5]_carry_eqn);
+SAMPLE_CLK[5] = DFFEAS(SAMPLE_CLK[5]_lut_out, GLOBAL(OSC100), VCC, , , , , , );
+
+
+--D1_LCD_HD_Delay[0] is LCD_DATA_DECODE:u3|LCD_HD_Delay[0] at LC_X16_Y11_N4
+--operation mode is normal
+
+D1_LCD_HD_Delay[0]_lut_out = HC_HD;
+D1_LCD_HD_Delay[0] = DFFEAS(D1_LCD_HD_Delay[0]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--D1_LCD_DEN_Delay[0] is LCD_DATA_DECODE:u3|LCD_DEN_Delay[0] at LC_X15_Y12_N7
+--operation mode is normal
+
+D1_LCD_DEN_Delay[0]_lut_out = HC_DEN;
+D1_LCD_DEN_Delay[0] = DFFEAS(D1_LCD_DEN_Delay[0]_lut_out, GLOBAL(HC_NCLK), VCC, , , , , , );
+
+
+--SAMPLE_CLK[4] is SAMPLE_CLK[4] at LC_X10_Y9_N5
+--operation mode is arithmetic
+
+SAMPLE_CLK[4]_carry_eqn = (!A1L170 & GND) # (A1L170 & VCC);
+SAMPLE_CLK[4]_lut_out = SAMPLE_CLK[4] $ (!SAMPLE_CLK[4]_carry_eqn);
+SAMPLE_CLK[4] = DFFEAS(SAMPLE_CLK[4]_lut_out, GLOBAL(OSC100), VCC, , , , , , );
+
+--A1L174 is SAMPLE_CLK[4]~62 at LC_X10_Y9_N5
+--operation mode is arithmetic
+
+A1L174_cout_0 = SAMPLE_CLK[4] & (!A1L170);
+A1L174 = CARRY(A1L174_cout_0);
+
+--A1L175 is SAMPLE_CLK[4]~62COUT1_91 at LC_X10_Y9_N5
+--operation mode is arithmetic
+
+A1L175_cout_1 = SAMPLE_CLK[4] & (!A1L170);
+A1L175 = CARRY(A1L175_cout_1);
+
+
+--SAMPLE_CLK[3] is SAMPLE_CLK[3] at LC_X10_Y9_N4
+--operation mode is arithmetic
+
+SAMPLE_CLK[3]_lut_out = SAMPLE_CLK[3] $ (A1L167);
+SAMPLE_CLK[3] = DFFEAS(SAMPLE_CLK[3]_lut_out, GLOBAL(OSC100), VCC, , , , , , );
+
+--A1L170 is SAMPLE_CLK[3]~66 at LC_X10_Y9_N4
+--operation mode is arithmetic
+
+A1L170 = A1L171;
+
+
+--SAMPLE_CLK[2] is SAMPLE_CLK[2] at LC_X10_Y9_N3
+--operation mode is arithmetic
+
+SAMPLE_CLK[2]_lut_out = SAMPLE_CLK[2] $ (!A1L164);
+SAMPLE_CLK[2] = DFFEAS(SAMPLE_CLK[2]_lut_out, GLOBAL(OSC100), VCC, , , , , , );
+
+--A1L167 is SAMPLE_CLK[2]~70 at LC_X10_Y9_N3
+--operation mode is arithmetic
+
+A1L167_cout_0 = SAMPLE_CLK[2] & (!A1L164);
+A1L167 = CARRY(A1L167_cout_0);
+
+--A1L168 is SAMPLE_CLK[2]~70COUT1_89 at LC_X10_Y9_N3
+--operation mode is arithmetic
+
+A1L168_cout_1 = SAMPLE_CLK[2] & (!A1L165);
+A1L168 = CARRY(A1L168_cout_1);
+
+
+--SAMPLE_CLK[1] is SAMPLE_CLK[1] at LC_X10_Y9_N2
+--operation mode is arithmetic
+
+SAMPLE_CLK[1]_lut_out = SAMPLE_CLK[1] $ A1L161;
+SAMPLE_CLK[1] = DFFEAS(SAMPLE_CLK[1]_lut_out, GLOBAL(OSC100), VCC, , , , , , );
+
+--A1L164 is SAMPLE_CLK[1]~74 at LC_X10_Y9_N2
+--operation mode is arithmetic
+
+A1L164_cout_0 = !A1L161 # !SAMPLE_CLK[1];
+A1L164 = CARRY(A1L164_cout_0);
+
+--A1L165 is SAMPLE_CLK[1]~74COUT1_88 at LC_X10_Y9_N2
+--operation mode is arithmetic
+
+A1L165_cout_1 = !A1L162 # !SAMPLE_CLK[1];
+A1L165 = CARRY(A1L165_cout_1);
+
+
+--SAMPLE_CLK[0] is SAMPLE_CLK[0] at LC_X10_Y9_N1
+--operation mode is arithmetic
+
+SAMPLE_CLK[0]_lut_out = !SAMPLE_CLK[0];
+SAMPLE_CLK[0] = DFFEAS(SAMPLE_CLK[0]_lut_out, GLOBAL(OSC100), VCC, , , , , , );
+
+--A1L161 is SAMPLE_CLK[0]~78 at LC_X10_Y9_N1
+--operation mode is arithmetic
+
+A1L161_cout_0 = SAMPLE_CLK[0];
+A1L161 = CARRY(A1L161_cout_0);
+
+--A1L162 is SAMPLE_CLK[0]~78COUT1_86 at LC_X10_Y9_N1
+--operation mode is arithmetic
+
+A1L162_cout_1 = SAMPLE_CLK[0];
+A1L162 = CARRY(A1L162_cout_1);
+
+
+--~GND is ~GND at LC_X7_Y9_N9
+--operation mode is normal
+
+~GND = GND;
+
+
+--HC_I2C_SCLK is HC_I2C_SCLK at PIN_P15
+--operation mode is input
+
+HC_I2C_SCLK = INPUT();
+
+
+--HC_AUD_XCK is HC_AUD_XCK at PIN_T16
+--operation mode is input
+
+HC_AUD_XCK = INPUT();
+
+
+--HC_AUD_BCLK is HC_AUD_BCLK at PIN_G17
+--operation mode is input
+
+HC_AUD_BCLK = INPUT();
+
+
+--HC_AUD_DACDAT is HC_AUD_DACDAT at PIN_H17
+--operation mode is input
+
+HC_AUD_DACDAT = INPUT();
+
+
+--HC_AUD_DACLRCK is HC_AUD_DACLRCK at PIN_H18
+--operation mode is input
+
+HC_AUD_DACLRCK = INPUT();
+
+
+--HC_AUD_ADCLRCK is HC_AUD_ADCLRCK at PIN_H16
+--operation mode is input
+
+HC_AUD_ADCLRCK = INPUT();
+
+
+--HC_TD_RESET is HC_TD_RESET at PIN_J14
+--operation mode is input
+
+HC_TD_RESET = INPUT();
+
+
+--HC_VGA_HS is HC_VGA_HS at PIN_M13
+--operation mode is input
+
+HC_VGA_HS = INPUT();
+
+
+--HC_VGA_VS is HC_VGA_VS at PIN_P17
+--operation mode is input
+
+HC_VGA_VS = INPUT();
+
+
+--HC_VGA_BLANK is HC_VGA_BLANK at PIN_N17
+--operation mode is input
+
+HC_VGA_BLANK = INPUT();
+
+
+--HC_VGA_SYNC is HC_VGA_SYNC at PIN_N18
+--operation mode is input
+
+HC_VGA_SYNC = INPUT();
+
+
+--HC_SD_CLK is HC_SD_CLK at PIN_J16
+--operation mode is input
+
+HC_SD_CLK = INPUT();
+
+
+--HC_ID_I2CSCL is HC_ID_I2CSCL at PIN_T17
+--operation mode is input
+
+HC_ID_I2CSCL = INPUT();
+
+
+--HC_UART_TXD is HC_UART_TXD at PIN_G16
+--operation mode is input
+
+HC_UART_TXD = INPUT();
+
+
+--HC_ETH_RESET_N is HC_ETH_RESET_N at PIN_F16
+--operation mode is input
+
+HC_ETH_RESET_N = INPUT();
+
+
+--HC_TX_EN is HC_TX_EN at PIN_F18
+--operation mode is input
+
+HC_TX_EN = INPUT();
+
+
+--HC_TXD[0] is HC_TXD[0] at PIN_F17
+--operation mode is input
+
+HC_TXD[0] = INPUT();
+
+
+--HC_TXD[1] is HC_TXD[1] at PIN_E17
+--operation mode is input
+
+HC_TXD[1] = INPUT();
+
+
+--HC_TXD[2] is HC_TXD[2] at PIN_E18
+--operation mode is input
+
+HC_TXD[2] = INPUT();
+
+
+--HC_TXD[3] is HC_TXD[3] at PIN_E16
+--operation mode is input
+
+HC_TXD[3] = INPUT();
+
+
+--HC_MDC is HC_MDC at PIN_D16
+--operation mode is input
+
+HC_MDC = INPUT();
+
+
+--HC_ADC_DCLK is HC_ADC_DCLK at PIN_B18
+--operation mode is input
+
+HC_ADC_DCLK = INPUT();
+
+
+--HC_ADC_DIN is HC_ADC_DIN at PIN_B16
+--operation mode is input
+
+HC_ADC_DIN = INPUT();
+
+
+--HC_ADC_CS_N is HC_ADC_CS_N at PIN_D18
+--operation mode is input
+
+HC_ADC_CS_N = INPUT();
+
+
+--HC_GREST is HC_GREST at PIN_C13
+--operation mode is input
+
+HC_GREST = INPUT();
+
+
+--HC_SCEN is HC_SCEN at PIN_B13
+--operation mode is input
+
+HC_SCEN = INPUT();
+
+
+--AUD_ADCDAT is AUD_ADCDAT at PIN_T12
+--operation mode is input
+
+AUD_ADCDAT = INPUT();
+
+
+--TD_VS is TD_VS at PIN_V11
+--operation mode is input
+
+TD_VS = INPUT();
+
+
+--TD_HS is TD_HS at PIN_T11
+--operation mode is input
+
+TD_HS = INPUT();
+
+
+--TD_D[0] is TD_D[0] at PIN_V8
+--operation mode is input
+
+TD_D[0] = INPUT();
+
+
+--TD_D[1] is TD_D[1] at PIN_T8
+--operation mode is input
+
+TD_D[1] = INPUT();
+
+
+--TD_D[2] is TD_D[2] at PIN_T9
+--operation mode is input
+
+TD_D[2] = INPUT();
+
+
+--TD_D[3] is TD_D[3] at PIN_V9
+--operation mode is input
+
+TD_D[3] = INPUT();
+
+
+--TD_D[4] is TD_D[4] at PIN_U9
+--operation mode is input
+
+TD_D[4] = INPUT();
+
+
+--TD_D[5] is TD_D[5] at PIN_U10
+--operation mode is input
+
+TD_D[5] = INPUT();
+
+
+--TD_D[6] is TD_D[6] at PIN_V10
+--operation mode is input
+
+TD_D[6] = INPUT();
+
+
+--TD_D[7] is TD_D[7] at PIN_T10
+--operation mode is input
+
+TD_D[7] = INPUT();
+
+
+--TD_27MHZ is TD_27MHZ at PIN_U8
+--operation mode is input
+
+TD_27MHZ = INPUT();
+
+
+--UART_RXD is UART_RXD at PIN_K4
+--operation mode is input
+
+UART_RXD = INPUT();
+
+
+--RX_CLK is RX_CLK at PIN_J5
+--operation mode is input
+
+RX_CLK = INPUT();
+
+
+--RX_DV is RX_DV at PIN_H5
+--operation mode is input
+
+RX_DV = INPUT();
+
+
+--RX_ERR is RX_ERR at PIN_H6
+--operation mode is input
+
+RX_ERR = INPUT();
+
+
+--RX_CRS is RX_CRS at PIN_H4
+--operation mode is input
+
+RX_CRS = INPUT();
+
+
+--RX_COL is RX_COL at PIN_G6
+--operation mode is input
+
+RX_COL = INPUT();
+
+
+--RXD[0] is RXD[0] at PIN_G4
+--operation mode is input
+
+RXD[0] = INPUT();
+
+
+--RXD[1] is RXD[1] at PIN_G5
+--operation mode is input
+
+RXD[1] = INPUT();
+
+
+--RXD[2] is RXD[2] at PIN_G7
+--operation mode is input
+
+RXD[2] = INPUT();
+
+
+--RXD[3] is RXD[3] at PIN_F4
+--operation mode is input
+
+RXD[3] = INPUT();
+
+
+--TX_CLK is TX_CLK at PIN_T2
+--operation mode is input
+
+TX_CLK = INPUT();
+
+
+--ADC_DOUT is ADC_DOUT at PIN_M1
+--operation mode is input
+
+ADC_DOUT = INPUT();
+
+
+--ADC_PENIRQ is ADC_PENIRQ at PIN_M3
+--operation mode is input
+
+ADC_PENIRQ = INPUT();
+
+
+--ADC_BUSY is ADC_BUSY at PIN_M2
+--operation mode is input
+
+ADC_BUSY = INPUT();
+
+
+--HC_VGA_CLOCK is HC_VGA_CLOCK at PIN_J13
+--operation mode is input
+
+HC_VGA_CLOCK = INPUT();
+
+
+--HC_VGA_DATA[0] is HC_VGA_DATA[0] at PIN_N16
+--operation mode is input
+
+HC_VGA_DATA[0] = INPUT();
+
+
+--HC_VGA_DATA[1] is HC_VGA_DATA[1] at PIN_M16
+--operation mode is input
+
+HC_VGA_DATA[1] = INPUT();
+
+
+--HC_VGA_DATA[2] is HC_VGA_DATA[2] at PIN_M18
+--operation mode is input
+
+HC_VGA_DATA[2] = INPUT();
+
+
+--HC_VGA_DATA[3] is HC_VGA_DATA[3] at PIN_M17
+--operation mode is input
+
+HC_VGA_DATA[3] = INPUT();
+
+
+--HC_VGA_DATA[4] is HC_VGA_DATA[4] at PIN_L17
+--operation mode is input
+
+HC_VGA_DATA[4] = INPUT();
+
+
+--HC_VGA_DATA[5] is HC_VGA_DATA[5] at PIN_L18
+--operation mode is input
+
+HC_VGA_DATA[5] = INPUT();
+
+
+--HC_VGA_DATA[6] is HC_VGA_DATA[6] at PIN_L16
+--operation mode is input
+
+HC_VGA_DATA[6] = INPUT();
+
+
+--HC_VGA_DATA[7] is HC_VGA_DATA[7] at PIN_K16
+--operation mode is input
+
+HC_VGA_DATA[7] = INPUT();
+
+
+--HC_VGA_DATA[8] is HC_VGA_DATA[8] at PIN_K18
+--operation mode is input
+
+HC_VGA_DATA[8] = INPUT();
+
+
+--HC_VGA_DATA[9] is HC_VGA_DATA[9] at PIN_J18
+--operation mode is input
+
+HC_VGA_DATA[9] = INPUT();
+
+
+--HC_NCLK is HC_NCLK at PIN_K13
+--operation mode is input
+
+HC_NCLK = INPUT();
+
+
+--HC_VD is HC_VD at PIN_D14
+--operation mode is input
+
+HC_VD = INPUT();
+
+
+--HC_LCD_DATA[0] is HC_LCD_DATA[0] at PIN_D17
+--operation mode is input
+
+HC_LCD_DATA[0] = INPUT();
+
+
+--HC_LCD_DATA[1] is HC_LCD_DATA[1] at PIN_C17
+--operation mode is input
+
+HC_LCD_DATA[1] = INPUT();
+
+
+--HC_LCD_DATA[2] is HC_LCD_DATA[2] at PIN_C16
+--operation mode is input
+
+HC_LCD_DATA[2] = INPUT();
+
+
+--HC_LCD_DATA[3] is HC_LCD_DATA[3] at PIN_D13
+--operation mode is input
+
+HC_LCD_DATA[3] = INPUT();
+
+
+--HC_LCD_DATA[4] is HC_LCD_DATA[4] at PIN_D15
+--operation mode is input
+
+HC_LCD_DATA[4] = INPUT();
+
+
+--HC_LCD_DATA[5] is HC_LCD_DATA[5] at PIN_B15
+--operation mode is input
+
+HC_LCD_DATA[5] = INPUT();
+
+
+--HC_LCD_DATA[6] is HC_LCD_DATA[6] at PIN_B14
+--operation mode is input
+
+HC_LCD_DATA[6] = INPUT();
+
+
+--HC_LCD_DATA[7] is HC_LCD_DATA[7] at PIN_A15
+--operation mode is input
+
+HC_LCD_DATA[7] = INPUT();
+
+
+--OSC100 is OSC100 at PIN_J6
+--operation mode is input
+
+OSC100 = INPUT();
+
+
+--HC_HD is HC_HD at PIN_C14
+--operation mode is input
+
+HC_HD = INPUT();
+
+
+--HC_DEN is HC_DEN at PIN_C15
+--operation mode is input
+
+HC_DEN = INPUT();
+
+
+--I2C_SCLK is I2C_SCLK at PIN_U11
+--operation mode is output
+
+I2C_SCLK = OUTPUT(HC_I2C_SCLK);
+
+
+--AUD_XCK is AUD_XCK at PIN_U14
+--operation mode is output
+
+AUD_XCK = OUTPUT(HC_AUD_XCK);
+
+
+--AUD_BCLK is AUD_BCLK at PIN_U13
+--operation mode is output
+
+AUD_BCLK = OUTPUT(HC_AUD_BCLK);
+
+
+--AUD_DACDAT is AUD_DACDAT at PIN_V13
+--operation mode is output
+
+AUD_DACDAT = OUTPUT(HC_AUD_DACDAT);
+
+
+--AUD_DACLRCK is AUD_DACLRCK at PIN_T13
+--operation mode is output
+
+AUD_DACLRCK = OUTPUT(HC_AUD_DACLRCK);
+
+
+--AUD_ADCLRCK is AUD_ADCLRCK at PIN_V12
+--operation mode is output
+
+AUD_ADCLRCK = OUTPUT(HC_AUD_ADCLRCK);
+
+
+--TD_RESET is TD_RESET at PIN_U12
+--operation mode is output
+
+TD_RESET = OUTPUT(HC_TD_RESET);
+
+
+--VGA_HS is VGA_HS at PIN_K5
+--operation mode is output
+
+VGA_HS = OUTPUT(HC_VGA_HS);
+
+
+--VGA_VS is VGA_VS at PIN_L5
+--operation mode is output
+
+VGA_VS = OUTPUT(HC_VGA_VS);
+
+
+--VGA_BLANK is VGA_BLANK at PIN_R8
+--operation mode is output
+
+VGA_BLANK = OUTPUT(HC_VGA_BLANK);
+
+
+--VGA_SYNC is VGA_SYNC at PIN_P7
+--operation mode is output
+
+VGA_SYNC = OUTPUT(HC_VGA_SYNC);
+
+
+--VGA_CLOCK is VGA_CLOCK at PIN_L4
+--operation mode is output
+
+VGA_CLOCK = OUTPUT(B1_CLK);
+
+
+--VGA_R[0] is VGA_R[0] at PIN_U7
+--operation mode is output
+
+VGA_R[0] = OUTPUT(B1L58);
+
+
+--VGA_R[1] is VGA_R[1] at PIN_V7
+--operation mode is output
+
+VGA_R[1] = OUTPUT(B1L59);
+
+
+--VGA_R[2] is VGA_R[2] at PIN_T7
+--operation mode is output
+
+VGA_R[2] = OUTPUT(B1L60);
+
+
+--VGA_R[3] is VGA_R[3] at PIN_T6
+--operation mode is output
+
+VGA_R[3] = OUTPUT(B1L61);
+
+
+--VGA_R[4] is VGA_R[4] at PIN_V6
+--operation mode is output
+
+VGA_R[4] = OUTPUT(B1L62);
+
+
+--VGA_R[5] is VGA_R[5] at PIN_U6
+--operation mode is output
+
+VGA_R[5] = OUTPUT(B1L63);
+
+
+--VGA_R[6] is VGA_R[6] at PIN_U5
+--operation mode is output
+
+VGA_R[6] = OUTPUT(B1L64);
+
+
+--VGA_R[7] is VGA_R[7] at PIN_V5
+--operation mode is output
+
+VGA_R[7] = OUTPUT(B1L65);
+
+
+--VGA_R[8] is VGA_R[8] at PIN_T5
+--operation mode is output
+
+VGA_R[8] = OUTPUT(B1L66);
+
+
+--VGA_R[9] is VGA_R[9] at PIN_T4
+--operation mode is output
+
+VGA_R[9] = OUTPUT(B1L67);
+
+
+--VGA_G[0] is VGA_G[0] at PIN_V4
+--operation mode is output
+
+VGA_G[0] = OUTPUT(B1L37);
+
+
+--VGA_G[1] is VGA_G[1] at PIN_U4
+--operation mode is output
+
+VGA_G[1] = OUTPUT(B1L38);
+
+
+--VGA_G[2] is VGA_G[2] at PIN_U3
+--operation mode is output
+
+VGA_G[2] = OUTPUT(B1L39);
+
+
+--VGA_G[3] is VGA_G[3] at PIN_V2
+--operation mode is output
+
+VGA_G[3] = OUTPUT(B1L40);
+
+
+--VGA_G[4] is VGA_G[4] at PIN_P8
+--operation mode is output
+
+VGA_G[4] = OUTPUT(B1L41);
+
+
+--VGA_G[5] is VGA_G[5] at PIN_R9
+--operation mode is output
+
+VGA_G[5] = OUTPUT(B1L42);
+
+
+--VGA_G[6] is VGA_G[6] at PIN_P9
+--operation mode is output
+
+VGA_G[6] = OUTPUT(B1L43);
+
+
+--VGA_G[7] is VGA_G[7] at PIN_P10
+--operation mode is output
+
+VGA_G[7] = OUTPUT(B1L44);
+
+
+--VGA_G[8] is VGA_G[8] at PIN_R10
+--operation mode is output
+
+VGA_G[8] = OUTPUT(B1L45);
+
+
+--VGA_G[9] is VGA_G[9] at PIN_P11
+--operation mode is output
+
+VGA_G[9] = OUTPUT(B1L46);
+
+
+--VGA_B[0] is VGA_B[0] at PIN_R7
+--operation mode is output
+
+VGA_B[0] = OUTPUT(B1L16);
+
+
+--VGA_B[1] is VGA_B[1] at PIN_P6
+--operation mode is output
+
+VGA_B[1] = OUTPUT(B1L17);
+
+
+--VGA_B[2] is VGA_B[2] at PIN_R6
+--operation mode is output
+
+VGA_B[2] = OUTPUT(B1L18);
+
+
+--VGA_B[3] is VGA_B[3] at PIN_R5
+--operation mode is output
+
+VGA_B[3] = OUTPUT(B1L19);
+
+
+--VGA_B[4] is VGA_B[4] at PIN_N4
+--operation mode is output
+
+VGA_B[4] = OUTPUT(B1L20);
+
+
+--VGA_B[5] is VGA_B[5] at PIN_N5
+--operation mode is output
+
+VGA_B[5] = OUTPUT(B1L21);
+
+
+--VGA_B[6] is VGA_B[6] at PIN_M5
+--operation mode is output
+
+VGA_B[6] = OUTPUT(B1L22);
+
+
+--VGA_B[7] is VGA_B[7] at PIN_M4
+--operation mode is output
+
+VGA_B[7] = OUTPUT(B1L23);
+
+
+--VGA_B[8] is VGA_B[8] at PIN_M6
+--operation mode is output
+
+VGA_B[8] = OUTPUT(B1L24);
+
+
+--VGA_B[9] is VGA_B[9] at PIN_L6
+--operation mode is output
+
+VGA_B[9] = OUTPUT(B1L25);
+
+
+--SD_CLK is SD_CLK at PIN_P1
+--operation mode is output
+
+SD_CLK = OUTPUT(HC_SD_CLK);
+
+
+--ID_I2CSCL is ID_I2CSCL at PIN_N3
+--operation mode is output
+
+ID_I2CSCL = OUTPUT(HC_ID_I2CSCL);
+
+
+--UART_TXD is UART_TXD at PIN_J4
+--operation mode is output
+
+UART_TXD = OUTPUT(HC_UART_TXD);
+
+
+--ETH_RESET_N is ETH_RESET_N at PIN_T3
+--operation mode is output
+
+ETH_RESET_N = OUTPUT(HC_ETH_RESET_N);
+
+
+--TX_EN is TX_EN at PIN_R3
+--operation mode is output
+
+TX_EN = OUTPUT(HC_TX_EN);
+
+
+--TXD[0] is TXD[0] at PIN_P4
+--operation mode is output
+
+TXD[0] = OUTPUT(HC_TXD[0]);
+
+
+--TXD[1] is TXD[1] at PIN_R1
+--operation mode is output
+
+TXD[1] = OUTPUT(HC_TXD[1]);
+
+
+--TXD[2] is TXD[2] at PIN_R2
+--operation mode is output
+
+TXD[2] = OUTPUT(HC_TXD[2]);
+
+
+--TXD[3] is TXD[3] at PIN_P2
+--operation mode is output
+
+TXD[3] = OUTPUT(HC_TXD[3]);
+
+
+--MDC is MDC at PIN_U1
+--operation mode is output
+
+MDC = OUTPUT(HC_MDC);
+
+
+--ADC_DCLK is ADC_DCLK at PIN_L3
+--operation mode is output
+
+ADC_DCLK = OUTPUT(HC_ADC_DCLK);
+
+
+--ADC_DIN is ADC_DIN at PIN_N2
+--operation mode is output
+
+ADC_DIN = OUTPUT(HC_ADC_DIN);
+
+
+--ADC_CS_N is ADC_CS_N at PIN_N1
+--operation mode is output
+
+ADC_CS_N = OUTPUT(HC_ADC_CS_N);
+
+
+--R[0] is R[0] at PIN_H1
+--operation mode is output
+
+R[0] = OUTPUT(D1_LCD_R[0]);
+
+
+--R[1] is R[1] at PIN_H2
+--operation mode is output
+
+R[1] = OUTPUT(D1_LCD_R[1]);
+
+
+--R[2] is R[2] at PIN_J2
+--operation mode is output
+
+R[2] = OUTPUT(D1_LCD_R[2]);
+
+
+--R[3] is R[3] at PIN_J1
+--operation mode is output
+
+R[3] = OUTPUT(D1_LCD_R[3]);
+
+
+--R[4] is R[4] at PIN_J3
+--operation mode is output
+
+R[4] = OUTPUT(D1_LCD_R[4]);
+
+
+--R[5] is R[5] at PIN_K3
+--operation mode is output
+
+R[5] = OUTPUT(D1_LCD_R[5]);
+
+
+--R[6] is R[6] at PIN_K1
+--operation mode is output
+
+R[6] = OUTPUT(D1_LCD_R[6]);
+
+
+--R[7] is R[7] at PIN_K2
+--operation mode is output
+
+R[7] = OUTPUT(D1_LCD_R[7]);
+
+
+--G[0] is G[0] at PIN_E3
+--operation mode is output
+
+G[0] = OUTPUT(D1_LCD_G[0]);
+
+
+--G[1] is G[1] at PIN_F3
+--operation mode is output
+
+G[1] = OUTPUT(D1_LCD_G[1]);
+
+
+--G[2] is G[2] at PIN_F1
+--operation mode is output
+
+G[2] = OUTPUT(D1_LCD_G[2]);
+
+
+--G[3] is G[3] at PIN_F2
+--operation mode is output
+
+G[3] = OUTPUT(D1_LCD_G[3]);
+
+
+--G[4] is G[4] at PIN_G2
+--operation mode is output
+
+G[4] = OUTPUT(D1_LCD_G[4]);
+
+
+--G[5] is G[5] at PIN_G1
+--operation mode is output
+
+G[5] = OUTPUT(D1_LCD_G[5]);
+
+
+--G[6] is G[6] at PIN_G3
+--operation mode is output
+
+G[6] = OUTPUT(D1_LCD_G[6]);
+
+
+--G[7] is G[7] at PIN_H3
+--operation mode is output
+
+G[7] = OUTPUT(D1_LCD_G[7]);
+
+
+--B[0] is B[0] at PIN_D4
+--operation mode is output
+
+B[0] = OUTPUT(D1_LCD_B[0]);
+
+
+--B[1] is B[1] at PIN_C3
+--operation mode is output
+
+B[1] = OUTPUT(D1_LCD_B[1]);
+
+
+--B[2] is B[2] at PIN_C2
+--operation mode is output
+
+B[2] = OUTPUT(D1_LCD_B[2]);
+
+
+--B[3] is B[3] at PIN_D3
+--operation mode is output
+
+B[3] = OUTPUT(D1_LCD_B[3]);
+
+
+--B[4] is B[4] at PIN_D1
+--operation mode is output
+
+B[4] = OUTPUT(D1_LCD_B[4]);
+
+
+--B[5] is B[5] at PIN_D2
+--operation mode is output
+
+B[5] = OUTPUT(D1_LCD_B[5]);
+
+
+--B[6] is B[6] at PIN_E2
+--operation mode is output
+
+B[6] = OUTPUT(D1_LCD_B[6]);
+
+
+--B[7] is B[7] at PIN_E1
+--operation mode is output
+
+B[7] = OUTPUT(D1_LCD_B[7]);
+
+
+--NCLK is NCLK at PIN_E4
+--operation mode is output
+
+NCLK = OUTPUT(E1L7);
+
+
+--HD is HD at PIN_F5
+--operation mode is output
+
+HD = OUTPUT(D1_LCD_HD);
+
+
+--VD is VD at PIN_F6
+--operation mode is output
+
+VD = OUTPUT(D1_LCD_VD);
+
+
+--DEN is DEN at PIN_E5
+--operation mode is output
+
+DEN = OUTPUT(D1_LCD_DEN);
+
+
+--GREST is GREST at PIN_L2
+--operation mode is output
+
+GREST = OUTPUT(HC_GREST);
+
+
+--SCEN is SCEN at PIN_L1
+--operation mode is output
+
+SCEN = OUTPUT(HC_SCEN);
+
+
+--HC_AUD_ADCDAT is HC_AUD_ADCDAT at PIN_R15
+--operation mode is output
+
+HC_AUD_ADCDAT = OUTPUT(AUD_ADCDAT);
+
+
+--HC_TD_VS is HC_TD_VS at PIN_J15
+--operation mode is output
+
+HC_TD_VS = OUTPUT(TD_VS);
+
+
+--HC_TD_HS is HC_TD_HS at PIN_H13
+--operation mode is output
+
+HC_TD_HS = OUTPUT(TD_HS);
+
+
+--HC_TD_D[0] is HC_TD_D[0] at PIN_M15
+--operation mode is output
+
+HC_TD_D[0] = OUTPUT(TD_D[0]);
+
+
+--HC_TD_D[1] is HC_TD_D[1] at PIN_M14
+--operation mode is output
+
+HC_TD_D[1] = OUTPUT(TD_D[1]);
+
+
+--HC_TD_D[2] is HC_TD_D[2] at PIN_L14
+--operation mode is output
+
+HC_TD_D[2] = OUTPUT(TD_D[2]);
+
+
+--HC_TD_D[3] is HC_TD_D[3] at PIN_L15
+--operation mode is output
+
+HC_TD_D[3] = OUTPUT(TD_D[3]);
+
+
+--HC_TD_D[4] is HC_TD_D[4] at PIN_M12
+--operation mode is output
+
+HC_TD_D[4] = OUTPUT(TD_D[4]);
+
+
+--HC_TD_D[5] is HC_TD_D[5] at PIN_L13
+--operation mode is output
+
+HC_TD_D[5] = OUTPUT(TD_D[5]);
+
+
+--HC_TD_D[6] is HC_TD_D[6] at PIN_K15
+--operation mode is output
+
+HC_TD_D[6] = OUTPUT(TD_D[6]);
+
+
+--HC_TD_D[7] is HC_TD_D[7] at PIN_K14
+--operation mode is output
+
+HC_TD_D[7] = OUTPUT(TD_D[7]);
+
+
+--HC_TD_27MHZ is HC_TD_27MHZ at PIN_G14
+--operation mode is output
+
+HC_TD_27MHZ = OUTPUT(TD_27MHZ);
+
+
+--HC_UART_RXD is HC_UART_RXD at PIN_G18
+--operation mode is output
+
+HC_UART_RXD = OUTPUT(UART_RXD);
+
+
+--HC_RX_CLK is HC_RX_CLK at PIN_H14
+--operation mode is output
+
+HC_RX_CLK = OUTPUT(RX_CLK);
+
+
+--HC_RX_DV is HC_RX_DV at PIN_E14
+--operation mode is output
+
+HC_RX_DV = OUTPUT(RX_DV);
+
+
+--HC_RX_ERR is HC_RX_ERR at PIN_G13
+--operation mode is output
+
+HC_RX_ERR = OUTPUT(RX_ERR);
+
+
+--HC_RX_CRS is HC_RX_CRS at PIN_H15
+--operation mode is output
+
+HC_RX_CRS = OUTPUT(RX_CRS);
+
+
+--HC_RX_COL is HC_RX_COL at PIN_F14
+--operation mode is output
+
+HC_RX_COL = OUTPUT(RX_COL);
+
+
+--HC_RXD[0] is HC_RXD[0] at PIN_G15
+--operation mode is output
+
+HC_RXD[0] = OUTPUT(RXD[0]);
+
+
+--HC_RXD[1] is HC_RXD[1] at PIN_G12
+--operation mode is output
+
+HC_RXD[1] = OUTPUT(RXD[1]);
+
+
+--HC_RXD[2] is HC_RXD[2] at PIN_F13
+--operation mode is output
+
+HC_RXD[2] = OUTPUT(RXD[2]);
+
+
+--HC_RXD[3] is HC_RXD[3] at PIN_F15
+--operation mode is output
+
+HC_RXD[3] = OUTPUT(RXD[3]);
+
+
+--HC_TX_CLK is HC_TX_CLK at PIN_A13
+--operation mode is output
+
+HC_TX_CLK = OUTPUT(TX_CLK);
+
+
+--HC_ADC_DOUT is HC_ADC_DOUT at PIN_E13
+--operation mode is output
+
+HC_ADC_DOUT = OUTPUT(ADC_DOUT);
+
+
+--HC_ADC_PENIRQ is HC_ADC_PENIRQ at PIN_A14
+--operation mode is output
+
+HC_ADC_PENIRQ = OUTPUT(ADC_PENIRQ);
+
+
+--HC_ADC_BUSY is HC_ADC_BUSY at PIN_E15
+--operation mode is output
+
+HC_ADC_BUSY = OUTPUT(ADC_BUSY);
+
+
+--MD_I2C_SDAT is MD_I2C_SDAT at PIN_V14
+--operation mode is bidir
+
+MD_I2C_SDAT = BIDIR(OPNDRN(VCC));
+
+
+--MD_SD_CMD is MD_SD_CMD at PIN_U16
+--operation mode is bidir
+
+MD_SD_CMD = BIDIR(OPNDRN(VCC));
+
+
+--MD_SD_DAT3 is MD_SD_DAT3 at PIN_U15
+--operation mode is bidir
+
+MD_SD_DAT3 = BIDIR(OPNDRN(VCC));
+
+
+--MD_SD_DAT is MD_SD_DAT at PIN_V17
+--operation mode is bidir
+
+MD_SD_DAT = BIDIR(OPNDRN(VCC));
+
+
+--MD_PS2_CLK is MD_PS2_CLK at PIN_T14
+--operation mode is bidir
+
+MD_PS2_CLK = BIDIR(OPNDRN(VCC));
+
+
+--MD_PS2_DAT is MD_PS2_DAT at PIN_T15
+--operation mode is bidir
+
+MD_PS2_DAT = BIDIR(OPNDRN(VCC));
+
+
+--MD_MDIO is MD_MDIO at PIN_V15
+--operation mode is bidir
+
+MD_MDIO = BIDIR(OPNDRN(VCC));
+
+
+--MD_SDA is MD_SDA at PIN_U18
+--operation mode is bidir
+
+MD_SDA = BIDIR(OPNDRN(VCC));
+
+
+--HM_I2C_SDAT is HM_I2C_SDAT at PIN_P16
+--operation mode is bidir
+
+HM_I2C_SDAT = BIDIR(OPNDRN(VCC));
+
+
+--HM_SD_CMD is HM_SD_CMD at PIN_N14
+--operation mode is bidir
+
+HM_SD_CMD = BIDIR(OPNDRN(VCC));
+
+
+--HM_SD_DAT3 is HM_SD_DAT3 at PIN_P14
+--operation mode is bidir
+
+HM_SD_DAT3 = BIDIR(OPNDRN(VCC));
+
+
+--HM_SD_DAT is HM_SD_DAT at PIN_N15
+--operation mode is bidir
+
+HM_SD_DAT = BIDIR(OPNDRN(VCC));
+
+
+--HM_PS2_CLK is HM_PS2_CLK at PIN_R17
+--operation mode is bidir
+
+HM_PS2_CLK = BIDIR(OPNDRN(VCC));
+
+
+--HM_PS2_DAT is HM_PS2_DAT at PIN_R16
+--operation mode is bidir
+
+HM_PS2_DAT = BIDIR(OPNDRN(VCC));
+
+
+--HM_MDIO is HM_MDIO at PIN_R18
+--operation mode is bidir
+
+HM_MDIO = BIDIR(OPNDRN(VCC));
+
+
+--HM_SDA is HM_SDA at PIN_N13
+--operation mode is bidir
+
+HM_SDA = BIDIR(OPNDRN(VCC));
+
+
+--A1L127 is ID_I2CDAT~0 at PIN_P3
+--operation mode is bidir
+
+A1L127 = ID_I2CDAT;
+
+--ID_I2CDAT is ID_I2CDAT at PIN_P3
+--operation mode is bidir
+
+ID_I2CDAT_tri_out = TRI(A1L52, !C1L30);
+ID_I2CDAT = BIDIR(ID_I2CDAT_tri_out);
+
+
+--A1L52 is HC_ID_I2CDAT~0 at PIN_P18
+--operation mode is bidir
+
+A1L52 = HC_ID_I2CDAT;
+
+--HC_ID_I2CDAT is HC_ID_I2CDAT at PIN_P18
+--operation mode is bidir
+
+HC_ID_I2CDAT_tri_out = TRI(A1L127, C1L30);
+HC_ID_I2CDAT = BIDIR(HC_ID_I2CDAT_tri_out);
+
+

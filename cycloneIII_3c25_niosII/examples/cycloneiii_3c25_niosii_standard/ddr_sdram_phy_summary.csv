@@ -1,0 +1,9 @@
+#Path, Setup Margin, Hold Margin
+"Address Command (Fast 1200mV 0C Model)",4.231,1.492
+"DQS vs CK (Fast 1200mV 0C Model)",1.858,1.839
+"Half Rate Address/Command (Fast 1200mV 0C Model)",11.747,1.490
+"Mimic (Fast 1200mV 0C Model)",1.515,
+"Phy (Fast 1200mV 0C Model)",1.515,0.121
+"Phy Reset (Fast 1200mV 0C Model)",4.790,0.489
+"Read Capture (All Conditions)",0.460,0.509
+"Write (All Conditions)",0.709,0.889

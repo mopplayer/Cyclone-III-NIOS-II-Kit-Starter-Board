@@ -1,0 +1,43 @@
+******** How to use the demo ********
+
+ Taquin is a very popular game where we 
+take a picture in and puzzle it.
+ This Taquin game can also use a video input
+as a support.
+
+ You have to select a level and a picture or video
+support. If no video is connected, then a blue thumbnail
+will be placed. The video in has to be connected before 
+starting the demo.
+
+ During level and picture selection stage, you can click
+on the left or right items to move them around and make
+them appear in the middle. Only middle items are selectable.
+
+Enjoy!
+Marc
+
+**** Welcome In the IMAGEM world ****
+
+What you will see is unique,
+It's not openGL
+It's not powerhorse CPU driven
+It's full color resolution
+It's the best usage of the FPGA paralelism.
+
+ Let's start a new world of thinking graphics.
+
+The SOPC_BUILDER design has been done with the support of:
+    - Microtronix for the multi-channel DDR ctrl
+    - El Camnio for the SD Card peripheral
+    - Micrium for the µCOSII operating system
+
+Limitations & Known Bugs:
+-------------------------
+
+ 1- Taquin Game will pick up the JPG and PNG picture in the 
+IMAGE root direcftory. It does not parse the subdirectories.
+ 2- Picture <= 800x480 resolution will be selected.
+ 3- The Thumbnails cylinder only takes the 10 first photos.
+ 4- For using the Video, the video source has to be connected
+before starting the demo.

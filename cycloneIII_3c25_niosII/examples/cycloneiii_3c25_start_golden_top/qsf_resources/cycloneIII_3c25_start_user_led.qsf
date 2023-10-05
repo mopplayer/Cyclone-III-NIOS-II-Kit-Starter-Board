@@ -1,0 +1,11 @@
+#
+# Pin assignments
+#
+set_location_assignment PIN_P13 -to led[0]
+set_location_assignment PIN_M3 -to led[1]
+set_location_assignment PIN_N12 -to led[2]
+set_location_assignment PIN_N9 -to led[3]
+
+#
+# IO Standard
+#

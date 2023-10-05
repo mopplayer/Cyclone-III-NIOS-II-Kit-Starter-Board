@@ -1,0 +1,19 @@
+VGA Altera Spinning Cube
+--------------------------
+
+The Spinning Cube application demonstrates the Nios II Embedded Evaluation Kit's LCD panel and touchscreen.
+
+How to Use
+----------
+
+1) Use the touch panel to select and load the application
+1) The application starts with a stationary cube
+2) Using your finger or a stylus gently rotate the cube by dragging across the touchscreen in any direction.
+3) After a few seconds, the cube will begin to rotate on its own.
+
+How it works
+------------
+The rotation effect is achieved by periodically rotating the 8 corner points of the cube in three dimentions,projecting them to two dimentions, then drawing filled triangles between cube corners to represent the three sides
+closest to the viewer.
+
+A reasonable rotation speed is achieved by running the 3-D rotation routine only on the corners of the cube,not on the entire cube.

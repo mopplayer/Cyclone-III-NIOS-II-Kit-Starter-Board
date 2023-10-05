@@ -1,0 +1,24 @@
+About Imagem
+--------------------------
+
+Imagem Technologies has innovative solutions for addressing graphics and video.
+Imagem's Athlet Graphics IP engine is a SOPC Builder ready vector graphics engine that can be used with the Nios II Processor.
+
+About Imagem 2D Graphics
+--------------------------
+
+1) From the LCD touch panel select and load the Imagem 2D Graphics demo
+2) Watch real time vectorial fonts using the Athlet Graphics IP engine
+
+
+Imagems Advantages:
+---------------------
+1)  Direct from designer to embedded platform 
+2) Does not use openGL 
+3) Driven by the Nios® II embedded processor 
+4) Full color resolution 
+5) Optimal usage of Altera's FPGA parallelism
+
+To get more details go to http://www.imagem-technology.com/ALTERA_EEK.html
+
+Contact imagem at http://www.imagem-technology.com/

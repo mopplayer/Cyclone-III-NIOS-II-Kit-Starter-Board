@@ -1,0 +1,47 @@
+UNEEK Presenter Version 0.6a
+
+This application is intended to allow you to run PowerPoint like presentations out the VGA interface on the NEEK board.  You can take PowerPoint presentations and save them off as JPEG files, load them up on your SD Card and plug it into your NEEK board.  Run this application and it will allow you to choose which directory of JPEG images on your SD Card you wish to present, and then it provides a user interface to control and interact with the presentation.  See the HOWTO sections below for information on creating UNEEK Presenter compatible presentations.
+
+The GUI in this application can be controlled by touching the touch panel or by pressing the BUTTON 1 and BUTTON 2 push buttons on the 3C25 board.  You can also plug a PS/2 keyboard into the NEEK and control this application thru the PS/2 keyboard input.  I've also tested this with the Honeywell Power Presenter, The Wireless PowerPoint Remote, which happens to have a USB and PS/2 output and an RF remote that works up to 150 feet away.  You can control the entire application with the wireless remote if you like.  Here is a link to the Honeywell remote http://www.powerremote.com/Prod_PPrf.htm, it's available at various websites for around $90USD.
+
+When you start this application it brings up a GUI that lets you browse your SD card for a directory containing JPG files.  When you browse into that directory you will see the JPEG files listed in the sorted order that you can present them.  If you choose to present that directory you will move to a presentation GUI that allows you to move forward and backward thru the images.  You can end the presentation and go back to the directory browser and choose another directory to present at any time.
+
+While you're in the directory browser, at the top level directory you are given the option to safely remove the SD Card.  If you want to swap SD Cards, click this button.  This application should be able to mount SD Cards formatted in FAT12, FAT16 and FAT32 formats, and you are free to insert an SD Card with any of these formats.  Please note however that the "Application Selector Utility" that the NEEK board boots into currently does not understand FAT32 formatted SD Cards.  If you are attempting to determine the format of your SD Card, most Windows platforms will call a FAT16 volume simply FAT, and it will explicitly say FAT32 for a FAT32 volume.  Also note that this application only supports "Standard Capacity" SD cards which are 2GB or smaller.
+
+When you choose a directory to present this application looks in that directory for a sub directory containing thumbnail images of the larger JPEG files.  If it can't locate a thumbnail directory, it gives you the option to create a thumbnail directory, or simply proceed to the presentation GUI.  I highly recommend creating the thumbnails as it provides a more user friendly experience when you're surfing around in the presentation GUI looking for the right slide to show.  Once you start the thumbnail creation process you cannot stop it, and each typical JPEG file will take about 3 seconds to thumbnail, so 40 slides for example may take about 2 minutes to convert.  This program expects a specific format and naming convention for the thumbnails, so don't try creating these with any other application, and if you make any alterations to the JPEG files in the directory, you should delete the thumbnail directory that the UNEEK Presenter created and allow it to recreate them for the entire directory again.
+
+When you browse into a JPG directory, instead of presenting, you can choose to run a slideshow of that directory.  Slideshow mode is quite similar to presentation mode, except, you are presented a timer where you may adjust the number of seconds that each image is displayed on the VGA output.  You may adjust this timer from 1 to 999 seconds. With very short display times, the application will automatically adjust the delay longer if it cannot decode the next image within the allotted time.  If you have a small number of images to display, that can fit within the image cache, currently 15 images, then once all the images are loaded and cached, you can reduce the timer value to the minimum, one second, and the images will be able to change every second.
+
+The expectation of this application is that the JPEG files are in a 1024x768 format for display on the VGA output.  See details below for creating these using PowerPoint.
+
+HOWTO CONTROL GUI
+
+The GUI control via touch screen should be self evident, touch the GUI elements to activate them.
+
+The GUI control via push button works like this:
+BUTTON 1 pressed - increment thru the GUI elements
+BUTTON 2 pressed - decrement thru the GUI elements
+BUTTON 1 and 2 pressed - select the GUI element
+
+The GUI control via PS/2 keyboard maps into the push button structure like this:
+PAGE UP - BUTTON 1
+PAGE DOWN - BUTTON 2
+B - BUTTON 1 and BUTTON 2
+
+When you're in presentation mode, the push button control is modified a bit and the PS/2 mappings act accordingly:
+BUTTON 1 pressed - advance back one slide
+BUTTON 2 pressed - advance forward one slide
+BUTTON 1 and 2 pressed once - black screen
+BUTTON 1 and 2 pressed twice quickly - end presentation
+
+When you're in slideshow mode, the push button control is modified a bit and the PS/2 mappings act accordingly:
+BUTTON 1 pressed - advance back one slide
+BUTTON 2 pressed - advance forward one slide
+BUTTON 1 and 2 pressed - end presentation
+
+How can you create properly formatted slide files?
+Simply open a PowerPoint presentation and choose "Save As" and then for "Save As Type" select JPEG as the file format.  PowerPoint will proceed to save your slides out as JPEG files named precisely the way this application would like to see them, all in their own new directory.  Put this directory on your SD Card, wherever you like.
+
+How can you get PowerPoint to create 1024x768 sized JPEGs?
+Open a PowerPoint presentation and choose "Page Setup", then in the "Slides sized for:" menu choose "Custom".  If your screen resolution setup in the system is 96dpi, then the custom dimensions you want are Width = 10.67" and Height = 8.0".  Under a typical Windows operating environment it assumes the display resolution is 96 dots per inch, so if we want 1024 dots, we need 1024 / 96 inches, and so on for the other axis.  If your system is configured for 72dpi, then you may want to plug in values for 1024 / 72 inches and 768 / 72 inches.  You should open the JPEG files created by PowerPoint in some image editor like Paint, to ensure that the dimensions that were output are indeed 1024x768.  It is OK if your image is smaller than 1024x768, however, if it is larger than 1024x768, this program may dramatically scale it down to fit the display with a very crude scaling decimator.
+

@@ -1,0 +1,47 @@
+-------------------------
+VGA Altera Mandelbrot C2H
+-------------------------
+
+This is a VGA mirrored version of the standard Altera Mandelbrot C2H application.
+
+-----------------------------------------
+Welcome to the Mandelbrot C2H Application!
+-----------------------------------------
+
+The Mandelbrot Set is a set of complex numbers that form a fractal.
+What's remarkable about this organically beautiful pattern with seemingly 
+unlimited variations is that the set is computed from a simple algorithm 
+comprising of additions and multiplications performed many times per pixel, 
+each pixel in turn represents a coordinate in the complex plane!
+
+However, what this demo showcases is more than just an intricate mathematical fractal
+but a solution for a common everyday problem faced by designers: improving performance
+on a system. 
+
+----------------------
+How to use the demo
+----------------------
+
+1) At start time, the application defaults to hardware implementation of Mandelbrot.
+2) Click on 'Software' push button and then touch 'Continue' to see Software version.
+3) You can also change the color pallette by pushing on the 'Color Pallette' button.
+
+----------------------------------------------
+GHz Processing at Milliwatts power consumption!
+----------------------------------------------
+
+Compare the implementation in software vs. hardware to see how hardware
+acceleration using the Nios II C to Hardware (C2H) Acceleration Compiler boosts
+the frames/sec. So while the Nios II Processor is busy rendering the image, paning, zooming
+the image, the hardware accelerator computes the Mandlebrot set.
+
+Consider this: A Nios II processor resides in a portion of the Cyclone III FPGA and runs 
+at a mere 100 MHz. This implementation consumes a fraction of the cost and power of a GHz processor!
+
+Find out more from www.altera.com/embedded
+
+-------------------------
+Wanna see how it was done?
+-------------------------
+Altera provides full source code for the Mandelbrot C2H application in the Nios II Embedded Evaluation Kit, Cyclone
+III Edition Install CD.

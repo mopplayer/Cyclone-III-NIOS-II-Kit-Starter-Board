@@ -1,0 +1,63 @@
+\t (00:00:01) allegro_free_viewer 16.3 002 (v16-3-85Q) i86
+\t (00:00:01) 
+
+\t (00:00:01) Starting new drawing...
+\i (00:00:01) trapsize 1036
+\i (00:00:01) trapsize 1006
+\i (00:00:02) trapsize 843
+\i (00:00:02) trapsize 1084
+\i (00:00:04) open 
+\i (00:00:18) fillin "D:\WL\Project\HSMC_debug_hdr\debug_header_revc.brd"
+\i (00:00:18) cd "D:\WL\Project\HSMC_debug_hdr"
+\t (00:00:18) Opening existing drawing...
+\t (00:00:18) Grids are drawn 400.000, 400.000 apart for enhanced viewability.
+\i (00:00:18) trapsize 197704
+\d (00:00:18) Database opened: D:/WL/Project/HSMC_debug_hdr/debug_header_revc.brd
+\i (00:00:20) zoom in 1 
+\i (00:00:20) setwindow pcb
+\i (00:00:20) zoom in 3458.673 3935.969
+\t (00:00:20) Grids are drawn 100.000, 100.000 apart for enhanced viewability.
+\i (00:00:20) trapsize 98852
+\i (00:00:20) zoom in 1 
+\i (00:00:20) setwindow pcb
+\i (00:00:20) zoom in 3458.674 3935.970
+\i (00:00:20) trapsize 49426
+\i (00:00:20) zoom in 1 
+\i (00:00:20) setwindow pcb
+\i (00:00:20) zoom in 3458.674 3935.970
+\i (00:00:20) trapsize 24713
+\i (00:00:21) zoom out 1 
+\i (00:00:21) setwindow pcb
+\i (00:00:21) zoom out 4723.981 3614.701
+\i (00:00:21) trapsize 49426
+\i (00:02:14) zoom out 1 
+\i (00:02:14) setwindow pcb
+\i (00:02:14) zoom out 4012.245 3140.212
+\i (00:02:14) trapsize 98852
+\i (00:02:14) zoom in 1 
+\i (00:02:14) setwindow pcb
+\i (00:02:14) zoom in 3992.474 3140.211
+\i (00:02:14) trapsize 49426
+\i (00:02:14) zoom in 1 
+\i (00:02:14) setwindow pcb
+\i (00:02:14) zoom in 3992.475 3140.212
+\i (00:02:14) trapsize 24713
+\i (00:02:15) zoom in 1 
+\i (00:02:15) setwindow pcb
+\i (00:02:15) zoom in 3992.475 3140.212
+\i (00:02:15) trapsize 12357
+\i (00:02:16) zoom out 1 
+\i (00:02:16) setwindow pcb
+\i (00:02:16) zoom out 3829.369 3031.475
+\i (00:02:16) trapsize 24713
+\i (00:02:20) roam y 96 
+\i (00:02:20) roam y 96
+\i (00:02:20) roam y 96 
+\i (00:02:20) roam y 96
+\i (00:02:20) roam y 96 
+\i (00:02:20) roam y 96
+\i (00:02:20) roam y 96 
+\i (00:02:20) roam y 96
+\i (00:02:20) roam y -96 
+\i (00:02:20) roam y -96
+\i (00:03:04) exit 

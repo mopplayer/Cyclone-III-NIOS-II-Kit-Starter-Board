@@ -1,0 +1,30 @@
+D/AVE is a Hardware IP Core, optimized for easy integration into FPGAs and ASICs. 
+Focus of D/AVE is to provide a high quality vector graphics with subpixel processing and extended antialiasing functionality. 
+The D/AVE IP contains an innovative rendering engine as main component which allows flexible system integration.
+D/AVE has been designed to allocate low memory bandwidth and to be very small with less than 100 k ASIC equivalent gates.
+
+This demo collection consists of 10 graphical demonstrations.
+Touch the display on the left hand side to load the previous demo, touch on the right hand side to load the next demo.
+
+Demo: Windmill
+- Demonstration of Anti-Aliasing and Subpixel Accuracy.
+Demo: Dashboard
+- Demonstration of applied high quality vector graphics in an automotive application.
+Demo: Trippy Circles
+- Demonstration of additive blending.
+Demo: Mapdemo
+- Demonstration of a map drawn by D/AVE.
+Demo: Line Ends
+- Demonstration showing round line caps.
+Demo: Line Ends Feedback
+- Demonstration showing an extended version of the Line Ends demo.
+Demo: Eye Logo
+- Demonstration of Vector Graphics
+Demo: Perspective Map
+- Demonstration of Perspective Blit Extension
+Demo: Pattern Rings
+- Demonstration of patterns which are used to fill primitives
+
+Download and try the D/AVE Altera Evaluation Kit:
+http://www.tesbv.com
+

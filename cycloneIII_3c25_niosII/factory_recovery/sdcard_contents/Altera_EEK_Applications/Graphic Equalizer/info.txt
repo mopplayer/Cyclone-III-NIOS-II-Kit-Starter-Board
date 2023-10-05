@@ -1,0 +1,13 @@
+Graphic Equalizer Demo Application Ver.3.1
+
+1) From the LCD touch panel click on Graphics Equalizer demo and press LOAD
+2) Connect an music player, e.g. MP3 player, to Line IN (BLUE) JACK.
+3) Connect the Line out (Green) jack to speaker
+4) Play the song on the music player
+5) Using a stylus move the blue line on the LCD touch screen to see effects of equalization
+6) You can optionally connect VGA out to a monitor/projector to see LCD contents on a monitor/projector 
+
+Note: Stereo audio filter is an instance of FIR Compiler MegaCore, FFT/iFFT are processed by C2H accelerator.
+PushButton functions:
+ -To change Display format: PB1,2,3
+ -To restore filter response: PB4

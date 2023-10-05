@@ -1,0 +1,348 @@
+# Copyright (C) 1991-2007 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		C2H_Mandelbrot_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name DEVICE EP3C25F324C7
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name TOP_LEVEL_ENTITY C2H_Mandelbrot
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 324
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name MUX_RESTRUCTURE OFF
+set_global_assignment -name STATE_MACHINE_PROCESSING "ONE-HOT"
+set_global_assignment -name CYCLONEIII_CONFIGURATION_SCHEME "ACTIVE PARALLEL"
+set_global_assignment -name GENERATE_TTF_FILE ON
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT EXTRA
+set_global_assignment -name STRATIXIII_UPDATE_MODE STANDARD
+set_global_assignment -name LAST_QUARTUS_VERSION 12.1
+set_global_assignment -name ENABLE_ADVANCED_IO_TIMING ON
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PLACEMENT_EFFORT_MULTIPLIER 1.0
+set_global_assignment -name ROUTER_EFFORT_MULTIPLIER 1.0
+set_global_assignment -name XSTL_INPUT_ALLOW_SE_BUFFER ON
+set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS OFF
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA7_THROUGH_DATA2_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_OTHER_AP_PINS_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name SEED 1
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name ROUTER_TIMING_OPTIMIZATION_LEVEL MAXIMUM
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP OFF
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_GATE_RETIME OFF
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+
+
+
+# DDR SDRAM Interface
+set_location_assignment PIN_U3 -to mem_dqs[0]
+set_location_assignment PIN_T8 -to mem_dqs[1]
+set_location_assignment PIN_V3 -to mem_dm[0]
+set_location_assignment PIN_V8 -to mem_dm[1]
+set_location_assignment PIN_V11 -to mem_ba[0]
+set_location_assignment PIN_V12 -to mem_ba[1]
+set_location_assignment PIN_T4 -to mem_cas_n
+set_location_assignment PIN_R13 -to mem_cke[0]
+set_location_assignment PIN_V1 -to mem_cs_n[0]
+set_location_assignment PIN_V16 -to mem_ras_n
+set_location_assignment PIN_U15 -to mem_we_n
+set_location_assignment PIN_U2 -to mem_clk[0]
+set_location_assignment PIN_V2 -to mem_clk_n[0]
+set_location_assignment PIN_U1 -to mem_addr[0]
+set_location_assignment PIN_U5 -to mem_addr[1]
+set_location_assignment PIN_U7 -to mem_addr[2]
+set_location_assignment PIN_U8 -to mem_addr[3]
+set_location_assignment PIN_P8 -to mem_addr[4]
+set_location_assignment PIN_P7 -to mem_addr[5]
+set_location_assignment PIN_P6 -to mem_addr[6]
+set_location_assignment PIN_T14 -to mem_addr[7]
+set_location_assignment PIN_T13 -to mem_addr[8]
+set_location_assignment PIN_V13 -to mem_addr[9]
+set_location_assignment PIN_U17 -to mem_addr[10]
+set_location_assignment PIN_V17 -to mem_addr[11]
+set_location_assignment PIN_U16 -to mem_addr[12]
+set_location_assignment PIN_U4 -to mem_dq[0]
+set_location_assignment PIN_V4 -to mem_dq[1]
+set_location_assignment PIN_R8 -to mem_dq[2]
+set_location_assignment PIN_V5 -to mem_dq[3]
+set_location_assignment PIN_P9 -to mem_dq[4]
+set_location_assignment PIN_U6 -to mem_dq[5]
+set_location_assignment PIN_V6 -to mem_dq[6]
+set_location_assignment PIN_V7 -to mem_dq[7]
+set_location_assignment PIN_U13 -to mem_dq[8]
+set_location_assignment PIN_U12 -to mem_dq[9]
+set_location_assignment PIN_U11 -to mem_dq[10]
+set_location_assignment PIN_V15 -to mem_dq[11]
+set_location_assignment PIN_U14 -to mem_dq[12]
+set_location_assignment PIN_R11 -to mem_dq[13]
+set_location_assignment PIN_P10 -to mem_dq[14]
+set_location_assignment PIN_V14 -to mem_dq[15]
+
+
+
+# Flash and SSRAM bridge
+set_location_assignment PIN_E12 -to tristate_bus_address[1]
+set_location_assignment PIN_A16 -to tristate_bus_address[2]
+set_location_assignment PIN_B16 -to tristate_bus_address[3]
+set_location_assignment PIN_A15 -to tristate_bus_address[4]
+set_location_assignment PIN_B15 -to tristate_bus_address[5]
+set_location_assignment PIN_A14 -to tristate_bus_address[6]
+set_location_assignment PIN_B14 -to tristate_bus_address[7]
+set_location_assignment PIN_A13 -to tristate_bus_address[8]
+set_location_assignment PIN_B13 -to tristate_bus_address[9]
+set_location_assignment PIN_A12 -to tristate_bus_address[10]
+set_location_assignment PIN_B12 -to tristate_bus_address[11]
+set_location_assignment PIN_A11 -to tristate_bus_address[12]
+set_location_assignment PIN_B11 -to tristate_bus_address[13]
+set_location_assignment PIN_C10 -to tristate_bus_address[14]
+set_location_assignment PIN_D10 -to tristate_bus_address[15]
+set_location_assignment PIN_E10 -to tristate_bus_address[16]
+set_location_assignment PIN_C9 -to tristate_bus_address[17]
+set_location_assignment PIN_D9 -to tristate_bus_address[18]
+set_location_assignment PIN_A7 -to tristate_bus_address[19]
+set_location_assignment PIN_A6 -to tristate_bus_address[20]
+set_location_assignment PIN_B18 -to tristate_bus_address[21]
+set_location_assignment PIN_C17 -to tristate_bus_address[22]
+set_location_assignment PIN_C18 -to tristate_bus_address[23]
+set_location_assignment PIN_E2 -to flash_select_n
+set_location_assignment PIN_D17 -to flash_read_n
+set_location_assignment PIN_D18 -to flash_write_n
+set_location_assignment PIN_C3 -to flash_reset_n
+set_location_assignment PIN_H3 -to tristate_bus_data[0]
+set_location_assignment PIN_D1 -to tristate_bus_data[1]
+set_location_assignment PIN_A8 -to tristate_bus_data[2]
+set_location_assignment PIN_B8 -to tristate_bus_data[3]
+set_location_assignment PIN_B7 -to tristate_bus_data[4]
+set_location_assignment PIN_C5 -to tristate_bus_data[5]
+set_location_assignment PIN_E8 -to tristate_bus_data[6]
+set_location_assignment PIN_A4 -to tristate_bus_data[7]
+set_location_assignment PIN_B4 -to tristate_bus_data[8]
+set_location_assignment PIN_E7 -to tristate_bus_data[9]
+set_location_assignment PIN_A3 -to tristate_bus_data[10]
+set_location_assignment PIN_B3 -to tristate_bus_data[11]
+set_location_assignment PIN_D5 -to tristate_bus_data[12]
+set_location_assignment PIN_B5 -to tristate_bus_data[13]
+set_location_assignment PIN_A5 -to tristate_bus_data[14]
+set_location_assignment PIN_B6 -to tristate_bus_data[15]
+set_location_assignment PIN_C16 -to tristate_bus_data[16]
+set_location_assignment PIN_D12 -to tristate_bus_data[17]
+set_location_assignment PIN_E11 -to tristate_bus_data[18]
+set_location_assignment PIN_D2 -to tristate_bus_data[19]
+set_location_assignment PIN_E13 -to tristate_bus_data[20]
+set_location_assignment PIN_E14 -to tristate_bus_data[21]
+set_location_assignment PIN_A17 -to tristate_bus_data[22]
+set_location_assignment PIN_D16 -to tristate_bus_data[23]
+set_location_assignment PIN_C12 -to tristate_bus_data[24]
+set_location_assignment PIN_A18 -to tristate_bus_data[25]
+set_location_assignment PIN_F8 -to tristate_bus_data[26]
+set_location_assignment PIN_D7 -to tristate_bus_data[27]
+set_location_assignment PIN_F6 -to tristate_bus_data[28]
+set_location_assignment PIN_E6 -to tristate_bus_data[29]
+set_location_assignment PIN_G6 -to tristate_bus_data[30]
+set_location_assignment PIN_C7 -to tristate_bus_data[31]
+set_location_assignment PIN_E9 -to ssram_outputenable_n
+set_location_assignment PIN_F9 -to ssram_chipenable_n
+set_location_assignment PIN_F10 -to ssram_bw_n[0]
+set_location_assignment PIN_F11 -to ssram_bw_n[1]
+set_location_assignment PIN_F12 -to ssram_bw_n[2]
+set_location_assignment PIN_F13 -to ssram_bw_n[3]
+set_location_assignment PIN_F7 -to ssram_adsc_n
+set_location_assignment PIN_G13 -to ssram_bwe_n
+set_location_assignment PIN_A2 -to ssram_clk
+
+
+
+# HSMC B Interface (LCD, EEPROM, touchpanel)
+# LCD
+set_location_assignment PIN_R4 -to lcd_rgb[0]
+set_location_assignment PIN_T17 -to lcd_rgb[1]
+set_location_assignment PIN_T18 -to lcd_rgb[2]
+set_location_assignment PIN_L16 -to lcd_rgb[3]
+set_location_assignment PIN_M17 -to lcd_rgb[4]
+set_location_assignment PIN_N6 -to lcd_rgb[5]
+set_location_assignment PIN_M13 -to lcd_rgb[6]
+set_location_assignment PIN_N13 -to lcd_rgb[7]
+set_location_assignment PIN_D14 -to video_clk
+set_location_assignment PIN_R17 -to lcd_den
+set_location_assignment PIN_M14 -to lcd_hd
+set_location_assignment PIN_L13 -to lcd_vd
+# LCD I2C
+set_location_assignment PIN_T2 -to lcd_i2c_dat
+set_location_assignment PIN_M6 -to lcd_i2c_cs
+# EEPROM I2C
+set_location_assignment PIN_H6 -to eeprom_scl
+set_location_assignment PIN_D3 -to eeprom_dat
+# Touchpanel SPI
+set_location_assignment PIN_N17 -to touch_panel_irq_n
+set_location_assignment PIN_U18 -to touch_panel_mosi
+set_location_assignment PIN_L18 -to touch_panel_miso
+set_location_assignment PIN_R5 -to touch_panel_ss_n
+# Multiplexed clock for Touchpanel SPI and LCD I2C
+set_location_assignment PIN_V18 -to serial_clk
+
+
+
+# Other I/O on the Host Board
+set_location_assignment PIN_V9 -to ext_50M_clk
+set_location_assignment PIN_N2 -to pld_clear_n
+set_location_assignment PIN_F1 -to push_buttons[0]
+set_location_assignment PIN_F2 -to push_buttons[1]
+set_location_assignment PIN_A10 -to push_buttons[2]
+set_location_assignment PIN_B10 -to push_buttons[3]
+
+
+
+# DDR SDRAM auto-generated assignments
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_clk[0]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_clk[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_clk_n[0]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_clk_n[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_cs_n[0]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_cs_n[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_cke[0]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_cke[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[8]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[9]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[10]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[11]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_addr[12]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[0]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[1]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[2]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[3]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[4]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[5]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[6]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[7]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[8]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[9]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[10]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[11]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_addr[12]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_ba[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_ba[1]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_ba[0]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_ba[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_ras_n
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_ras_n
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_cas_n
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_cas_n
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to mem_we_n
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_we_n
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[8]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[9]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[10]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[11]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[12]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[13]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[14]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dq[15]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[0]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[1]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[2]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[3]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[4]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[5]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[6]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[7]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[8]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[9]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[10]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[11]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[12]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[13]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[14]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dq[15]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[0]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[1]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[2]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[3]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[4]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[5]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[6]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[7]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[8]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[9]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[10]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[11]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[12]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[13]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[14]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dq[15]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dqs[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dqs[1]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dqs[0]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dqs[1]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dqs[0]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dqs[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dm[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 12MA -to mem_dm[1]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dm[0]
+set_instance_assignment -name OUTPUT_ENABLE_GROUP 1522066258 -to mem_dm[1]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dm[0]
+set_instance_assignment -name IO_STANDARD "SSTL-2 CLASS I" -to mem_dm[1]
+
+set_global_assignment -name SEARCH_PATH altera/91sp2/ip/altera/sopc_builder_ip/altera_avalon_pixel_converter/ -tag from_archive
+set_global_assignment -name SEARCH_PATH altera/91sp2/ip/altera/sopc_builder_ip/altera_avalon_video_sync_generator/ -tag from_archive
+set_global_assignment -name SEARCH_PATH altera/91sp2/quartus/libraries/vhdl/ieee/ -tag from_archive
+set_global_assignment -name SEARCH_PATH dummy_master/ -tag from_archive
+set_global_assignment -name SEARCH_PATH megafunctions/ -tag from_archive
+set_global_assignment -name SDC_FILE frame_buffer_phy_ddr_timing.sdc
+set_global_assignment -name SDC_FILE my_constraints.sdc
+set_global_assignment -name BDF_FILE C2H_Mandelbrot.bdf
+set_global_assignment -name QIP_FILE system.qip
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

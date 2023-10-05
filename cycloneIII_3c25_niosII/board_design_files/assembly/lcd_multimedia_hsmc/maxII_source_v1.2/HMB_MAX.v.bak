@@ -1,0 +1,476 @@
+// --------------------------------------------------------------------
+// Copyright (c) 2007 by Terasic Technologies Inc. 
+// --------------------------------------------------------------------
+//
+// Permission:
+//
+//   Terasic grants permission to use and modify this code for use
+//   in synthesis for all Terasic Development Boards and Altrea Development 
+//   Kits made by Terasic.  Other use of this code, including the selling 
+//   ,duplication, or modification of any portion is strictly prohibited.
+//
+// Disclaimer:
+//
+//   This VHDL or Verilog source code is intended as a design reference
+//   which illustrates how these types of functions can be implemented.
+//   It is the user's responsibility to verify their design for
+//   consistency and functionality through the use of formal
+//   verification methods.  Terasic provides no warranty regarding the use 
+//   or functionality of this code.
+//
+// --------------------------------------------------------------------
+//           
+//                     Terasic Technologies Inc
+//                     356 Fu-Shin E. Rd Sec. 1. JhuBei City,
+//                     HsinChu County, Taiwan
+//                     302
+//
+//                     web: http://www.terasic.com/
+//                     email: support@terasic.com
+//
+// --------------------------------------------------------------------
+//
+// Major Functions: HMB MAXII TOP
+//
+// --------------------------------------------------------------------
+//
+// Revision History :
+// --------------------------------------------------------------------
+//   Ver 	:| Author            :| Mod. Date :| Changes Made:
+//   V1.0  	:| Joe Yang          :| 07/05/20  :|      Initial Revision
+//	 V1.01 	:| Joe Yang          :| 07/05/21  :|      Add ethernet mdio direction comtrol
+//	 V1.01a	:| Johnny Fan        :| 07/06/8   :|      Modify Terasic_3WIREBir_bus module
+//   V1.1 	:| Johnny Fan        :| 07/06/11  :|      Change for HMB PCB V1.1
+
+//   V1.2 	:| Johnny Fan        :| 08/06/02  :|      Add LCD power on sequece control for new
+//                                                    LCD driver IC     
+// --------------------------------------------------------------------
+
+module HMB_MAX 
+		(	
+		////////////////////	Clock Input	 	////////////////////	
+		OSC100,							//	100 MHz					
+		////////////////////	I2C		////////////////////////////
+		I2C_SCLK,						//	I2C Clock
+		MD_I2C_SDAT,					//	I2C Data
+		////////////////	Audio CODEC		////////////////////////
+		AUD_XCK,						//	Audio CODEC Chip Clock
+		AUD_BCLK,						//	Audio CODEC Bit-Stream Clock
+		AUD_DACDAT,						//	Audio CODEC DAC Data
+		AUD_DACLRCK,					//	Audio CODEC DAC LR Clock
+		AUD_ADCLRCK,					//	Audio CODEC ADC LR Clock
+		AUD_ADCDAT,						//	Audio CODEC ADC Data	
+		////////////////	TV Decoder		////////////////////////
+		TD_RESET,						//	TV Decoder Reset
+		TD_VS,							//	TV Decoder V_SYNC
+		TD_HS,							//	TV Decoder H_SYNC
+		TD_D,    						//	TV Decoder Data bus 8 bits
+		TD_27MHZ,						//	TV Decode  Clock
+		////////////////////	VGA		////////////////////////////
+		VGA_HS,							//	VGA H_SYNC
+		VGA_VS,							//	VGA V_SYNC
+		VGA_BLANK,						//	VGA BLANK
+		VGA_SYNC,						//	VGA SYNC
+		VGA_CLOCK,   					//	VGA Clock
+		VGA_R,   						//	VGA Red[9:0]
+		VGA_G,	 						//	VGA Green[9:0]
+		VGA_B,  						//	VGA Blue[9:0]	
+		////////////////////	SD_Card Interface	////////////////
+		SD_CLK,						//	SD Card Clock
+		MD_SD_CMD,						//	SD Card Command Signal
+		MD_SD_DAT3,						//	SD Card Data 3
+		MD_SD_DAT,						//	SD Card Data
+		////////////////////	ID_I2C	////////////////////////////
+		ID_I2CSCL,						//	ID I2C Clock
+		ID_I2CDAT,						//	ID I2C Data		
+		////////////////////	PS2		////////////////////////////
+		MD_PS2_CLK,						//	PS2 Clock
+		MD_PS2_DAT,						//	PS2 Data
+		////////////////////////	UART	////////////////////////
+		UART_TXD,						//	UART Transmitter
+		UART_RXD,						//	UART Receiver
+		////////////	Ethernet Interface	////////////////////////
+		ETH_RESET_N,	                //  DP83848 Reset
+		TX_EN,							//  DP83848 MII TRANSMIT ENABLE
+		TXD,							//	DP83848 MII TRANSMIT DATA  
+		MDC,                       		//  DP83848 MANAGEMENT DATA CLOCK
+		MD_MDIO,                      		//	DP83848 MANAGEMENT DATA I/O
+		RX_CLK,							//	DP83848 MII RECEIVE CLOCK
+		RX_DV,							//	DP83848 MII RECEIVE DATA VALID
+		RX_ERR,							//	DP83848 MII RECEIVE ERROR
+		RX_CRS,							//  DP83848 MII CARRIER SENSE
+		RX_COL,                    		//  DP83848 MII COLLISION DETECT	
+		RXD,							//  DP83848 MII RECEIVE DATA
+		TX_CLK,							//  DP83848 MII TRANSMIT CLOCK
+		////////////// 	LCD Touch Panel Interface  //////////////////////
+		ADC_DCLK,						// ADC/LCM serial interface clock
+	    ADC_DIN,						// ADC serial interface data in
+		ADC_CS_N,				        // ADC Chip Select 
+		R,								// LCD Red Data
+		G,								// LCD Green Data
+		B,								// LCD Blue Data
+		NCLK,							// LCD Clock signal
+		HD,								// LCD Horizontal sync input				
+		VD,								// LCD Vertical sync input
+		DEN,							// LCD Data Enable
+		GREST,							// LCD Global reset
+		SCEN,							// LCD Serial interface chip enable line
+		MD_SDA,							// LCD Serial interface data line
+		ADC_DOUT,						// ADC serial interface data out
+		ADC_PENIRQ,						// ADC pen Interrupt
+		ADC_BUSY,						// ADC busy	
+		////////////// 	HSMC  Connector Interface  //////////////////////        
+		//I2C
+		HC_I2C_SCLK,
+		HM_I2C_SDAT,
+		//Audio CODEC
+		HC_AUD_XCK,
+		HC_AUD_BCLK,
+		HC_AUD_DACDAT,
+		HC_AUD_DACLRCK,			
+		HC_AUD_ADCLRCK,
+		HC_AUD_ADCDAT,				
+		//TV Decoder
+		HC_TD_RESET,
+		HC_TD_VS,
+		HC_TD_HS,
+		HC_TD_D,
+		HC_TD_27MHZ,
+		//VGA
+		HC_VGA_CLOCK,
+		HC_VGA_HS,
+		HC_VGA_VS,
+		HC_VGA_BLANK,
+		HC_VGA_SYNC,
+		HC_VGA_DATA,
+		//SD_Card Interface
+		HC_SD_CLK,
+		HM_SD_CMD,		
+		HM_SD_DAT3,	
+		HM_SD_DAT,				
+        //ID_I2C
+		HC_ID_I2CSCL,
+		HC_ID_I2CDAT,
+		//PS2
+		HM_PS2_CLK,
+		HM_PS2_DAT,		
+		//UART
+		HC_UART_TXD,						
+		HC_UART_RXD,
+		//Ethernet Interface		
+        HC_ETH_RESET_N,
+        HC_TX_EN,
+		HC_TXD,
+        HC_MDC,
+		HM_MDIO,
+		HC_RX_CLK,
+        HC_RX_DV,
+        HC_RX_ERR,
+        HC_RX_CRS,	
+        HC_RX_COL, 
+        HC_RXD,	
+        HC_TX_CLK,
+		//LCD Touch Panel Interface
+        HC_ADC_DCLK,
+        HC_ADC_DIN,
+        HC_ADC_CS_N,
+		HC_LCD_DATA,
+		HC_NCLK,				
+        HC_VD,		
+        HC_HD,
+        HC_DEN,	
+        HC_GREST,		
+        HC_SCEN,
+        HM_SDA,			
+        HC_ADC_DOUT,	
+        HC_ADC_PENIRQ,	
+        HC_ADC_BUSY,	
+				
+		);
+
+////////////////////////	Clock Input	 	////////////////////////
+input			OSC100;					//	100 MHz
+////////////////// 	HSMC  Connector Interface  ////////////////////// 
+//I2C
+input			HC_I2C_SCLK;
+inout			HM_I2C_SDAT;
+//Audio CODEC
+input			HC_AUD_XCK;
+input			HC_AUD_BCLK;	
+input			HC_AUD_DACDAT;			
+input			HC_AUD_DACLRCK;				
+input			HC_AUD_ADCLRCK;					
+output			HC_AUD_ADCDAT;
+//TV Decoder
+input			HC_TD_RESET;
+output			HC_TD_VS;
+output			HC_TD_HS;
+output	[7:0]	HC_TD_D;
+output			HC_TD_27MHZ;
+//VGA
+input			HC_VGA_CLOCK;
+input			HC_VGA_HS;
+input			HC_VGA_VS;
+input			HC_VGA_BLANK;
+input			HC_VGA_SYNC;
+input	[9:0]   HC_VGA_DATA;
+//SD_Card Interface
+input			HC_SD_CLK;	
+input			HM_SD_CMD;					
+input			HM_SD_DAT3;
+output			HM_SD_DAT;				
+//ID_I2C
+input			HC_ID_I2CSCL;
+inout			HC_ID_I2CDAT;	
+//PS2				
+inout			HM_PS2_CLK;	
+inout			HM_PS2_DAT;	
+//UART
+input			HC_UART_TXD;				
+output			HC_UART_RXD;				
+//Ethernet Interface
+input			HC_ETH_RESET_N;
+input			HC_TX_EN;
+input	[3:0]	HC_TXD;	
+input			HC_MDC;
+inout			HM_MDIO;
+output			HC_RX_CLK;
+output			HC_RX_DV;
+output			HC_RX_ERR;
+output			HC_RX_CRS;
+output			HC_RX_COL; 
+output	[3:0]	HC_RXD;	
+output			HC_TX_CLK;
+//LCD Touch Panel Interface
+input			HC_ADC_DCLK;
+input			HC_ADC_DIN;
+input			HC_ADC_CS_N;
+input	[7:0]	HC_LCD_DATA;
+input			HC_NCLK;	
+input			HC_VD;
+input			HC_HD;
+input			HC_DEN;	
+input			HC_GREST;		
+input			HC_SCEN;
+inout			HM_SDA;			
+output			HC_ADC_DOUT;
+output			HC_ADC_PENIRQ;	
+output			HC_ADC_BUSY;	
+
+////////////////////////	I2C		////////////////////////////////
+output			I2C_SCLK;				//	I2C Clock
+inout			MD_I2C_SDAT;			//	I2C Data
+////////////////////	Audio CODEC		////////////////////////////
+output			AUD_XCK;				//	Audio CODEC Chip Clock
+output			AUD_BCLK;				//	Audio CODEC Bit-Stream Clock
+output			AUD_DACDAT;				//	Audio CODEC DAC Data
+output			AUD_DACLRCK;			//	Audio CODEC DAC LR Clock
+output			AUD_ADCLRCK;			//	Audio CODEC ADC LR Clock
+input			AUD_ADCDAT;				//	Audio CODEC ADC Data
+////////////////////	TV Devoder		////////////////////////////
+output			TD_RESET;				//	TV Decoder Reset
+input			TD_VS;					//	TV Decoder V_SYNC
+input			TD_HS;					//	TV Decoder H_SYNC
+input	[7:0]	TD_D;	    			//	TV Decoder Data bus 8 bits
+input			TD_27MHZ;				//	TV Decode  Clock
+////////////////////////	VGA			////////////////////////////
+output			VGA_HS;					//	VGA H_SYNC
+output			VGA_VS;					//	VGA V_SYNC
+output			VGA_BLANK;				//	VGA BLANK
+output			VGA_SYNC;				//	VGA SYNC
+output			VGA_CLOCK;   			//	VGA Clock
+output	[9:0]	VGA_R;   				//	VGA Red[9:0]
+output	[9:0]	VGA_G;	 				//	VGA Green[9:0]
+output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
+////////////////////	SD Card Interface	////////////////////////
+output			SD_CLK;					//	SD Card Clock
+output			MD_SD_CMD;				//	SD Card Command Signal
+output			MD_SD_DAT3;				//	SD Card Data 3
+input			MD_SD_DAT;				//	SD Card Data
+////////////////////////	ID_I2C		////////////////////////////////
+output			ID_I2CSCL;				//	ID I2C Clock
+inout			ID_I2CDAT;				//	ID I2C Data
+////////////////////////	PS2		////////////////////////////////
+inout			MD_PS2_CLK;				//	PS2 Clock
+inout		 	MD_PS2_DAT;				//	PS2 Data
+////////////////////////////	UART	////////////////////////////
+output			UART_TXD;				//	UART Transmitter
+input			UART_RXD;				//	UART Receiver
+/////////////////   	Ethernet Interface	////////////////////////
+output			ETH_RESET_N;            //  DP83848 Reset
+output			TX_EN;	          		//  DP83848 MII TRANSMIT ENABLE
+output	[3:0]	TXD;	            	//	DP83848 MII TRANSMIT DATA  
+output			MDC;                	//  DP83848 MANAGEMENT DATA CLOCK
+inout			MD_MDIO;               	//	DP83848 MANAGEMENT DATA I/O
+input			RX_CLK;	            	//	DP83848 MII RECEIVE CLOCK
+input			RX_DV;	            	//	DP83848 MII RECEIVE DATA VALI
+input			RX_ERR;	            	//	DP83848 MII RECEIVE ERROR
+input			RX_CRS;	            	//  DP83848 MII CARRIER SENSE
+input			RX_COL;             	//  DP83848 MII COLLISION DETECT
+input  	[3:0]	RXD;	            	//  DP83848 MII RECEIVE DATA
+input 			TX_CLK;	            	//  DP83848 MII TRANSMIT CLOCK
+////////////// 	LCD Touch Panel Interface  //////////////////////
+output			ADC_DCLK;				// ADC/LCD serial interface clock
+output			ADC_DIN;				// ADC serial interface data in
+output			ADC_CS_N;				// ADC Chip Select
+output	[7:0]	R;						// LCD Red Data
+output	[7:0]	G;						// LCD Green Data
+output	[7:0]	B;						// LCD Blue Data
+output			NCLK;					// LCD Clock signal
+output			HD;						// LCD Horizontal sync input			
+output			VD;						// LCD Vertical sync input
+output			DEN;					// LCD Data Enable
+output			GREST;					// LCD Global reset
+output			SCEN;					// LCD Serial interface chip enable line
+inout			MD_SDA;					// LCD Serial interface data line
+input			ADC_DOUT;				// ADC serial interface data out
+input			ADC_PENIRQ;				// ADC pen Interrupt
+input			ADC_BUSY;				// ADC busy
+/////////////////////////////////////////////////////////
+
+
+//=============================================
+//	Audio and TV decoder I2C interface		
+//=============================================
+
+assign  I2C_SCLK   	 	= HC_I2C_SCLK ;
+
+//=============================================
+//				Audio CODEC interface		
+//=============================================
+
+assign	AUD_XCK 	 	= HC_AUD_XCK;
+assign	AUD_BCLK	  	= HC_AUD_BCLK;
+assign  AUD_DACDAT	 	= HC_AUD_DACDAT;
+assign	AUD_DACLRCK	  	= HC_AUD_DACLRCK;				
+assign	AUD_ADCLRCK	  	= HC_AUD_ADCLRCK;					
+assign	HC_AUD_ADCDAT 	= AUD_ADCDAT;
+
+//=============================================
+//				TV Devoder interface		
+//=============================================
+
+assign 	TD_RESET 		= HC_TD_RESET ;
+assign 	HC_TD_VS		= TD_VS;
+assign 	HC_TD_HS		= TD_HS;
+assign 	HC_TD_D			= TD_D;
+assign 	HC_TD_27MHZ		= TD_27MHZ;
+
+//=============================================
+//				VGA interface		
+//=============================================
+
+VGA_DATA_DECODE u1
+(
+   .clk(HC_VGA_CLOCK),
+   .reset_n(1'b1),
+   
+   .RGB_in(HC_VGA_DATA),
+   .HS_in(HC_VGA_HS),
+   .VS_in(HC_VGA_VS),
+   .BLANK_in(HC_VGA_BLANK),
+   .SYNC_in(HC_VGA_SYNC),
+
+   .VGA_R(VGA_R),
+   .VGA_G(VGA_G),
+   .VGA_B(VGA_B),
+   .VGA_HS(VGA_HS),
+   .VGA_VS(VGA_VS),
+   .VGA_BLANK(VGA_BLANK),
+   .VGA_CLOCK(VGA_CLOCK)
+);
+
+//=============================================
+//				SD CARD interface		
+//=============================================
+
+assign	SD_CLK    	 =  HC_SD_CLK;	
+
+//=============================================
+//				ID_I2C interface		
+//=============================================
+
+// SAMPLE CLOCK for birdirection control //
+
+reg [7:0] SAMPLE_CLK;
+
+always@(posedge OSC100)
+	begin
+		SAMPLE_CLK <= SAMPLE_CLK + 1;
+	end	
+
+assign	ID_I2CSCL   	= HC_ID_I2CSCL;
+
+Terasic_I2CBir_bus	u2 (
+						.clk(SAMPLE_CLK[5]),  //CLOCK = 1.56MHZ //
+						.reset(1'b0),
+						.scl(HC_ID_I2CSCL),
+						.sda(HC_ID_I2CDAT),
+						.sda_o(ID_I2CDAT)
+						);
+						
+//=============================================
+//				UART interface		
+//=============================================
+
+assign	UART_TXD     	= HC_UART_TXD;
+assign	HC_UART_RXD  	= UART_RXD;
+
+//=============================================
+//				Ethernet Interface interface		
+//=============================================
+
+assign	ETH_RESET_N    	= HC_ETH_RESET_N;
+assign	MDC				= HC_MDC;
+assign	TX_EN			= HC_TX_EN;
+assign	TXD				= HC_TXD;
+assign	HC_RX_CLK		= RX_CLK;
+assign	HC_RX_DV		= RX_DV;
+assign	HC_RX_ERR		= RX_ERR;
+assign	HC_RX_CRS		= RX_CRS;
+assign	HC_RX_COL		= RX_COL;
+assign	HC_RXD			= RXD;
+assign	HC_TX_CLK		= TX_CLK;
+
+//=============================================
+//			LCD Touch Panel Interface		
+//=============================================
+wire	nclk_decode;
+assign	SCEN			= HC_SCEN;
+assign	ADC_DCLK 		= HC_ADC_DCLK;
+assign	ADC_DIN 		= HC_ADC_DIN;
+assign	ADC_CS_N 		= HC_ADC_CS_N;
+assign	HC_ADC_DOUT 	= ADC_DOUT;
+assign	HC_ADC_PENIRQ 	= ADC_PENIRQ;
+assign	HC_ADC_BUSY 	= ADC_BUSY; 
+
+LCD_DATA_DECODE u3
+(
+   .clk(HC_NCLK),
+   .reset_n(1'b1),
+   
+   .RGB_in(HC_LCD_DATA),
+   .HD_in(HC_HD),
+   .VD_in(HC_VD),
+   .DEN_in(HC_DEN),
+   
+   .LCD_R(R),
+   .LCD_G(G),
+   .LCD_B(B),
+   .LCD_HD(HD),
+   .LCD_VD(VD),
+   .LCD_DEN(DEN),
+   .LCD_NCLK(nclk_decode)
+);
+						LCD_poweron_seq 	u4	(
+
+						.iCLK(OSC100),
+						.iHC_GREST_n(HC_GREST),
+						.oGREST_n(GREST),
+						.iNCLK_decode(nclk_decode),
+						.oNCLK(NCLK),
+						);
+
+
+
+endmodule

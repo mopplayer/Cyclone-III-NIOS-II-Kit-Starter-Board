@@ -1,0 +1,233 @@
+
+INPUT-UNITS     INCHES
+
+WHEEL     1
+
+CIRCLE            18            D10
+FLASH     TR-C18X26X8-45           180  D11
+CIRCLE            26            D12
+CIRCLE            20            D13
+FLASH     TR-C20X28X8-45       0.00000  D14
+CIRCLE            28            D15
+CIRCLE            37            D16
+FLASH     TR-C35X47X14-45      0.00000  D17
+CIRCLE            47            D18
+FLASH     TR-C18X26X8-45       0.00000  D19
+RECTANGLE      55.12     17.72   0.00000  D20
+RECTANGLE      61.02     23.62   0.00000  D21
+RECTANGLE      29.53      9.06   0.00000  D22
+RECTANGLE      35.43     14.96   0.00000  D23
+RECTANGLE       9.06     29.53   0.00000  D24
+RECTANGLE      14.96     35.43   0.00000  D25
+SQUARE        161.42   0.00000            D26
+SQUARE        167.32   0.00000            D27
+RECTANGLE      39.37     11.81   0.00000  D28
+RECTANGLE      45.28     17.72   0.00000  D29
+RECTANGLE      39.37     15.75   0.00000  D30
+RECTANGLE      45.28     21.65   0.00000  D31
+RECTANGLE      11.81     39.37   0.00000  D32
+RECTANGLE      17.72     45.28   0.00000  D33
+RECTANGLE      15.75     39.37   0.00000  D34
+RECTANGLE      21.65     45.28   0.00000  D35
+RECTANGLE      32.48     11.81   0.00000  D36
+RECTANGLE      38.39     17.72   0.00000  D37
+RECTANGLE      11.81     32.48   0.00000  D38
+RECTANGLE      17.72     38.39   0.00000  D39
+SQUARE           110   0.00000            D40
+SQUARE           116   0.00000            D41
+LINE              69            D42
+OBLONG           129        69   0.00000  D43
+FLASH     TR-O120X59X140X71X18-90       180  D44
+LINE              71            D45
+OBLONG           140        71   0.00000  D46
+LINE              75            D47
+OBLONG           135        75   0.00000  D48
+OBLONG            69       129   0.00000  D49
+FLASH     TR-O120X59X140X71X18-90        90  D50
+OBLONG            71       140   0.00000  D51
+OBLONG            75       135   0.00000  D52
+CIRCLE            63            D53
+FLASH     TR-C57X69X16-45           90  D54
+CIRCLE            69            D55
+CIRCLE            90            D56
+FLASH     TR-C75X89X18-45          270  D57
+CIRCLE            89            D58
+CIRCLE            96            D59
+CIRCLE            67            D60
+CIRCLE            94            D61
+FLASH     TR-C77X91X18-45          270  D62
+CIRCLE            91            D63
+CIRCLE           100            D64
+FLASH     TR-C57X69X16-45          270  D65
+CIRCLE            53            D66
+FLASH     TR-C51X63X16-45          270  D67
+CIRCLE            59            D68
+SQUARE            53   0.00000            D69
+FLASH     TR-S51X63X16-45          270  D70
+SQUARE            63   0.00000            D71
+SQUARE            59   0.00000            D72
+RECTANGLE        140        60   0.00000  D73
+RECTANGLE        146        66   0.00000  D74
+RECTANGLE         80        26   0.00000  D75
+RECTANGLE         86        32   0.00000  D76
+RECTANGLE         80        30   0.00000  D77
+RECTANGLE         86        36   0.00000  D78
+CIRCLE            40            D79
+CIRCLE         19.29            D80
+CIRCLE          25.2            D81
+RECTANGLE      62.99    118.11   0.00000  D82
+RECTANGLE       68.9    124.02   0.00000  D83
+FLASH     TR-C57X69X16-45      0.00000  D84
+CIRCLE            35            D85
+CIRCLE            80            D86
+CIRCLE           250            D87
+FLASH     TR-C146X167X20-45    0.00000  D88
+CIRCLE           167            D89
+CIRCLE           256            D90
+SQUARE            35   0.00000            D91
+SQUARE            41   0.00000            D92
+RECTANGLE         55        43   0.00000  D93
+RECTANGLE         61        49   0.00000  D94
+RECTANGLE         43        55   0.00000  D95
+RECTANGLE         49        61   0.00000  D96
+RECTANGLE         24        39   0.00000  D97
+RECTANGLE         30        45   0.00000  D98
+RECTANGLE         47        71   0.00000  D99
+RECTANGLE         53        77   0.00000  D100
+RECTANGLE         71        47   0.00000  D101
+RECTANGLE         77        53   0.00000  D102
+RECTANGLE        106        47   0.00000  D103
+RECTANGLE        112        53   0.00000  D104
+RECTANGLE         47       106   0.00000  D105
+RECTANGLE         53       112   0.00000  D106
+RECTANGLE         59        24   0.00000  D107
+RECTANGLE         65        30   0.00000  D108
+RECTANGLE         24        59   0.00000  D109
+RECTANGLE         30        65   0.00000  D110
+LINE              55            D111
+OBLONG           168        55   0.00000  D112
+FLASH     TR-O168X55X182X69X15-90       180  D113
+OBLONG        180.36        69   0.00000  D114
+LINE              61            D115
+OBLONG           174        61   0.00000  D116
+OBLONG            55       168   0.00000  D117
+FLASH     TR-O168X55X182X69X15-90       270  D118
+OBLONG            69    180.36   0.00000  D119
+OBLONG            61       174   0.00000  D120
+CIRCLE           104            D121
+FLASH     TR-C83X98X18-45          180  D122
+CIRCLE            98            D123
+CIRCLE           110            D124
+RECTANGLE       37.4     84.65   0.00000  D125
+RECTANGLE      43.31     90.55   0.00000  D126
+RECTANGLE     127.95     84.65   0.00000  D127
+RECTANGLE     133.86     90.55   0.00000  D128
+RECTANGLE      70.87     78.74   0.00000  D129
+RECTANGLE      76.77     84.65   0.00000  D130
+RECTANGLE         55        24   0.00000  D131
+RECTANGLE         61        30   0.00000  D132
+RECTANGLE         40        18   0.00000  D133
+RECTANGLE         46        24   0.00000  D134
+RECTANGLE         40        25   0.00000  D135
+RECTANGLE         46        31   0.00000  D136
+RECTANGLE      23.62     62.99   0.00000  D137
+RECTANGLE      29.53      68.9   0.00000  D138
+CIRCLE            43            D139
+FLASH     TR-C46X57X16-45      0.00000  D140
+CIRCLE            57            D141
+CIRCLE            49            D142
+SQUARE            43   0.00000            D143
+FLASH     TR-S46X57X16-45      0.00000  D144
+SQUARE            57   0.00000            D145
+SQUARE            49   0.00000            D146
+CIRCLE           207            D147
+FLASH     TR-C146X167X20-45        180  D148
+CIRCLE           213            D149
+FLASH     TR-C57X69X16-45          180  D150
+FLASH     TR-S57X69X16-90          180  D151
+SQUARE            69   0.00000            D152
+RECTANGLE      16.54     70.08   0.00000  D153
+RECTANGLE      22.44     75.98   0.00000  D154
+FLASH     TR-C61X75X16-45          180  D155
+CIRCLE            75            D156
+FLASH     TR-S61X75X16-45          180  D157
+SQUARE            75   0.00000            D158
+RECTANGLE      59.06     11.81   0.00000  D159
+RECTANGLE      64.96     17.72   0.00000  D160
+RECTANGLE      11.81     59.06   0.00000  D161
+RECTANGLE      17.72     64.96   0.00000  D162
+RECTANGLE      70.87     86.61   0.00000  D163
+RECTANGLE      76.77     92.52   0.00000  D164
+RECTANGLE      11.81     70.87   0.00000  D165
+RECTANGLE      17.72     76.77   0.00000  D166
+RECTANGLE       25.2       100   0.00000  D167
+RECTANGLE       31.1    105.91   0.00000  D168
+RECTANGLE       25.2    185.04   0.00000  D169
+RECTANGLE       31.1    190.94   0.00000  D170
+RECTANGLE      57.09     11.81   0.00000  D171
+RECTANGLE      62.99     17.72   0.00000  D172
+RECTANGLE      17.72     55.12   0.00000  D173
+RECTANGLE      23.62     61.02   0.00000  D174
+RECTANGLE      78.74     70.87   0.00000  D175
+RECTANGLE      84.65     76.77   0.00000  D176
+RECTANGLE      84.65    127.95   0.00000  D177
+RECTANGLE      90.55    133.86   0.00000  D178
+RECTANGLE      84.65      37.4   0.00000  D179
+RECTANGLE      90.55     43.31   0.00000  D180
+RECTANGLE         24        55   0.00000  D181
+RECTANGLE         30        61   0.00000  D182
+RECTANGLE         30        80   0.00000  D183
+RECTANGLE         36        86   0.00000  D184
+RECTANGLE         26        80   0.00000  D185
+RECTANGLE         32        86   0.00000  D186
+RECTANGLE         60       140   0.00000  D187
+RECTANGLE         66       146   0.00000  D188
+RECTANGLE      70.08     16.54   0.00000  D189
+RECTANGLE      75.98     22.44   0.00000  D190
+RECTANGLE      62.99     23.62   0.00000  D191
+RECTANGLE       68.9     29.53   0.00000  D192
+RECTANGLE     118.11     62.99   0.00000  D193
+RECTANGLE     124.02      68.9   0.00000  D194
+RECTANGLE         25        40   0.00000  D195
+RECTANGLE         31        46   0.00000  D196
+RECTANGLE         18        40   0.00000  D197
+RECTANGLE         24        46   0.00000  D198
+RECTANGLE      70.87     11.81   0.00000  D199
+RECTANGLE      76.77     17.72   0.00000  D200
+RECTANGLE      86.61     70.87   0.00000  D201
+RECTANGLE      92.52     76.77   0.00000  D202
+FLASH     TR-O120X59X140X71X18-90   0.00000  D203
+FLASH     TR-S57X69X16-90      0.00000  D204
+RECTANGLE      11.81     57.09   0.00000  D205
+RECTANGLE      17.72     62.99   0.00000  D206
+RECTANGLE     185.04      25.2   0.00000  D207
+RECTANGLE     190.94      31.1   0.00000  D208
+RECTANGLE        100      25.2   0.00000  D209
+RECTANGLE     105.91      31.1   0.00000  D210
+FLASH     TR-S51X63X16-45      0.00000  D211
+FLASH     TR-C51X63X16-45      0.00000  D212
+FLASH     TR-C77X91X18-45      0.00000  D213
+FLASH     TR-S61X75X16-45      0.00000  D214
+FLASH     TR-C61X75X16-45      0.00000  D215
+FLASH     TR-C83X98X18-45      0.00000  D216
+FLASH     TR-O168X55X182X69X15-90   0.00000  D217
+FLASH     TR-C75X89X18-45      0.00000  D218
+RECTANGLE         39        24   0.00000  D219
+RECTANGLE         45        30   0.00000  D220
+LINE               6            D221
+LINE               8            D222
+LINE               7            D223
+LINE               1            D224
+LINE              10            D225
+LINE              12            D226
+LINE               4            D227
+LINE              25            D228
+LINE            9.84            D229
+LINE           23.62            D230
+LINE            7.87            D231
+LINE              15            D232
+LINE              30            D233
+LINE              20            D234
+LINE           20.73            D235
+LINE             0.8            D236
+

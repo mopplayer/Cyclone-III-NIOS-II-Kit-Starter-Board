@@ -1,0 +1,24 @@
+************** HOW TO USE THE WATCH ***********
+
+ - Touch the screen to speed up the hands.
+ - For fine tuning, select the middle button,	
+	a Selection Menu will appear.
+
+    + Select an item to set and click on
+	Top Button to decrease
+	Bottom Button to increase.
+
+********* Welcome In the IMAGEM world *********
+
+What you will see is unique,
+It's not openGL
+It's not powerhorse CPU driven
+It's full color resolution
+It's the best usage of the FPGA paralelism.
+
+ Let's start a new world of thinking graphics.
+
+The SOPC_BUILDER design has been done with the support of:
+    - Microtronix for the multi-channel DDR ctrl
+    - El Camnio for the SD Card peripheral
+    - Micrium for the µCOSII operating system

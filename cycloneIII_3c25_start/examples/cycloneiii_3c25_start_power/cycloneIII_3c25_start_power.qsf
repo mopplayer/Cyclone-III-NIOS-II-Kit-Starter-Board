@@ -1,0 +1,150 @@
+# Copyright (C) 1991-2008 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		cycloneIII_3c25_start_power_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C25F324C6
+set_global_assignment -name TOP_LEVEL_ENTITY cycloneIII_3c25_start_power_top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 8.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:05:03  APRIL 01, 2008"
+set_global_assignment -name LAST_QUARTUS_VERSION 12.0
+set_global_assignment -name SIMULATION_MODE TIMING
+set_global_assignment -name SIMULATOR_SIGNAL_ACTIVITY_FILE_START_TIME "75 us"
+set_global_assignment -name SIMULATOR_SIGNAL_ACTIVITY_FILE_END_TIME "100 us"
+set_global_assignment -name SIMULATOR_GENERATE_SIGNAL_ACTIVITY_FILE ON
+set_global_assignment -name SIMULATOR_SIGNAL_ACTIVITY_FILE_OUTPUT_DESTINATION test.saf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 2147039 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS "EXTRA EFFORT"
+set_global_assignment -name POWER_AUTO_COMPUTE_TJ OFF
+set_global_assignment -name POWER_TJ_VALUE 85
+set_global_assignment -name POWER_USE_INPUT_FILES ON
+set_global_assignment -name POWER_USE_PVA OFF
+set_global_assignment -name POWER_INPUT_FILE_NAME test.saf -section_id test.saf
+set_global_assignment -name POWER_INPUT_FILE_TYPE SAF -section_id test.saf
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED WITH WEAK PULL-UP"
+set_instance_assignment -name POWER_READ_INPUT_FILE test.saf -to cycloneIII_3c25_start_power
+set_location_assignment PIN_B9 -to i_clk
+set_location_assignment PIN_F1 -to i_nrst
+set_location_assignment PIN_B10 -to i_noutput_ena
+set_location_assignment PIN_F2 -to i_nfreq_next
+set_location_assignment PIN_A10 -to i_nperc_next
+set_location_assignment PIN_P13 -to o_nfreq_state[0]
+set_location_assignment PIN_P12 -to o_nfreq_state[1]
+set_location_assignment PIN_N12 -to o_nperc_state[0]
+set_location_assignment PIN_N9 -to o_nperc_state[1]
+set_location_assignment PIN_P11 -to o_outputs[19]
+set_location_assignment PIN_K17 -to o_outputs[18]
+set_location_assignment PIN_N11 -to o_outputs[17]
+set_location_assignment PIN_N10 -to o_outputs[16]
+set_location_assignment PIN_J13 -to o_outputs[15]
+set_location_assignment PIN_N8 -to o_outputs[14]
+set_location_assignment PIN_N7 -to o_outputs[13]
+set_location_assignment PIN_T1 -to o_outputs[12]
+set_location_assignment PIN_M5 -to o_outputs[11]
+set_location_assignment PIN_H6 -to o_outputs[10]
+set_location_assignment PIN_D3 -to o_outputs[0]
+set_location_assignment PIN_L6 -to o_outputs[1]
+set_location_assignment PIN_M3 -to o_outputs[2]
+set_location_assignment PIN_T2 -to o_outputs[3]
+set_location_assignment PIN_H15 -to o_outputs[4]
+set_location_assignment PIN_H16 -to o_outputs[5]
+set_location_assignment PIN_N16 -to o_outputs[6]
+set_location_assignment PIN_N15 -to o_outputs[7]
+set_location_assignment PIN_R16 -to o_outputs[8]
+set_location_assignment PIN_T16 -to o_outputs[9]
+set_location_assignment PIN_C1 -to o_outputs[20]
+set_location_assignment PIN_H1 -to o_outputs[21]
+set_location_assignment PIN_L5 -to o_outputs[22]
+set_location_assignment PIN_L3 -to o_outputs[23]
+set_location_assignment PIN_P1 -to o_outputs[24]
+set_location_assignment PIN_R3 -to o_outputs[25]
+set_location_assignment PIN_G18 -to o_outputs[26]
+set_location_assignment PIN_L18 -to o_outputs[27]
+set_location_assignment PIN_M17 -to o_outputs[28]
+set_location_assignment PIN_M14 -to o_outputs[29]
+set_location_assignment PIN_R18 -to o_outputs[30]
+set_location_assignment PIN_N6 -to o_outputs[31]
+set_location_assignment PIN_N13 -to o_outputs[32]
+set_location_assignment PIN_C2 -to o_outputs[33]
+set_location_assignment PIN_H2 -to o_outputs[34]
+set_location_assignment PIN_K5 -to o_outputs[35]
+set_location_assignment PIN_L4 -to o_outputs[36]
+set_location_assignment PIN_P2 -to o_outputs[37]
+set_location_assignment PIN_G17 -to o_outputs[38]
+set_location_assignment PIN_K18 -to o_outputs[39]
+set_location_assignment PIN_L16 -to o_outputs[40]
+set_location_assignment PIN_L13 -to o_outputs[41]
+set_location_assignment PIN_R17 -to o_outputs[42]
+set_location_assignment PIN_M6 -to o_outputs[43]
+set_location_assignment PIN_M13 -to o_outputs[44]
+set_location_assignment PIN_B1 -to o_outputs[45]
+set_location_assignment PIN_G1 -to o_outputs[46]
+set_location_assignment PIN_K1 -to o_outputs[47]
+set_location_assignment PIN_L1 -to o_outputs[48]
+set_location_assignment PIN_M1 -to o_outputs[49]
+set_location_assignment PIN_R1 -to o_outputs[50]
+set_location_assignment PIN_U18 -to o_outputs[51]
+set_location_assignment PIN_H18 -to o_outputs[52]
+set_location_assignment PIN_M18 -to o_outputs[53]
+set_location_assignment PIN_L15 -to o_outputs[54]
+set_location_assignment PIN_P18 -to o_outputs[55]
+set_location_assignment PIN_R4 -to o_outputs[56]
+set_location_assignment PIN_T18 -to o_outputs[57]
+set_location_assignment PIN_B2 -to o_outputs[58]
+set_location_assignment PIN_G2 -to o_outputs[59]
+set_location_assignment PIN_K2 -to o_outputs[60]
+set_location_assignment PIN_L2 -to o_outputs[61]
+set_location_assignment PIN_M2 -to o_outputs[62]
+set_location_assignment PIN_R2 -to o_outputs[63]
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 324
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_global_assignment -name CYCLONEIII_CONFIGURATION_SCHEME "ACTIVE PARALLEL"
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name GENERATE_TTF_FILE ON
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF
+set_global_assignment -name SHIFT_REGISTER_RECOGNITION_ACLR_SIGNAL OFF
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE test.vwf
+set_global_assignment -name MISC_FILE cycloneIII_3c25_start_power.dpf
+set_global_assignment -name SDC_FILE cycloneIII_3c25_start_power.sdc
+set_global_assignment -name VERILOG_FILE clk_mux.v
+set_global_assignment -name VERILOG_FILE mult32.v
+set_global_assignment -name VERILOG_FILE pulse.v
+set_global_assignment -name VERILOG_FILE rom512x32.v
+set_global_assignment -name VERILOG_FILE stamp.v
+set_global_assignment -name VERILOG_FILE stamp_logic.v
+set_global_assignment -name VERILOG_FILE stamp_ram_dsp.v
+set_global_assignment -name VERILOG_FILE pll.v
+set_global_assignment -name VERILOG_FILE clk_gen.v
+set_global_assignment -name VERILOG_FILE cycloneIII_3c25_start_power_top.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE test.vwf
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

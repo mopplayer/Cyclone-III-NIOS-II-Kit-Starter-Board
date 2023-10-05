@@ -1,0 +1,118 @@
+# 1 "hw_mandelbrot.c"
+# 1 "/cygdrive/d/board_development/c2h_mandelbrot/software_examples/app/mandelbrot_c2h//"
+# 1 "<built-in>"
+# 1 "<command line>"
+# 1 "hw_mandelbrot.c"
+# 1 "settings.h" 1
+# 2 "hw_mandelbrot.c" 2
+# 1 "../../bsp/hal_mandelbrot/system.h" 1
+# 55 "../../bsp/hal_mandelbrot/system.h"
+# 1 "../../bsp/hal_mandelbrot/linker.h" 1
+# 56 "../../bsp/hal_mandelbrot/system.h" 2
+# 3 "hw_mandelbrot.c" 2
+
+
+
+#pragma altera_accelerate enable_interrupt_for_function hw_draw_int_mandelbrot
+
+
+
+#pragma altera_accelerate connect_variable hw_draw_int_mandelbrot/colour_lookup_table to colour_lookup_table/s2
+
+
+#pragma altera_accelerate connect_variable hw_draw_int_mandelbrot/frame_buffer to frame_buffer_pipeline_bridge/s1
+# 65 "hw_mandelbrot.c"
+void hw_draw_int_mandelbrot(long long current_x, long long current_y, long long step_dim, int max_iter, unsigned long * restrict frame_buffer)
+{
+
+  long * restrict colour_lookup_table = (long *)0x4401c00;
+  long pixel, column;
+
+
+  long long current_x0_copy;
+  long iters0;
+
+
+  long long current_x1_copy;
+  long iters1;
+
+
+  long long current_x2_copy, current_x3_copy;
+  long iters2, iters3;
+# 91 "hw_mandelbrot.c"
+  long long current_y_copy;
+
+
+  column = 0;
+
+
+
+    current_x0_copy = current_x;
+
+
+    current_x1_copy = current_x + step_dim;
+
+
+    current_x2_copy = current_x + (step_dim << 1);
+    current_x3_copy = current_x + (step_dim << 1) + step_dim;
+# 123 "hw_mandelbrot.c"
+  current_y_copy = current_y;
+
+
+
+  for(pixel = 0; pixel < 384000; pixel = (pixel + 4))
+  {
+
+      { long x = 0; long y = 0; long long xsqr = 0; long long ysqr = 0; (iters0) = 0; while( ((xsqr + ysqr) < 0x0400000000000000LL) && ((iters0) < (max_iter)) ) { xsqr = ((long long)x) * ((long long)x); ysqr = ((long long)y) * ((long long)y); y = (long)(((2 * ((long long)x) * ((long long)y)) + ((current_y_copy) << 28)) >> 28); x = (long)(((xsqr - ysqr) + ((current_x0_copy) << 28)) >> 28); (iters0) = (iters0) + 1; } };
+
+
+      { long x = 0; long y = 0; long long xsqr = 0; long long ysqr = 0; (iters1) = 0; while( ((xsqr + ysqr) < 0x0400000000000000LL) && ((iters1) < (max_iter)) ) { xsqr = ((long long)x) * ((long long)x); ysqr = ((long long)y) * ((long long)y); y = (long)(((2 * ((long long)x) * ((long long)y)) + ((current_y_copy) << 28)) >> 28); x = (long)(((xsqr - ysqr) + ((current_x1_copy) << 28)) >> 28); (iters1) = (iters1) + 1; } };
+
+
+      { long x = 0; long y = 0; long long xsqr = 0; long long ysqr = 0; (iters2) = 0; while( ((xsqr + ysqr) < 0x0400000000000000LL) && ((iters2) < (max_iter)) ) { xsqr = ((long long)x) * ((long long)x); ysqr = ((long long)y) * ((long long)y); y = (long)(((2 * ((long long)x) * ((long long)y)) + ((current_y_copy) << 28)) >> 28); x = (long)(((xsqr - ysqr) + ((current_x2_copy) << 28)) >> 28); (iters2) = (iters2) + 1; } };
+      { long x = 0; long y = 0; long long xsqr = 0; long long ysqr = 0; (iters3) = 0; while( ((xsqr + ysqr) < 0x0400000000000000LL) && ((iters3) < (max_iter)) ) { xsqr = ((long long)x) * ((long long)x); ysqr = ((long long)y) * ((long long)y); y = (long)(((2 * ((long long)x) * ((long long)y)) + ((current_y_copy) << 28)) >> 28); x = (long)(((xsqr - ysqr) + ((current_x3_copy) << 28)) >> 28); (iters3) = (iters3) + 1; } };
+# 157 "hw_mandelbrot.c"
+    if(column == (800 - 4))
+    {
+
+        current_x0_copy = current_x;
+
+
+        current_x1_copy = current_x + step_dim;
+
+
+        current_x2_copy = current_x + (step_dim << 1);
+        current_x3_copy = current_x + (step_dim << 1) + step_dim;
+# 185 "hw_mandelbrot.c"
+      current_y_copy = current_y_copy - step_dim;
+      column = 0;
+    }
+    else
+    {
+
+        current_x0_copy = (current_x0_copy + (step_dim * 4));
+
+
+        current_x1_copy = (current_x1_copy + (step_dim * 4));
+
+
+        current_x2_copy = (current_x2_copy + (step_dim * 4));
+        current_x3_copy = (current_x3_copy + (step_dim * 4));
+# 216 "hw_mandelbrot.c"
+      column = column + 4;
+    }
+
+
+
+
+      *frame_buffer++ = (iters0 == max_iter)? 0 : colour_lookup_table[iters0 & 0xFF];
+
+
+      *frame_buffer++ = (iters1 == max_iter)? 0 : colour_lookup_table[iters1 & 0xFF];
+
+
+      *frame_buffer++ = (iters2 == max_iter)? 0 : colour_lookup_table[iters2 & 0xFF];
+      *frame_buffer++ = (iters3 == max_iter)? 0 : colour_lookup_table[iters3 & 0xFF];
+# 247 "hw_mandelbrot.c"
+  }
+}

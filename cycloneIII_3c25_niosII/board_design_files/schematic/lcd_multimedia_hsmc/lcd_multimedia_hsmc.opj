@@ -1,0 +1,36 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (File ".\hmb_v11.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (NoModify))
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\hmb_v11.dsn")
+      (Path "Design Resources" ".\hmb_v11.dsn" "TOP")
+      (Path "Design Resources" ".\hmb_v11.dsn" "AUDIO")
+      (Path "Design Resources" ".\hmb_v11.dsn" "Bidirectional Level Shift")
+      (Path "Design Resources" ".\hmb_v11.dsn" "Ethernet")
+      (Path "Design Resources" ".\hmb_v11.dsn" "External Memory")
+      (Path "Design Resources" ".\hmb_v11.dsn" "HSMC")
+      (Path "Design Resources" ".\hmb_v11.dsn" "Level shifter & Multiplexer")
+      (Path "Design Resources" ".\hmb_v11.dsn" "POWER")
+      (Path "Design Resources" ".\hmb_v11.dsn" "RS232 & PS2")
+      (Path "Design Resources" ".\hmb_v11.dsn" "Touch Panel")
+      (Path "Design Resources" ".\hmb_v11.dsn" "TV DECODER")
+      (Path "Design Resources" ".\hmb_v11.dsn" "VGA DAC")
+      (Select "Design Resources" ".\hmb_v11.dsn"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 434 0 594"))
+      (Tab 0)))
+  (PartMRUSelector))

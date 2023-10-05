@@ -1,0 +1,9 @@
+VGA Altera Spinning Cube
+
+This is a VGA mirrored version of the original Altera Spinning Cube demo.
+
+The Spinning Cube application demonstrates the Embedded Application Kit's LCD panel and touchscreen.
+
+The application starts with a stationary cube which you can rotate by dragging a stylus across the touchscreen in any direction.  After a few seconds, the cube will begin to rotate on its own.  The rotation effect is achieved by periodically rotating the 8 corner points of the cube in three dimentions, projecting them to two dimentions, then drawing filled triangles between cube corners to represent the three sides closest to the viewer.
+
+A reasonable rotation speed is achieved by running the 3-D rotation routine only on the corners of the cube, not on the entire cube.

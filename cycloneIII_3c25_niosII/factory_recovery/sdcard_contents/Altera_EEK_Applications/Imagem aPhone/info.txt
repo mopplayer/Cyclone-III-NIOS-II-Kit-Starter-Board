@@ -1,0 +1,28 @@
+About Imagem
+--------------------------
+
+Imagem Technologies has innovative solutions for addressing graphics and video.
+Imagem's Athlet Graphics IP engine is a SOPC Builder ready vector graphics engine that can be used with the Nios II Processor.
+
+About Imagem aPhone
+--------------------------
+
+1) From the LCD touch panel select and load the demo
+2) Interact wiht the aPhone GUI using the LCD touch panel
+
+
+About the Imagem aPhone:
+---------------------
+NiosII/f processor core running at 120 MHz
+IMAGEM Athlet IP with video in, polygon rendering and TFT controller
+ALSE Avalon® multi-port memory controller for DDR ( www.alse-fr.com )
+Altera SD card SPI reference design
+LCD touch screen
+Video-in decoder accessible through I²C
+--------------------------------------------------------------------------------
+
+You can now download the ATHLET Software Evaluation Kit for Free and build your own demo in minutes with the tutorials including the aphone tutorial ! 
+
+http://www.imagem-technology.com/ALTERA_EEK.html
+
+Contact imagem at http://www.imagem-technology.com/

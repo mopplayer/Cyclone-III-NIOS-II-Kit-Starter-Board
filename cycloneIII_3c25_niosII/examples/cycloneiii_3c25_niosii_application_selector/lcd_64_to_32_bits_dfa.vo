@@ -1,0 +1,797 @@
+//IP Functional Simulation Model
+//VERSION_BEGIN 11.1 cbx_mgl 2011:10:31:21:12:31:SJ cbx_simgen 2011:10:31:21:11:05:SJ  VERSION_END
+// synthesis VERILOG_INPUT_VERSION VERILOG_2001
+// altera message_off 10463
+
+
+
+// Copyright (C) 1991-2011 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// You may only use these simulation model output files for simulation
+// purposes and expressly not for synthesis or any other purposes (in which
+// event Altera disclaims all warranties of any kind).
+
+
+//synopsys translate_off
+
+//synthesis_resources = lut 110 mux21 72 oper_decoder 1 oper_less_than 2 oper_mux 7 
+`timescale 1 ps / 1 ps
+module  lcd_64_to_32_bits_dfa
+	( 
+	clk,
+	in_data,
+	in_empty,
+	in_endofpacket,
+	in_ready,
+	in_startofpacket,
+	in_valid,
+	out_data,
+	out_empty,
+	out_endofpacket,
+	out_ready,
+	out_startofpacket,
+	out_valid,
+	reset_n) /* synthesis synthesis_clearbox=1 */;
+	input   clk;
+	input   [63:0]  in_data;
+	input   [2:0]  in_empty;
+	input   in_endofpacket;
+	output   in_ready;
+	input   in_startofpacket;
+	input   in_valid;
+	output   [31:0]  out_data;
+	output   [1:0]  out_empty;
+	output   out_endofpacket;
+	input   out_ready;
+	output   out_startofpacket;
+	output   out_valid;
+	input   reset_n;
+
+	reg	lcd_64_to_32_bits_dfa_out_data_0_reg0_305q;
+	reg	lcd_64_to_32_bits_dfa_out_data_10_reg0_295q;
+	reg	lcd_64_to_32_bits_dfa_out_data_11_reg0_294q;
+	reg	lcd_64_to_32_bits_dfa_out_data_12_reg0_293q;
+	reg	lcd_64_to_32_bits_dfa_out_data_13_reg0_292q;
+	reg	lcd_64_to_32_bits_dfa_out_data_14_reg0_291q;
+	reg	lcd_64_to_32_bits_dfa_out_data_15_reg0_290q;
+	reg	lcd_64_to_32_bits_dfa_out_data_16_reg0_289q;
+	reg	lcd_64_to_32_bits_dfa_out_data_17_reg0_288q;
+	reg	lcd_64_to_32_bits_dfa_out_data_18_reg0_287q;
+	reg	lcd_64_to_32_bits_dfa_out_data_19_reg0_286q;
+	reg	lcd_64_to_32_bits_dfa_out_data_1_reg0_304q;
+	reg	lcd_64_to_32_bits_dfa_out_data_20_reg0_285q;
+	reg	lcd_64_to_32_bits_dfa_out_data_21_reg0_284q;
+	reg	lcd_64_to_32_bits_dfa_out_data_22_reg0_283q;
+	reg	lcd_64_to_32_bits_dfa_out_data_23_reg0_282q;
+	reg	lcd_64_to_32_bits_dfa_out_data_24_reg0_281q;
+	reg	lcd_64_to_32_bits_dfa_out_data_25_reg0_280q;
+	reg	lcd_64_to_32_bits_dfa_out_data_26_reg0_279q;
+	reg	lcd_64_to_32_bits_dfa_out_data_27_reg0_278q;
+	reg	lcd_64_to_32_bits_dfa_out_data_28_reg0_277q;
+	reg	lcd_64_to_32_bits_dfa_out_data_29_reg0_276q;
+	reg	lcd_64_to_32_bits_dfa_out_data_2_reg0_303q;
+	reg	lcd_64_to_32_bits_dfa_out_data_30_reg0_275q;
+	reg	lcd_64_to_32_bits_dfa_out_data_31_reg0_274q;
+	reg	lcd_64_to_32_bits_dfa_out_data_3_reg0_302q;
+	reg	lcd_64_to_32_bits_dfa_out_data_4_reg0_301q;
+	reg	lcd_64_to_32_bits_dfa_out_data_5_reg0_300q;
+	reg	lcd_64_to_32_bits_dfa_out_data_6_reg0_299q;
+	reg	lcd_64_to_32_bits_dfa_out_data_7_reg0_298q;
+	reg	lcd_64_to_32_bits_dfa_out_data_8_reg0_297q;
+	reg	lcd_64_to_32_bits_dfa_out_data_9_reg0_296q;
+	reg	lcd_64_to_32_bits_dfa_out_empty_0_reg0_272q;
+	reg	lcd_64_to_32_bits_dfa_out_empty_1_reg0_308q;
+	reg	lcd_64_to_32_bits_dfa_out_endofpacket_reg0_307q;
+	reg	lcd_64_to_32_bits_dfa_out_startofpacket_reg0_306q;
+	reg	lcd_64_to_32_bits_dfa_out_valid_reg0_273q;
+	reg	lcd_64_to_32_bits_dfa_state_register_0_271q;
+	reg	lcd_64_to_32_bits_dfa_state_register_1_145q;
+	reg	lcd_64_to_32_bits_dfa_state_register_2_144q;
+	reg	lcd_64_to_32_bits_dfa_a_data0_0_82q;
+	reg	lcd_64_to_32_bits_dfa_a_data0_1_81q;
+	reg	lcd_64_to_32_bits_dfa_a_data0_2_80q;
+	reg	lcd_64_to_32_bits_dfa_a_data0_3_79q;
+	reg	lcd_64_to_32_bits_dfa_a_data0_4_78q;
+	reg	lcd_64_to_32_bits_dfa_a_data0_5_77q;
+	reg	lcd_64_to_32_bits_dfa_a_data0_6_76q;
+	reg	lcd_64_to_32_bits_dfa_a_data0_7_75q;
+	reg	lcd_64_to_32_bits_dfa_a_data1_0_90q;
+	reg	lcd_64_to_32_bits_dfa_a_data1_1_89q;
+	reg	lcd_64_to_32_bits_dfa_a_data1_2_88q;
+	reg	lcd_64_to_32_bits_dfa_a_data1_3_87q;
+	reg	lcd_64_to_32_bits_dfa_a_data1_4_86q;
+	reg	lcd_64_to_32_bits_dfa_a_data1_5_85q;
+	reg	lcd_64_to_32_bits_dfa_a_data1_6_84q;
+	reg	lcd_64_to_32_bits_dfa_a_data1_7_83q;
+	reg	lcd_64_to_32_bits_dfa_a_data2_0_98q;
+	reg	lcd_64_to_32_bits_dfa_a_data2_1_97q;
+	reg	lcd_64_to_32_bits_dfa_a_data2_2_96q;
+	reg	lcd_64_to_32_bits_dfa_a_data2_3_95q;
+	reg	lcd_64_to_32_bits_dfa_a_data2_4_94q;
+	reg	lcd_64_to_32_bits_dfa_a_data2_5_93q;
+	reg	lcd_64_to_32_bits_dfa_a_data2_6_92q;
+	reg	lcd_64_to_32_bits_dfa_a_data2_7_91q;
+	reg	lcd_64_to_32_bits_dfa_a_data3_0_106q;
+	reg	lcd_64_to_32_bits_dfa_a_data3_1_105q;
+	reg	lcd_64_to_32_bits_dfa_a_data3_2_104q;
+	reg	lcd_64_to_32_bits_dfa_a_data3_3_103q;
+	reg	lcd_64_to_32_bits_dfa_a_data3_4_102q;
+	reg	lcd_64_to_32_bits_dfa_a_data3_5_101q;
+	reg	lcd_64_to_32_bits_dfa_a_data3_6_100q;
+	reg	lcd_64_to_32_bits_dfa_a_data3_7_99q;
+	reg	lcd_64_to_32_bits_dfa_a_data4_0_114q;
+	reg	lcd_64_to_32_bits_dfa_a_data4_1_113q;
+	reg	lcd_64_to_32_bits_dfa_a_data4_2_112q;
+	reg	lcd_64_to_32_bits_dfa_a_data4_3_111q;
+	reg	lcd_64_to_32_bits_dfa_a_data4_4_110q;
+	reg	lcd_64_to_32_bits_dfa_a_data4_5_109q;
+	reg	lcd_64_to_32_bits_dfa_a_data4_6_108q;
+	reg	lcd_64_to_32_bits_dfa_a_data4_7_107q;
+	reg	lcd_64_to_32_bits_dfa_a_data5_0_122q;
+	reg	lcd_64_to_32_bits_dfa_a_data5_1_121q;
+	reg	lcd_64_to_32_bits_dfa_a_data5_2_120q;
+	reg	lcd_64_to_32_bits_dfa_a_data5_3_119q;
+	reg	lcd_64_to_32_bits_dfa_a_data5_4_118q;
+	reg	lcd_64_to_32_bits_dfa_a_data5_5_117q;
+	reg	lcd_64_to_32_bits_dfa_a_data5_6_116q;
+	reg	lcd_64_to_32_bits_dfa_a_data5_7_115q;
+	reg	lcd_64_to_32_bits_dfa_a_data6_0_130q;
+	reg	lcd_64_to_32_bits_dfa_a_data6_1_129q;
+	reg	lcd_64_to_32_bits_dfa_a_data6_2_128q;
+	reg	lcd_64_to_32_bits_dfa_a_data6_3_127q;
+	reg	lcd_64_to_32_bits_dfa_a_data6_4_126q;
+	reg	lcd_64_to_32_bits_dfa_a_data6_5_125q;
+	reg	lcd_64_to_32_bits_dfa_a_data6_6_124q;
+	reg	lcd_64_to_32_bits_dfa_a_data6_7_123q;
+	reg	lcd_64_to_32_bits_dfa_a_data7_0_138q;
+	reg	lcd_64_to_32_bits_dfa_a_data7_1_137q;
+	reg	lcd_64_to_32_bits_dfa_a_data7_2_136q;
+	reg	lcd_64_to_32_bits_dfa_a_data7_3_135q;
+	reg	lcd_64_to_32_bits_dfa_a_data7_4_134q;
+	reg	lcd_64_to_32_bits_dfa_a_data7_5_133q;
+	reg	lcd_64_to_32_bits_dfa_a_data7_6_132q;
+	reg	lcd_64_to_32_bits_dfa_a_data7_7_131q;
+	reg	lcd_64_to_32_bits_dfa_a_empty_0_143q;
+	reg	lcd_64_to_32_bits_dfa_a_empty_1_142q;
+	reg	lcd_64_to_32_bits_dfa_a_empty_2_141q;
+	reg	lcd_64_to_32_bits_dfa_a_endofpacket_140q;
+	reg	lcd_64_to_32_bits_dfa_a_startofpacket_139q;
+	reg	lcd_64_to_32_bits_dfa_a_valid_74q;
+	wire	wire_lcd_64_to_32_bits_dfa_a_empty_1m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_a_empty_2m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_a_empty_3m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_a_ready_163m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_a_ready_169m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_0_222m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_10_212m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_11_211m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_12_210m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_13_209m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_14_208m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_15_207m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_16_206m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_17_205m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_18_204m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_19_203m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_1_221m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_20_202m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_21_201m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_22_200m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_23_199m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_24_198m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_25_197m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_26_196m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_27_195m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_28_194m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_29_193m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_2_220m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_30_192m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_31_191m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_3_219m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_4_218m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_5_217m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_6_216m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_7_215m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_8_214m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_data_9_213m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_156m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_157m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_161m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_162m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_167m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_168m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_174m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_175m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_179m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_180m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_186m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_empty_187m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_endofpacket_149m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_endofpacket_153m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_endofpacket_181m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_endofpacket_188m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_startofpacket_223m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_b_valid_182m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_147m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_148m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_151m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_152m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_158m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_159m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_160m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_164m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_165m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_166m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_176m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_177m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_178m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_183m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_184m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_new_state_185m_dataout;
+	wire	wire_lcd_64_to_32_bits_dfa_out_valid_reg0_420m_dataout;
+	wire  [7:0]   wire_lcd_64_to_32_bits_dfa_decoder0_189_o;
+	wire  wire_lcd_64_to_32_bits_dfa_lessthan0_154_o;
+	wire  wire_lcd_64_to_32_bits_dfa_lessthan1_172_o;
+	wire  wire_lcd_64_to_32_bits_dfa_mux0_224_o;
+	wire  wire_lcd_64_to_32_bits_dfa_mux1_225_o;
+	wire  wire_lcd_64_to_32_bits_dfa_mux2_226_o;
+	wire  wire_lcd_64_to_32_bits_dfa_mux3_227_o;
+	wire  wire_lcd_64_to_32_bits_dfa_mux4_228_o;
+	wire  wire_lcd_64_to_32_bits_dfa_mux5_229_o;
+	wire  wire_lcd_64_to_32_bits_dfa_mux6_230_o;
+	wire  s_wire_lcd_64_to_32_bits_dfa_always4_155_dataout;
+	wire  s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout;
+	wire  s_wire_lcd_64_to_32_bits_dfa_always4_173_dataout;
+	wire  s_wire_lcd_64_to_32_bits_dfa_in_ready_232_dataout;
+	wire  s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout;
+	wire  s_wire_vcc;
+
+	initial
+	begin
+		lcd_64_to_32_bits_dfa_out_data_0_reg0_305q = 0;
+		lcd_64_to_32_bits_dfa_out_data_10_reg0_295q = 0;
+		lcd_64_to_32_bits_dfa_out_data_11_reg0_294q = 0;
+		lcd_64_to_32_bits_dfa_out_data_12_reg0_293q = 0;
+		lcd_64_to_32_bits_dfa_out_data_13_reg0_292q = 0;
+		lcd_64_to_32_bits_dfa_out_data_14_reg0_291q = 0;
+		lcd_64_to_32_bits_dfa_out_data_15_reg0_290q = 0;
+		lcd_64_to_32_bits_dfa_out_data_16_reg0_289q = 0;
+		lcd_64_to_32_bits_dfa_out_data_17_reg0_288q = 0;
+		lcd_64_to_32_bits_dfa_out_data_18_reg0_287q = 0;
+		lcd_64_to_32_bits_dfa_out_data_19_reg0_286q = 0;
+		lcd_64_to_32_bits_dfa_out_data_1_reg0_304q = 0;
+		lcd_64_to_32_bits_dfa_out_data_20_reg0_285q = 0;
+		lcd_64_to_32_bits_dfa_out_data_21_reg0_284q = 0;
+		lcd_64_to_32_bits_dfa_out_data_22_reg0_283q = 0;
+		lcd_64_to_32_bits_dfa_out_data_23_reg0_282q = 0;
+		lcd_64_to_32_bits_dfa_out_data_24_reg0_281q = 0;
+		lcd_64_to_32_bits_dfa_out_data_25_reg0_280q = 0;
+		lcd_64_to_32_bits_dfa_out_data_26_reg0_279q = 0;
+		lcd_64_to_32_bits_dfa_out_data_27_reg0_278q = 0;
+		lcd_64_to_32_bits_dfa_out_data_28_reg0_277q = 0;
+		lcd_64_to_32_bits_dfa_out_data_29_reg0_276q = 0;
+		lcd_64_to_32_bits_dfa_out_data_2_reg0_303q = 0;
+		lcd_64_to_32_bits_dfa_out_data_30_reg0_275q = 0;
+		lcd_64_to_32_bits_dfa_out_data_31_reg0_274q = 0;
+		lcd_64_to_32_bits_dfa_out_data_3_reg0_302q = 0;
+		lcd_64_to_32_bits_dfa_out_data_4_reg0_301q = 0;
+		lcd_64_to_32_bits_dfa_out_data_5_reg0_300q = 0;
+		lcd_64_to_32_bits_dfa_out_data_6_reg0_299q = 0;
+		lcd_64_to_32_bits_dfa_out_data_7_reg0_298q = 0;
+		lcd_64_to_32_bits_dfa_out_data_8_reg0_297q = 0;
+		lcd_64_to_32_bits_dfa_out_data_9_reg0_296q = 0;
+		lcd_64_to_32_bits_dfa_out_empty_0_reg0_272q = 0;
+		lcd_64_to_32_bits_dfa_out_empty_1_reg0_308q = 0;
+		lcd_64_to_32_bits_dfa_out_endofpacket_reg0_307q = 0;
+		lcd_64_to_32_bits_dfa_out_startofpacket_reg0_306q = 0;
+	end
+	always @ ( posedge clk or  negedge reset_n)
+	begin
+		if (reset_n == 1'b0) 
+		begin
+			lcd_64_to_32_bits_dfa_out_data_0_reg0_305q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_10_reg0_295q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_11_reg0_294q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_12_reg0_293q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_13_reg0_292q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_14_reg0_291q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_15_reg0_290q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_16_reg0_289q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_17_reg0_288q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_18_reg0_287q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_19_reg0_286q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_1_reg0_304q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_20_reg0_285q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_21_reg0_284q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_22_reg0_283q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_23_reg0_282q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_24_reg0_281q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_25_reg0_280q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_26_reg0_279q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_27_reg0_278q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_28_reg0_277q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_29_reg0_276q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_2_reg0_303q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_30_reg0_275q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_31_reg0_274q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_3_reg0_302q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_4_reg0_301q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_5_reg0_300q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_6_reg0_299q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_7_reg0_298q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_8_reg0_297q <= 0;
+			lcd_64_to_32_bits_dfa_out_data_9_reg0_296q <= 0;
+			lcd_64_to_32_bits_dfa_out_empty_0_reg0_272q <= 0;
+			lcd_64_to_32_bits_dfa_out_empty_1_reg0_308q <= 0;
+			lcd_64_to_32_bits_dfa_out_endofpacket_reg0_307q <= 0;
+			lcd_64_to_32_bits_dfa_out_startofpacket_reg0_306q <= 0;
+		end
+		else if  (s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout == 1'b1) 
+		begin
+			lcd_64_to_32_bits_dfa_out_data_0_reg0_305q <= wire_lcd_64_to_32_bits_dfa_b_data_0_222m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_10_reg0_295q <= wire_lcd_64_to_32_bits_dfa_b_data_10_212m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_11_reg0_294q <= wire_lcd_64_to_32_bits_dfa_b_data_11_211m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_12_reg0_293q <= wire_lcd_64_to_32_bits_dfa_b_data_12_210m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_13_reg0_292q <= wire_lcd_64_to_32_bits_dfa_b_data_13_209m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_14_reg0_291q <= wire_lcd_64_to_32_bits_dfa_b_data_14_208m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_15_reg0_290q <= wire_lcd_64_to_32_bits_dfa_b_data_15_207m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_16_reg0_289q <= wire_lcd_64_to_32_bits_dfa_b_data_16_206m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_17_reg0_288q <= wire_lcd_64_to_32_bits_dfa_b_data_17_205m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_18_reg0_287q <= wire_lcd_64_to_32_bits_dfa_b_data_18_204m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_19_reg0_286q <= wire_lcd_64_to_32_bits_dfa_b_data_19_203m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_1_reg0_304q <= wire_lcd_64_to_32_bits_dfa_b_data_1_221m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_20_reg0_285q <= wire_lcd_64_to_32_bits_dfa_b_data_20_202m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_21_reg0_284q <= wire_lcd_64_to_32_bits_dfa_b_data_21_201m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_22_reg0_283q <= wire_lcd_64_to_32_bits_dfa_b_data_22_200m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_23_reg0_282q <= wire_lcd_64_to_32_bits_dfa_b_data_23_199m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_24_reg0_281q <= wire_lcd_64_to_32_bits_dfa_b_data_24_198m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_25_reg0_280q <= wire_lcd_64_to_32_bits_dfa_b_data_25_197m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_26_reg0_279q <= wire_lcd_64_to_32_bits_dfa_b_data_26_196m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_27_reg0_278q <= wire_lcd_64_to_32_bits_dfa_b_data_27_195m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_28_reg0_277q <= wire_lcd_64_to_32_bits_dfa_b_data_28_194m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_29_reg0_276q <= wire_lcd_64_to_32_bits_dfa_b_data_29_193m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_2_reg0_303q <= wire_lcd_64_to_32_bits_dfa_b_data_2_220m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_30_reg0_275q <= wire_lcd_64_to_32_bits_dfa_b_data_30_192m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_31_reg0_274q <= wire_lcd_64_to_32_bits_dfa_b_data_31_191m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_3_reg0_302q <= wire_lcd_64_to_32_bits_dfa_b_data_3_219m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_4_reg0_301q <= wire_lcd_64_to_32_bits_dfa_b_data_4_218m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_5_reg0_300q <= wire_lcd_64_to_32_bits_dfa_b_data_5_217m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_6_reg0_299q <= wire_lcd_64_to_32_bits_dfa_b_data_6_216m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_7_reg0_298q <= wire_lcd_64_to_32_bits_dfa_b_data_7_215m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_8_reg0_297q <= wire_lcd_64_to_32_bits_dfa_b_data_8_214m_dataout;
+			lcd_64_to_32_bits_dfa_out_data_9_reg0_296q <= wire_lcd_64_to_32_bits_dfa_b_data_9_213m_dataout;
+			lcd_64_to_32_bits_dfa_out_empty_0_reg0_272q <= wire_lcd_64_to_32_bits_dfa_mux5_229_o;
+			lcd_64_to_32_bits_dfa_out_empty_1_reg0_308q <= wire_lcd_64_to_32_bits_dfa_mux4_228_o;
+			lcd_64_to_32_bits_dfa_out_endofpacket_reg0_307q <= wire_lcd_64_to_32_bits_dfa_mux6_230_o;
+			lcd_64_to_32_bits_dfa_out_startofpacket_reg0_306q <= wire_lcd_64_to_32_bits_dfa_b_startofpacket_223m_dataout;
+		end
+	end
+	initial
+	begin
+		lcd_64_to_32_bits_dfa_out_valid_reg0_273q = 0;
+		lcd_64_to_32_bits_dfa_state_register_0_271q = 0;
+		lcd_64_to_32_bits_dfa_state_register_1_145q = 0;
+		lcd_64_to_32_bits_dfa_state_register_2_144q = 0;
+	end
+	always @ ( posedge clk or  negedge reset_n)
+	begin
+		if (reset_n == 1'b0) 
+		begin
+			lcd_64_to_32_bits_dfa_out_valid_reg0_273q <= 0;
+			lcd_64_to_32_bits_dfa_state_register_0_271q <= 0;
+			lcd_64_to_32_bits_dfa_state_register_1_145q <= 0;
+			lcd_64_to_32_bits_dfa_state_register_2_144q <= 0;
+		end
+		else 
+		begin
+			lcd_64_to_32_bits_dfa_out_valid_reg0_273q <= wire_lcd_64_to_32_bits_dfa_out_valid_reg0_420m_dataout;
+			lcd_64_to_32_bits_dfa_state_register_0_271q <= wire_lcd_64_to_32_bits_dfa_mux3_227_o;
+			lcd_64_to_32_bits_dfa_state_register_1_145q <= wire_lcd_64_to_32_bits_dfa_mux2_226_o;
+			lcd_64_to_32_bits_dfa_state_register_2_144q <= wire_lcd_64_to_32_bits_dfa_mux1_225_o;
+		end
+	end
+	initial
+	begin
+		lcd_64_to_32_bits_dfa_a_data0_0_82q = 0;
+		lcd_64_to_32_bits_dfa_a_data0_1_81q = 0;
+		lcd_64_to_32_bits_dfa_a_data0_2_80q = 0;
+		lcd_64_to_32_bits_dfa_a_data0_3_79q = 0;
+		lcd_64_to_32_bits_dfa_a_data0_4_78q = 0;
+		lcd_64_to_32_bits_dfa_a_data0_5_77q = 0;
+		lcd_64_to_32_bits_dfa_a_data0_6_76q = 0;
+		lcd_64_to_32_bits_dfa_a_data0_7_75q = 0;
+		lcd_64_to_32_bits_dfa_a_data1_0_90q = 0;
+		lcd_64_to_32_bits_dfa_a_data1_1_89q = 0;
+		lcd_64_to_32_bits_dfa_a_data1_2_88q = 0;
+		lcd_64_to_32_bits_dfa_a_data1_3_87q = 0;
+		lcd_64_to_32_bits_dfa_a_data1_4_86q = 0;
+		lcd_64_to_32_bits_dfa_a_data1_5_85q = 0;
+		lcd_64_to_32_bits_dfa_a_data1_6_84q = 0;
+		lcd_64_to_32_bits_dfa_a_data1_7_83q = 0;
+		lcd_64_to_32_bits_dfa_a_data2_0_98q = 0;
+		lcd_64_to_32_bits_dfa_a_data2_1_97q = 0;
+		lcd_64_to_32_bits_dfa_a_data2_2_96q = 0;
+		lcd_64_to_32_bits_dfa_a_data2_3_95q = 0;
+		lcd_64_to_32_bits_dfa_a_data2_4_94q = 0;
+		lcd_64_to_32_bits_dfa_a_data2_5_93q = 0;
+		lcd_64_to_32_bits_dfa_a_data2_6_92q = 0;
+		lcd_64_to_32_bits_dfa_a_data2_7_91q = 0;
+		lcd_64_to_32_bits_dfa_a_data3_0_106q = 0;
+		lcd_64_to_32_bits_dfa_a_data3_1_105q = 0;
+		lcd_64_to_32_bits_dfa_a_data3_2_104q = 0;
+		lcd_64_to_32_bits_dfa_a_data3_3_103q = 0;
+		lcd_64_to_32_bits_dfa_a_data3_4_102q = 0;
+		lcd_64_to_32_bits_dfa_a_data3_5_101q = 0;
+		lcd_64_to_32_bits_dfa_a_data3_6_100q = 0;
+		lcd_64_to_32_bits_dfa_a_data3_7_99q = 0;
+		lcd_64_to_32_bits_dfa_a_data4_0_114q = 0;
+		lcd_64_to_32_bits_dfa_a_data4_1_113q = 0;
+		lcd_64_to_32_bits_dfa_a_data4_2_112q = 0;
+		lcd_64_to_32_bits_dfa_a_data4_3_111q = 0;
+		lcd_64_to_32_bits_dfa_a_data4_4_110q = 0;
+		lcd_64_to_32_bits_dfa_a_data4_5_109q = 0;
+		lcd_64_to_32_bits_dfa_a_data4_6_108q = 0;
+		lcd_64_to_32_bits_dfa_a_data4_7_107q = 0;
+		lcd_64_to_32_bits_dfa_a_data5_0_122q = 0;
+		lcd_64_to_32_bits_dfa_a_data5_1_121q = 0;
+		lcd_64_to_32_bits_dfa_a_data5_2_120q = 0;
+		lcd_64_to_32_bits_dfa_a_data5_3_119q = 0;
+		lcd_64_to_32_bits_dfa_a_data5_4_118q = 0;
+		lcd_64_to_32_bits_dfa_a_data5_5_117q = 0;
+		lcd_64_to_32_bits_dfa_a_data5_6_116q = 0;
+		lcd_64_to_32_bits_dfa_a_data5_7_115q = 0;
+		lcd_64_to_32_bits_dfa_a_data6_0_130q = 0;
+		lcd_64_to_32_bits_dfa_a_data6_1_129q = 0;
+		lcd_64_to_32_bits_dfa_a_data6_2_128q = 0;
+		lcd_64_to_32_bits_dfa_a_data6_3_127q = 0;
+		lcd_64_to_32_bits_dfa_a_data6_4_126q = 0;
+		lcd_64_to_32_bits_dfa_a_data6_5_125q = 0;
+		lcd_64_to_32_bits_dfa_a_data6_6_124q = 0;
+		lcd_64_to_32_bits_dfa_a_data6_7_123q = 0;
+		lcd_64_to_32_bits_dfa_a_data7_0_138q = 0;
+		lcd_64_to_32_bits_dfa_a_data7_1_137q = 0;
+		lcd_64_to_32_bits_dfa_a_data7_2_136q = 0;
+		lcd_64_to_32_bits_dfa_a_data7_3_135q = 0;
+		lcd_64_to_32_bits_dfa_a_data7_4_134q = 0;
+		lcd_64_to_32_bits_dfa_a_data7_5_133q = 0;
+		lcd_64_to_32_bits_dfa_a_data7_6_132q = 0;
+		lcd_64_to_32_bits_dfa_a_data7_7_131q = 0;
+		lcd_64_to_32_bits_dfa_a_empty_0_143q = 0;
+		lcd_64_to_32_bits_dfa_a_empty_1_142q = 0;
+		lcd_64_to_32_bits_dfa_a_empty_2_141q = 0;
+		lcd_64_to_32_bits_dfa_a_endofpacket_140q = 0;
+		lcd_64_to_32_bits_dfa_a_startofpacket_139q = 0;
+		lcd_64_to_32_bits_dfa_a_valid_74q = 0;
+	end
+	always @ ( posedge clk or  negedge reset_n)
+	begin
+		if (reset_n == 1'b0) 
+		begin
+			lcd_64_to_32_bits_dfa_a_data0_0_82q <= 0;
+			lcd_64_to_32_bits_dfa_a_data0_1_81q <= 0;
+			lcd_64_to_32_bits_dfa_a_data0_2_80q <= 0;
+			lcd_64_to_32_bits_dfa_a_data0_3_79q <= 0;
+			lcd_64_to_32_bits_dfa_a_data0_4_78q <= 0;
+			lcd_64_to_32_bits_dfa_a_data0_5_77q <= 0;
+			lcd_64_to_32_bits_dfa_a_data0_6_76q <= 0;
+			lcd_64_to_32_bits_dfa_a_data0_7_75q <= 0;
+			lcd_64_to_32_bits_dfa_a_data1_0_90q <= 0;
+			lcd_64_to_32_bits_dfa_a_data1_1_89q <= 0;
+			lcd_64_to_32_bits_dfa_a_data1_2_88q <= 0;
+			lcd_64_to_32_bits_dfa_a_data1_3_87q <= 0;
+			lcd_64_to_32_bits_dfa_a_data1_4_86q <= 0;
+			lcd_64_to_32_bits_dfa_a_data1_5_85q <= 0;
+			lcd_64_to_32_bits_dfa_a_data1_6_84q <= 0;
+			lcd_64_to_32_bits_dfa_a_data1_7_83q <= 0;
+			lcd_64_to_32_bits_dfa_a_data2_0_98q <= 0;
+			lcd_64_to_32_bits_dfa_a_data2_1_97q <= 0;
+			lcd_64_to_32_bits_dfa_a_data2_2_96q <= 0;
+			lcd_64_to_32_bits_dfa_a_data2_3_95q <= 0;
+			lcd_64_to_32_bits_dfa_a_data2_4_94q <= 0;
+			lcd_64_to_32_bits_dfa_a_data2_5_93q <= 0;
+			lcd_64_to_32_bits_dfa_a_data2_6_92q <= 0;
+			lcd_64_to_32_bits_dfa_a_data2_7_91q <= 0;
+			lcd_64_to_32_bits_dfa_a_data3_0_106q <= 0;
+			lcd_64_to_32_bits_dfa_a_data3_1_105q <= 0;
+			lcd_64_to_32_bits_dfa_a_data3_2_104q <= 0;
+			lcd_64_to_32_bits_dfa_a_data3_3_103q <= 0;
+			lcd_64_to_32_bits_dfa_a_data3_4_102q <= 0;
+			lcd_64_to_32_bits_dfa_a_data3_5_101q <= 0;
+			lcd_64_to_32_bits_dfa_a_data3_6_100q <= 0;
+			lcd_64_to_32_bits_dfa_a_data3_7_99q <= 0;
+			lcd_64_to_32_bits_dfa_a_data4_0_114q <= 0;
+			lcd_64_to_32_bits_dfa_a_data4_1_113q <= 0;
+			lcd_64_to_32_bits_dfa_a_data4_2_112q <= 0;
+			lcd_64_to_32_bits_dfa_a_data4_3_111q <= 0;
+			lcd_64_to_32_bits_dfa_a_data4_4_110q <= 0;
+			lcd_64_to_32_bits_dfa_a_data4_5_109q <= 0;
+			lcd_64_to_32_bits_dfa_a_data4_6_108q <= 0;
+			lcd_64_to_32_bits_dfa_a_data4_7_107q <= 0;
+			lcd_64_to_32_bits_dfa_a_data5_0_122q <= 0;
+			lcd_64_to_32_bits_dfa_a_data5_1_121q <= 0;
+			lcd_64_to_32_bits_dfa_a_data5_2_120q <= 0;
+			lcd_64_to_32_bits_dfa_a_data5_3_119q <= 0;
+			lcd_64_to_32_bits_dfa_a_data5_4_118q <= 0;
+			lcd_64_to_32_bits_dfa_a_data5_5_117q <= 0;
+			lcd_64_to_32_bits_dfa_a_data5_6_116q <= 0;
+			lcd_64_to_32_bits_dfa_a_data5_7_115q <= 0;
+			lcd_64_to_32_bits_dfa_a_data6_0_130q <= 0;
+			lcd_64_to_32_bits_dfa_a_data6_1_129q <= 0;
+			lcd_64_to_32_bits_dfa_a_data6_2_128q <= 0;
+			lcd_64_to_32_bits_dfa_a_data6_3_127q <= 0;
+			lcd_64_to_32_bits_dfa_a_data6_4_126q <= 0;
+			lcd_64_to_32_bits_dfa_a_data6_5_125q <= 0;
+			lcd_64_to_32_bits_dfa_a_data6_6_124q <= 0;
+			lcd_64_to_32_bits_dfa_a_data6_7_123q <= 0;
+			lcd_64_to_32_bits_dfa_a_data7_0_138q <= 0;
+			lcd_64_to_32_bits_dfa_a_data7_1_137q <= 0;
+			lcd_64_to_32_bits_dfa_a_data7_2_136q <= 0;
+			lcd_64_to_32_bits_dfa_a_data7_3_135q <= 0;
+			lcd_64_to_32_bits_dfa_a_data7_4_134q <= 0;
+			lcd_64_to_32_bits_dfa_a_data7_5_133q <= 0;
+			lcd_64_to_32_bits_dfa_a_data7_6_132q <= 0;
+			lcd_64_to_32_bits_dfa_a_data7_7_131q <= 0;
+			lcd_64_to_32_bits_dfa_a_empty_0_143q <= 0;
+			lcd_64_to_32_bits_dfa_a_empty_1_142q <= 0;
+			lcd_64_to_32_bits_dfa_a_empty_2_141q <= 0;
+			lcd_64_to_32_bits_dfa_a_endofpacket_140q <= 0;
+			lcd_64_to_32_bits_dfa_a_startofpacket_139q <= 0;
+			lcd_64_to_32_bits_dfa_a_valid_74q <= 0;
+		end
+		else if  (s_wire_lcd_64_to_32_bits_dfa_in_ready_232_dataout == 1'b1) 
+		begin
+			lcd_64_to_32_bits_dfa_a_data0_0_82q <= in_data[56];
+			lcd_64_to_32_bits_dfa_a_data0_1_81q <= in_data[57];
+			lcd_64_to_32_bits_dfa_a_data0_2_80q <= in_data[58];
+			lcd_64_to_32_bits_dfa_a_data0_3_79q <= in_data[59];
+			lcd_64_to_32_bits_dfa_a_data0_4_78q <= in_data[60];
+			lcd_64_to_32_bits_dfa_a_data0_5_77q <= in_data[61];
+			lcd_64_to_32_bits_dfa_a_data0_6_76q <= in_data[62];
+			lcd_64_to_32_bits_dfa_a_data0_7_75q <= in_data[63];
+			lcd_64_to_32_bits_dfa_a_data1_0_90q <= in_data[48];
+			lcd_64_to_32_bits_dfa_a_data1_1_89q <= in_data[49];
+			lcd_64_to_32_bits_dfa_a_data1_2_88q <= in_data[50];
+			lcd_64_to_32_bits_dfa_a_data1_3_87q <= in_data[51];
+			lcd_64_to_32_bits_dfa_a_data1_4_86q <= in_data[52];
+			lcd_64_to_32_bits_dfa_a_data1_5_85q <= in_data[53];
+			lcd_64_to_32_bits_dfa_a_data1_6_84q <= in_data[54];
+			lcd_64_to_32_bits_dfa_a_data1_7_83q <= in_data[55];
+			lcd_64_to_32_bits_dfa_a_data2_0_98q <= in_data[40];
+			lcd_64_to_32_bits_dfa_a_data2_1_97q <= in_data[41];
+			lcd_64_to_32_bits_dfa_a_data2_2_96q <= in_data[42];
+			lcd_64_to_32_bits_dfa_a_data2_3_95q <= in_data[43];
+			lcd_64_to_32_bits_dfa_a_data2_4_94q <= in_data[44];
+			lcd_64_to_32_bits_dfa_a_data2_5_93q <= in_data[45];
+			lcd_64_to_32_bits_dfa_a_data2_6_92q <= in_data[46];
+			lcd_64_to_32_bits_dfa_a_data2_7_91q <= in_data[47];
+			lcd_64_to_32_bits_dfa_a_data3_0_106q <= in_data[32];
+			lcd_64_to_32_bits_dfa_a_data3_1_105q <= in_data[33];
+			lcd_64_to_32_bits_dfa_a_data3_2_104q <= in_data[34];
+			lcd_64_to_32_bits_dfa_a_data3_3_103q <= in_data[35];
+			lcd_64_to_32_bits_dfa_a_data3_4_102q <= in_data[36];
+			lcd_64_to_32_bits_dfa_a_data3_5_101q <= in_data[37];
+			lcd_64_to_32_bits_dfa_a_data3_6_100q <= in_data[38];
+			lcd_64_to_32_bits_dfa_a_data3_7_99q <= in_data[39];
+			lcd_64_to_32_bits_dfa_a_data4_0_114q <= in_data[24];
+			lcd_64_to_32_bits_dfa_a_data4_1_113q <= in_data[25];
+			lcd_64_to_32_bits_dfa_a_data4_2_112q <= in_data[26];
+			lcd_64_to_32_bits_dfa_a_data4_3_111q <= in_data[27];
+			lcd_64_to_32_bits_dfa_a_data4_4_110q <= in_data[28];
+			lcd_64_to_32_bits_dfa_a_data4_5_109q <= in_data[29];
+			lcd_64_to_32_bits_dfa_a_data4_6_108q <= in_data[30];
+			lcd_64_to_32_bits_dfa_a_data4_7_107q <= in_data[31];
+			lcd_64_to_32_bits_dfa_a_data5_0_122q <= in_data[16];
+			lcd_64_to_32_bits_dfa_a_data5_1_121q <= in_data[17];
+			lcd_64_to_32_bits_dfa_a_data5_2_120q <= in_data[18];
+			lcd_64_to_32_bits_dfa_a_data5_3_119q <= in_data[19];
+			lcd_64_to_32_bits_dfa_a_data5_4_118q <= in_data[20];
+			lcd_64_to_32_bits_dfa_a_data5_5_117q <= in_data[21];
+			lcd_64_to_32_bits_dfa_a_data5_6_116q <= in_data[22];
+			lcd_64_to_32_bits_dfa_a_data5_7_115q <= in_data[23];
+			lcd_64_to_32_bits_dfa_a_data6_0_130q <= in_data[8];
+			lcd_64_to_32_bits_dfa_a_data6_1_129q <= in_data[9];
+			lcd_64_to_32_bits_dfa_a_data6_2_128q <= in_data[10];
+			lcd_64_to_32_bits_dfa_a_data6_3_127q <= in_data[11];
+			lcd_64_to_32_bits_dfa_a_data6_4_126q <= in_data[12];
+			lcd_64_to_32_bits_dfa_a_data6_5_125q <= in_data[13];
+			lcd_64_to_32_bits_dfa_a_data6_6_124q <= in_data[14];
+			lcd_64_to_32_bits_dfa_a_data6_7_123q <= in_data[15];
+			lcd_64_to_32_bits_dfa_a_data7_0_138q <= in_data[0];
+			lcd_64_to_32_bits_dfa_a_data7_1_137q <= in_data[1];
+			lcd_64_to_32_bits_dfa_a_data7_2_136q <= in_data[2];
+			lcd_64_to_32_bits_dfa_a_data7_3_135q <= in_data[3];
+			lcd_64_to_32_bits_dfa_a_data7_4_134q <= in_data[4];
+			lcd_64_to_32_bits_dfa_a_data7_5_133q <= in_data[5];
+			lcd_64_to_32_bits_dfa_a_data7_6_132q <= in_data[6];
+			lcd_64_to_32_bits_dfa_a_data7_7_131q <= in_data[7];
+			lcd_64_to_32_bits_dfa_a_empty_0_143q <= wire_lcd_64_to_32_bits_dfa_a_empty_3m_dataout;
+			lcd_64_to_32_bits_dfa_a_empty_1_142q <= wire_lcd_64_to_32_bits_dfa_a_empty_2m_dataout;
+			lcd_64_to_32_bits_dfa_a_empty_2_141q <= wire_lcd_64_to_32_bits_dfa_a_empty_1m_dataout;
+			lcd_64_to_32_bits_dfa_a_endofpacket_140q <= in_endofpacket;
+			lcd_64_to_32_bits_dfa_a_startofpacket_139q <= in_startofpacket;
+			lcd_64_to_32_bits_dfa_a_valid_74q <= in_valid;
+		end
+	end
+	and(wire_lcd_64_to_32_bits_dfa_a_empty_1m_dataout, in_empty[2], in_endofpacket);
+	and(wire_lcd_64_to_32_bits_dfa_a_empty_2m_dataout, in_empty[1], in_endofpacket);
+	and(wire_lcd_64_to_32_bits_dfa_a_empty_3m_dataout, in_empty[0], in_endofpacket);
+	and(wire_lcd_64_to_32_bits_dfa_a_ready_163m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_155_dataout, lcd_64_to_32_bits_dfa_a_valid_74q);
+	and(wire_lcd_64_to_32_bits_dfa_a_ready_169m_dataout, wire_lcd_64_to_32_bits_dfa_a_ready_163m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout);
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_0_222m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data7_0_138q : lcd_64_to_32_bits_dfa_a_data3_0_106q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_10_212m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data6_2_128q : lcd_64_to_32_bits_dfa_a_data2_2_96q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_11_211m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data6_3_127q : lcd_64_to_32_bits_dfa_a_data2_3_95q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_12_210m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data6_4_126q : lcd_64_to_32_bits_dfa_a_data2_4_94q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_13_209m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data6_5_125q : lcd_64_to_32_bits_dfa_a_data2_5_93q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_14_208m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data6_6_124q : lcd_64_to_32_bits_dfa_a_data2_6_92q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_15_207m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data6_7_123q : lcd_64_to_32_bits_dfa_a_data2_7_91q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_16_206m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data5_0_122q : lcd_64_to_32_bits_dfa_a_data1_0_90q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_17_205m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data5_1_121q : lcd_64_to_32_bits_dfa_a_data1_1_89q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_18_204m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data5_2_120q : lcd_64_to_32_bits_dfa_a_data1_2_88q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_19_203m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data5_3_119q : lcd_64_to_32_bits_dfa_a_data1_3_87q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_1_221m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data7_1_137q : lcd_64_to_32_bits_dfa_a_data3_1_105q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_20_202m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data5_4_118q : lcd_64_to_32_bits_dfa_a_data1_4_86q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_21_201m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data5_5_117q : lcd_64_to_32_bits_dfa_a_data1_5_85q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_22_200m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data5_6_116q : lcd_64_to_32_bits_dfa_a_data1_6_84q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_23_199m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data5_7_115q : lcd_64_to_32_bits_dfa_a_data1_7_83q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_24_198m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data4_0_114q : lcd_64_to_32_bits_dfa_a_data0_0_82q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_25_197m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data4_1_113q : lcd_64_to_32_bits_dfa_a_data0_1_81q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_26_196m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data4_2_112q : lcd_64_to_32_bits_dfa_a_data0_2_80q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_27_195m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data4_3_111q : lcd_64_to_32_bits_dfa_a_data0_3_79q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_28_194m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data4_4_110q : lcd_64_to_32_bits_dfa_a_data0_4_78q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_29_193m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data4_5_109q : lcd_64_to_32_bits_dfa_a_data0_5_77q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_2_220m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data7_2_136q : lcd_64_to_32_bits_dfa_a_data3_2_104q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_30_192m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data4_6_108q : lcd_64_to_32_bits_dfa_a_data0_6_76q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_31_191m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data4_7_107q : lcd_64_to_32_bits_dfa_a_data0_7_75q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_3_219m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data7_3_135q : lcd_64_to_32_bits_dfa_a_data3_3_103q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_4_218m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data7_4_134q : lcd_64_to_32_bits_dfa_a_data3_4_102q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_5_217m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data7_5_133q : lcd_64_to_32_bits_dfa_a_data3_5_101q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_6_216m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data7_6_132q : lcd_64_to_32_bits_dfa_a_data3_6_100q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_7_215m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data7_7_131q : lcd_64_to_32_bits_dfa_a_data3_7_99q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_8_214m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data6_0_130q : lcd_64_to_32_bits_dfa_a_data2_0_98q;
+	assign		wire_lcd_64_to_32_bits_dfa_b_data_9_213m_dataout = (s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout === 1'b1) ? lcd_64_to_32_bits_dfa_a_data6_1_129q : lcd_64_to_32_bits_dfa_a_data2_1_97q;
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_156m_dataout, lcd_64_to_32_bits_dfa_a_empty_1_142q, s_wire_lcd_64_to_32_bits_dfa_always4_155_dataout);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_157m_dataout, lcd_64_to_32_bits_dfa_a_empty_0_143q, s_wire_lcd_64_to_32_bits_dfa_always4_155_dataout);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_161m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_156m_dataout, lcd_64_to_32_bits_dfa_a_valid_74q);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_162m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_157m_dataout, lcd_64_to_32_bits_dfa_a_valid_74q);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_167m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_161m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_168m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_162m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_174m_dataout, lcd_64_to_32_bits_dfa_a_empty_1_142q, s_wire_lcd_64_to_32_bits_dfa_always4_173_dataout);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_175m_dataout, lcd_64_to_32_bits_dfa_a_empty_0_143q, s_wire_lcd_64_to_32_bits_dfa_always4_173_dataout);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_179m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_174m_dataout, lcd_64_to_32_bits_dfa_a_valid_74q);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_180m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_175m_dataout, lcd_64_to_32_bits_dfa_a_valid_74q);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_186m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_179m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout);
+	and(wire_lcd_64_to_32_bits_dfa_b_empty_187m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_180m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout);
+	and(wire_lcd_64_to_32_bits_dfa_b_endofpacket_149m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_173_dataout, lcd_64_to_32_bits_dfa_a_valid_74q);
+	and(wire_lcd_64_to_32_bits_dfa_b_endofpacket_153m_dataout, wire_lcd_64_to_32_bits_dfa_b_endofpacket_149m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout);
+	and(wire_lcd_64_to_32_bits_dfa_b_endofpacket_181m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_173_dataout, lcd_64_to_32_bits_dfa_a_valid_74q);
+	and(wire_lcd_64_to_32_bits_dfa_b_endofpacket_188m_dataout, wire_lcd_64_to_32_bits_dfa_b_endofpacket_181m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout);
+	and(wire_lcd_64_to_32_bits_dfa_b_startofpacket_223m_dataout, lcd_64_to_32_bits_dfa_a_startofpacket_139q, wire_lcd_64_to_32_bits_dfa_decoder0_189_o[0]);
+	and(wire_lcd_64_to_32_bits_dfa_b_valid_182m_dataout, lcd_64_to_32_bits_dfa_a_valid_74q, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout);
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_147m_dataout = (lcd_64_to_32_bits_dfa_a_valid_74q === 1'b1) ? (~ s_wire_lcd_64_to_32_bits_dfa_always4_173_dataout) : lcd_64_to_32_bits_dfa_state_register_2_144q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_148m_dataout = (lcd_64_to_32_bits_dfa_a_valid_74q === 1'b1) ? (~ s_wire_lcd_64_to_32_bits_dfa_always4_173_dataout) : lcd_64_to_32_bits_dfa_state_register_1_145q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_151m_dataout = (s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout === 1'b1) ? wire_lcd_64_to_32_bits_dfa_new_state_147m_dataout : lcd_64_to_32_bits_dfa_state_register_2_144q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_152m_dataout = (s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout === 1'b1) ? wire_lcd_64_to_32_bits_dfa_new_state_148m_dataout : lcd_64_to_32_bits_dfa_state_register_1_145q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_158m_dataout = (lcd_64_to_32_bits_dfa_a_valid_74q === 1'b1) ? (~ s_wire_lcd_64_to_32_bits_dfa_always4_155_dataout) : lcd_64_to_32_bits_dfa_state_register_2_144q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_159m_dataout = (lcd_64_to_32_bits_dfa_a_valid_74q === 1'b1) ? (~ s_wire_lcd_64_to_32_bits_dfa_always4_155_dataout) : lcd_64_to_32_bits_dfa_state_register_1_145q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_160m_dataout = (lcd_64_to_32_bits_dfa_a_valid_74q === 1'b1) ? (~ s_wire_lcd_64_to_32_bits_dfa_always4_155_dataout) : lcd_64_to_32_bits_dfa_state_register_0_271q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_164m_dataout = (s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout === 1'b1) ? wire_lcd_64_to_32_bits_dfa_new_state_158m_dataout : lcd_64_to_32_bits_dfa_state_register_2_144q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_165m_dataout = (s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout === 1'b1) ? wire_lcd_64_to_32_bits_dfa_new_state_159m_dataout : lcd_64_to_32_bits_dfa_state_register_1_145q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_166m_dataout = (s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout === 1'b1) ? wire_lcd_64_to_32_bits_dfa_new_state_160m_dataout : lcd_64_to_32_bits_dfa_state_register_0_271q;
+	and(wire_lcd_64_to_32_bits_dfa_new_state_176m_dataout, lcd_64_to_32_bits_dfa_state_register_2_144q, ~(lcd_64_to_32_bits_dfa_a_valid_74q));
+	and(wire_lcd_64_to_32_bits_dfa_new_state_177m_dataout, lcd_64_to_32_bits_dfa_state_register_1_145q, ~(lcd_64_to_32_bits_dfa_a_valid_74q));
+	and(wire_lcd_64_to_32_bits_dfa_new_state_178m_dataout, lcd_64_to_32_bits_dfa_state_register_0_271q, ~(lcd_64_to_32_bits_dfa_a_valid_74q));
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_183m_dataout = (s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout === 1'b1) ? wire_lcd_64_to_32_bits_dfa_new_state_176m_dataout : lcd_64_to_32_bits_dfa_state_register_2_144q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_184m_dataout = (s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout === 1'b1) ? wire_lcd_64_to_32_bits_dfa_new_state_177m_dataout : lcd_64_to_32_bits_dfa_state_register_1_145q;
+	assign		wire_lcd_64_to_32_bits_dfa_new_state_185m_dataout = (s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout === 1'b1) ? wire_lcd_64_to_32_bits_dfa_new_state_178m_dataout : lcd_64_to_32_bits_dfa_state_register_0_271q;
+	assign		wire_lcd_64_to_32_bits_dfa_out_valid_reg0_420m_dataout = (s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout === 1'b1) ? wire_lcd_64_to_32_bits_dfa_b_valid_182m_dataout : lcd_64_to_32_bits_dfa_out_valid_reg0_273q;
+	oper_decoder   lcd_64_to_32_bits_dfa_decoder0_189
+	( 
+	.i({lcd_64_to_32_bits_dfa_state_register_2_144q, lcd_64_to_32_bits_dfa_state_register_1_145q, lcd_64_to_32_bits_dfa_state_register_0_271q}),
+	.o(wire_lcd_64_to_32_bits_dfa_decoder0_189_o));
+	defparam
+		lcd_64_to_32_bits_dfa_decoder0_189.width_i = 3,
+		lcd_64_to_32_bits_dfa_decoder0_189.width_o = 8;
+	oper_less_than   lcd_64_to_32_bits_dfa_lessthan0_154
+	( 
+	.a({1'b1, {2{1'b0}}}),
+	.b({lcd_64_to_32_bits_dfa_a_empty_2_141q, lcd_64_to_32_bits_dfa_a_empty_1_142q, lcd_64_to_32_bits_dfa_a_empty_0_143q}),
+	.cin(1'b1),
+	.o(wire_lcd_64_to_32_bits_dfa_lessthan0_154_o));
+	defparam
+		lcd_64_to_32_bits_dfa_lessthan0_154.sgate_representation = 0,
+		lcd_64_to_32_bits_dfa_lessthan0_154.width_a = 3,
+		lcd_64_to_32_bits_dfa_lessthan0_154.width_b = 3;
+	oper_less_than   lcd_64_to_32_bits_dfa_lessthan1_172
+	( 
+	.a({3{1'b0}}),
+	.b({lcd_64_to_32_bits_dfa_a_empty_2_141q, lcd_64_to_32_bits_dfa_a_empty_1_142q, lcd_64_to_32_bits_dfa_a_empty_0_143q}),
+	.cin(1'b1),
+	.o(wire_lcd_64_to_32_bits_dfa_lessthan1_172_o));
+	defparam
+		lcd_64_to_32_bits_dfa_lessthan1_172.sgate_representation = 0,
+		lcd_64_to_32_bits_dfa_lessthan1_172.width_a = 3,
+		lcd_64_to_32_bits_dfa_lessthan1_172.width_b = 3;
+	oper_mux   lcd_64_to_32_bits_dfa_mux0_224
+	( 
+	.data({s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout, wire_lcd_64_to_32_bits_dfa_a_ready_169m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout, wire_lcd_64_to_32_bits_dfa_a_ready_169m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout, wire_lcd_64_to_32_bits_dfa_a_ready_169m_dataout, s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout, wire_lcd_64_to_32_bits_dfa_a_ready_169m_dataout}),
+	.o(wire_lcd_64_to_32_bits_dfa_mux0_224_o),
+	.sel({lcd_64_to_32_bits_dfa_state_register_2_144q, lcd_64_to_32_bits_dfa_state_register_1_145q, lcd_64_to_32_bits_dfa_state_register_0_271q}));
+	defparam
+		lcd_64_to_32_bits_dfa_mux0_224.width_data = 8,
+		lcd_64_to_32_bits_dfa_mux0_224.width_sel = 3;
+	oper_mux   lcd_64_to_32_bits_dfa_mux1_225
+	( 
+	.data({wire_lcd_64_to_32_bits_dfa_new_state_183m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_164m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_151m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_164m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_151m_dataout, {3{wire_lcd_64_to_32_bits_dfa_new_state_183m_dataout}}}),
+	.o(wire_lcd_64_to_32_bits_dfa_mux1_225_o),
+	.sel({lcd_64_to_32_bits_dfa_state_register_2_144q, lcd_64_to_32_bits_dfa_state_register_1_145q, lcd_64_to_32_bits_dfa_state_register_0_271q}));
+	defparam
+		lcd_64_to_32_bits_dfa_mux1_225.width_data = 8,
+		lcd_64_to_32_bits_dfa_mux1_225.width_sel = 3;
+	oper_mux   lcd_64_to_32_bits_dfa_mux2_226
+	( 
+	.data({wire_lcd_64_to_32_bits_dfa_new_state_184m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_165m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_152m_dataout, {2{wire_lcd_64_to_32_bits_dfa_new_state_184m_dataout}}, wire_lcd_64_to_32_bits_dfa_new_state_165m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_152m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_184m_dataout}),
+	.o(wire_lcd_64_to_32_bits_dfa_mux2_226_o),
+	.sel({lcd_64_to_32_bits_dfa_state_register_2_144q, lcd_64_to_32_bits_dfa_state_register_1_145q, lcd_64_to_32_bits_dfa_state_register_0_271q}));
+	defparam
+		lcd_64_to_32_bits_dfa_mux2_226.width_data = 8,
+		lcd_64_to_32_bits_dfa_mux2_226.width_sel = 3;
+	oper_mux   lcd_64_to_32_bits_dfa_mux3_227
+	( 
+	.data({wire_lcd_64_to_32_bits_dfa_new_state_185m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_166m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_185m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_166m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_185m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_166m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_185m_dataout, wire_lcd_64_to_32_bits_dfa_new_state_166m_dataout}),
+	.o(wire_lcd_64_to_32_bits_dfa_mux3_227_o),
+	.sel({lcd_64_to_32_bits_dfa_state_register_2_144q, lcd_64_to_32_bits_dfa_state_register_1_145q, lcd_64_to_32_bits_dfa_state_register_0_271q}));
+	defparam
+		lcd_64_to_32_bits_dfa_mux3_227.width_data = 8,
+		lcd_64_to_32_bits_dfa_mux3_227.width_sel = 3;
+	oper_mux   lcd_64_to_32_bits_dfa_mux4_228
+	( 
+	.data({wire_lcd_64_to_32_bits_dfa_b_empty_186m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_167m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_186m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_167m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_186m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_167m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_186m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_167m_dataout}),
+	.o(wire_lcd_64_to_32_bits_dfa_mux4_228_o),
+	.sel({lcd_64_to_32_bits_dfa_state_register_2_144q, lcd_64_to_32_bits_dfa_state_register_1_145q, lcd_64_to_32_bits_dfa_state_register_0_271q}));
+	defparam
+		lcd_64_to_32_bits_dfa_mux4_228.width_data = 8,
+		lcd_64_to_32_bits_dfa_mux4_228.width_sel = 3;
+	oper_mux   lcd_64_to_32_bits_dfa_mux5_229
+	( 
+	.data({wire_lcd_64_to_32_bits_dfa_b_empty_187m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_168m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_187m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_168m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_187m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_168m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_187m_dataout, wire_lcd_64_to_32_bits_dfa_b_empty_168m_dataout}),
+	.o(wire_lcd_64_to_32_bits_dfa_mux5_229_o),
+	.sel({lcd_64_to_32_bits_dfa_state_register_2_144q, lcd_64_to_32_bits_dfa_state_register_1_145q, lcd_64_to_32_bits_dfa_state_register_0_271q}));
+	defparam
+		lcd_64_to_32_bits_dfa_mux5_229.width_data = 8,
+		lcd_64_to_32_bits_dfa_mux5_229.width_sel = 3;
+	oper_mux   lcd_64_to_32_bits_dfa_mux6_230
+	( 
+	.data({wire_lcd_64_to_32_bits_dfa_b_endofpacket_188m_dataout, wire_lcd_64_to_32_bits_dfa_a_ready_169m_dataout, wire_lcd_64_to_32_bits_dfa_b_endofpacket_153m_dataout, wire_lcd_64_to_32_bits_dfa_a_ready_169m_dataout, wire_lcd_64_to_32_bits_dfa_b_endofpacket_153m_dataout, wire_lcd_64_to_32_bits_dfa_a_ready_169m_dataout, wire_lcd_64_to_32_bits_dfa_b_endofpacket_153m_dataout, wire_lcd_64_to_32_bits_dfa_a_ready_169m_dataout}),
+	.o(wire_lcd_64_to_32_bits_dfa_mux6_230_o),
+	.sel({lcd_64_to_32_bits_dfa_state_register_2_144q, lcd_64_to_32_bits_dfa_state_register_1_145q, lcd_64_to_32_bits_dfa_state_register_0_271q}));
+	defparam
+		lcd_64_to_32_bits_dfa_mux6_230.width_data = 8,
+		lcd_64_to_32_bits_dfa_mux6_230.width_sel = 3;
+	assign
+		in_ready = s_wire_lcd_64_to_32_bits_dfa_in_ready_232_dataout,
+		out_data = {lcd_64_to_32_bits_dfa_out_data_31_reg0_274q, lcd_64_to_32_bits_dfa_out_data_30_reg0_275q, lcd_64_to_32_bits_dfa_out_data_29_reg0_276q, lcd_64_to_32_bits_dfa_out_data_28_reg0_277q, lcd_64_to_32_bits_dfa_out_data_27_reg0_278q, lcd_64_to_32_bits_dfa_out_data_26_reg0_279q, lcd_64_to_32_bits_dfa_out_data_25_reg0_280q, lcd_64_to_32_bits_dfa_out_data_24_reg0_281q, lcd_64_to_32_bits_dfa_out_data_23_reg0_282q, lcd_64_to_32_bits_dfa_out_data_22_reg0_283q, lcd_64_to_32_bits_dfa_out_data_21_reg0_284q, lcd_64_to_32_bits_dfa_out_data_20_reg0_285q, lcd_64_to_32_bits_dfa_out_data_19_reg0_286q, lcd_64_to_32_bits_dfa_out_data_18_reg0_287q, lcd_64_to_32_bits_dfa_out_data_17_reg0_288q, lcd_64_to_32_bits_dfa_out_data_16_reg0_289q, lcd_64_to_32_bits_dfa_out_data_15_reg0_290q, lcd_64_to_32_bits_dfa_out_data_14_reg0_291q, lcd_64_to_32_bits_dfa_out_data_13_reg0_292q, lcd_64_to_32_bits_dfa_out_data_12_reg0_293q, lcd_64_to_32_bits_dfa_out_data_11_reg0_294q, lcd_64_to_32_bits_dfa_out_data_10_reg0_295q, lcd_64_to_32_bits_dfa_out_data_9_reg0_296q, lcd_64_to_32_bits_dfa_out_data_8_reg0_297q, lcd_64_to_32_bits_dfa_out_data_7_reg0_298q, lcd_64_to_32_bits_dfa_out_data_6_reg0_299q, lcd_64_to_32_bits_dfa_out_data_5_reg0_300q, lcd_64_to_32_bits_dfa_out_data_4_reg0_301q, lcd_64_to_32_bits_dfa_out_data_3_reg0_302q, lcd_64_to_32_bits_dfa_out_data_2_reg0_303q, lcd_64_to_32_bits_dfa_out_data_1_reg0_304q, lcd_64_to_32_bits_dfa_out_data_0_reg0_305q},
+		out_empty = {lcd_64_to_32_bits_dfa_out_empty_1_reg0_308q, lcd_64_to_32_bits_dfa_out_empty_0_reg0_272q},
+		out_endofpacket = lcd_64_to_32_bits_dfa_out_endofpacket_reg0_307q,
+		out_startofpacket = lcd_64_to_32_bits_dfa_out_startofpacket_reg0_306q,
+		out_valid = lcd_64_to_32_bits_dfa_out_valid_reg0_273q,
+		s_wire_lcd_64_to_32_bits_dfa_always4_155_dataout = (lcd_64_to_32_bits_dfa_a_endofpacket_140q & wire_lcd_64_to_32_bits_dfa_lessthan0_154_o),
+		s_wire_lcd_64_to_32_bits_dfa_always4_171_dataout = ((~ lcd_64_to_32_bits_dfa_out_valid_reg0_273q) | out_ready),
+		s_wire_lcd_64_to_32_bits_dfa_always4_173_dataout = (lcd_64_to_32_bits_dfa_a_endofpacket_140q & wire_lcd_64_to_32_bits_dfa_lessthan1_172_o),
+		s_wire_lcd_64_to_32_bits_dfa_in_ready_232_dataout = ((~ lcd_64_to_32_bits_dfa_a_valid_74q) | wire_lcd_64_to_32_bits_dfa_mux0_224_o),
+		s_wire_lcd_64_to_32_bits_dfa_wideor0_190_dataout = (((wire_lcd_64_to_32_bits_dfa_decoder0_189_o[7] | wire_lcd_64_to_32_bits_dfa_decoder0_189_o[5]) | wire_lcd_64_to_32_bits_dfa_decoder0_189_o[3]) | wire_lcd_64_to_32_bits_dfa_decoder0_189_o[1]),
+		s_wire_vcc = 1'b1;
+endmodule //lcd_64_to_32_bits_dfa
+//synopsys translate_on
+//VALID FILE

@@ -1,0 +1,26 @@
+# osc_clk
+# cpu
+set_global_assignment -name SDC_FILE [file join $::quartus(qip_path) cpu.sdc]
+set_global_assignment -name SOURCE_FILE [file join $::quartus(qip_path) cpu.ocp]
+# flash_ssram_tristate_bridge
+# ext_ssram
+# ext_flash
+# altmemddr
+# altmemddr_bridge
+# pipeline_bridge
+# jtag_uart
+# button_pio
+# sys_clk_timer
+# high_res_timer
+# onchip_ram
+# led_pio
+# sysid
+# sys_pll
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) altera/sopc_builder_ip/altera_avalon_altpll/altera_avalon_altpll_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) sys_pll.v]
+# null
+set_global_assignment -name SDC_FILE [file join $::quartus(ip_rootpath) altera/sopc_builder_ip/altera_avalon_clock_adapter/altera_avalon_clock_adapter.sdc]
+set_global_assignment -name SOPC_BUILDER_SIGNATURE_ID "00000000000000E000000139DC7300B9"
+set_global_assignment -entity "cycloneIII_3c25_start_niosII_standard_sopc" -name IP_TOOL_NAME "sopc"
+set_global_assignment -entity "cycloneIII_3c25_start_niosII_standard_sopc" -name IP_TOOL_VERSION "12.0"
+set_global_assignment -entity "cycloneIII_3c25_start_niosII_standard_sopc" -name IP_TOOL_ENV "sopc"

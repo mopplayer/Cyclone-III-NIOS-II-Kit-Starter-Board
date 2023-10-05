@@ -1,0 +1,52 @@
+************** HOW TO USE THE DEMO ***********
+
+- This demonstration has multiple applications 
+  running at a time.On the touch screen you can
+  see sort of data logging with SLS GUI library.
+   
+For Data Logger demo:
+   - Click on Start experiment button and it will
+     show logging page.
+   - Click on start button. User can switch from
+     graph view to table view.
+   - At the right side, user can find navigation
+     button, using that user can increase the scale
+     size on y-axis and navigate previous data
+     (After stopping experiment using stop button).
+
+- For Ethernet Demo
+    1)Connect board to your PC or into network with
+      RJ-45 cable. 	
+
+      NOTE 1: If you connect board into network, then 
+              IP (192.168.0.14) should not be assigned
+              to any PC
+      NOTE 2: Use cross cable if you are connecting
+              board to PC else use straight cable
+              if you are connecting board to network.
+	 	
+     2)	Select SLS uClinux Demo from Demo list
+        displayed on NEEK LCD.
+
+     3)	Here three user applications (BOA/HTTP server ,
+        chat server and Data logger ) are running 
+        simultaneously .
+	 	
+     4)	Now for BOA and chat servers,  open explorer 
+        at host PC and type following line:
+        http://192.168.0.14 
+        - Once you type above address in explorer, 
+          you will able to see html page that is 
+          running on boa server (Inside NEEK board).
+        - From this page you can start Chat server
+          application by clicking on hyperlink,
+	  provided on that page.
+
+
+********* About the application *********
+
+-It is based on uClinux.
+-It uses SLS Ehernet Mac 10/100 IP.
+-It is developed on SLS GUI Library.
+-It uses SLS Touch Screen IP and SLS VGA IP 
+ for display.

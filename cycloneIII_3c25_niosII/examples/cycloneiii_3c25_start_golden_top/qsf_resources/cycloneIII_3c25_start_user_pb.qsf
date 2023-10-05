@@ -1,0 +1,11 @@
+#
+# Pin assignments
+#
+set_location_assignment PIN_F1 -to button[0]
+set_location_assignment PIN_F2 -to button[1]
+set_location_assignment PIN_A10 -to button[2]
+set_location_assignment PIN_B10 -to button[3]
+
+#
+# IO Standard
+#

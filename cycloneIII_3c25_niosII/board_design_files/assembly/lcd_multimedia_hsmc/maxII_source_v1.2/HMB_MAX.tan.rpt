@@ -1,0 +1,1096 @@
+Classic Timing Analyzer report for HMB_MAX
+Tue Mar 30 15:22:23 2010
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'HC_VGA_CLOCK'
+  7. Clock Setup: 'HC_NCLK'
+  8. Clock Setup: 'OSC100'
+  9. Clock Setup: 'HC_ID_I2CSCL'
+ 10. tsu
+ 11. tco
+ 12. tpd
+ 13. th
+ 14. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                             ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------+----------------------------------+--------------+--------------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                      ; To                               ; From Clock   ; To Clock     ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------+----------------------------------+--------------+--------------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 1.817 ns                         ; HC_VD                                     ; LCD_DATA_DECODE:u3|d1_VD         ; --           ; HC_NCLK      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.096 ns                        ; Terasic_I2CBir_bus:u2|cnt[1]              ; ID_I2CDAT                        ; HC_ID_I2CSCL ; --           ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 6.967 ns                         ; HC_GREST                                  ; GREST                            ; --           ; --           ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 1.107 ns                         ; HC_ID_I2CDAT                              ; Terasic_I2CBir_bus:u2|pre_w_r    ; --           ; HC_ID_I2CSCL ; 0            ;
+; Clock Setup: 'OSC100'        ; N/A   ; None          ; 175.01 MHz ( period = 5.714 ns ) ; LCD_poweron_seq:u4|reset_cnt[3]           ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100       ; OSC100       ; 0            ;
+; Clock Setup: 'HC_ID_I2CSCL'  ; N/A   ; None          ; 221.43 MHz ( period = 4.516 ns ) ; Terasic_I2CBir_bus:u2|cnt[3]              ; Terasic_I2CBir_bus:u2|cnt[7]     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; 0            ;
+; Clock Setup: 'HC_VGA_CLOCK'  ; N/A   ; None          ; 255.75 MHz ( period = 3.910 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[2]      ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; 0            ;
+; Clock Setup: 'HC_NCLK'       ; N/A   ; None          ; 270.42 MHz ( period = 3.698 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_B[7]      ; HC_NCLK      ; HC_NCLK      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                           ;                                  ;              ;              ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------+----------------------------------+--------------+--------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EPM2210F324C3      ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; HC_VGA_CLOCK    ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; HC_NCLK         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; OSC100          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; HC_ID_I2CSCL    ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'HC_VGA_CLOCK'                                                                                                                                                                                                                                      ;
++-------+------------------------------------------------+-------------------------------------------+-------------------------------------------+--------------+--------------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                                      ; To                                        ; From Clock   ; To Clock     ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-------------------------------------------+-------------------------------------------+--------------+--------------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 255.75 MHz ( period = 3.910 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_R[6]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.467 ns                ;
+; N/A   ; 255.75 MHz ( period = 3.910 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_G[2]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.467 ns                ;
+; N/A   ; 255.75 MHz ( period = 3.910 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_G[6]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.467 ns                ;
+; N/A   ; 255.75 MHz ( period = 3.910 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[2]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.467 ns                ;
+; N/A   ; 267.74 MHz ( period = 3.735 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_R[4]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.292 ns                ;
+; N/A   ; 267.74 MHz ( period = 3.735 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_G[0]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.292 ns                ;
+; N/A   ; 267.74 MHz ( period = 3.735 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_G[4]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.292 ns                ;
+; N/A   ; 267.74 MHz ( period = 3.735 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[0]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.292 ns                ;
+; N/A   ; 273.00 MHz ( period = 3.663 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_R[5]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.220 ns                ;
+; N/A   ; 273.00 MHz ( period = 3.663 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_G[1]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.220 ns                ;
+; N/A   ; 273.00 MHz ( period = 3.663 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_G[5]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.220 ns                ;
+; N/A   ; 273.00 MHz ( period = 3.663 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[1]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.220 ns                ;
+; N/A   ; 273.45 MHz ( period = 3.657 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_R[6]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.214 ns                ;
+; N/A   ; 273.45 MHz ( period = 3.657 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_G[2]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.214 ns                ;
+; N/A   ; 273.45 MHz ( period = 3.657 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_G[6]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.214 ns                ;
+; N/A   ; 273.45 MHz ( period = 3.657 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_B[2]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.214 ns                ;
+; N/A   ; 287.19 MHz ( period = 3.482 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_R[4]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.039 ns                ;
+; N/A   ; 287.19 MHz ( period = 3.482 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_G[0]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.039 ns                ;
+; N/A   ; 287.19 MHz ( period = 3.482 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_G[4]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.039 ns                ;
+; N/A   ; 287.19 MHz ( period = 3.482 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_B[0]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 3.039 ns                ;
+; N/A   ; 293.26 MHz ( period = 3.410 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_R[5]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 293.26 MHz ( period = 3.410 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_G[1]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 293.26 MHz ( period = 3.410 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_G[5]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 293.26 MHz ( period = 3.410 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_B[1]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.967 ns                ;
+; N/A   ; 298.78 MHz ( period = 3.347 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_R[8]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.904 ns                ;
+; N/A   ; 298.78 MHz ( period = 3.347 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_R[9]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.904 ns                ;
+; N/A   ; 298.78 MHz ( period = 3.347 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_G[8]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.904 ns                ;
+; N/A   ; 298.78 MHz ( period = 3.347 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_G[9]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.904 ns                ;
+; N/A   ; 298.78 MHz ( period = 3.347 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[8]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.904 ns                ;
+; N/A   ; 300.66 MHz ( period = 3.326 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_R[7]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.883 ns                ;
+; N/A   ; 300.66 MHz ( period = 3.326 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_G[3]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.883 ns                ;
+; N/A   ; 300.66 MHz ( period = 3.326 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_G[7]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.883 ns                ;
+; N/A   ; 300.66 MHz ( period = 3.326 ns )               ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[3]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.883 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_R[8]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.651 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_R[9]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.651 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_G[8]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.651 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_G[9]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.651 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_B[8]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.651 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_R[7]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.630 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_G[3]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.630 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_G[7]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.630 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_B[3]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.630 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[4]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.454 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[5]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.454 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[6]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.454 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[7]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.454 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_B[9]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.454 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_B[4]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.201 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_B[5]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.201 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_B[6]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.201 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_B[7]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.201 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_B[9]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.201 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_VS                  ; VGA_DATA_DECODE:u1|VGA_VS                 ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.167 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_HS                 ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.134 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_VS                 ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.134 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_BLANK              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.134 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_R[0]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.134 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_R[1]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.134 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_R[2]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.134 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_R[3]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.134 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_RGB[6]              ; VGA_DATA_DECODE:u1|VGA_B[6]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 2.049 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_HS                  ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.952 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_HS                  ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.946 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_RGB[4]              ; VGA_DATA_DECODE:u1|VGA_B[4]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.945 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_HS                 ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.881 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_VS                 ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.881 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_BLANK              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.881 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_R[0]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.881 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_R[1]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.881 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_R[2]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.881 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_R[3]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.881 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[0]              ; VGA_DATA_DECODE:u1|VGA_R[0]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.861 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[2]              ; VGA_DATA_DECODE:u1|VGA_R[2]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.842 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[1]              ; VGA_DATA_DECODE:u1|VGA_R[1]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.819 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[9]              ; VGA_DATA_DECODE:u1|d3_RGB[9]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.807 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_RGB[5]              ; VGA_DATA_DECODE:u1|VGA_B[5]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.803 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_HS                  ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.610 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_HS                  ; VGA_DATA_DECODE:u1|VGA_HS                 ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.605 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_HS                  ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.604 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[3]              ; VGA_DATA_DECODE:u1|VGA_R[3]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.568 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|VGA_CLOCK              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.525 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.500 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.494 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_BLANK               ; VGA_DATA_DECODE:u1|VGA_BLANK              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.477 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_RGB[7]              ; VGA_DATA_DECODE:u1|VGA_B[7]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.336 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|VGA_CLOCK              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.332 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|color_phase_counter[0] ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.120 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; VGA_DATA_DECODE:u1|color_phase_counter[1] ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 1.112 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[6]              ; VGA_DATA_DECODE:u1|VGA_G[6]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.955 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[2]              ; VGA_DATA_DECODE:u1|VGA_G[2]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.952 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[2]              ; VGA_DATA_DECODE:u1|d3_RGB[2]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.952 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[6]              ; VGA_DATA_DECODE:u1|d3_RGB[6]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.951 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[6]              ; VGA_DATA_DECODE:u1|VGA_R[6]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.948 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[6]              ; VGA_DATA_DECODE:u1|d2_RGB[6]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.947 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[8]              ; VGA_DATA_DECODE:u1|VGA_G[8]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.944 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[0]              ; VGA_DATA_DECODE:u1|VGA_G[0]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.943 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[4]              ; VGA_DATA_DECODE:u1|VGA_G[4]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.943 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_RGB[2]              ; VGA_DATA_DECODE:u1|VGA_B[2]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.943 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[7]              ; VGA_DATA_DECODE:u1|d3_RGB[7]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.943 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[4]              ; VGA_DATA_DECODE:u1|d3_RGB[4]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.942 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[8]              ; VGA_DATA_DECODE:u1|d3_RGB[8]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.942 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[0]              ; VGA_DATA_DECODE:u1|d3_RGB[0]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.941 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[7]              ; VGA_DATA_DECODE:u1|VGA_G[7]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.940 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_HS                  ; VGA_DATA_DECODE:u1|d3_HS                  ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.931 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[9]              ; VGA_DATA_DECODE:u1|VGA_G[9]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.928 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_RGB[3]              ; VGA_DATA_DECODE:u1|VGA_B[3]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.928 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[5]              ; VGA_DATA_DECODE:u1|VGA_G[5]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.803 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[5]              ; VGA_DATA_DECODE:u1|VGA_R[5]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.802 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[1]              ; VGA_DATA_DECODE:u1|d3_RGB[1]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.800 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[1]              ; VGA_DATA_DECODE:u1|VGA_G[1]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.799 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[5]              ; VGA_DATA_DECODE:u1|d3_RGB[5]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.799 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[5]              ; VGA_DATA_DECODE:u1|d2_RGB[5]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.795 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[7]              ; VGA_DATA_DECODE:u1|d2_RGB[7]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.792 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[3]              ; VGA_DATA_DECODE:u1|d3_RGB[3]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.789 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_RGB[3]              ; VGA_DATA_DECODE:u1|VGA_G[3]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.787 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[7]              ; VGA_DATA_DECODE:u1|VGA_R[7]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.786 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[8]              ; VGA_DATA_DECODE:u1|VGA_R[8]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.785 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[9]              ; VGA_DATA_DECODE:u1|d2_RGB[9]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.785 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[9]              ; VGA_DATA_DECODE:u1|VGA_R[9]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.782 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[8]              ; VGA_DATA_DECODE:u1|d2_RGB[8]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.782 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[4]              ; VGA_DATA_DECODE:u1|VGA_R[4]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.780 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_RGB[8]              ; VGA_DATA_DECODE:u1|VGA_B[8]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.777 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[4]              ; VGA_DATA_DECODE:u1|d2_RGB[4]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.776 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_RGB[0]              ; VGA_DATA_DECODE:u1|VGA_B[0]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.773 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_RGB[1]              ; VGA_DATA_DECODE:u1|VGA_B[1]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.772 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_VS                  ; VGA_DATA_DECODE:u1|d2_VS                  ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.772 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_BLANK               ; VGA_DATA_DECODE:u1|d2_BLANK               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.772 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[1]              ; VGA_DATA_DECODE:u1|d2_RGB[1]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.771 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[0]              ; VGA_DATA_DECODE:u1|d2_RGB[0]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.770 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_VS                  ; VGA_DATA_DECODE:u1|d3_VS                  ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.769 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d2_BLANK               ; VGA_DATA_DECODE:u1|d3_BLANK               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.769 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_HS                  ; VGA_DATA_DECODE:u1|d2_HS                  ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.766 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[3]              ; VGA_DATA_DECODE:u1|d2_RGB[3]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.765 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d3_RGB[9]              ; VGA_DATA_DECODE:u1|VGA_B[9]               ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.765 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; VGA_DATA_DECODE:u1|d1_RGB[2]              ; VGA_DATA_DECODE:u1|d2_RGB[2]              ; HC_VGA_CLOCK ; HC_VGA_CLOCK ; None                        ; None                      ; 0.764 ns                ;
++-------+------------------------------------------------+-------------------------------------------+-------------------------------------------+--------------+--------------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'HC_NCLK'                                                                                                                                                                                                                                     ;
++-------+------------------------------------------------+-------------------------------------------+-------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                                      ; To                                        ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-------------------------------------------+-------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 270.42 MHz ( period = 3.698 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_R[7]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.255 ns                ;
+; N/A   ; 270.42 MHz ( period = 3.698 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_G[7]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.255 ns                ;
+; N/A   ; 270.42 MHz ( period = 3.698 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_B[3]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.255 ns                ;
+; N/A   ; 270.42 MHz ( period = 3.698 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_B[4]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.255 ns                ;
+; N/A   ; 270.42 MHz ( period = 3.698 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_B[6]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.255 ns                ;
+; N/A   ; 270.42 MHz ( period = 3.698 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_B[7]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.255 ns                ;
+; N/A   ; 273.15 MHz ( period = 3.661 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_R[3]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.218 ns                ;
+; N/A   ; 273.15 MHz ( period = 3.661 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_G[0]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.218 ns                ;
+; N/A   ; 273.15 MHz ( period = 3.661 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_G[3]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.218 ns                ;
+; N/A   ; 273.15 MHz ( period = 3.661 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_B[0]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.218 ns                ;
+; N/A   ; 290.02 MHz ( period = 3.448 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_R[7]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.005 ns                ;
+; N/A   ; 290.02 MHz ( period = 3.448 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_G[7]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.005 ns                ;
+; N/A   ; 290.02 MHz ( period = 3.448 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_B[3]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.005 ns                ;
+; N/A   ; 290.02 MHz ( period = 3.448 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_B[4]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.005 ns                ;
+; N/A   ; 290.02 MHz ( period = 3.448 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_B[6]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.005 ns                ;
+; N/A   ; 290.02 MHz ( period = 3.448 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_B[7]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 3.005 ns                ;
+; N/A   ; 293.17 MHz ( period = 3.411 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_R[3]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.968 ns                ;
+; N/A   ; 293.17 MHz ( period = 3.411 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_G[0]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.968 ns                ;
+; N/A   ; 293.17 MHz ( period = 3.411 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_G[3]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.968 ns                ;
+; N/A   ; 293.17 MHz ( period = 3.411 ns )               ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_B[0]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.968 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_R[5]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.812 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_R[6]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.812 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_G[5]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.812 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_G[6]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.812 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_B[5]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.812 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_R[4]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.804 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_G[1]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.804 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_G[4]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.804 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_B[1]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.804 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_R[5]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.562 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_R[6]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.562 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_G[5]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.562 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_G[6]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.562 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_B[5]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.562 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_R[4]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.554 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_G[1]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.554 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_G[4]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.554 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_B[1]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.554 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_R[2]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.394 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_G[2]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.394 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_B[2]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.394 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_VD                 ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.394 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_HD                  ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.318 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_HD                  ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.314 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_NCLK               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.168 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_R[2]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.144 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_G[2]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.144 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_B[2]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.144 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_VD                 ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.144 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_R[0]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.129 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_R[1]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.129 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_HD                 ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.129 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|LCD_DEN                ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.129 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_HD                  ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.034 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_HD                  ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.031 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_HD                  ; LCD_DATA_DECODE:u3|LCD_HD                 ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 2.031 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_NCLK               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.934 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_R[0]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.879 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_R[1]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.879 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_HD                 ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.879 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|LCD_DEN                ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.879 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_RGB[3]              ; LCD_DATA_DECODE:u3|LCD_B[3]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.750 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.565 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.562 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_RGB[4]              ; LCD_DATA_DECODE:u3|LCD_B[4]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.462 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[6]              ; LCD_DATA_DECODE:u3|d3_RGB[6]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.447 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[1]              ; LCD_DATA_DECODE:u3|LCD_R[1]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.336 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[0]              ; LCD_DATA_DECODE:u3|LCD_R[0]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.333 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|color_phase_counter[1] ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.124 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; LCD_DATA_DECODE:u3|color_phase_counter[0] ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 1.118 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[1]              ; LCD_DATA_DECODE:u3|LCD_G[1]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.957 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[4]              ; LCD_DATA_DECODE:u3|d3_RGB[4]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.955 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[4]              ; LCD_DATA_DECODE:u3|LCD_G[4]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.953 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[1]              ; LCD_DATA_DECODE:u3|d3_RGB[1]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.953 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[2]              ; LCD_DATA_DECODE:u3|d3_RGB[2]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.949 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[7]              ; LCD_DATA_DECODE:u3|d3_RGB[7]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.949 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[2]              ; LCD_DATA_DECODE:u3|LCD_G[2]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.946 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[7]              ; LCD_DATA_DECODE:u3|LCD_G[7]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.946 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[0]              ; LCD_DATA_DECODE:u3|d3_RGB[0]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.944 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[5]              ; LCD_DATA_DECODE:u3|LCD_G[5]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.942 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[5]              ; LCD_DATA_DECODE:u3|d3_RGB[5]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.942 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[0]              ; LCD_DATA_DECODE:u3|LCD_G[0]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.941 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_VD                  ; LCD_DATA_DECODE:u3|LCD_VD                 ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.941 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_RGB[7]              ; LCD_DATA_DECODE:u3|LCD_B[7]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.940 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_DEN                 ; LCD_DATA_DECODE:u3|d3_DEN                 ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.937 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[6]              ; LCD_DATA_DECODE:u3|LCD_G[6]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.936 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_RGB[5]              ; LCD_DATA_DECODE:u3|LCD_B[5]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.935 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[1]              ; LCD_DATA_DECODE:u3|d2_RGB[1]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.930 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_HD                  ; LCD_DATA_DECODE:u3|d3_HD                  ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.930 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_DEN                 ; LCD_DATA_DECODE:u3|d2_DEN                 ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.930 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_RGB[2]              ; LCD_DATA_DECODE:u3|LCD_B[2]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.928 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[3]              ; LCD_DATA_DECODE:u3|d2_RGB[3]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.798 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[3]              ; LCD_DATA_DECODE:u3|LCD_R[3]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.797 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[3]              ; LCD_DATA_DECODE:u3|d3_RGB[3]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.797 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_RGB[3]              ; LCD_DATA_DECODE:u3|LCD_G[3]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.793 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[4]              ; LCD_DATA_DECODE:u3|LCD_R[4]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.785 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[4]              ; LCD_DATA_DECODE:u3|d2_RGB[4]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.782 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[2]              ; LCD_DATA_DECODE:u3|LCD_R[2]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.781 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[7]              ; LCD_DATA_DECODE:u3|LCD_R[7]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.781 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[2]              ; LCD_DATA_DECODE:u3|d2_RGB[2]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.780 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_DEN                 ; LCD_DATA_DECODE:u3|LCD_DEN                ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.780 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[5]              ; LCD_DATA_DECODE:u3|d2_RGB[5]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.779 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[6]              ; LCD_DATA_DECODE:u3|d2_RGB[6]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.777 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[6]              ; LCD_DATA_DECODE:u3|LCD_R[6]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.776 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[7]              ; LCD_DATA_DECODE:u3|d2_RGB[7]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.776 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[5]              ; LCD_DATA_DECODE:u3|LCD_R[5]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.774 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_RGB[0]              ; LCD_DATA_DECODE:u3|d2_RGB[0]              ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.772 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_VD                  ; LCD_DATA_DECODE:u3|d2_VD                  ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.772 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_RGB[0]              ; LCD_DATA_DECODE:u3|LCD_B[0]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.769 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d2_VD                  ; LCD_DATA_DECODE:u3|d3_VD                  ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.769 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d1_HD                  ; LCD_DATA_DECODE:u3|d2_HD                  ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.766 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_RGB[6]              ; LCD_DATA_DECODE:u3|LCD_B[6]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.765 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; LCD_DATA_DECODE:u3|d3_RGB[1]              ; LCD_DATA_DECODE:u3|LCD_B[1]               ; HC_NCLK    ; HC_NCLK  ; None                        ; None                      ; 0.763 ns                ;
++-------+------------------------------------------------+-------------------------------------------+-------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'OSC100'                                                                                                                                                                                                                                                           ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                             ; To                               ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 175.01 MHz ( period = 5.714 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.271 ns                ;
+; N/A                                     ; 175.22 MHz ( period = 5.707 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.264 ns                ;
+; N/A                                     ; 175.81 MHz ( period = 5.688 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.245 ns                ;
+; N/A                                     ; 175.84 MHz ( period = 5.687 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.244 ns                ;
+; N/A                                     ; 175.99 MHz ( period = 5.682 ns )                    ; LCD_poweron_seq:u4|reset_cnt[17] ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 5.239 ns                ;
+; N/A                                     ; 176.06 MHz ( period = 5.680 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.237 ns                ;
+; N/A                                     ; 176.65 MHz ( period = 5.661 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.218 ns                ;
+; N/A                                     ; 177.49 MHz ( period = 5.634 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[5]  ; OSC100     ; OSC100   ; None                        ; None                      ; 5.191 ns                ;
+; N/A                                     ; 178.06 MHz ( period = 5.616 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.173 ns                ;
+; N/A                                     ; 178.92 MHz ( period = 5.589 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.146 ns                ;
+; N/A                                     ; 179.60 MHz ( period = 5.568 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[7]  ; OSC100     ; OSC100   ; None                        ; None                      ; 5.125 ns                ;
+; N/A                                     ; 180.38 MHz ( period = 5.544 ns )                    ; LCD_poweron_seq:u4|reset_cnt[17] ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 5.101 ns                ;
+; N/A                                     ; 181.62 MHz ( period = 5.506 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.063 ns                ;
+; N/A                                     ; 181.85 MHz ( period = 5.499 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.056 ns                ;
+; N/A                                     ; 182.22 MHz ( period = 5.488 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.045 ns                ;
+; N/A                                     ; 182.45 MHz ( period = 5.481 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.038 ns                ;
+; N/A                                     ; 182.48 MHz ( period = 5.480 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.037 ns                ;
+; N/A                                     ; 183.08 MHz ( period = 5.462 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 5.019 ns                ;
+; N/A                                     ; 184.30 MHz ( period = 5.426 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[5]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.983 ns                ;
+; N/A                                     ; 184.91 MHz ( period = 5.408 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.965 ns                ;
+; N/A                                     ; 184.91 MHz ( period = 5.408 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.965 ns                ;
+; N/A                                     ; 185.15 MHz ( period = 5.401 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.958 ns                ;
+; N/A                                     ; 185.22 MHz ( period = 5.399 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.956 ns                ;
+; N/A                                     ; 185.46 MHz ( period = 5.392 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.949 ns                ;
+; N/A                                     ; 185.53 MHz ( period = 5.390 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.947 ns                ;
+; N/A                                     ; 185.74 MHz ( period = 5.384 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.941 ns                ;
+; N/A                                     ; 185.74 MHz ( period = 5.384 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.941 ns                ;
+; N/A                                     ; 185.77 MHz ( period = 5.383 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[9]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.940 ns                ;
+; N/A                                     ; 185.80 MHz ( period = 5.382 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.939 ns                ;
+; N/A                                     ; 185.87 MHz ( period = 5.380 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.937 ns                ;
+; N/A                                     ; 185.98 MHz ( period = 5.377 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.934 ns                ;
+; N/A                                     ; 186.12 MHz ( period = 5.373 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.930 ns                ;
+; N/A                                     ; 186.57 MHz ( period = 5.360 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[7]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.917 ns                ;
+; N/A                                     ; 186.64 MHz ( period = 5.358 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.915 ns                ;
+; N/A                                     ; 186.67 MHz ( period = 5.357 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.914 ns                ;
+; N/A                                     ; 186.71 MHz ( period = 5.356 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[9]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.913 ns                ;
+; N/A                                     ; 186.81 MHz ( period = 5.353 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.910 ns                ;
+; N/A                                     ; 186.99 MHz ( period = 5.348 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[4]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.905 ns                ;
+; N/A                                     ; 187.69 MHz ( period = 5.328 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[5]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.885 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.867 ns                ;
+; N/A                                     ; 188.54 MHz ( period = 5.304 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.861 ns                ;
+; N/A                                     ; 188.64 MHz ( period = 5.301 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.858 ns                ;
+; N/A                                     ; 189.18 MHz ( period = 5.286 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.843 ns                ;
+; N/A                                     ; 189.50 MHz ( period = 5.277 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.834 ns                ;
+; N/A                                     ; 189.68 MHz ( period = 5.272 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[6]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.829 ns                ;
+; N/A                                     ; 189.75 MHz ( period = 5.270 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[8]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.827 ns                ;
+; N/A                                     ; 190.04 MHz ( period = 5.262 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[7]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.819 ns                ;
+; N/A                                     ; 190.51 MHz ( period = 5.249 ns )                    ; LCD_poweron_seq:u4|reset_cnt[12] ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.806 ns                ;
+; N/A                                     ; 190.59 MHz ( period = 5.247 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.804 ns                ;
+; N/A                                     ; 193.20 MHz ( period = 5.176 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.733 ns                ;
+; N/A                                     ; 193.24 MHz ( period = 5.175 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[9]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.732 ns                ;
+; N/A                                     ; 193.31 MHz ( period = 5.173 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.730 ns                ;
+; N/A                                     ; 193.35 MHz ( period = 5.172 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.729 ns                ;
+; N/A                                     ; 193.57 MHz ( period = 5.166 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.723 ns                ;
+; N/A                                     ; 193.87 MHz ( period = 5.158 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.715 ns                ;
+; N/A                                     ; 193.91 MHz ( period = 5.157 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[9]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.714 ns                ;
+; N/A                                     ; 194.02 MHz ( period = 5.154 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.711 ns                ;
+; N/A                                     ; 194.21 MHz ( period = 5.149 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[3]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.706 ns                ;
+; N/A                                     ; 194.29 MHz ( period = 5.147 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.704 ns                ;
+; N/A                                     ; 194.55 MHz ( period = 5.140 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[4]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.697 ns                ;
+; N/A                                     ; 194.78 MHz ( period = 5.134 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[7]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.691 ns                ;
+; N/A                                     ; 195.62 MHz ( period = 5.112 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[8]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.669 ns                ;
+; N/A                                     ; 195.73 MHz ( period = 5.109 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 4.666 ns                ;
+; N/A                                     ; 196.23 MHz ( period = 5.096 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.653 ns                ;
+; N/A                                     ; 196.31 MHz ( period = 5.094 ns )                    ; LCD_poweron_seq:u4|reset_cnt[15] ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.651 ns                ;
+; N/A                                     ; 196.93 MHz ( period = 5.078 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.635 ns                ;
+; N/A                                     ; 196.93 MHz ( period = 5.078 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.635 ns                ;
+; N/A                                     ; 196.97 MHz ( period = 5.077 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[9]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.634 ns                ;
+; N/A                                     ; 197.04 MHz ( period = 5.075 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.632 ns                ;
+; N/A                                     ; 197.08 MHz ( period = 5.074 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.631 ns                ;
+; N/A                                     ; 197.28 MHz ( period = 5.069 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.626 ns                ;
+; N/A                                     ; 197.32 MHz ( period = 5.068 ns )                    ; LCD_poweron_seq:u4|reset_cnt[12] ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.625 ns                ;
+; N/A                                     ; 197.32 MHz ( period = 5.068 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[9]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.625 ns                ;
+; N/A                                     ; 197.43 MHz ( period = 5.065 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.622 ns                ;
+; N/A                                     ; 197.47 MHz ( period = 5.064 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[6]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.621 ns                ;
+; N/A                                     ; 197.55 MHz ( period = 5.062 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[8]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.619 ns                ;
+; N/A                                     ; 197.67 MHz ( period = 5.059 ns )                    ; LCD_poweron_seq:u4|reset_cnt[11] ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.616 ns                ;
+; N/A                                     ; 197.86 MHz ( period = 5.054 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 197.90 MHz ( period = 5.053 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[9]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.610 ns                ;
+; N/A                                     ; 197.98 MHz ( period = 5.051 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[3]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.608 ns                ;
+; N/A                                     ; 198.02 MHz ( period = 5.050 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.607 ns                ;
+; N/A                                     ; 198.18 MHz ( period = 5.046 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[5]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.603 ns                ;
+; N/A                                     ; 198.22 MHz ( period = 5.045 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[7]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.602 ns                ;
+; N/A                                     ; 198.33 MHz ( period = 5.042 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[4]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.599 ns                ;
+; N/A                                     ; 199.48 MHz ( period = 5.013 ns )                    ; LCD_poweron_seq:u4|reset_cnt[12] ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.570 ns                ;
+; N/A                                     ; 200.08 MHz ( period = 4.998 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.555 ns                ;
+; N/A                                     ; 200.16 MHz ( period = 4.996 ns )                    ; LCD_poweron_seq:u4|reset_cnt[14] ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.553 ns                ;
+; N/A                                     ; 200.44 MHz ( period = 4.989 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.546 ns                ;
+; N/A                                     ; 200.92 MHz ( period = 4.977 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.534 ns                ;
+; N/A                                     ; 201.05 MHz ( period = 4.974 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.531 ns                ;
+; N/A                                     ; 201.21 MHz ( period = 4.970 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[1]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.527 ns                ;
+; N/A                                     ; 201.37 MHz ( period = 4.966 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[6]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.523 ns                ;
+; N/A                                     ; 201.45 MHz ( period = 4.964 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[8]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.521 ns                ;
+; N/A                                     ; 201.65 MHz ( period = 4.959 ns )                    ; LCD_poweron_seq:u4|reset_cnt[13] ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.516 ns                ;
+; N/A                                     ; 201.78 MHz ( period = 4.956 ns )                    ; LCD_poweron_seq:u4|reset_cnt[15] ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 4.513 ns                ;
+; N/A                                     ; 202.55 MHz ( period = 4.937 ns )                    ; LCD_poweron_seq:u4|reset_cnt[12] ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.494 ns                ;
+; N/A                                     ; 203.33 MHz ( period = 4.918 ns )                    ; LCD_poweron_seq:u4|reset_cnt[10] ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.475 ns                ;
+; N/A                                     ; 203.54 MHz ( period = 4.913 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[8]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.470 ns                ;
+; N/A                                     ; 204.37 MHz ( period = 4.893 ns )                    ; LCD_poweron_seq:u4|reset_cnt[13] ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.450 ns                ;
+; N/A                                     ; 205.00 MHz ( period = 4.878 ns )                    ; LCD_poweron_seq:u4|reset_cnt[11] ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.435 ns                ;
+; N/A                                     ; 205.04 MHz ( period = 4.877 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[3]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.434 ns                ;
+; N/A                                     ; 205.72 MHz ( period = 4.861 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[7]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.418 ns                ;
+; N/A                                     ; 205.85 MHz ( period = 4.858 ns )                    ; LCD_poweron_seq:u4|reset_cnt[14] ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 4.415 ns                ;
+; N/A                                     ; 206.48 MHz ( period = 4.843 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.400 ns                ;
+; N/A                                     ; 206.53 MHz ( period = 4.842 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[9]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.399 ns                ;
+; N/A                                     ; 206.65 MHz ( period = 4.839 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.396 ns                ;
+; N/A                                     ; 207.30 MHz ( period = 4.824 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[8]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.381 ns                ;
+; N/A                                     ; 207.34 MHz ( period = 4.823 ns )                    ; LCD_poweron_seq:u4|reset_cnt[11] ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.380 ns                ;
+; N/A                                     ; 207.38 MHz ( period = 4.822 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.379 ns                ;
+; N/A                                     ; 207.51 MHz ( period = 4.819 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[7]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.376 ns                ;
+; N/A                                     ; 208.51 MHz ( period = 4.796 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.353 ns                ;
+; N/A                                     ; 209.12 MHz ( period = 4.782 ns )                    ; LCD_poweron_seq:u4|reset_cnt[11] ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.339 ns                ;
+; N/A                                     ; 209.95 MHz ( period = 4.763 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.320 ns                ;
+; N/A                                     ; 210.04 MHz ( period = 4.761 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[6]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.318 ns                ;
+; N/A                                     ; 210.30 MHz ( period = 4.755 ns )                    ; LCD_poweron_seq:u4|reset_cnt[13] ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 4.312 ns                ;
+; N/A                                     ; 210.66 MHz ( period = 4.747 ns )                    ; LCD_poweron_seq:u4|reset_cnt[11] ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.304 ns                ;
+; N/A                                     ; 210.93 MHz ( period = 4.741 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.298 ns                ;
+; N/A                                     ; 211.10 MHz ( period = 4.737 ns )                    ; LCD_poweron_seq:u4|reset_cnt[10] ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.294 ns                ;
+; N/A                                     ; 211.73 MHz ( period = 4.723 ns )                    ; LCD_poweron_seq:u4|reset_cnt[13] ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.280 ns                ;
+; N/A                                     ; 211.91 MHz ( period = 4.719 ns )                    ; LCD_poweron_seq:u4|reset_cnt[15] ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.276 ns                ;
+; N/A                                     ; 212.77 MHz ( period = 4.700 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.257 ns                ;
+; N/A                                     ; 213.49 MHz ( period = 4.684 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 4.241 ns                ;
+; N/A                                     ; 213.58 MHz ( period = 4.682 ns )                    ; LCD_poweron_seq:u4|reset_cnt[10] ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.239 ns                ;
+; N/A                                     ; 214.36 MHz ( period = 4.665 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.222 ns                ;
+; N/A                                     ; 214.82 MHz ( period = 4.655 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[2]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.212 ns                ;
+; N/A                                     ; 215.10 MHz ( period = 4.649 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.206 ns                ;
+; N/A                                     ; 215.19 MHz ( period = 4.647 ns )                    ; LCD_poweron_seq:u4|reset_cnt[13] ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.204 ns                ;
+; N/A                                     ; 215.47 MHz ( period = 4.641 ns )                    ; LCD_poweron_seq:u4|reset_cnt[10] ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.198 ns                ;
+; N/A                                     ; 215.66 MHz ( period = 4.637 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.194 ns                ;
+; N/A                                     ; 217.11 MHz ( period = 4.606 ns )                    ; LCD_poweron_seq:u4|reset_cnt[10] ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.163 ns                ;
+; N/A                                     ; 217.49 MHz ( period = 4.598 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[8]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.155 ns                ;
+; N/A                                     ; 217.86 MHz ( period = 4.590 ns )                    ; LCD_poweron_seq:u4|reset_cnt[10] ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.147 ns                ;
+; N/A                                     ; 219.73 MHz ( period = 4.551 ns )                    ; LCD_poweron_seq:u4|reset_cnt[3]  ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 220.51 MHz ( period = 4.535 ns )                    ; LCD_poweron_seq:u4|reset_cnt[12] ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.092 ns                ;
+; N/A                                     ; 221.04 MHz ( period = 4.524 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.081 ns                ;
+; N/A                                     ; 222.27 MHz ( period = 4.499 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 4.056 ns                ;
+; N/A                                     ; 222.82 MHz ( period = 4.488 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.045 ns                ;
+; N/A                                     ; 223.16 MHz ( period = 4.481 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.038 ns                ;
+; N/A                                     ; 224.11 MHz ( period = 4.462 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[12] ; OSC100     ; OSC100   ; None                        ; None                      ; 4.019 ns                ;
+; N/A                                     ; 224.16 MHz ( period = 4.461 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.018 ns                ;
+; N/A                                     ; 224.42 MHz ( period = 4.456 ns )                    ; LCD_poweron_seq:u4|reset_cnt[12] ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.013 ns                ;
+; N/A                                     ; 224.92 MHz ( period = 4.446 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[6]  ; OSC100     ; OSC100   ; None                        ; None                      ; 4.003 ns                ;
+; N/A                                     ; 226.86 MHz ( period = 4.408 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[5]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.965 ns                ;
+; N/A                                     ; 227.79 MHz ( period = 4.390 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.947 ns                ;
+; N/A                                     ; 227.84 MHz ( period = 4.389 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[1]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.946 ns                ;
+; N/A                                     ; 227.89 MHz ( period = 4.388 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.945 ns                ;
+; N/A                                     ; 228.15 MHz ( period = 4.383 ns )                    ; LCD_poweron_seq:u4|reset_cnt[14] ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.940 ns                ;
+; N/A                                     ; 229.10 MHz ( period = 4.365 ns )                    ; LCD_poweron_seq:u4|reset_cnt[10] ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.922 ns                ;
+; N/A                                     ; 230.04 MHz ( period = 4.347 ns )                    ; LCD_poweron_seq:u4|reset_cnt[16] ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.904 ns                ;
+; N/A                                     ; 230.26 MHz ( period = 4.343 ns )                    ; LCD_poweron_seq:u4|reset_cnt[1]  ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.900 ns                ;
+; N/A                                     ; 230.31 MHz ( period = 4.342 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[8]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.899 ns                ;
+; N/A                                     ; 230.31 MHz ( period = 4.342 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[7]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.899 ns                ;
+; N/A                                     ; 231.21 MHz ( period = 4.325 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.882 ns                ;
+; N/A                                     ; 231.32 MHz ( period = 4.323 ns )                    ; LCD_poweron_seq:u4|reset_cnt[7]  ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 3.880 ns                ;
+; N/A                                     ; 231.59 MHz ( period = 4.318 ns )                    ; LCD_poweron_seq:u4|reset_cnt[12] ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 3.875 ns                ;
+; N/A                                     ; 232.67 MHz ( period = 4.298 ns )                    ; LCD_poweron_seq:u4|reset_cnt[13] ; LCD_poweron_seq:u4|reset_cnt[13] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.855 ns                ;
+; N/A                                     ; 232.88 MHz ( period = 4.294 ns )                    ; LCD_poweron_seq:u4|reset_cnt[11] ; LCD_poweron_seq:u4|reset_cnt[11] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.851 ns                ;
+; N/A                                     ; 233.97 MHz ( period = 4.274 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.831 ns                ;
+; N/A                                     ; 234.80 MHz ( period = 4.259 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[5]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.816 ns                ;
+; N/A                                     ; 235.29 MHz ( period = 4.250 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 3.807 ns                ;
+; N/A                                     ; 235.52 MHz ( period = 4.246 ns )                    ; LCD_poweron_seq:u4|reset_cnt[4]  ; LCD_poweron_seq:u4|reset_cnt[4]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.803 ns                ;
+; N/A                                     ; 235.57 MHz ( period = 4.245 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.802 ns                ;
+; N/A                                     ; 235.74 MHz ( period = 4.242 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.799 ns                ;
+; N/A                                     ; 236.07 MHz ( period = 4.236 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.793 ns                ;
+; N/A                                     ; 236.13 MHz ( period = 4.235 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[6]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.792 ns                ;
+; N/A                                     ; 236.57 MHz ( period = 4.227 ns )                    ; LCD_poweron_seq:u4|reset_cnt[10] ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 3.784 ns                ;
+; N/A                                     ; 236.91 MHz ( period = 4.221 ns )                    ; LCD_poweron_seq:u4|reset_cnt[8]  ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.778 ns                ;
+; N/A                                     ; 237.59 MHz ( period = 4.209 ns )                    ; LCD_poweron_seq:u4|reset_cnt[16] ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 3.766 ns                ;
+; N/A                                     ; 239.01 MHz ( period = 4.184 ns )                    ; LCD_poweron_seq:u4|reset_cnt[12] ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.741 ns                ;
+; N/A                                     ; 240.50 MHz ( period = 4.158 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.715 ns                ;
+; N/A                                     ; 240.56 MHz ( period = 4.157 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[9]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.714 ns                ;
+; N/A                                     ; 240.73 MHz ( period = 4.154 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.711 ns                ;
+; N/A                                     ; 241.78 MHz ( period = 4.136 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 3.693 ns                ;
+; N/A                                     ; 242.07 MHz ( period = 4.131 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[3]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.688 ns                ;
+; N/A                                     ; 242.60 MHz ( period = 4.122 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[4]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.679 ns                ;
+; N/A                                     ; 242.72 MHz ( period = 4.120 ns )                    ; LCD_poweron_seq:u4|reset_cnt[2]  ; LCD_poweron_seq:u4|reset_cnt[2]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.677 ns                ;
+; N/A                                     ; 245.22 MHz ( period = 4.078 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.635 ns                ;
+; N/A                                     ; 245.70 MHz ( period = 4.070 ns )                    ; LCD_poweron_seq:u4|reset_cnt[14] ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.627 ns                ;
+; N/A                                     ; 247.16 MHz ( period = 4.046 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[6]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 247.28 MHz ( period = 4.044 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[8]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.601 ns                ;
+; N/A                                     ; 249.38 MHz ( period = 4.010 ns )                    ; LCD_poweron_seq:u4|reset_cnt[5]  ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.567 ns                ;
+; N/A                                     ; 250.38 MHz ( period = 3.994 ns )                    ; LCD_poweron_seq:u4|reset_cnt[11] ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.551 ns                ;
+; N/A                                     ; 251.95 MHz ( period = 3.969 ns )                    ; LCD_poweron_seq:u4|reset_cnt[15] ; LCD_poweron_seq:u4|reset_cnt[15] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.526 ns                ;
+; N/A                                     ; 252.59 MHz ( period = 3.959 ns )                    ; LCD_poweron_seq:u4|reset_cnt[16] ; LCD_poweron_seq:u4|reset_cnt[16] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.516 ns                ;
+; N/A                                     ; 255.62 MHz ( period = 3.912 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.469 ns                ;
+; N/A                                     ; 256.81 MHz ( period = 3.894 ns )                    ; LCD_poweron_seq:u4|reset_cnt[13] ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.451 ns                ;
+; N/A                                     ; 259.54 MHz ( period = 3.853 ns )                    ; LCD_poweron_seq:u4|reset_cnt[10] ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.410 ns                ;
+; N/A                                     ; 263.44 MHz ( period = 3.796 ns )                    ; LCD_poweron_seq:u4|reset_cnt[11] ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.353 ns                ;
+; N/A                                     ; 268.02 MHz ( period = 3.731 ns )                    ; LCD_poweron_seq:u4|reset_cnt[15] ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.288 ns                ;
+; N/A                                     ; 269.47 MHz ( period = 3.711 ns )                    ; LCD_poweron_seq:u4|reset_cnt[10] ; LCD_poweron_seq:u4|reset_cnt[10] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.268 ns                ;
+; N/A                                     ; 269.69 MHz ( period = 3.708 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.265 ns                ;
+; N/A                                     ; 270.86 MHz ( period = 3.692 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|reset_cnt[9]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.249 ns                ;
+; N/A                                     ; 273.37 MHz ( period = 3.658 ns )                    ; LCD_poweron_seq:u4|reset_cnt[11] ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 3.215 ns                ;
+; N/A                                     ; 274.95 MHz ( period = 3.637 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[2]  ; OSC100     ; OSC100   ; None                        ; None                      ; 3.194 ns                ;
+; N/A                                     ; 280.11 MHz ( period = 3.570 ns )                    ; LCD_poweron_seq:u4|reset_cnt[9]  ; LCD_poweron_seq:u4|self_rst      ; OSC100     ; OSC100   ; None                        ; None                      ; 3.127 ns                ;
+; N/A                                     ; 287.36 MHz ( period = 3.480 ns )                    ; LCD_poweron_seq:u4|reset_cnt[14] ; LCD_poweron_seq:u4|reset_cnt[14] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.037 ns                ;
+; N/A                                     ; 290.44 MHz ( period = 3.443 ns )                    ; LCD_poweron_seq:u4|reset_cnt[16] ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 3.000 ns                ;
+; N/A                                     ; 294.55 MHz ( period = 3.395 ns )                    ; LCD_poweron_seq:u4|reset_cnt[14] ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 2.952 ns                ;
+; N/A                                     ; 296.56 MHz ( period = 3.372 ns )                    ; LCD_poweron_seq:u4|reset_cnt[6]  ; LCD_poweron_seq:u4|reset_cnt[0]  ; OSC100     ; OSC100   ; None                        ; None                      ; 2.929 ns                ;
+; N/A                                     ; 300.75 MHz ( period = 3.325 ns )                    ; LCD_poweron_seq:u4|reset_cnt[0]  ; LCD_poweron_seq:u4|reset_cnt[17] ; OSC100     ; OSC100   ; None                        ; None                      ; 2.882 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                  ;                                  ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'HC_ID_I2CSCL'                                                                                                                                                                                                              ;
++-------+------------------------------------------------+-------------------------------+-------------------------------+--------------+--------------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                          ; To                            ; From Clock   ; To Clock     ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-------------------------------+-------------------------------+--------------+--------------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 221.43 MHz ( period = 4.516 ns )               ; Terasic_I2CBir_bus:u2|cnt[3]  ; Terasic_I2CBir_bus:u2|cnt[0]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 4.073 ns                ;
+; N/A   ; 221.43 MHz ( period = 4.516 ns )               ; Terasic_I2CBir_bus:u2|cnt[3]  ; Terasic_I2CBir_bus:u2|cnt[3]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 4.073 ns                ;
+; N/A   ; 221.43 MHz ( period = 4.516 ns )               ; Terasic_I2CBir_bus:u2|cnt[3]  ; Terasic_I2CBir_bus:u2|cnt[4]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 4.073 ns                ;
+; N/A   ; 221.43 MHz ( period = 4.516 ns )               ; Terasic_I2CBir_bus:u2|cnt[3]  ; Terasic_I2CBir_bus:u2|cnt[2]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 4.073 ns                ;
+; N/A   ; 221.43 MHz ( period = 4.516 ns )               ; Terasic_I2CBir_bus:u2|cnt[3]  ; Terasic_I2CBir_bus:u2|cnt[1]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 4.073 ns                ;
+; N/A   ; 221.43 MHz ( period = 4.516 ns )               ; Terasic_I2CBir_bus:u2|cnt[3]  ; Terasic_I2CBir_bus:u2|cnt[5]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 4.073 ns                ;
+; N/A   ; 221.43 MHz ( period = 4.516 ns )               ; Terasic_I2CBir_bus:u2|cnt[3]  ; Terasic_I2CBir_bus:u2|cnt[6]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 4.073 ns                ;
+; N/A   ; 221.43 MHz ( period = 4.516 ns )               ; Terasic_I2CBir_bus:u2|cnt[3]  ; Terasic_I2CBir_bus:u2|cnt[7]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 4.073 ns                ;
+; N/A   ; 234.14 MHz ( period = 4.271 ns )               ; Terasic_I2CBir_bus:u2|cnt[1]  ; Terasic_I2CBir_bus:u2|cnt[0]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.828 ns                ;
+; N/A   ; 234.14 MHz ( period = 4.271 ns )               ; Terasic_I2CBir_bus:u2|cnt[1]  ; Terasic_I2CBir_bus:u2|cnt[3]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.828 ns                ;
+; N/A   ; 234.14 MHz ( period = 4.271 ns )               ; Terasic_I2CBir_bus:u2|cnt[1]  ; Terasic_I2CBir_bus:u2|cnt[4]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.828 ns                ;
+; N/A   ; 234.14 MHz ( period = 4.271 ns )               ; Terasic_I2CBir_bus:u2|cnt[1]  ; Terasic_I2CBir_bus:u2|cnt[2]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.828 ns                ;
+; N/A   ; 234.14 MHz ( period = 4.271 ns )               ; Terasic_I2CBir_bus:u2|cnt[1]  ; Terasic_I2CBir_bus:u2|cnt[1]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.828 ns                ;
+; N/A   ; 234.14 MHz ( period = 4.271 ns )               ; Terasic_I2CBir_bus:u2|cnt[1]  ; Terasic_I2CBir_bus:u2|cnt[5]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.828 ns                ;
+; N/A   ; 234.14 MHz ( period = 4.271 ns )               ; Terasic_I2CBir_bus:u2|cnt[1]  ; Terasic_I2CBir_bus:u2|cnt[6]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.828 ns                ;
+; N/A   ; 234.14 MHz ( period = 4.271 ns )               ; Terasic_I2CBir_bus:u2|cnt[1]  ; Terasic_I2CBir_bus:u2|cnt[7]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.828 ns                ;
+; N/A   ; 239.01 MHz ( period = 4.184 ns )               ; Terasic_I2CBir_bus:u2|cnt[0]  ; Terasic_I2CBir_bus:u2|cnt[0]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.741 ns                ;
+; N/A   ; 239.01 MHz ( period = 4.184 ns )               ; Terasic_I2CBir_bus:u2|cnt[0]  ; Terasic_I2CBir_bus:u2|cnt[3]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.741 ns                ;
+; N/A   ; 239.01 MHz ( period = 4.184 ns )               ; Terasic_I2CBir_bus:u2|cnt[0]  ; Terasic_I2CBir_bus:u2|cnt[4]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.741 ns                ;
+; N/A   ; 239.01 MHz ( period = 4.184 ns )               ; Terasic_I2CBir_bus:u2|cnt[0]  ; Terasic_I2CBir_bus:u2|cnt[2]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.741 ns                ;
+; N/A   ; 239.01 MHz ( period = 4.184 ns )               ; Terasic_I2CBir_bus:u2|cnt[0]  ; Terasic_I2CBir_bus:u2|cnt[1]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.741 ns                ;
+; N/A   ; 239.01 MHz ( period = 4.184 ns )               ; Terasic_I2CBir_bus:u2|cnt[0]  ; Terasic_I2CBir_bus:u2|cnt[5]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.741 ns                ;
+; N/A   ; 239.01 MHz ( period = 4.184 ns )               ; Terasic_I2CBir_bus:u2|cnt[0]  ; Terasic_I2CBir_bus:u2|cnt[6]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.741 ns                ;
+; N/A   ; 239.01 MHz ( period = 4.184 ns )               ; Terasic_I2CBir_bus:u2|cnt[0]  ; Terasic_I2CBir_bus:u2|cnt[7]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.741 ns                ;
+; N/A   ; 239.87 MHz ( period = 4.169 ns )               ; Terasic_I2CBir_bus:u2|cnt[1]  ; Terasic_I2CBir_bus:u2|pre_w_r ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.726 ns                ;
+; N/A   ; 245.64 MHz ( period = 4.071 ns )               ; Terasic_I2CBir_bus:u2|cnt[7]  ; Terasic_I2CBir_bus:u2|pre_w_r ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.628 ns                ;
+; N/A   ; 246.00 MHz ( period = 4.065 ns )               ; Terasic_I2CBir_bus:u2|cnt[2]  ; Terasic_I2CBir_bus:u2|cnt[0]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.622 ns                ;
+; N/A   ; 246.00 MHz ( period = 4.065 ns )               ; Terasic_I2CBir_bus:u2|cnt[2]  ; Terasic_I2CBir_bus:u2|cnt[3]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.622 ns                ;
+; N/A   ; 246.00 MHz ( period = 4.065 ns )               ; Terasic_I2CBir_bus:u2|cnt[2]  ; Terasic_I2CBir_bus:u2|cnt[4]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.622 ns                ;
+; N/A   ; 246.00 MHz ( period = 4.065 ns )               ; Terasic_I2CBir_bus:u2|cnt[2]  ; Terasic_I2CBir_bus:u2|cnt[2]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.622 ns                ;
+; N/A   ; 246.00 MHz ( period = 4.065 ns )               ; Terasic_I2CBir_bus:u2|cnt[2]  ; Terasic_I2CBir_bus:u2|cnt[1]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.622 ns                ;
+; N/A   ; 246.00 MHz ( period = 4.065 ns )               ; Terasic_I2CBir_bus:u2|cnt[2]  ; Terasic_I2CBir_bus:u2|cnt[5]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.622 ns                ;
+; N/A   ; 246.00 MHz ( period = 4.065 ns )               ; Terasic_I2CBir_bus:u2|cnt[2]  ; Terasic_I2CBir_bus:u2|cnt[6]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.622 ns                ;
+; N/A   ; 246.00 MHz ( period = 4.065 ns )               ; Terasic_I2CBir_bus:u2|cnt[2]  ; Terasic_I2CBir_bus:u2|cnt[7]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.622 ns                ;
+; N/A   ; 247.59 MHz ( period = 4.039 ns )               ; Terasic_I2CBir_bus:u2|cnt[4]  ; Terasic_I2CBir_bus:u2|cnt[0]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.596 ns                ;
+; N/A   ; 247.59 MHz ( period = 4.039 ns )               ; Terasic_I2CBir_bus:u2|cnt[4]  ; Terasic_I2CBir_bus:u2|cnt[3]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.596 ns                ;
+; N/A   ; 247.59 MHz ( period = 4.039 ns )               ; Terasic_I2CBir_bus:u2|cnt[4]  ; Terasic_I2CBir_bus:u2|cnt[4]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.596 ns                ;
+; N/A   ; 247.59 MHz ( period = 4.039 ns )               ; Terasic_I2CBir_bus:u2|cnt[4]  ; Terasic_I2CBir_bus:u2|cnt[2]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.596 ns                ;
+; N/A   ; 247.59 MHz ( period = 4.039 ns )               ; Terasic_I2CBir_bus:u2|cnt[4]  ; Terasic_I2CBir_bus:u2|cnt[1]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.596 ns                ;
+; N/A   ; 247.59 MHz ( period = 4.039 ns )               ; Terasic_I2CBir_bus:u2|cnt[4]  ; Terasic_I2CBir_bus:u2|cnt[5]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.596 ns                ;
+; N/A   ; 247.59 MHz ( period = 4.039 ns )               ; Terasic_I2CBir_bus:u2|cnt[4]  ; Terasic_I2CBir_bus:u2|cnt[6]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.596 ns                ;
+; N/A   ; 247.59 MHz ( period = 4.039 ns )               ; Terasic_I2CBir_bus:u2|cnt[4]  ; Terasic_I2CBir_bus:u2|cnt[7]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.596 ns                ;
+; N/A   ; 252.33 MHz ( period = 3.963 ns )               ; Terasic_I2CBir_bus:u2|cnt[2]  ; Terasic_I2CBir_bus:u2|pre_w_r ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.520 ns                ;
+; N/A   ; 253.04 MHz ( period = 3.952 ns )               ; Terasic_I2CBir_bus:u2|cnt[6]  ; Terasic_I2CBir_bus:u2|pre_w_r ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.509 ns                ;
+; N/A   ; 254.00 MHz ( period = 3.937 ns )               ; Terasic_I2CBir_bus:u2|cnt[4]  ; Terasic_I2CBir_bus:u2|pre_w_r ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.494 ns                ;
+; N/A   ; 255.10 MHz ( period = 3.920 ns )               ; Terasic_I2CBir_bus:u2|cnt[7]  ; Terasic_I2CBir_bus:u2|cnt[0]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.477 ns                ;
+; N/A   ; 255.10 MHz ( period = 3.920 ns )               ; Terasic_I2CBir_bus:u2|cnt[7]  ; Terasic_I2CBir_bus:u2|cnt[3]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.477 ns                ;
+; N/A   ; 255.10 MHz ( period = 3.920 ns )               ; Terasic_I2CBir_bus:u2|cnt[7]  ; Terasic_I2CBir_bus:u2|cnt[4]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.477 ns                ;
+; N/A   ; 255.10 MHz ( period = 3.920 ns )               ; Terasic_I2CBir_bus:u2|cnt[7]  ; Terasic_I2CBir_bus:u2|cnt[2]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.477 ns                ;
+; N/A   ; 255.10 MHz ( period = 3.920 ns )               ; Terasic_I2CBir_bus:u2|cnt[7]  ; Terasic_I2CBir_bus:u2|cnt[1]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.477 ns                ;
+; N/A   ; 255.10 MHz ( period = 3.920 ns )               ; Terasic_I2CBir_bus:u2|cnt[7]  ; Terasic_I2CBir_bus:u2|cnt[5]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.477 ns                ;
+; N/A   ; 255.10 MHz ( period = 3.920 ns )               ; Terasic_I2CBir_bus:u2|cnt[7]  ; Terasic_I2CBir_bus:u2|cnt[6]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.477 ns                ;
+; N/A   ; 255.10 MHz ( period = 3.920 ns )               ; Terasic_I2CBir_bus:u2|cnt[7]  ; Terasic_I2CBir_bus:u2|cnt[7]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.477 ns                ;
+; N/A   ; 263.09 MHz ( period = 3.801 ns )               ; Terasic_I2CBir_bus:u2|cnt[6]  ; Terasic_I2CBir_bus:u2|cnt[0]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.358 ns                ;
+; N/A   ; 263.09 MHz ( period = 3.801 ns )               ; Terasic_I2CBir_bus:u2|cnt[6]  ; Terasic_I2CBir_bus:u2|cnt[3]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.358 ns                ;
+; N/A   ; 263.09 MHz ( period = 3.801 ns )               ; Terasic_I2CBir_bus:u2|cnt[6]  ; Terasic_I2CBir_bus:u2|cnt[4]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.358 ns                ;
+; N/A   ; 263.09 MHz ( period = 3.801 ns )               ; Terasic_I2CBir_bus:u2|cnt[6]  ; Terasic_I2CBir_bus:u2|cnt[2]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.358 ns                ;
+; N/A   ; 263.09 MHz ( period = 3.801 ns )               ; Terasic_I2CBir_bus:u2|cnt[6]  ; Terasic_I2CBir_bus:u2|cnt[1]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.358 ns                ;
+; N/A   ; 263.09 MHz ( period = 3.801 ns )               ; Terasic_I2CBir_bus:u2|cnt[6]  ; Terasic_I2CBir_bus:u2|cnt[5]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.358 ns                ;
+; N/A   ; 263.09 MHz ( period = 3.801 ns )               ; Terasic_I2CBir_bus:u2|cnt[6]  ; Terasic_I2CBir_bus:u2|cnt[6]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.358 ns                ;
+; N/A   ; 263.09 MHz ( period = 3.801 ns )               ; Terasic_I2CBir_bus:u2|cnt[6]  ; Terasic_I2CBir_bus:u2|cnt[7]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.358 ns                ;
+; N/A   ; 268.17 MHz ( period = 3.729 ns )               ; Terasic_I2CBir_bus:u2|cnt[5]  ; Terasic_I2CBir_bus:u2|pre_w_r ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.286 ns                ;
+; N/A   ; 279.49 MHz ( period = 3.578 ns )               ; Terasic_I2CBir_bus:u2|cnt[5]  ; Terasic_I2CBir_bus:u2|cnt[0]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.135 ns                ;
+; N/A   ; 279.49 MHz ( period = 3.578 ns )               ; Terasic_I2CBir_bus:u2|cnt[5]  ; Terasic_I2CBir_bus:u2|cnt[3]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.135 ns                ;
+; N/A   ; 279.49 MHz ( period = 3.578 ns )               ; Terasic_I2CBir_bus:u2|cnt[5]  ; Terasic_I2CBir_bus:u2|cnt[4]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.135 ns                ;
+; N/A   ; 279.49 MHz ( period = 3.578 ns )               ; Terasic_I2CBir_bus:u2|cnt[5]  ; Terasic_I2CBir_bus:u2|cnt[2]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.135 ns                ;
+; N/A   ; 279.49 MHz ( period = 3.578 ns )               ; Terasic_I2CBir_bus:u2|cnt[5]  ; Terasic_I2CBir_bus:u2|cnt[1]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.135 ns                ;
+; N/A   ; 279.49 MHz ( period = 3.578 ns )               ; Terasic_I2CBir_bus:u2|cnt[5]  ; Terasic_I2CBir_bus:u2|cnt[5]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.135 ns                ;
+; N/A   ; 279.49 MHz ( period = 3.578 ns )               ; Terasic_I2CBir_bus:u2|cnt[5]  ; Terasic_I2CBir_bus:u2|cnt[6]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.135 ns                ;
+; N/A   ; 279.49 MHz ( period = 3.578 ns )               ; Terasic_I2CBir_bus:u2|cnt[5]  ; Terasic_I2CBir_bus:u2|cnt[7]  ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.135 ns                ;
+; N/A   ; 285.88 MHz ( period = 3.498 ns )               ; Terasic_I2CBir_bus:u2|cnt[3]  ; Terasic_I2CBir_bus:u2|pre_w_r ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 3.055 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|cnt[1]  ; Terasic_I2CBir_bus:u2|w_r     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 2.519 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|cnt[7]  ; Terasic_I2CBir_bus:u2|w_r     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 2.421 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|cnt[2]  ; Terasic_I2CBir_bus:u2|w_r     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 2.313 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|cnt[6]  ; Terasic_I2CBir_bus:u2|w_r     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 2.302 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|cnt[4]  ; Terasic_I2CBir_bus:u2|w_r     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 2.287 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|pre_w_r ; Terasic_I2CBir_bus:u2|w_r     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 2.124 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|cnt[5]  ; Terasic_I2CBir_bus:u2|w_r     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 2.079 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|w_r     ; Terasic_I2CBir_bus:u2|w_r     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 1.985 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|cnt[0]  ; Terasic_I2CBir_bus:u2|w_r     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 1.878 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|cnt[3]  ; Terasic_I2CBir_bus:u2|w_r     ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 1.848 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|cnt[0]  ; Terasic_I2CBir_bus:u2|pre_w_r ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 1.580 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; Terasic_I2CBir_bus:u2|pre_w_r ; Terasic_I2CBir_bus:u2|pre_w_r ; HC_ID_I2CSCL ; HC_ID_I2CSCL ; None                        ; None                      ; 1.303 ns                ;
++-------+------------------------------------------------+-------------------------------+-------------------------------+--------------+--------------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; tsu                                                                                                ;
++-------+--------------+------------+----------------+--------------------------------+--------------+
+; Slack ; Required tsu ; Actual tsu ; From           ; To                             ; To Clock     ;
++-------+--------------+------------+----------------+--------------------------------+--------------+
+; N/A   ; None         ; 1.817 ns   ; HC_VD          ; LCD_DATA_DECODE:u3|d1_VD       ; HC_NCLK      ;
+; N/A   ; None         ; 1.675 ns   ; HC_LCD_DATA[7] ; LCD_DATA_DECODE:u3|d1_RGB[7]   ; HC_NCLK      ;
+; N/A   ; None         ; 1.621 ns   ; HC_LCD_DATA[5] ; LCD_DATA_DECODE:u3|d1_RGB[5]   ; HC_NCLK      ;
+; N/A   ; None         ; 1.575 ns   ; HC_DEN         ; LCD_DATA_DECODE:u3|d1_DEN      ; HC_NCLK      ;
+; N/A   ; None         ; 1.527 ns   ; HC_LCD_DATA[1] ; LCD_DATA_DECODE:u3|d1_RGB[1]   ; HC_NCLK      ;
+; N/A   ; None         ; 1.524 ns   ; HC_LCD_DATA[3] ; LCD_DATA_DECODE:u3|d1_RGB[3]   ; HC_NCLK      ;
+; N/A   ; None         ; 1.500 ns   ; HC_VGA_DATA[6] ; VGA_DATA_DECODE:u1|d1_RGB[6]   ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.491 ns   ; HC_LCD_DATA[0] ; LCD_DATA_DECODE:u3|d1_RGB[0]   ; HC_NCLK      ;
+; N/A   ; None         ; 1.448 ns   ; HC_LCD_DATA[2] ; LCD_DATA_DECODE:u3|d1_RGB[2]   ; HC_NCLK      ;
+; N/A   ; None         ; 1.434 ns   ; HC_VGA_DATA[3] ; VGA_DATA_DECODE:u1|d1_RGB[3]   ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.412 ns   ; HC_VGA_DATA[7] ; VGA_DATA_DECODE:u1|d1_RGB[7]   ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.381 ns   ; HC_VGA_DATA[2] ; VGA_DATA_DECODE:u1|d1_RGB[2]   ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.367 ns   ; HC_LCD_DATA[4] ; LCD_DATA_DECODE:u3|d1_RGB[4]   ; HC_NCLK      ;
+; N/A   ; None         ; 1.359 ns   ; HC_LCD_DATA[6] ; LCD_DATA_DECODE:u3|d1_RGB[6]   ; HC_NCLK      ;
+; N/A   ; None         ; 1.306 ns   ; HC_VGA_DATA[5] ; VGA_DATA_DECODE:u1|d1_RGB[5]   ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.138 ns   ; HC_VGA_DATA[4] ; VGA_DATA_DECODE:u1|d1_RGB[4]   ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.130 ns   ; HC_HD          ; LCD_DATA_DECODE:u3|d1_HD       ; HC_NCLK      ;
+; N/A   ; None         ; 1.128 ns   ; HC_VGA_DATA[1] ; VGA_DATA_DECODE:u1|d1_RGB[1]   ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.127 ns   ; HC_VGA_BLANK   ; VGA_DATA_DECODE:u1|d1_BLANK    ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.122 ns   ; HC_VGA_DATA[0] ; VGA_DATA_DECODE:u1|d1_RGB[0]   ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.116 ns   ; HC_VGA_HS      ; VGA_DATA_DECODE:u1|d1_HS       ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.099 ns   ; HC_VGA_DATA[8] ; VGA_DATA_DECODE:u1|d1_RGB[8]   ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 1.081 ns   ; HC_VGA_DATA[9] ; VGA_DATA_DECODE:u1|d1_RGB[9]   ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 0.863 ns   ; HC_VGA_VS      ; VGA_DATA_DECODE:u1|d1_VS       ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 0.168 ns   ; HC_ID_I2CDAT   ; Terasic_I2CBir_bus:u2|w_r      ; HC_ID_I2CSCL ;
+; N/A   ; None         ; -0.158 ns  ; HC_ID_I2CSCL   ; Terasic_I2CBir_bus:u2|rx_start ; OSC100       ;
+; N/A   ; None         ; -0.159 ns  ; HC_ID_I2CSCL   ; Terasic_I2CBir_bus:u2|rx_stop  ; OSC100       ;
+; N/A   ; None         ; -0.216 ns  ; HC_ID_I2CDAT   ; Terasic_I2CBir_bus:u2|rx_start ; OSC100       ;
+; N/A   ; None         ; -0.217 ns  ; HC_ID_I2CDAT   ; Terasic_I2CBir_bus:u2|rx_stop  ; OSC100       ;
+; N/A   ; None         ; -0.452 ns  ; HC_ID_I2CSCL   ; Terasic_I2CBir_bus:u2|prev_scl ; OSC100       ;
+; N/A   ; None         ; -0.744 ns  ; HC_ID_I2CDAT   ; Terasic_I2CBir_bus:u2|prev_sda ; OSC100       ;
+; N/A   ; None         ; -0.761 ns  ; HC_ID_I2CDAT   ; Terasic_I2CBir_bus:u2|pre_w_r  ; HC_ID_I2CSCL ;
++-------+--------------+------------+----------------+--------------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; tco                                                                                                ;
++-------+--------------+------------+----------------------------------+--------------+--------------+
+; Slack ; Required tco ; Actual tco ; From                             ; To           ; From Clock   ;
++-------+--------------+------------+----------------------------------+--------------+--------------+
+; N/A   ; None         ; 11.096 ns  ; Terasic_I2CBir_bus:u2|cnt[1]     ; ID_I2CDAT    ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 11.006 ns  ; Terasic_I2CBir_bus:u2|cnt[1]     ; HC_ID_I2CDAT ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.998 ns  ; Terasic_I2CBir_bus:u2|cnt[7]     ; ID_I2CDAT    ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.908 ns  ; Terasic_I2CBir_bus:u2|cnt[7]     ; HC_ID_I2CDAT ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.890 ns  ; Terasic_I2CBir_bus:u2|cnt[2]     ; ID_I2CDAT    ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.879 ns  ; Terasic_I2CBir_bus:u2|cnt[6]     ; ID_I2CDAT    ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.864 ns  ; Terasic_I2CBir_bus:u2|cnt[4]     ; ID_I2CDAT    ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.800 ns  ; Terasic_I2CBir_bus:u2|cnt[2]     ; HC_ID_I2CDAT ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.789 ns  ; Terasic_I2CBir_bus:u2|cnt[6]     ; HC_ID_I2CDAT ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.774 ns  ; Terasic_I2CBir_bus:u2|cnt[4]     ; HC_ID_I2CDAT ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.656 ns  ; Terasic_I2CBir_bus:u2|cnt[5]     ; ID_I2CDAT    ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.566 ns  ; Terasic_I2CBir_bus:u2|cnt[5]     ; HC_ID_I2CDAT ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.425 ns  ; Terasic_I2CBir_bus:u2|cnt[3]     ; ID_I2CDAT    ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 10.335 ns  ; Terasic_I2CBir_bus:u2|cnt[3]     ; HC_ID_I2CDAT ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 9.883 ns   ; LCD_poweron_seq:u4|reset_cnt[1]  ; GREST        ; OSC100       ;
+; N/A   ; None         ; 9.772 ns   ; LCD_poweron_seq:u4|reset_cnt[17] ; GREST        ; OSC100       ;
+; N/A   ; None         ; 9.610 ns   ; LCD_poweron_seq:u4|reset_cnt[17] ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 9.337 ns   ; LCD_poweron_seq:u4|reset_cnt[0]  ; GREST        ; OSC100       ;
+; N/A   ; None         ; 9.304 ns   ; Terasic_I2CBir_bus:u2|cnt[0]     ; ID_I2CDAT    ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 9.214 ns   ; Terasic_I2CBir_bus:u2|cnt[0]     ; HC_ID_I2CDAT ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 9.184 ns   ; LCD_poweron_seq:u4|reset_cnt[15] ; GREST        ; OSC100       ;
+; N/A   ; None         ; 9.175 ns   ; LCD_poweron_seq:u4|reset_cnt[0]  ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 9.086 ns   ; LCD_poweron_seq:u4|reset_cnt[14] ; GREST        ; OSC100       ;
+; N/A   ; None         ; 9.022 ns   ; LCD_poweron_seq:u4|reset_cnt[15] ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 8.983 ns   ; LCD_poweron_seq:u4|reset_cnt[13] ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.924 ns   ; LCD_poweron_seq:u4|reset_cnt[14] ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 8.912 ns   ; LCD_poweron_seq:u4|reset_cnt[3]  ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.831 ns   ; Terasic_I2CBir_bus:u2|w_r        ; ID_I2CDAT    ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 8.821 ns   ; LCD_poweron_seq:u4|reset_cnt[13] ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 8.750 ns   ; LCD_poweron_seq:u4|reset_cnt[3]  ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 8.741 ns   ; Terasic_I2CBir_bus:u2|w_r        ; HC_ID_I2CDAT ; HC_ID_I2CSCL ;
+; N/A   ; None         ; 8.727 ns   ; LCD_poweron_seq:u4|reset_cnt[8]  ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.565 ns   ; LCD_poweron_seq:u4|reset_cnt[8]  ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 8.551 ns   ; LCD_poweron_seq:u4|reset_cnt[7]  ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.546 ns   ; LCD_poweron_seq:u4|reset_cnt[12] ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.534 ns   ; LCD_poweron_seq:u4|reset_cnt[2]  ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.478 ns   ; LCD_poweron_seq:u4|reset_cnt[4]  ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.455 ns   ; LCD_poweron_seq:u4|reset_cnt[10] ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.437 ns   ; LCD_poweron_seq:u4|reset_cnt[16] ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.389 ns   ; LCD_poweron_seq:u4|reset_cnt[7]  ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 8.384 ns   ; LCD_poweron_seq:u4|reset_cnt[12] ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 8.364 ns   ; LCD_poweron_seq:u4|reset_cnt[5]  ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.339 ns   ; LCD_poweron_seq:u4|self_rst      ; GREST        ; OSC100       ;
+; N/A   ; None         ; 8.316 ns   ; LCD_poweron_seq:u4|reset_cnt[4]  ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 8.293 ns   ; LCD_poweron_seq:u4|reset_cnt[10] ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 8.275 ns   ; LCD_poweron_seq:u4|reset_cnt[16] ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 8.202 ns   ; LCD_poweron_seq:u4|reset_cnt[5]  ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 7.886 ns   ; LCD_poweron_seq:u4|reset_cnt[11] ; GREST        ; OSC100       ;
+; N/A   ; None         ; 7.798 ns   ; LCD_poweron_seq:u4|reset_cnt[9]  ; GREST        ; OSC100       ;
+; N/A   ; None         ; 7.724 ns   ; LCD_poweron_seq:u4|reset_cnt[11] ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 7.636 ns   ; LCD_poweron_seq:u4|reset_cnt[9]  ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 7.462 ns   ; LCD_poweron_seq:u4|reset_cnt[6]  ; GREST        ; OSC100       ;
+; N/A   ; None         ; 7.441 ns   ; LCD_poweron_seq:u4|reset_cnt[2]  ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 7.300 ns   ; LCD_poweron_seq:u4|reset_cnt[6]  ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 6.961 ns   ; VGA_DATA_DECODE:u1|VGA_G[0]      ; VGA_G[0]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.712 ns   ; VGA_DATA_DECODE:u1|VGA_R[4]      ; VGA_R[4]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.630 ns   ; LCD_DATA_DECODE:u3|LCD_NCLK      ; NCLK         ; HC_NCLK      ;
+; N/A   ; None         ; 6.620 ns   ; VGA_DATA_DECODE:u1|VGA_G[4]      ; VGA_G[4]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.532 ns   ; VGA_DATA_DECODE:u1|VGA_HS        ; VGA_HS       ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.495 ns   ; VGA_DATA_DECODE:u1|VGA_B[0]      ; VGA_B[0]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.489 ns   ; VGA_DATA_DECODE:u1|VGA_R[8]      ; VGA_R[8]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.472 ns   ; VGA_DATA_DECODE:u1|VGA_CLOCK     ; VGA_CLOCK    ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.466 ns   ; VGA_DATA_DECODE:u1|VGA_VS        ; VGA_VS       ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.457 ns   ; VGA_DATA_DECODE:u1|VGA_R[9]      ; VGA_R[9]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.421 ns   ; VGA_DATA_DECODE:u1|VGA_B[8]      ; VGA_B[8]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.402 ns   ; VGA_DATA_DECODE:u1|VGA_B[9]      ; VGA_B[9]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.384 ns   ; VGA_DATA_DECODE:u1|VGA_B[6]      ; VGA_B[6]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.154 ns   ; LCD_DATA_DECODE:u3|LCD_R[5]      ; R[5]         ; HC_NCLK      ;
+; N/A   ; None         ; 6.117 ns   ; VGA_DATA_DECODE:u1|VGA_B[3]      ; VGA_B[3]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.035 ns   ; VGA_DATA_DECODE:u1|VGA_R[3]      ; VGA_R[3]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.023 ns   ; VGA_DATA_DECODE:u1|VGA_R[2]      ; VGA_R[2]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.016 ns   ; VGA_DATA_DECODE:u1|VGA_B[4]      ; VGA_B[4]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 6.001 ns   ; VGA_DATA_DECODE:u1|VGA_B[7]      ; VGA_B[7]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.994 ns   ; VGA_DATA_DECODE:u1|VGA_G[3]      ; VGA_G[3]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.974 ns   ; VGA_DATA_DECODE:u1|VGA_B[5]      ; VGA_B[5]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.852 ns   ; LCD_DATA_DECODE:u3|LCD_R[1]      ; R[1]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.792 ns   ; LCD_DATA_DECODE:u3|LCD_R[6]      ; R[6]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.762 ns   ; VGA_DATA_DECODE:u1|VGA_G[9]      ; VGA_G[9]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.759 ns   ; LCD_DATA_DECODE:u3|LCD_R[0]      ; R[0]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.757 ns   ; LCD_DATA_DECODE:u3|LCD_R[3]      ; R[3]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.753 ns   ; LCD_DATA_DECODE:u3|LCD_R[2]      ; R[2]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.753 ns   ; VGA_DATA_DECODE:u1|VGA_G[8]      ; VGA_G[8]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.752 ns   ; LCD_DATA_DECODE:u3|LCD_DEN       ; DEN          ; HC_NCLK      ;
+; N/A   ; None         ; 5.743 ns   ; LCD_DATA_DECODE:u3|LCD_HD        ; HD           ; HC_NCLK      ;
+; N/A   ; None         ; 5.742 ns   ; VGA_DATA_DECODE:u1|VGA_R[1]      ; VGA_R[1]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.739 ns   ; LCD_DATA_DECODE:u3|LCD_VD        ; VD           ; HC_NCLK      ;
+; N/A   ; None         ; 5.719 ns   ; LCD_DATA_DECODE:u3|LCD_G[5]      ; G[5]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.714 ns   ; LCD_DATA_DECODE:u3|LCD_G[2]      ; G[2]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.704 ns   ; LCD_poweron_seq:u4|reset_cnt[1]  ; NCLK         ; OSC100       ;
+; N/A   ; None         ; 5.693 ns   ; VGA_DATA_DECODE:u1|VGA_R[0]      ; VGA_R[0]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.692 ns   ; VGA_DATA_DECODE:u1|VGA_G[2]      ; VGA_G[2]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.689 ns   ; LCD_DATA_DECODE:u3|LCD_G[6]      ; G[6]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.665 ns   ; VGA_DATA_DECODE:u1|VGA_R[7]      ; VGA_R[7]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.657 ns   ; VGA_DATA_DECODE:u1|VGA_BLANK     ; VGA_BLANK    ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.622 ns   ; VGA_DATA_DECODE:u1|VGA_G[7]      ; VGA_G[7]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.617 ns   ; LCD_DATA_DECODE:u3|LCD_B[0]      ; B[0]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.612 ns   ; VGA_DATA_DECODE:u1|VGA_B[2]      ; VGA_B[2]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.610 ns   ; VGA_DATA_DECODE:u1|VGA_B[1]      ; VGA_B[1]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.610 ns   ; VGA_DATA_DECODE:u1|VGA_G[1]      ; VGA_G[1]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.585 ns   ; VGA_DATA_DECODE:u1|VGA_G[5]      ; VGA_G[5]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.570 ns   ; VGA_DATA_DECODE:u1|VGA_G[6]      ; VGA_G[6]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.450 ns   ; LCD_DATA_DECODE:u3|LCD_R[4]      ; R[4]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.439 ns   ; LCD_DATA_DECODE:u3|LCD_G[4]      ; G[4]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.434 ns   ; LCD_DATA_DECODE:u3|LCD_B[7]      ; B[7]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.434 ns   ; LCD_DATA_DECODE:u3|LCD_R[7]      ; R[7]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.417 ns   ; LCD_DATA_DECODE:u3|LCD_B[4]      ; B[4]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.416 ns   ; LCD_DATA_DECODE:u3|LCD_B[6]      ; B[6]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.415 ns   ; LCD_DATA_DECODE:u3|LCD_B[3]      ; B[3]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.392 ns   ; LCD_DATA_DECODE:u3|LCD_G[1]      ; G[1]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.295 ns   ; LCD_DATA_DECODE:u3|LCD_G[3]      ; G[3]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.294 ns   ; LCD_DATA_DECODE:u3|LCD_B[2]      ; B[2]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.290 ns   ; LCD_DATA_DECODE:u3|LCD_G[0]      ; G[0]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.258 ns   ; LCD_DATA_DECODE:u3|LCD_B[5]      ; B[5]         ; HC_NCLK      ;
+; N/A   ; None         ; 5.249 ns   ; VGA_DATA_DECODE:u1|VGA_R[6]      ; VGA_R[6]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 5.249 ns   ; VGA_DATA_DECODE:u1|VGA_R[5]      ; VGA_R[5]     ; HC_VGA_CLOCK ;
+; N/A   ; None         ; 4.575 ns   ; LCD_DATA_DECODE:u3|LCD_B[1]      ; B[1]         ; HC_NCLK      ;
+; N/A   ; None         ; 4.575 ns   ; LCD_DATA_DECODE:u3|LCD_G[7]      ; G[7]         ; HC_NCLK      ;
++-------+--------------+------------+----------------------------------+--------------+--------------+
+
+
++------------------------------------------------------------------------------+
+; tpd                                                                          ;
++-------+-------------------+-----------------+----------------+---------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From           ; To            ;
++-------+-------------------+-----------------+----------------+---------------+
+; N/A   ; None              ; 6.967 ns        ; HC_GREST       ; GREST         ;
+; N/A   ; None              ; 6.234 ns        ; HC_ADC_DIN     ; ADC_DIN       ;
+; N/A   ; None              ; 6.228 ns        ; HC_MDC         ; MDC           ;
+; N/A   ; None              ; 5.841 ns        ; TX_CLK         ; HC_TX_CLK     ;
+; N/A   ; None              ; 5.795 ns        ; HC_ADC_DCLK    ; ADC_DCLK      ;
+; N/A   ; None              ; 5.747 ns        ; HC_TXD[2]      ; TXD[2]        ;
+; N/A   ; None              ; 5.745 ns        ; HC_ID_I2CSCL   ; ID_I2CSCL     ;
+; N/A   ; None              ; 5.739 ns        ; HC_ETH_RESET_N ; ETH_RESET_N   ;
+; N/A   ; None              ; 5.737 ns        ; HC_TXD[3]      ; TXD[3]        ;
+; N/A   ; None              ; 5.730 ns        ; HC_TX_EN       ; TX_EN         ;
+; N/A   ; None              ; 5.717 ns        ; HC_TXD[0]      ; TXD[0]        ;
+; N/A   ; None              ; 5.710 ns        ; HC_TXD[1]      ; TXD[1]        ;
+; N/A   ; None              ; 5.672 ns        ; HC_ADC_CS_N    ; ADC_CS_N      ;
+; N/A   ; None              ; 5.661 ns        ; HC_ID_I2CDAT   ; ID_I2CDAT     ;
+; N/A   ; None              ; 5.656 ns        ; ADC_DOUT       ; HC_ADC_DOUT   ;
+; N/A   ; None              ; 5.652 ns        ; ADC_BUSY       ; HC_ADC_BUSY   ;
+; N/A   ; None              ; 5.576 ns        ; RXD[0]         ; HC_RXD[0]     ;
+; N/A   ; None              ; 5.460 ns        ; HC_SCEN        ; SCEN          ;
+; N/A   ; None              ; 5.436 ns        ; TD_27MHZ       ; HC_TD_27MHZ   ;
+; N/A   ; None              ; 5.429 ns        ; RXD[2]         ; HC_RXD[2]     ;
+; N/A   ; None              ; 5.359 ns        ; ID_I2CDAT      ; HC_ID_I2CDAT  ;
+; N/A   ; None              ; 5.333 ns        ; HC_SD_CLK      ; SD_CLK        ;
+; N/A   ; None              ; 5.295 ns        ; HC_UART_TXD    ; UART_TXD      ;
+; N/A   ; None              ; 5.294 ns        ; RXD[3]         ; HC_RXD[3]     ;
+; N/A   ; None              ; 5.286 ns        ; RX_ERR         ; HC_RX_ERR     ;
+; N/A   ; None              ; 5.285 ns        ; ADC_PENIRQ     ; HC_ADC_PENIRQ ;
+; N/A   ; None              ; 5.284 ns        ; RX_DV          ; HC_RX_DV      ;
+; N/A   ; None              ; 5.215 ns        ; UART_RXD       ; HC_UART_RXD   ;
+; N/A   ; None              ; 5.208 ns        ; RX_CLK         ; HC_RX_CLK     ;
+; N/A   ; None              ; 5.204 ns        ; RX_COL         ; HC_RX_COL     ;
+; N/A   ; None              ; 5.078 ns        ; TD_D[0]        ; HC_TD_D[0]    ;
+; N/A   ; None              ; 5.074 ns        ; HC_AUD_ADCLRCK ; AUD_ADCLRCK   ;
+; N/A   ; None              ; 5.053 ns        ; RX_CRS         ; HC_RX_CRS     ;
+; N/A   ; None              ; 5.050 ns        ; RXD[1]         ; HC_RXD[1]     ;
+; N/A   ; None              ; 4.931 ns        ; HC_AUD_BCLK    ; AUD_BCLK      ;
+; N/A   ; None              ; 4.926 ns        ; TD_D[1]        ; HC_TD_D[1]    ;
+; N/A   ; None              ; 4.885 ns        ; HC_I2C_SCLK    ; I2C_SCLK      ;
+; N/A   ; None              ; 4.734 ns        ; TD_VS          ; HC_TD_VS      ;
+; N/A   ; None              ; 4.714 ns        ; TD_HS          ; HC_TD_HS      ;
+; N/A   ; None              ; 4.657 ns        ; TD_D[3]        ; HC_TD_D[3]    ;
+; N/A   ; None              ; 4.652 ns        ; TD_D[2]        ; HC_TD_D[2]    ;
+; N/A   ; None              ; 4.623 ns        ; HC_AUD_DACDAT  ; AUD_DACDAT    ;
+; N/A   ; None              ; 4.573 ns        ; TD_D[6]        ; HC_TD_D[6]    ;
+; N/A   ; None              ; 4.559 ns        ; TD_D[5]        ; HC_TD_D[5]    ;
+; N/A   ; None              ; 4.536 ns        ; TD_D[7]        ; HC_TD_D[7]    ;
+; N/A   ; None              ; 4.453 ns        ; TD_D[4]        ; HC_TD_D[4]    ;
+; N/A   ; None              ; 4.246 ns        ; HC_AUD_DACLRCK ; AUD_DACLRCK   ;
+; N/A   ; None              ; 4.184 ns        ; HC_TD_RESET    ; TD_RESET      ;
+; N/A   ; None              ; 3.983 ns        ; HC_AUD_XCK     ; AUD_XCK       ;
+; N/A   ; None              ; 3.830 ns        ; AUD_ADCDAT     ; HC_AUD_ADCDAT ;
++-------+-------------------+-----------------+----------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; th                                                                                                       ;
++---------------+-------------+-----------+----------------+--------------------------------+--------------+
+; Minimum Slack ; Required th ; Actual th ; From           ; To                             ; To Clock     ;
++---------------+-------------+-----------+----------------+--------------------------------+--------------+
+; N/A           ; None        ; 1.107 ns  ; HC_ID_I2CDAT   ; Terasic_I2CBir_bus:u2|pre_w_r  ; HC_ID_I2CSCL ;
+; N/A           ; None        ; 1.090 ns  ; HC_ID_I2CDAT   ; Terasic_I2CBir_bus:u2|prev_sda ; OSC100       ;
+; N/A           ; None        ; 0.798 ns  ; HC_ID_I2CSCL   ; Terasic_I2CBir_bus:u2|prev_scl ; OSC100       ;
+; N/A           ; None        ; 0.563 ns  ; HC_ID_I2CDAT   ; Terasic_I2CBir_bus:u2|rx_stop  ; OSC100       ;
+; N/A           ; None        ; 0.562 ns  ; HC_ID_I2CDAT   ; Terasic_I2CBir_bus:u2|rx_start ; OSC100       ;
+; N/A           ; None        ; 0.505 ns  ; HC_ID_I2CSCL   ; Terasic_I2CBir_bus:u2|rx_stop  ; OSC100       ;
+; N/A           ; None        ; 0.504 ns  ; HC_ID_I2CSCL   ; Terasic_I2CBir_bus:u2|rx_start ; OSC100       ;
+; N/A           ; None        ; 0.178 ns  ; HC_ID_I2CDAT   ; Terasic_I2CBir_bus:u2|w_r      ; HC_ID_I2CSCL ;
+; N/A           ; None        ; -0.517 ns ; HC_VGA_VS      ; VGA_DATA_DECODE:u1|d1_VS       ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -0.735 ns ; HC_VGA_DATA[9] ; VGA_DATA_DECODE:u1|d1_RGB[9]   ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -0.753 ns ; HC_VGA_DATA[8] ; VGA_DATA_DECODE:u1|d1_RGB[8]   ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -0.770 ns ; HC_VGA_HS      ; VGA_DATA_DECODE:u1|d1_HS       ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -0.776 ns ; HC_VGA_DATA[0] ; VGA_DATA_DECODE:u1|d1_RGB[0]   ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -0.781 ns ; HC_VGA_BLANK   ; VGA_DATA_DECODE:u1|d1_BLANK    ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -0.782 ns ; HC_VGA_DATA[1] ; VGA_DATA_DECODE:u1|d1_RGB[1]   ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -0.784 ns ; HC_HD          ; LCD_DATA_DECODE:u3|d1_HD       ; HC_NCLK      ;
+; N/A           ; None        ; -0.792 ns ; HC_VGA_DATA[4] ; VGA_DATA_DECODE:u1|d1_RGB[4]   ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -0.960 ns ; HC_VGA_DATA[5] ; VGA_DATA_DECODE:u1|d1_RGB[5]   ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -1.013 ns ; HC_LCD_DATA[6] ; LCD_DATA_DECODE:u3|d1_RGB[6]   ; HC_NCLK      ;
+; N/A           ; None        ; -1.021 ns ; HC_LCD_DATA[4] ; LCD_DATA_DECODE:u3|d1_RGB[4]   ; HC_NCLK      ;
+; N/A           ; None        ; -1.035 ns ; HC_VGA_DATA[2] ; VGA_DATA_DECODE:u1|d1_RGB[2]   ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -1.066 ns ; HC_VGA_DATA[7] ; VGA_DATA_DECODE:u1|d1_RGB[7]   ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -1.088 ns ; HC_VGA_DATA[3] ; VGA_DATA_DECODE:u1|d1_RGB[3]   ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -1.102 ns ; HC_LCD_DATA[2] ; LCD_DATA_DECODE:u3|d1_RGB[2]   ; HC_NCLK      ;
+; N/A           ; None        ; -1.145 ns ; HC_LCD_DATA[0] ; LCD_DATA_DECODE:u3|d1_RGB[0]   ; HC_NCLK      ;
+; N/A           ; None        ; -1.154 ns ; HC_VGA_DATA[6] ; VGA_DATA_DECODE:u1|d1_RGB[6]   ; HC_VGA_CLOCK ;
+; N/A           ; None        ; -1.178 ns ; HC_LCD_DATA[3] ; LCD_DATA_DECODE:u3|d1_RGB[3]   ; HC_NCLK      ;
+; N/A           ; None        ; -1.181 ns ; HC_LCD_DATA[1] ; LCD_DATA_DECODE:u3|d1_RGB[1]   ; HC_NCLK      ;
+; N/A           ; None        ; -1.229 ns ; HC_DEN         ; LCD_DATA_DECODE:u3|d1_DEN      ; HC_NCLK      ;
+; N/A           ; None        ; -1.275 ns ; HC_LCD_DATA[5] ; LCD_DATA_DECODE:u3|d1_RGB[5]   ; HC_NCLK      ;
+; N/A           ; None        ; -1.329 ns ; HC_LCD_DATA[7] ; LCD_DATA_DECODE:u3|d1_RGB[7]   ; HC_NCLK      ;
+; N/A           ; None        ; -1.471 ns ; HC_VD          ; LCD_DATA_DECODE:u3|d1_VD       ; HC_NCLK      ;
++---------------+-------------+-----------+----------------+--------------------------------+--------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+    Info: Processing started: Tue Mar 30 15:22:22 2010
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off HMB_MAX -c HMB_MAX
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "HC_VGA_CLOCK" is an undefined clock
+    Info: Assuming node "HC_NCLK" is an undefined clock
+    Info: Assuming node "OSC100" is an undefined clock
+    Info: Assuming node "HC_ID_I2CSCL" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "SAMPLE_CLK[5]" as buffer
+Info: Clock "HC_VGA_CLOCK" has Internal fmax of 255.75 MHz between source register "VGA_DATA_DECODE:u1|color_phase_counter[1]" and destination register "VGA_DATA_DECODE:u1|VGA_R[6]" (period= 3.91 ns)
+    Info: + Longest register to register delay is 3.467 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X11_Y5_N6; Fanout = 4; REG Node = 'VGA_DATA_DECODE:u1|color_phase_counter[1]'
+        Info: 2: + IC(0.618 ns) + CELL(0.319 ns) = 0.937 ns; Loc. = LC_X11_Y5_N0; Fanout = 33; COMB Node = 'VGA_DATA_DECODE:u1|Equal1~0'
+        Info: 3: + IC(1.753 ns) + CELL(0.777 ns) = 3.467 ns; Loc. = LC_X5_Y4_N6; Fanout = 1; REG Node = 'VGA_DATA_DECODE:u1|VGA_R[6]'
+        Info: Total cell delay = 1.096 ns ( 31.61 % )
+        Info: Total interconnect delay = 2.371 ns ( 68.39 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "HC_VGA_CLOCK" to destination register is 2.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_J13; Fanout = 75; CLK Node = 'HC_VGA_CLOCK'
+            Info: 2: + IC(1.099 ns) + CELL(0.574 ns) = 2.400 ns; Loc. = LC_X5_Y4_N6; Fanout = 1; REG Node = 'VGA_DATA_DECODE:u1|VGA_R[6]'
+            Info: Total cell delay = 1.301 ns ( 54.21 % )
+            Info: Total interconnect delay = 1.099 ns ( 45.79 % )
+        Info: - Longest clock path from clock "HC_VGA_CLOCK" to source register is 2.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_J13; Fanout = 75; CLK Node = 'HC_VGA_CLOCK'
+            Info: 2: + IC(1.099 ns) + CELL(0.574 ns) = 2.400 ns; Loc. = LC_X11_Y5_N6; Fanout = 4; REG Node = 'VGA_DATA_DECODE:u1|color_phase_counter[1]'
+            Info: Total cell delay = 1.301 ns ( 54.21 % )
+            Info: Total interconnect delay = 1.099 ns ( 45.79 % )
+    Info: + Micro clock to output delay of source is 0.235 ns
+    Info: + Micro setup delay of destination is 0.208 ns
+Info: Clock "HC_NCLK" has Internal fmax of 270.42 MHz between source register "LCD_DATA_DECODE:u3|color_phase_counter[0]" and destination register "LCD_DATA_DECODE:u3|LCD_R[7]" (period= 3.698 ns)
+    Info: + Longest register to register delay is 3.255 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X4_Y13_N7; Fanout = 4; REG Node = 'LCD_DATA_DECODE:u3|color_phase_counter[0]'
+        Info: 2: + IC(0.621 ns) + CELL(0.319 ns) = 0.940 ns; Loc. = LC_X4_Y13_N4; Fanout = 27; COMB Node = 'LCD_DATA_DECODE:u3|Equal1~0'
+        Info: 3: + IC(1.538 ns) + CELL(0.777 ns) = 3.255 ns; Loc. = LC_X1_Y10_N6; Fanout = 1; REG Node = 'LCD_DATA_DECODE:u3|LCD_R[7]'
+        Info: Total cell delay = 1.096 ns ( 33.67 % )
+        Info: Total interconnect delay = 2.159 ns ( 66.33 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "HC_NCLK" to destination register is 2.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_K13; Fanout = 63; CLK Node = 'HC_NCLK'
+            Info: 2: + IC(1.099 ns) + CELL(0.574 ns) = 2.400 ns; Loc. = LC_X1_Y10_N6; Fanout = 1; REG Node = 'LCD_DATA_DECODE:u3|LCD_R[7]'
+            Info: Total cell delay = 1.301 ns ( 54.21 % )
+            Info: Total interconnect delay = 1.099 ns ( 45.79 % )
+        Info: - Longest clock path from clock "HC_NCLK" to source register is 2.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_K13; Fanout = 63; CLK Node = 'HC_NCLK'
+            Info: 2: + IC(1.099 ns) + CELL(0.574 ns) = 2.400 ns; Loc. = LC_X4_Y13_N7; Fanout = 4; REG Node = 'LCD_DATA_DECODE:u3|color_phase_counter[0]'
+            Info: Total cell delay = 1.301 ns ( 54.21 % )
+            Info: Total interconnect delay = 1.099 ns ( 45.79 % )
+    Info: + Micro clock to output delay of source is 0.235 ns
+    Info: + Micro setup delay of destination is 0.208 ns
+Info: Clock "OSC100" has Internal fmax of 175.01 MHz between source register "LCD_poweron_seq:u4|reset_cnt[3]" and destination register "LCD_poweron_seq:u4|reset_cnt[11]" (period= 5.714 ns)
+    Info: + Longest register to register delay is 5.271 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y10_N0; Fanout = 3; REG Node = 'LCD_poweron_seq:u4|reset_cnt[3]'
+        Info: 2: + IC(1.972 ns) + CELL(0.596 ns) = 2.568 ns; Loc. = LC_X3_Y11_N4; Fanout = 6; COMB Node = 'LCD_poweron_seq:u4|Add0~87'
+        Info: 3: + IC(0.000 ns) + CELL(0.218 ns) = 2.786 ns; Loc. = LC_X3_Y11_N9; Fanout = 6; COMB Node = 'LCD_poweron_seq:u4|Add0~62'
+        Info: 4: + IC(0.000 ns) + CELL(0.771 ns) = 3.557 ns; Loc. = LC_X4_Y11_N2; Fanout = 1; COMB Node = 'LCD_poweron_seq:u4|Add0~30'
+        Info: 5: + IC(1.539 ns) + CELL(0.175 ns) = 5.271 ns; Loc. = LC_X5_Y12_N8; Fanout = 4; REG Node = 'LCD_poweron_seq:u4|reset_cnt[11]'
+        Info: Total cell delay = 1.760 ns ( 33.39 % )
+        Info: Total interconnect delay = 3.511 ns ( 66.61 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "OSC100" to destination register is 2.472 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_J6; Fanout = 25; CLK Node = 'OSC100'
+            Info: 2: + IC(1.171 ns) + CELL(0.574 ns) = 2.472 ns; Loc. = LC_X5_Y12_N8; Fanout = 4; REG Node = 'LCD_poweron_seq:u4|reset_cnt[11]'
+            Info: Total cell delay = 1.301 ns ( 52.63 % )
+            Info: Total interconnect delay = 1.171 ns ( 47.37 % )
+        Info: - Longest clock path from clock "OSC100" to source register is 2.472 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_J6; Fanout = 25; CLK Node = 'OSC100'
+            Info: 2: + IC(1.171 ns) + CELL(0.574 ns) = 2.472 ns; Loc. = LC_X9_Y10_N0; Fanout = 3; REG Node = 'LCD_poweron_seq:u4|reset_cnt[3]'
+            Info: Total cell delay = 1.301 ns ( 52.63 % )
+            Info: Total interconnect delay = 1.171 ns ( 47.37 % )
+    Info: + Micro clock to output delay of source is 0.235 ns
+    Info: + Micro setup delay of destination is 0.208 ns
+Info: Clock "HC_ID_I2CSCL" has Internal fmax of 221.43 MHz between source register "Terasic_I2CBir_bus:u2|cnt[3]" and destination register "Terasic_I2CBir_bus:u2|cnt[0]" (period= 4.516 ns)
+    Info: + Longest register to register delay is 4.073 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y7_N3; Fanout = 5; REG Node = 'Terasic_I2CBir_bus:u2|cnt[3]'
+        Info: 2: + IC(0.823 ns) + CELL(0.462 ns) = 1.285 ns; Loc. = LC_X10_Y7_N0; Fanout = 1; COMB Node = 'Terasic_I2CBir_bus:u2|LessThan0~1'
+        Info: 3: + IC(0.454 ns) + CELL(0.462 ns) = 2.201 ns; Loc. = LC_X10_Y7_N2; Fanout = 8; COMB Node = 'Terasic_I2CBir_bus:u2|LessThan0~2'
+        Info: 4: + IC(0.680 ns) + CELL(1.192 ns) = 4.073 ns; Loc. = LC_X9_Y7_N0; Fanout = 7; REG Node = 'Terasic_I2CBir_bus:u2|cnt[0]'
+        Info: Total cell delay = 2.116 ns ( 51.95 % )
+        Info: Total interconnect delay = 1.957 ns ( 48.05 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "HC_ID_I2CSCL" to destination register is 4.583 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = PIN_T17; Fanout = 14; CLK Node = 'HC_ID_I2CSCL'
+            Info: 2: + IC(3.301 ns) + CELL(0.574 ns) = 4.583 ns; Loc. = LC_X9_Y7_N0; Fanout = 7; REG Node = 'Terasic_I2CBir_bus:u2|cnt[0]'
+            Info: Total cell delay = 1.282 ns ( 27.97 % )
+            Info: Total interconnect delay = 3.301 ns ( 72.03 % )
+        Info: - Longest clock path from clock "HC_ID_I2CSCL" to source register is 4.583 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = PIN_T17; Fanout = 14; CLK Node = 'HC_ID_I2CSCL'
+            Info: 2: + IC(3.301 ns) + CELL(0.574 ns) = 4.583 ns; Loc. = LC_X9_Y7_N3; Fanout = 5; REG Node = 'Terasic_I2CBir_bus:u2|cnt[3]'
+            Info: Total cell delay = 1.282 ns ( 27.97 % )
+            Info: Total interconnect delay = 3.301 ns ( 72.03 % )
+    Info: + Micro clock to output delay of source is 0.235 ns
+    Info: + Micro setup delay of destination is 0.208 ns
+Info: tsu for register "LCD_DATA_DECODE:u3|d1_VD" (data pin = "HC_VD", clock pin = "HC_NCLK") is 1.817 ns
+    Info: + Longest pin to register delay is 4.009 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = PIN_D14; Fanout = 1; PIN Node = 'HC_VD'
+        Info: 2: + IC(3.126 ns) + CELL(0.175 ns) = 4.009 ns; Loc. = LC_X3_Y13_N5; Fanout = 1; REG Node = 'LCD_DATA_DECODE:u3|d1_VD'
+        Info: Total cell delay = 0.883 ns ( 22.03 % )
+        Info: Total interconnect delay = 3.126 ns ( 77.97 % )
+    Info: + Micro setup delay of destination is 0.208 ns
+    Info: - Shortest clock path from clock "HC_NCLK" to destination register is 2.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.727 ns) = 0.727 ns; Loc. = PIN_K13; Fanout = 63; CLK Node = 'HC_NCLK'
+        Info: 2: + IC(1.099 ns) + CELL(0.574 ns) = 2.400 ns; Loc. = LC_X3_Y13_N5; Fanout = 1; REG Node = 'LCD_DATA_DECODE:u3|d1_VD'
+        Info: Total cell delay = 1.301 ns ( 54.21 % )
+        Info: Total interconnect delay = 1.099 ns ( 45.79 % )
+Info: tco from clock "HC_ID_I2CSCL" to destination pin "ID_I2CDAT" through register "Terasic_I2CBir_bus:u2|cnt[1]" is 11.096 ns
+    Info: + Longest clock path from clock "HC_ID_I2CSCL" to source register is 4.583 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = PIN_T17; Fanout = 14; CLK Node = 'HC_ID_I2CSCL'
+        Info: 2: + IC(3.301 ns) + CELL(0.574 ns) = 4.583 ns; Loc. = LC_X9_Y7_N1; Fanout = 4; REG Node = 'Terasic_I2CBir_bus:u2|cnt[1]'
+        Info: Total cell delay = 1.282 ns ( 27.97 % )
+        Info: Total interconnect delay = 3.301 ns ( 72.03 % )
+    Info: + Micro clock to output delay of source is 0.235 ns
+    Info: + Longest register to pin delay is 6.278 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X9_Y7_N1; Fanout = 4; REG Node = 'Terasic_I2CBir_bus:u2|cnt[1]'
+        Info: 2: + IC(0.828 ns) + CELL(0.319 ns) = 1.147 ns; Loc. = LC_X10_Y7_N4; Fanout = 2; COMB Node = 'Terasic_I2CBir_bus:u2|Equal0~0'
+        Info: 3: + IC(0.493 ns) + CELL(0.319 ns) = 1.959 ns; Loc. = LC_X10_Y7_N5; Fanout = 3; COMB Node = 'Terasic_I2CBir_bus:u2|Equal0~1'
+        Info: 4: + IC(1.100 ns) + CELL(0.125 ns) = 3.184 ns; Loc. = LC_X10_Y7_N8; Fanout = 2; COMB Node = 'Terasic_I2CBir_bus:u2|i2c_rw~0'
+        Info: 5: + IC(2.091 ns) + CELL(1.003 ns) = 6.278 ns; Loc. = PIN_P3; Fanout = 0; PIN Node = 'ID_I2CDAT'
+        Info: Total cell delay = 1.766 ns ( 28.13 % )
+        Info: Total interconnect delay = 4.512 ns ( 71.87 % )
+Info: Longest tpd from source pin "HC_GREST" to destination pin "GREST" is 6.967 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = PIN_C13; Fanout = 1; PIN Node = 'HC_GREST'
+    Info: 2: + IC(2.457 ns) + CELL(0.319 ns) = 3.484 ns; Loc. = LC_X5_Y12_N6; Fanout = 1; COMB Node = 'LCD_poweron_seq:u4|oGREST_n~0'
+    Info: 3: + IC(2.029 ns) + CELL(1.454 ns) = 6.967 ns; Loc. = PIN_L2; Fanout = 0; PIN Node = 'GREST'
+    Info: Total cell delay = 2.481 ns ( 35.61 % )
+    Info: Total interconnect delay = 4.486 ns ( 64.39 % )
+Info: th for register "Terasic_I2CBir_bus:u2|pre_w_r" (data pin = "HC_ID_I2CDAT", clock pin = "HC_ID_I2CSCL") is 1.107 ns
+    Info: + Longest clock path from clock "HC_ID_I2CSCL" to destination register is 4.583 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = PIN_T17; Fanout = 14; CLK Node = 'HC_ID_I2CSCL'
+        Info: 2: + IC(3.301 ns) + CELL(0.574 ns) = 4.583 ns; Loc. = LC_X10_Y7_N3; Fanout = 2; REG Node = 'Terasic_I2CBir_bus:u2|pre_w_r'
+        Info: Total cell delay = 1.282 ns ( 27.97 % )
+        Info: Total interconnect delay = 3.301 ns ( 72.03 % )
+    Info: + Micro hold delay of destination is 0.138 ns
+    Info: - Shortest pin to register delay is 3.614 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_P18; Fanout = 1; PIN Node = 'HC_ID_I2CDAT'
+        Info: 2: + IC(0.000 ns) + CELL(0.708 ns) = 0.708 ns; Loc. = IOC_X21_Y3_N3; Fanout = 6; COMB Node = 'HC_ID_I2CDAT~0'
+        Info: 3: + IC(2.404 ns) + CELL(0.502 ns) = 3.614 ns; Loc. = LC_X10_Y7_N3; Fanout = 2; REG Node = 'Terasic_I2CBir_bus:u2|pre_w_r'
+        Info: Total cell delay = 1.210 ns ( 33.48 % )
+        Info: Total interconnect delay = 2.404 ns ( 66.52 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 136 megabytes
+    Info: Processing ended: Tue Mar 30 15:22:23 2010
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
